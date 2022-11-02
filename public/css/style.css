@@ -1,0 +1,452 @@
+body h1.text-white-test{
+    color: red !important;
+}
+
+span.badge.genre.current,
+span.badge.artist.current{
+    font-weight: 600;
+    border: 1px solid #7bc0df;
+}
+
+a.cancel-plan{
+    cursor: pointer;
+}
+
+.cancel-plan-radois-wrapper .form-check input,
+.cancel-plan-radois-wrapper .form-check label{
+    cursor: pointer;
+}
+
+.pe-none{
+    pointer-events: none;
+}
+
+table#main-search-table thead th a{
+    font-family: inherit !important;
+    color: #5e6e82;
+}
+
+table#main-search-table thead th{
+    padding-right: 30px;
+}
+table#main-search-table thead th .title{
+    position: relative;
+    padding-right: 20px;
+    display: inline-block;
+}
+
+table#main-search-table thead th a:hover{
+    text-decoration: none;
+}
+
+table#main-search-table thead th svg.sort-arrow{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 15px;
+    height: auto;
+    margin: auto;
+}
+
+table#main-search-table thead th svg.sort-arrow path{
+    fill: #bfbfbf;
+}
+
+table#main-search-table thead th svg.sort-arrow.current path{
+    fill: #636363;
+}
+
+table#main-search-table thead th svg.sort-arrow.up{
+    right: 0;
+}
+
+table#main-search-table thead th svg.sort-arrow.down{
+    right: -7px;
+}
+
+table#main-search-table thead th .title.current-up svg.sort-arrow.up path,
+table#main-search-table thead th .title.current-down svg.sort-arrow.down path{
+    fill: #636363;
+}
+
+
+/* Tooltip */
+.tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-wrapper .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background: #d4f2ff;
+    color: #1978a2;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip-wrapper:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltip-wrapper .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #d4f2ff transparent;
+}
+
+/* Homepage */
+
+main form#search-view-form button[type=submit],
+main form#searchform .home-search button{
+    opacity: 0.5;
+}
+
+main form#search-view-form .search-input-wrapper.valid button, 
+main form#searchform .home-search.valid button{
+    opacity: 1;
+}
+
+main  .search-view-form-message,
+main #homepagetoptext .search-message{
+    color: #fff;
+    margin-left: 15px;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+
+main .search-view-form-message{
+    color: #5e6e82;
+    padding-left: 15px;
+}
+
+main  .search-view-form-message.show,
+main #homepagetoptext .search-message.show{
+    opacity: 1;
+}
+
+
+main form#search-view-form button[type=submit],
+main form#searchform .home-search button[type=submit]{
+    outline: 0;
+}
+
+
+main form#search-view-form button[type=submit] svg,
+main form#searchform .home-search button[type=submit] svg{
+    pointer-events: none;
+}
+
+.modal #staticBackdropLabel.playlist-name{
+    word-break: break-word;
+}
+
+.modal .logo.stripe-logo{
+    height: 30px;
+    width: auto;
+}
+
+.modal .logo.paypal-logo{
+    height: 20px;
+    width: auto;
+}
+
+.modal .input-wrapper.payment-wrapper input,
+.modal .input-wrapper.payment-wrapper label{
+    cursor: pointer;
+}
+
+.modal .input-wrapper.payment-wrapper{
+    display: inline-block;
+}
+
+#paypal-wrapper{
+    margin-top: 20px;
+}
+
+.paypal-button-label-container.update{
+    background: #0070ba;
+    border-radius: 23px;
+    text-align: center;
+    padding: 10px 0px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.paypal-button-label-container.update:hover{
+    filter: brightness(0.95);
+}
+
+.paypal-button-label-container.update img{
+    height: 25px;
+}
+
+.paypal-button-label-container.update .paypal-button-text{
+    color: #fff;
+}
+
+
+
+#paymentModal .modal-content {
+    position: relative;
+}
+
+#paymentModal.loading .modal-content::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #000000ba;
+    opacity: 1;
+    z-index: 9999;
+}
+
+
+#paymentModal .modal-content .loader{
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 60px;
+    height: 60px;
+    z-index: 999999;
+}
+
+#paymentModal.loading .modal-content .loader{
+    opacity: 1;
+}
+
+
+.home-search{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #fff;
+    border-radius: 5px;
+}
+
+#searchform.homepage-form-search.in-header{
+    position: fixed;
+    top: 5px;
+    left: 520px;
+    z-index: 999999;
+    width: 30vw;
+}
+
+#searchform.homepage-form-search.in-header #searchbox{
+    height: 51px;
+}
+
+#searchform.homepage-form-search.in-header.guest #searchbox {
+    height: 44px;
+}
+
+#searchform.homepage-form-search.in-header.guest{
+    /*left: 760px;*/
+    right: 4%;
+    left: unset;
+}
+
+main form#searchform.homepage-form-search.in-header button[type=submit]{
+    opacity: 1;
+}
+
+.home-search .fa-search{
+    margin-left: 10px;
+    /*color: #6900ff !important;*/
+    color: #8500ed !important;
+
+}
+
+.home-search #searchbox{
+    border-radius: 0 !important;
+    border: 0;
+    box-shadow: none !important;
+    font-size: 18px !important;
+}
+
+main form#searchform .home-search button[type=submit]{
+    outline: 0;
+    /*background: #6900ff !important;*/
+    background: #8500ed !important;
+    /*opacity: 1;*/
+    border-radius: 5px !important;
+
+    margin-right: 10px;
+}
+
+main nav.navbar.dark-scroll:not(.guest) #navbarStandard{
+    display: none !important;
+}
+
+.ui-autocomplete-loading { 
+    background: url(../images/icons/loader-black.gif) no-repeat right center;
+    background-size: 28px;
+    background-position: 96% center;
+
+}
+/* Scrollable autocomplete */
+.ui-autocomplete {
+    max-height: 200px;
+    max-width: 300px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* add padding to account for vertical scrollbar */
+    /* padding-right: 20px; */
+}
+
+#artist-wrapper.got-artist input{
+    background: #e8f0fe;
+}
+
+form .artist-image-wrapper{
+    text-align: center;
+    display: none;
+}
+
+form .artist-image-wrapper img{
+    max-width: 100%;
+    border-radius: 50%;
+    width: 105px;
+    height: auto;
+}
+
+.home .ui-autocomplete.artists-ui-list{
+    z-index: 99999;
+}
+
+@media only screen and (max-width: 1540px) {
+    #searchform.homepage-form-search.in-header{
+        position: fixed;
+
+        top: 9px;
+        /*left: 490px;*/
+        left: 32%;
+        z-index: 999999;
+        width: 26vw;
+    }
+
+    #searchform.homepage-form-search.in-header{
+        top: 5px;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    #searchform.homepage-form-search.in-header{
+        left: 34%;
+        width: 21vw;
+    }
+
+    #searchform.homepage-form-search.in-header.guest{
+        position: fixed;
+        top: 5px;
+        /*left: 490px;*/
+        left: 32%;
+        z-index: 999999;
+        width: 26vw;
+    }
+
+}
+
+
+
+
+@media only screen and (max-width: 1300px) {
+    #searchform.homepage-form-search.in-header.guest{
+        right: 20%;
+        left: unset;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    #searchform.homepage-form-search.in-header.guest{
+        right: 2%;
+        left: unset;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+
+    /*    #searchform.homepage-form-search.in-header{
+            top: 54px;
+            width: 100%;
+            background: #192534;
+            z-index: 999999;
+            padding: 5px 0;
+            left: 0;
+            right: 0;
+            background-color: rgb(11, 23, 39);
+        }*/
+
+
+    #searchform.homepage-form-search.in-header,
+    #searchform.homepage-form-search.in-header.guest{
+        top: 51px;
+        width: 100%;
+        background: #192534;
+        z-index: 999999;
+        padding: 5px 0;
+        left: 0;
+        right: 0;
+        background-color: rgb(11, 23, 39);
+    }
+
+
+    #searchform.homepage-form-search.in-header{
+        top: 100px;
+    }
+
+    #searchform.homepage-form-search.in-header .home-search,
+    #searchform.homepage-form-search.in-header.guest .home-search{
+        /*max-width: 70%;*/
+        max-width: 700px;
+        width: 85%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    main form#searchform{
+        width: 100%;
+    }
+
+    main form#searchform .home-search button[type=submit]{
+        padding: 5px 8px;
+    }
+
+    .home-search #searchbox{
+        font-size: 14px !important;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    nav.navbar{
+        z-index: 9999999; 
+    }
+}
+
+
+
+
+

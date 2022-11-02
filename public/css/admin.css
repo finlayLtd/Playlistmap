@@ -1,0 +1,16 @@
+.crawler-image-wrapper{
+    position: absolute;
+    left: 240px;
+    bottom: 50px;
+    margin: auto;
+}
+
+.crawler-image-wrapper img{
+    width: 250px;
+    height: auto;
+}
+
+
+.pe-none{
+    pointer-events: none;
+}
