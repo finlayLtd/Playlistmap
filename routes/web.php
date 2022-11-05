@@ -89,6 +89,8 @@ Route::name('frontend.')->namespace('Frontend')->middleware(['auth', 'verified']
     Route::get('/sendgrid', 'SendgridTest@test')->name('profile')->withoutMiddleware(['verified']);
 
     Route::get('/profile', 'ProfileController@index')->name('profile')->withoutMiddleware(['verified']);
+    Route::get('/profile/security', 'ProfileController@security')->name('security')->withoutMiddleware(['verified']);
+    Route::get('/profile/subscription', 'ProfileController@subscription')->name('subscription')->withoutMiddleware(['verified']);
     Route::post('/profile', 'ProfileController@update')->name('profile.update')->withoutMiddleware(['verified']);
     Route::post('/updateSpotifyArtist', 'ProfileController@updateSpotifyArtist')->name('profile.update-spotify-artist')->withoutMiddleware(['verified']);
 

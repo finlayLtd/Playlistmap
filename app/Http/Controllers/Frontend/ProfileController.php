@@ -18,6 +18,20 @@ class ProfileController extends Controller {
         return view('frontend.profile.index', compact('user', 'playlists'));
     }
 
+    public function security() {
+        $user = auth()->user();
+        $playlists = $user->unlockedPlaylists()->paginate(25);
+
+        return view('frontend.profile.security', compact('user', 'playlists'));
+    }
+
+    public function subscription() {
+        $user = auth()->user();
+        $playlists = $user->unlockedPlaylists()->paginate(25);
+
+        return view('frontend.profile.subscription', compact('user', 'playlists'));
+    }
+
     public function update(Request $request) {
         $user = auth()->user();
 

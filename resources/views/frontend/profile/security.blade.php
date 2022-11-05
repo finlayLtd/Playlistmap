@@ -46,7 +46,7 @@
             </div>
 
             <a href="{{route('frontend.profile')}}">
-                <div class="cardSelected">
+                <div class="cardRow">
                         <i class="fas fa-user"></i>
                         <span style="margin-left: 8px;">
     
@@ -57,7 +57,7 @@
                 </div>
             </a>
             <a href="{{route('frontend.security')}}">
-                <div class="cardRow">
+                <div class="cardSelected">
                         <i class="fas fa-user-unlock"></i>
                         <span style="margin-left: 8px;">
 
@@ -93,67 +93,12 @@
             font-size: 24px;
             line-height: 36px;
             color: #FFFFFF;">
-            Profile
+            Login & Security
         </div>
         <form class="row g-3" action="{{ route('frontend.profile.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="form-outline">
-  <input type="text" id="form12" class="form-control" />
-  <label class="form-label" for="form12">Example label</label>
-</div>
-            <div class="form-group col-12">
-                <label>Profile Image:</label>
-                <input type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
-                @include('backend.includes.partials.error', ['field' => 'avatar'])
-            </div>
-
-            <div class="col-12 d-flex justify-content-end">
-                <button onclick="ym(73260880, 'reachGoal', 'profileupdatebtn'); return true;" class="btn btn-primary" type="submit" style="border-radius: 25px; padding: 8px 20px !important;">
-                    Upload Image
-                </button>
-            </div>
-
-            
-        </form>
-
-        <div style="font-family: 'Lato';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 36px;
-            color: #FFFFFF;">
-            Personal Details
-        </div>
-        <div style="font-family: 'Lato';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            letter-spacing: -0.0044em;
-            margin-bottom: 16px;
-            color: #C0C0C0;">
-                General information about your account.
-        </div>
-        <form class="row g-3" action="{{ route('frontend.profile.update') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-
-            <div class="col-6">
-                
-                <input class="form-control" name="firstName"
-                        id="firstName" type="text" value="" placeholder="First Name">
-            </div>
-
-            <div class="col-6">
-                <input class="form-control" name="SecondName"
-                        id="SecondName" type="text" value="" placeholder="SecondName">
-            </div>
 
             <div class="col-12">
-                <input class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Full Name"
-                        id="name" type="text" value="{{ old('name', $user ? $user->name : '') }}">
-                <x-error field="name"/>
-            </div>
-            <!-- <div class="col-12">
                 <label class="form-label" for="email">Email</label>
                 <input class="form-control @error('email') is-invalid @enderror" name="email"
                         id="email" type="text" value="{{ old('email', $user ? $user->email : '') }}">
@@ -164,25 +109,15 @@
                 <input class="form-control @error('password') is-invalid @enderror" name="password"
                         id="password" type="text" >
                 <x-error field="password"/>
-            </div> -->
-
-            <div class="col-6">
-                
-                <input class="form-control" name="birthday"
-                        id="birthday" type="text" value="" placeholder="Date of Birth*">
-                        
             </div>
 
-            <div class="col-6">
-                <input class="form-control" name="location"
-                        id="location" type="text" value="" placeholder="Location">
-            </div>
+            
             
             
            
             <div class="col-12 d-flex" id="save">
                 <button onclick="ym(73260880, 'reachGoal', 'profileupdatebtn'); return true;" class="btn btn-primary" type="submit" style="border-radius: 25px; padding: 8px 20px !important;">
-                  <i class="far fa-save"></i> Save changes
+                  <i class="far fa-save"></i> Update Password
                 </button>
             </div>
         </form>
