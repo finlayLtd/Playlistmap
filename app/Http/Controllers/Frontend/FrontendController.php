@@ -134,7 +134,7 @@ class FrontendController extends Controller {
                     $playlists = $playlists->take(7);
                 } else {
                     $page = isset(request()->page) ? request()->page : 1;
-                    $perPage = 25;
+                    $perPage = 12;
                     $playlists = new \Illuminate\Pagination\LengthAwarePaginator(
                             $playlists->forPage($page, $perPage),
                             $playlists->count(),
@@ -147,7 +147,7 @@ class FrontendController extends Controller {
                 if ($user->subscription()->plan->isFree()) {
                     $playlists = $playlists->limit(7)->get();
                 } else {
-                    $playlists = $playlists->paginate(25);
+                    $playlists = $playlists->paginate(12);
                 }
             }
 
@@ -176,6 +176,7 @@ class FrontendController extends Controller {
         if ($user->subscription()->canUseFeature('search_limit') && $q) {
             $user->subscription()->recordFeatureUsage('search_limit');
         }
+
         return view('frontend.search', $data);
     }
 

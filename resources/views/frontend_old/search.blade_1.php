@@ -12,7 +12,7 @@
         <form class="" action="{{ route('frontend.search') }}">
             <div class="input-group w-75 mx-auto">
                 <input class="form-control" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"
-                       placeholder="Type Music Genres, Artists Names, Playlist Names"/>
+                    placeholder="Type Music Genres, Artists Names, Playlist Names"/>
                 <button type="submit" class="input-group-text"><i class="fa fa-search"></i></button>
             </div>
             <div class="mt-3 w-75 mx-auto text-center">
@@ -20,7 +20,7 @@
                 @foreach($keywords as $keyword)
                 <span class="badge badge-soft-info">
                     <a class="hover-text-decoration-none"
-                       href="{{ route('frontend.search', ['q' => $keyword->name]) }}">{{ $keyword->name }}</a>
+                    href="{{ route('frontend.search', ['q' => $keyword->name]) }}">{{ $keyword->name }}</a>
                 </span>
                 @endforeach
                 @endif

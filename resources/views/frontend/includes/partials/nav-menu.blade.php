@@ -19,7 +19,7 @@
 </div>
 <div class="w-100 search-wrapper">
     @php($route = auth()->check() ? route('frontend.search') : route('frontend.search.guest'))
-    <form class="searchform" class="homepage-form-search @if (Auth::guest()) guest @endif" action="{{ $route }}">
+    <form class="searchform @if(isset($keywords)) d-none @endif" class="homepage-form-search @if (Auth::guest()) guest @endif" action="{{ $route }}">
 
         <div class="input-group">
             <!--<i class="fa fa-search"></i>-->
@@ -105,6 +105,7 @@
     </li>
 
     @endauth
+    
 
 <?php /*
     <!--    <li class="nav-item mr-3">
@@ -161,6 +162,10 @@
          font-weight: 400;}
         #btntopregister
         {border:1px solid black}
+
+        header{
+            height:40px !important;
+        }
     }
 
 </style>

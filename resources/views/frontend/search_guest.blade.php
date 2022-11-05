@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('layouts.frontend-main')
 
 @section('content')
     @if(request()->query('q'))

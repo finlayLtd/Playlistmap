@@ -8,7 +8,7 @@
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     </head>
 
-    <body class="{{$bodyClass ?? "" }}">
+    <body class="{{$bodyClass ?? "" }}" style="background:#121212">
         @include('frontend.includes.third-party.gtm_ns')
 
         @include('frontend.includes.partials.navbar')
@@ -27,6 +27,7 @@
                 </div>
             <!--</div>-->
         </main>
+        
         @include('frontend.includes.partials.footer')
         <script> var homeurl = "{{ url('/')}}";</script>
         @include('frontend.includes.partials.scripts')
