@@ -1,6 +1,6 @@
 <section class="{{$page ?? ""}}-section {{$page ?? ""}}-section-testimonials playlistmap-testimonials">
     <div class="wrap">
-        <h2 class="text-center position-relative">
+        <h2 class="text-center position-relative container">
             <span class="position-relative">
                 {{$title ?? "Your Success Speaks Volumes"}}
                 @if(!isset($showTitleQuote))
@@ -8,12 +8,12 @@
                 @endif
             </span>
         </h2>
-        <div class="testimonials-arrows d-flex justify-content-end mb-4 mt-4">
+        <div class="testimonials-arrows justify-content-end mb-4 mt-4">
             <div class="testimonials-button testimonials-prev d-flex justify-content-center align-items-center me-2"><i class="fa-solid fa-chevron-left"></i></div>
             <div class="testimonials-button testimonials-next d-flex justify-content-center align-items-center active"><i class="fa-solid fa-chevron-right"></i></div>
         </div>
-        <div class="testimonials-wrapper">
-            <div class="single-testimonial">
+        <div class="testimonials-wrapper container">
+            <div class="single-testimonial container">
                 <div class="d-flex">
                     <div class="image-wrapper position-relative me-3">
                         <img class="graphic graphic-left" src="{{asset('/images/testimonials/alusin.jpg')}}" />
@@ -30,7 +30,7 @@
                     <img class="graphic graphic-left" src="{{asset('/images/graphics/red-quotes.svg')}}" />
                 </div>
             </div>
-            <div class="single-testimonial">
+            <div class="single-testimonial container">
                 <div class="d-flex">
                     <div class="image-wrapper position-relative me-3">
                         <img class="graphic graphic-left" src="{{asset('/images/testimonials/eliav.jpg')}}" />
@@ -47,7 +47,7 @@
                     <img class="graphic graphic-left" src="{{asset('/images/graphics/red-quotes.svg')}}" />
                 </div>
             </div>
-            <div class="single-testimonial">
+            <div class="single-testimonial container">
                 <div class="d-flex">
                     <div class="image-wrapper position-relative me-3">
                         <img class="graphic graphic-left" src="{{asset('/images/testimonials/ronny.jpg')}}" />

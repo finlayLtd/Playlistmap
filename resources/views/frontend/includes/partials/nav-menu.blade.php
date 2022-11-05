@@ -19,7 +19,7 @@
 </div>
 <div class="w-100 search-wrapper">
     @php($route = auth()->check() ? route('frontend.search') : route('frontend.search.guest'))
-    <form class="searchform @if(isset($keywords)) d-none @endif" class="homepage-form-search @if (Auth::guest()) guest @endif" action="{{ $route }}">
+    <form class="searchform @if(isset($keywords) || ( isset($bodyClass) && $bodyClass=='pricing')) d-none @endif" class="homepage-form-search @if (Auth::guest()) guest @endif" action="{{ $route }}">
 
         <div class="input-group">
             <!--<i class="fa fa-search"></i>-->

@@ -477,10 +477,6 @@ footer{
     color: #827F7F;
 }
 
-footer h6{
-
-}
-
 footer ul li a{
     color: #C0C0C0; 
     font-size: 16px;
@@ -522,10 +518,6 @@ footer .rights{
 /* End of footer */
 
 /* Start of Search */
-.search-wrapper form.searchform{
-
-}
-
 .search-wrapper form.searchform .input-group{
     /*position: relative;*/
     display: flex;
@@ -690,10 +682,6 @@ footer .rights{
 
 /* Homepage */
 
-.homepage .homepage-section{
-
-}
-
 .homepage .homepage-section.homepage-section-hero{
     /*height: 747px;*/
     width: auto;
@@ -837,10 +825,6 @@ footer .rights{
 .homepage .homepage-section-how-it-works .single-how-it-works .image-wrapper:hover img.hover{
     opacity: 1;
     transition: opacity .5s linear;
-}
-
-.homepage .homepage-section-how-it-works .single-how-it-works .image-wrapper:hover img{
-    /*transition: transform 3s ease-in-out;*/
 }
 
 .homepage .homepage-section-how-it-works{
@@ -1022,14 +1006,6 @@ footer .rights{
 }
 
 .homepage .homepage-section-discovered-section .wrap .step-image.step1{
-    /*    position: absolute;
-        top: 0;
-        bottom: 0;
-        right: -60px;
-        margin: auto;*/
-}
-
-.homepage .homepage-section-discovered-section .wrap .step-image.step1{
     max-width: 498px;
     padding-top: 130px;
 }
@@ -1154,10 +1130,6 @@ footer .rights{
     margin-left: 70px;
 }
 
-.playlistmap-testimonials .wrap h2{
-
-}
-
 .playlistmap-testimonials .wrap h2 .big-red-quote{
     opacity: 0.2;
     filter: blur(2px);
@@ -1169,8 +1141,8 @@ footer .rights{
 }
 
 .playlistmap-testimonials .single-testimonial{
-    width: 636px !important;
-    height: 366px;
+    width: 636px;
+    height: 420px;
     background: #1B1B1B;
     border-radius: 20px;
     margin-right: 32px;
@@ -1312,10 +1284,6 @@ footer .rights{
     border-radius: 20px;
 }
 
-.homepage .homepage-section-get-started .get-started-wrapper{
-    /*border-radius: 20px;*/
-}
-
 .homepage .homepage-section-get-started .get-started-wrapper img{
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -1449,23 +1417,7 @@ footer .rights{
 }
 
 .about .about-section-what-is-playlistmap .wrap .what-is-playlistmap::before{
-
     background: #121212;
-    /*border: 2px solid #BE281D;*/
-    /*backdrop-filter: blur(4px);*/
-    /*    border-radius: 30px;
-         transform: rotate(3deg);*/
-    /*z-index: 100;*/
-
-}
-.about .about-section-what-is-playlistmap .wrap .what-is-playlistmap::after{
-    /*border: 2px solid #BE281D;*/
-    /*backdrop-filter: blur(4px);*/
-    /*transform: rotate(3deg);*/
-    /*    width: calc(100% + 2px);
-        height: calc(100% + 2px);
-        left:-2px;
-        top: -2px;*/
 }
 
 .about .about-section-what-is-playlistmap .wrap{
@@ -1629,7 +1581,6 @@ footer .rights{
     background: #1B1B1B;
     border-radius: 20px;
     padding: 24px;
-    margin: 0 12px;
     position: relative;
 }
 
@@ -1682,6 +1633,12 @@ footer .rights{
     color: #FBDE4B;
 }
 
+.plan-container:hover{
+    transform: scale(1.02);
+    transition-duration: 0.4s;
+    border:1px solid gray;
+}
+
 .pricing .playlistmap-testimonials .single-testimonial{
     max-width: 411px;
 }
@@ -1699,10 +1656,22 @@ footer .rights{
 }
 
 
+.testimonials-arrows{
+    display: flex;
+}
 
 
 #paymentModal .modal-content{
-    padding: 48px 32px;
+    padding: 15px;
+}
+
+#paymentModal div.position-absolute[aria-label="Close"]{
+    width:45px;
+    height:45px;
+    background: #121212;
+    border-radius: 50%;
+    right:0px;
+    top:-10px;
 }
 
 #paymentModal .plan-details div{
@@ -2144,10 +2113,60 @@ footer .rights{
 
 }
 
+@media (min-width: 576px){
+    .testimonials-wrapper.container{
+        max-width: 100%;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     footer .footer-links-wrapper{
         flex-direction: column;
         margin-bottom: 0px !important;
+    }
+
+    .testimonials-arrows{
+        display:none;
+    }
+
+    
+    body:has(#paymentModal.show) header{
+        display:none!important;
+    }
+
+    .testimonials-wrapper.container{
+        margin-top: 40px;
+    }
+
+    section.playlistmap-testimonials h2 span, 
+    section.pricing-section h3 {
+        font-size: 42px;
+    }
+
+    .single-faq h6{
+        font-size: 15px;
+    }
+
+    .single-faq{
+        padding:6px 24px !important;
+    }
+
+    section.playlistmap-faq h2{
+        font-size:35px;
+        line-height: normal;
+    }
+
+    .playlistmap-testimonials .wrap .testimonials-wrapper{
+        margin-left: 0px;
+    }
+
+    .pricing .playlistmap-testimonials .single-testimonial{
+        max-width: 300px;
+    }
+
+    .playlistmap-testimonials .single-testimonial{
+        margin-right:12px;
+        height: 520px;
     }
 
     footer .rights {

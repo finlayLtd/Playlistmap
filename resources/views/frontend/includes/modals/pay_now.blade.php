@@ -1,25 +1,15 @@
-
-
-
 <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModal"
      aria-hidden="true" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <img class="loader" src="{{asset('images/icons/loader-white.gif')}}" />
-            <button  data-dismiss="modal" aria-label="Close" style="background: none;
-                     border: none;
-                     position: absolute;
-                     left: 12px;
-                     top: 12px;">
+    <div class="modal-dialog modal-dialog-centered align-items-end">
+        <div class="modal-content position-relative">
+            <div class="position-absolute" data-dismiss="modal" aria-label="Close">
                 <i class="fas fa-times"></i>
-            </button>
-            <div class="modal-header border-0 pb-0">
-                <!--                <h5 class="modal-title text-center w-100 text-info" style="color: #344050 !important;">
-                                    Upgrade Your Plan 
-                                </h5>-->
-                <img class="mr-2" src="{{ asset('images/logo-w.png') }}" alt="" width="190" />
-
             </div>
+            <img class="loader" src="{{asset('images/icons/loader-white.gif')}}" />
+            <div class="modal-header border-0 pb-0">
+                <img class="mr-2" src="{{ asset('images/logo-w.png') }}" alt="" width="190" />
+            </div>
+
             <div class="modal-body">
                 <div class="monthly-yearly-wrapper d-flex align-items-center justify-center month small">
                     <div class="text pe-2 month">Pay Monthly</div>
@@ -188,3 +178,4 @@
         </div>
     </div>
 </div>
+
