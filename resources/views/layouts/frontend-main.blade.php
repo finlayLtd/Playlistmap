@@ -4,8 +4,16 @@
     <head>
         @include('frontend.includes.partials.head')
         @yield('head-scripts')
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css"
+            rel="stylesheet"
+        />
         <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"
+        ></script>
     </head>
 
     <body class="{{$bodyClass ?? "" }}" style="background:#121212">

@@ -60,11 +60,12 @@
                 @if(user()->avatar_url)
                 <img class="rounded-circle profile-image ml-4" src="{{ user()->avatar_url }}" alt="" />
                 @else
-                <div class="default-avatar-icon"-wrapper">
+                <div class="default-avatar-icon">
                     <i class="fas fa-circle-user default-avatar-icon"></i>
                 </div>
                 @endif
             </div>
+            
             <div class="arrow-wrapper d-flex align-items-center">
                 <i class="fas fa-chevron-down"></i>
             </div>
