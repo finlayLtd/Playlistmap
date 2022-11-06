@@ -486,6 +486,7 @@
         .search-wrapper form.searchform label {
             padding-right: 73px;
             top: -30px !important;
+            font-size: 16px !important;
         }
 
         .buttonMobileCenter{
