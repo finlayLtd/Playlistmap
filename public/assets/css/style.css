@@ -1305,6 +1305,12 @@ footer .rights{
     width: 387px;
 }
 
+@media screen and (max-width:767px){
+    .about .about-section-hero img.logo{
+        width: 259PX;
+    }
+}
+
 .about .about-section-hero .main{
     max-width: 910px;
     width: 90%;
@@ -1318,6 +1324,18 @@ footer .rights{
     line-height: 120px;
     text-align: center;
     letter-spacing: -1.75px;
+}
+
+@media screen and (max-width:767px){
+    .about .about-section-hero .main .about-headline{
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 80px;
+        text-align: center;
+        letter-spacing: -1.5px;
+    }
 }
 
 .about .about-section.about-section-hero .trusted-by .partners{
@@ -1997,7 +2015,6 @@ footer .rights{
     header.mobile-menu nav{
         height: 100vh;
         background: red;
-        max-width: 320px;
         margin: 0 auto;
     }
 

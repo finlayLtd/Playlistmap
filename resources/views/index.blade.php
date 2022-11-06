@@ -1,28 +1,27 @@
 @extends('layouts.frontend-main', ['title' => 'Playlistmap Homepage', 'bodyClass' => 'homepage'])
 
 @section('content')
-<section class="homepage-section homepage-section-hero" style="background:linear-gradient(180deg, rgba(18, 18, 18, 0) 1.27%, rgba(18, 18, 18, 0.787848) 53.37%, #121212 73.28%), url({{asset('images/bg/hero.jpg')}})">
-<!--<section class="homepage-section homepage-section-hero" style="background:{{"linear-gradient(180deg, rgba(18, 18, 18, 0) 1.27%, rgba(18, 18, 18, 0.787848) 53.37%, #121212 73.28%)"}}, url({{asset('images/bg/hero.jpg')}}">-->
+<section class="homepage-section homepage-section-hero backgroundClass">
     <div class="wrap">
         <div class="main">
-            <h1 class="text-center">Your Music Deserves To Be Heard</h1>
-            <h6 class="text-center">Pitch your music to thousands of Spotify playlist curators. Target your ideal audience, increase your streams, and grow your fanbase organically. </h6>
+            <h1 class="text-center title1">Your Music Deserves To Be Heard</h1>
+            <h6 class="text-center text1">Pitch your music to thousands of Spotify playlist curators. Target your ideal audience, increase your streams, and grow your fanbase organically. </h6>
             <div class="w-100 search-wrapper red">
                 @php($route = auth()->check() ? route('frontend.search') : route('frontend.search.guest')) 
                 <form class="searchform" class="homepage-form-search @if (Auth::guest()) guest @endif" action="{{ $route }}">
                     <div class="input-group">
                         <input class="playlistmap-search" class="form-control bg-transparent text-100" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"
                                placeholder=" " style=""/>
-                        <label>Search for your genre or a similar sounding artist</label>
+                        <label class="placehoder1">Search for your genre or a similar sounding artist</label>
                         <!--<label>Try &quot;<span class="red">edm</span>&quot; or &quot;<span class="red">the weekend</span>&quot;</label>-->
                         <button onclick="ym(73260880, 'reachGoal', 'homepageserachbtn'); return true;" type="submit" class="input-group-text bg-transparent text-100"><i class="fas fa-magnifying-glass"></i></button>
                         <button class="input-group-text clear-input"><i class="fas fa-circle-xmark"></i></button>
                     </div>
                 </form>
             </div>
-            <a href="#"><button class="secondary how-it-works"><i class="fas fa-play"></i>See how it works</button></a>
+            <a href="#" class="buttonMobileCenter"><button class="secondary how-it-works"><i class="fas fa-play"></i>See how it works</button></a>
         </div>
-        @include('frontend.components.pages.trusted-by', ['position' => false])
+        @include('frontend.components.pages.trusted-by', ['position' => 'center'])
 
         <div class="text-center scroll-down">
             <img class="scroll-down-top me-2" src="{{asset('/images/icons/scroll-down.svg')}}" />
@@ -34,38 +33,65 @@
 </section>
 <section class="homepage-section homepage-section-how-it-works">
     <div class="wrap">
-        <h2 class="text-center">This Is Playlisting, Made Easy</h2>
-        <div class="row how-it-works d-flex justify-content-between">
-            <div class="single-how-it-works col-md-4 text-center">
-                <div class="image-wrapper d-flex align-items-center justify-content-center m-auto">
-                    <img class="normal" src="{{asset('/images/graphics/find.svg')}}" />
-                    <img class="hover" src="{{asset('/images/graphics/find-hover.svg')}}" />
-                    <img class="red-line" src="{{asset('/images/graphics/red-line.svg')}}" />
+        <h2 class="text-center playlistTitle">This Is Playlisting, Made Easy</h2>
+        <div style="margin: 16px 0px !important;">
+            <div class="row how-it-works" style="margin: 0px;">
+
+                <div class="single-how-it-works col-md-4 text-center">
+                    <div class="row">
+                        <div class="col-4 col-md-12" style="margin: auto;">
+                            <div class="image-wrapper d-flex align-items-center justify-content-center m-auto">
+                                <img class="normal smallImage" src="{{asset('/images/graphics/find.svg')}}" />
+                                <img class="hover" src="{{asset('/images/graphics/find-hover.svg')}}" />
+                                <img class="red-line" src="{{asset('/images/graphics/red-line.svg')}}" />
+                            </div>
+                        </div>
+                        <div class="col-8 col-md-12">
+                            <h4 class="title2">Discover</h4>
+                            <div class="how-it-work-text text2">
+                                Identify hundreds of playlists that match your unique genre, subgenre, and sound with our advanced search and filters.
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h4 class="mt-5">Discover</h4>
-                <div class="how-it-work-text mt-4">
-                    Identify hundreds of playlists that match your unique genre, subgenre, and sound with our advanced search and filters.
+
+                <div class="single-how-it-works col-md-4 text-center">
+                    <div class="row">
+                        <div class="col-4 col-md-12" style="margin:auto;">
+                            <div class="image-wrapper d-flex align-items-center justify-content-center m-auto">
+                                <img class="normal smallImage" src="{{asset('/images/graphics/unlock.svg')}}" />
+                                <img class="hover" src="{{asset('/images/graphics/unlock-hover.svg')}}" />
+                                <img class="red-line" src="{{asset('/images/graphics/red-line.svg')}}" />
+                            </div>
+                        </div>
+
+                        <div class="col-8 col-md-12">
+                            <h4 class="title2">Unlock</h4>
+                            <div class="how-it-work-text  text2">
+                                Use your credits to access playlist curators’ names, email addresses, and social media profiles.
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="single-how-it-works col-md-4 text-center">
-                <div class="image-wrapper d-flex align-items-center justify-content-center m-auto">
-                    <img class="normal" src="{{asset('/images/graphics/unlock.svg')}}" />
-                    <img class="hover" src="{{asset('/images/graphics/unlock-hover.svg')}}" />
-                    <img class="red-line" src="{{asset('/images/graphics/red-line.svg')}}" />
-                </div>
-                <h4 class="mt-5">Unlock</h4>
-                <div class="how-it-work-text  mt-4">
-                    Use your credits to access playlist curators’ names, email addresses, and social media profiles.
-                </div>
-            </div>
-            <div class="single-how-it-works col-md-4 text-center">
-                <div class="image-wrapper d-flex align-items-center justify-content-center m-auto">
-                    <img class="normal" src="{{asset('/images/graphics/pitch.svg')}}" />
-                    <img class="hover"  src="{{asset('/images/graphics/pitch-hover.svg')}}" />
-                </div>
-                <h4 class="mt-5">Pitch</h4>
-                <div class="how-it-work-text  mt-4">
-                    Eliminate the stress of writing pitches with our customizable templates. Boost your open rate and get accepted to your ideal playlists.
+
+                <div class="single-how-it-works col-md-4 text-center">
+
+                    <div class="row">
+                        <div class="col-4 col-md-12" style="margin:auto;">
+                            <div class="image-wrapper d-flex align-items-center justify-content-center m-auto">
+                                <img class="normal smallImage" src="{{asset('/images/graphics/pitch.svg')}}" />
+                                <img class="hover"  src="{{asset('/images/graphics/pitch-hover.svg')}}" />
+                            </div>
+                        </div>
+
+                        <div class="col-8 col-md-12">
+                            <h4 class="title2">Pitch</h4>
+                            <div class="how-it-work-text  text2">
+                                Eliminate the stress of writing pitches with our customizable templates. Boost your open rate and get accepted to your ideal playlists.
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -86,7 +112,7 @@
     </div>
 </section>
 
-<section class="homepage-section homepage-section-tabs-section">
+<!-- <section class="homepage-section homepage-section-tabs-section">
     <div class="wrap">
         <div class="d-flex justify-content-center">
 
@@ -209,16 +235,16 @@
 
         </div>
     </div>
-</section>
+</section> -->
 
 
 @include('frontend.components.pages.statistics', ['page' => 'homepage'])
-@include('frontend.components.pages.testimonials', ['page' => 'homepage'])
+<!-- @include('frontend.components.pages.testimonials', ['page' => 'homepage']) -->
 @include('frontend.components.pages.faq', ['page' => 'homepage'])
 
 
 
-<section class="homepage-section homepage-section-get-started">
+<!-- <section class="homepage-section homepage-section-get-started">
     <div class="wrap">
         <div class="d-flex get-started-wrapper">
             <div>
@@ -234,5 +260,176 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 @endsection
+
+
+<style>
+
+
+    @media screen and (max-width:767px){
+        .main {
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+        }
+
+        .title1{
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 56px;
+            letter-spacing: -0.75px;
+            color: #FFFFFF;
+        }
+
+        .playlistTitle{
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 34px;
+            line-height: 44px;
+            letter-spacing: -0.75px;
+            color: #FFFFFF;
+        }
+
+        .title2{
+            margin-top: 0px !important;
+            text-align: left;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 36px;
+            color: #FFFFFF;
+        }
+
+        .text1{
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 32px;
+            letter-spacing: -0.15px;
+            color: #FFFFFF;
+        }
+
+        .text2{
+            margin-top: 0px !important;
+            text-align: left;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.0044em;
+            color: #C0C0C0;
+        }
+
+        .placehoder1{
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 32px;
+            letter-spacing: -0.15px;
+            color: #827F7F;
+        }
+
+        .main{
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .search-wrapper form.searchform label {
+            padding-right: 73px;
+            top: -30px !important;
+        }
+
+        .buttonMobileCenter{
+            display: flex;
+            justify-content: center;
+        }
+
+        .homepage .homepage-section.homepage-section-hero .trusted-by {
+            padding-left: 0px !important;
+            margin-top: 64px !important;
+        }
+
+        .homepage .homepage-section-how-it-works .single-how-it-works .image-wrapper:before {
+            border-radius: 22px !important;
+        }
+
+        .smallImage{
+            width: 45px !important;
+        }
+
+        .homepage .homepage-section-how-it-works .single-how-it-works .image-wrapper {
+            height: 67px !important;
+            width: 68px !important;
+        }
+
+        .single-how-it-works{
+            margin-bottom: 24px !important;
+            padding-top: 15px !important;
+            padding-bottom: 10px !important;
+            background: #1B1B1B;
+            border-radius: 30px;
+        }
+
+        .homepage .homepage-section-how-it-works .wrap {
+            padding: 32px 0 !important;
+        }
+
+        .homepage .homepage-section-how-it-works .wrap h2 {
+            margin-bottom: 24px !important;
+        }
+
+        .homepage .homepage-section-how-it-works .single-how-it-works {
+            max-width: 100% !important;
+        }
+
+        .homepage .homepage-section-how-it-works .single-how-it-works .image-wrapper img.hover {
+            width: 55px;
+        }
+
+        .red-line{
+            display: none;
+        }
+
+        .how-it-works{
+            background: url(http://localhost:8000/images/down_vector.png);
+            background-repeat-x: no-repeat;
+            background-position: center;
+        }
+
+        .backgroundClass{
+            background:linear-gradient(180deg, rgba(18, 18, 18, 0) 1.27%, rgba(18, 18, 18, 0.787848) 53.37%, #121212 73.28%), url({{asset('images/downBackground.jpg')}}) !important;
+        }
+
+        .homepage .homepage-section.homepage-section-hero .wrap .main {
+            padding-top: 100px !important;
+            padding-right: 10px !important;
+            padding-left: 10px !important;
+            /* max-width: 740px; */
+            /* margin: 0 auto; */
+        }
+
+        
+    }
+
+
+    .homepage .homepage-section-how-it-works .single-how-it-works {
+            max-width: 100% !important;
+        }
+
+    .homepage .homepage-section.homepage-section-hero .trusted-by {
+        padding-left: 0px !important;
+    }
+
+    .backgroundClass{
+        background:linear-gradient(180deg, rgba(18, 18, 18, 0) 1.27%, rgba(18, 18, 18, 0.787848) 53.37%, #121212 73.28%), url({{asset('images/bg/hero.jpg')}})
+    }
+</style>
+
+

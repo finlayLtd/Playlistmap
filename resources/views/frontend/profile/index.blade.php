@@ -1,7 +1,14 @@
 @extends('layouts.frontend-main')
 
 @section('content')
-
+<link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css"
+    rel="stylesheet"
+/>
+<script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"
+></script>
 
 <div style="height: 70px;">
 
@@ -97,10 +104,7 @@
         </div>
         <form class="row g-3" action="{{ route('frontend.profile.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="form-outline">
-  <input type="text" id="form12" class="form-control" />
-  <label class="form-label" for="form12">Example label</label>
-</div>
+            
             <div class="form-group col-12">
                 <label>Profile Image:</label>
                 <input type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
@@ -108,7 +112,7 @@
             </div>
 
             <div class="col-12 d-flex justify-content-end">
-                <button onclick="ym(73260880, 'reachGoal', 'profileupdatebtn'); return true;" class="btn btn-primary" type="submit" style="border-radius: 25px; padding: 8px 20px !important;">
+                <button onclick="ym(73260880, 'reachGoal', 'profileupdatebtn'); return true;" class="btn btn-primary" type="submit" style="border-radius: 25px; padding: 8px 20px !important; margin-bottom: 20px;">
                     Upload Image
                 </button>
             </div>
@@ -138,21 +142,38 @@
             @csrf
 
             <div class="col-6">
-                
-                <input class="form-control" name="firstName"
-                        id="firstName" type="text" value="" placeholder="First Name">
+                <div class="form-outline form-white">
+                    <input class="form-control" name="firstName" id="firstName" type="text" value="" >
+                    <label class="form-label" for="firstName" style="margin-left: 10px; margin-top: 7px;">
+                        First Name
+                    </label>
+                </div>
             </div>
 
             <div class="col-6">
-                <input class="form-control" name="SecondName"
-                        id="SecondName" type="text" value="" placeholder="SecondName">
+                <div class="form-outline form-white">
+                    <input class="form-control" name="SecondName" id="SecondName" type="text" value="" >
+                    <label class="form-label" for="SecondName" style="margin-left: 10px; margin-top: 7px;">
+                        Second Name
+                    </label>
+                </div>
             </div>
 
             <div class="col-12">
-                <input class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Full Name"
-                        id="name" type="text" value="{{ old('name', $user ? $user->name : '') }}">
-                <x-error field="name"/>
+                <div class="form-outline form-white">
+                    <input class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Full Name"
+                            id="name" type="text" value="{{ old('name', $user ? $user->name : '') }}">
+                    <x-error field="name"/>
+                    <label class="form-label" for="name" style="margin-left: 10px; margin-top: 7px;">
+                        Full Name
+                    </label>
+                </div>
             </div>
+
+            
+
+
+
             <!-- <div class="col-12">
                 <label class="form-label" for="email">Email</label>
                 <input class="form-control @error('email') is-invalid @enderror" name="email"
@@ -166,17 +187,28 @@
                 <x-error field="password"/>
             </div> -->
 
+
             <div class="col-6">
-                
-                <input class="form-control" name="birthday"
-                        id="birthday" type="text" value="" placeholder="Date of Birth*">
-                        
+                <div class="form-outline form-white">
+                    <input class="form-control" name="birthday"
+                            id="birthday" type="text" value="" >
+                    <label class="form-label" for="birthday" style="margin-left: 10px; margin-top: 7px;">
+                        Date of birth*
+                    </label>
+                </div>
             </div>
 
             <div class="col-6">
-                <input class="form-control" name="location"
-                        id="location" type="text" value="" placeholder="Location">
+                <div class="form-outline form-white">
+                    <input class="form-control" name="location"
+                            id="location" type="text" value="" >
+                    <label class="form-label" for="location" style="margin-left: 10px; margin-top: 7px;">
+                        Location
+                    </label>
+                </div>
             </div>
+
+           
             
             
            
@@ -247,6 +279,10 @@
         border-radius: 10px !important;
         border: none;
     }
+    
+    .btn-primary{
+        background: #2062EF !important;
+    }
 
 
     
@@ -270,6 +306,10 @@
             padding: 44px;
         }
     }
+
+    ul{
+        padding-left: 0px !important;
+    }
 </style>
 
 @endsection
@@ -284,6 +324,8 @@
         });
     });
 
+    document.querySelectorAll('.form-outline').forEach((formOutline) => { new mdb.Input(formOutline).init(); });
+    $(".form-notch").css("display", "none");
 
 </script>
 <script

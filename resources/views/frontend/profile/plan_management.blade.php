@@ -1,6 +1,9 @@
 @extends('layouts.frontend')
 
 @section('content')
+
+
+
 <div class="mb-3">
     <div class="card-header text-center px-3">
         <h3 class=" font-weight-bold p-6">Instantly connect with playlist curators</h3>

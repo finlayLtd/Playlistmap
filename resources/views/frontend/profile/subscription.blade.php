@@ -1,7 +1,14 @@
 @extends('layouts.frontend-main')
 
 @section('content')
-
+<link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css"
+    rel="stylesheet"
+/>
+<script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"
+></script>
 
 <div style="height: 70px;">
 
@@ -96,6 +103,32 @@
             Subscritption
         </div>
 
+        <div style="padding: 16px;
+            background: #181818;
+            border-radius: 10px;">
+            <div>
+                <span class="thLetter">
+                    Basic Plan
+                </span>
+                <span class="thLetter">
+                    Monthly
+                </span>
+                <span class="thLetter">
+                    $8.99/Month
+                </span>
+                <span class="thLetter">
+                    30 Credits/Month <i class="fas fa-exclamation-circle" style="color: #C0C0C0;"></i>
+                </span>
+                <button type="button" class="btn btn-danger" style="margin-left: 10px; padding: 10px !important; border-radius: 25px !important; color: white; float:right; "> <i class="far fa-chevron-down"></i> Manage Plan</button>
+            </div>
+            <div style="margin-top:24px; color: rgba(192, 192, 192, 1);">
+                    The next payment is due on <span style="color: rgba(251, 222, 75, 1) !important;">October 27, 2021</span> . 
+            </div>
+            
+        </div>
+
+
+
         <div style="font-family: 'Lato';
             font-style: normal;
             font-weight: 700;
@@ -103,6 +136,13 @@
             line-height: 36px;
             color: #FFFFFF;">
             Payment Methods
+            <div style="font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: -0.0044em;">
+                Securely add or remove payment methods.
+                <button type="button" class="btn btn-outline-secondary" style="margin-left: 10px; padding: 10px !important; border-radius: 25px !important; color: white; float:right;"> Manage Payments</button>
+            </div>
         </div>
         
     </div>
@@ -111,6 +151,16 @@
 
 
 <style>
+    .thLetter{
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.0044em;
+        color: #FFFFFF;
+    }
+
     .profileModal{
         padding: 24px;
         gap: 32px;
@@ -167,6 +217,10 @@
         border: none;
     }
 
+    .btn-primary{
+        background: #2062EF !important;
+    }
+
 
     
 
@@ -202,6 +256,10 @@
             $('#reportPlaylistModal').modal('show');
         });
     });
+
+    document.querySelectorAll('.form-outline').forEach((formOutline) => { new mdb.Input(formOutline).init(); });
+    $(".form-notch").css("display", "none");
+
 
 
 </script>

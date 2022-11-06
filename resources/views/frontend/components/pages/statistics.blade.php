@@ -1,12 +1,12 @@
 <section class="{{$page ?? ""}}-section {{$page ?? ""}}-section-statistics playlistmap-statistics">
     <div class="wrap">
-        <img class="graphic graphic-left" src="{{asset('/images/graphics/statistics-graphic-left.svg')}}" />
-        <img class="graphic graphic-right" src="{{asset('/images/graphics/statistics-graphic-right.svg')}}" />
-        <img class="graphic graphic-bottom" src="{{asset('/images/graphics/statistics-graphic-bottom.svg')}}" />
-        <h2 class="text-center">PlaylistMap By The Numbers</h2>
-        <div class="statistics d-flex justify-content-between mt-5">
-            <div class="d-flex">
-                <img class="step-image step4 me-3" src="{{asset('/images/graphics/statistics1.svg')}}" />
+        <img class="graphic graphic-left deleteIcon" src="{{asset('/images/graphics/statistics-graphic-left.svg')}}" />
+        <img class="graphic graphic-right deleteIcon" src="{{asset('/images/graphics/statistics-graphic-right.svg')}}" />
+        <img class="graphic graphic-bottom deleteIcon" src="{{asset('/images/graphics/statistics-graphic-bottom.svg')}}" />
+        <h2 class="text-center titleForStatistics">PlaylistMap By The Numbers</h2>
+        <div class="row mt-5">
+            <div class="col-md-3 text-center">
+                <img class="step-image step4  staticsImage" src="{{asset('/images/graphics/statistics1.svg')}}" />
                 <div class="d-flex flex-column justify-content-between">
                     <div class="text">
                         <h4>20k</h4>
@@ -14,8 +14,8 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex">
-                <img class="step-image step4 me-3" src="{{asset('/images/graphics/statistics2.svg')}}" />
+            <div class="col-md-3 text-center">
+                <img class="step-image step4 staticsImage" src="{{asset('/images/graphics/statistics2.svg')}}" />
                 <div class="d-flex flex-column justify-content-between">
                     <div class="text">
                         <h4>3B</h4>
@@ -23,8 +23,8 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex">
-                <img class="step-image step4 me-3" src="{{asset('/images/graphics/statistics4.svg')}}" />
+            <div class="col-md-3 text-center">
+                <img class="step-image step4 staticsImage" src="{{asset('/images/graphics/statistics4.svg')}}" />
                 <div class="d-flex flex-column justify-content-between">
                     <div class="text">
                         <h4>100M</h4>
@@ -32,8 +32,8 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex">
-                <img class="step-image step4 me-3" src="{{asset('/images/graphics/statistics3.svg')}}" />
+            <div class="col-md-3 text-center">
+                <img class="step-image step4 staticsImage" src="{{asset('/images/graphics/statistics3.svg')}}" />
                 <div class="d-flex flex-column justify-content-between">
                     <div class="text">
                         <h4>150</h4>
@@ -44,3 +44,33 @@
         </div>
     </div>
 </section>
+
+<style>
+    @media screen and (max-width:767px){
+        .deleteIcon{
+            display:none;
+        }
+        .titleForStatistics{
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 34px;
+            line-height: 44px;
+            letter-spacing: -0.75px;
+            color: #FFFFFF;
+        }
+
+        .playlistmap-statistics {
+            background: linear-gradient(95.34deg, #BE281D 1.31%, #2062EF 100.03%);
+            border-radius: 30px;
+            padding: 30px !important;
+            margin: 16px !important;
+            z-index: 200;
+            position: relative;
+        }
+
+        .staticsImage{
+            margin-top: 20px;
+        }
+    }
+</style>
