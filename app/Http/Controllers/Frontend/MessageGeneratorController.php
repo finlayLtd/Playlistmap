@@ -14,12 +14,20 @@ class MessageGeneratorController extends Controller
         if (!$playlist->isUnlocked()){
             abort(404);
         }
-        $template = user()->subscription()->plan->templates()->inRandomOrder()->first();
 
+        $template = user()->subscription()->plan->templates()->inRandomOrder()->first();
         $template->body = $this->parse($template->body, $playlist);
         $template->subject =$this->parse($template->subject, $playlist);
 
-        return view('frontend.message_generator', compact('playlist', 'template'));
+        $templates = user()->subscription()->plan->templates()->inRandomOrder()->get();
+        foreach ($templates as $key => $element) {
+            # code...
+            $element->body = $this->parse($element->body, $playlist);
+            $element->subject =$this->parse($element->subject, $playlist);
+        }
+        
+
+        return view('frontend.message_generator', compact('playlist', 'template', 'templates'));
     }
 
     public function changeTemplate(Request $request, Playlist $playlist)

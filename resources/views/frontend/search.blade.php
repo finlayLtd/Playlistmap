@@ -211,20 +211,27 @@
                         @foreach($playlists as $key=>$playlist)
                             @php $shouldBlur = user()->subscription()->plan->isFree() && $loop->iteration > 3;
                             @endphp
-                            <tr class="{{ $shouldBlur ? 'premium-content' : '' }}" data-id="{{ $playlist->id }}" style="height:125px">
-                                @php 
-                                    if ($playlist->isUnlocked()){
-                                        $modal = "pld_{$playlist->id}_modal";
-                                        $unlock_text = 'Details';
-                                        $unlock_class = '';
-                                        $btn_class = 'btn-success';
-                                    } else {
-                                        $modal = $playlist->shouldUnlock() ? 'unlock_playlist_modal' : 'upgrade_to_unlock_modal';
-                                        $unlock_text = 'Unlock';
-                                        $unlock_class = $playlist->shouldUnlock() ? 'unlockPlaylistBtn' : '';
-                                        $btn_class = 'btn-primary';
-                                    }
-                                @endphp
+
+                            @php 
+                                if ($playlist->isUnlocked()){
+                                    $modal = "pld_{$playlist->id}_modal";
+                                    $unlock_text = 'Details';
+                                    $unlock_class = '';
+                                    $btn_class = 'btn-success';
+                                } else {
+                                    $modal = $playlist->shouldUnlock() ? 'unlock_playlist_modal' : 'upgrade_to_unlock_modal';
+                                    $unlock_text = 'Unlock';
+                                    $unlock_class = $playlist->shouldUnlock() ? 'unlockPlaylistBtn' : '';
+                                    $btn_class = 'btn-primary';
+                                }
+                            @endphp
+                            <tr class="{{ $shouldBlur ? 'premium-content' : '' }} @if(!$playlist->isUnlocked()) open-modal @endif" data-id="{{ $playlist->id }}" style="height:125px"
+                                @if(!$playlist->isUnlocked()) 
+                                    data-toggle="modal" data-target="#{{$modal}}" data-playlist-id="{{ $playlist->id }}" 
+                                @else 
+                                    data-toggle="modal" data-target="#{{$modal}}" data-playlist-id="{{ $playlist->id }}" 
+                                @endif
+                            >
                                 <td>
                                     <div class="position-relative d-flex justify-content-center align-items-center">
                                         <div class="position-absolute btn-group mobile-d-none" role="group" aria-label="Basic example">
@@ -321,55 +328,7 @@
             </div>
 
             <div class="list-responsive container row m-auto" style="display:@php if( isset($_SESSION['grid']) && $_SESSION['grid'] ) echo('flex'); else echo('none'); @endphp;">
-                @foreach($playlists as $playlist)
-                    @php $shouldBlur = user()->subscription()->plan->isFree() && $loop->iteration > 3;
-                    @endphp
-                    @php 
-                        if ($playlist->isUnlocked()){
-                            $modal = "pld_{$playlist->id}_modal";
-                            $unlock_text = 'Details';
-                            $unlock_class = '';
-                            $btn_class = 'btn-success';
-                        } else {
-                            $modal = $playlist->shouldUnlock() ? 'unlock_playlist_modal' : 'upgrade_to_unlock_modal';
-                            $unlock_text = 'Unlock';
-                            $unlock_class = $playlist->shouldUnlock() ? 'unlockPlaylistBtn' : '';
-                            $btn_class = 'btn-primary';
-                        }
-                    @endphp
-                    <div class="col-md-2 col-sm-6 pt-5">
-                        <div class="w-100 header" style="color:#827F7F;">
-                            <div class="d-inline w-50 float-left">
-                                <i class="mx-2 fa fa-users" aria-hidden="true" style="margin-right:0px !important"></i>
-                                {{ $playlist->formatted_followers }}
-                            </div>
-                            <div class="d-inline w-50 float-right">
-                                <i class="mx-2 fa-sharp fa-solid fa-calendar-week" style="margin-right:0px !important"></i>
-                                {{ $playlist->number_of_tracks }}
-                            </div>
-                        </div>
-                        <div style="position:relative">
-                            <div class="mt-2" style="padding:3px; border-radius:10px; background:white;">
-                                <div class="img-container" style="postition:relative;background-image:url('{{ $playlist->image }}')">
-                                </div>
-                            </div>
-                            <div class="position-btn" style="top:8px; left:8px"><i class="fa-regular fa-heart"></i></div>
-                            <div class="position-btn" style="top:8px; right:8px"><i class="fa-solid fa-ellipsis"></i></div>
-                            <div class="position-btn" style="bottom:8px; left:8px"><i class="fa-solid fa-chart-pie"></i></div>
-                        </div>
-                
-                        <div class="text-truncate pt-4">{{ $playlist->name }}</div>
-                    <div>
-                        <span style="color:#827F7F">updated:</span>
-                        <x-friendly-date :date="$playlist->last_updated_on"/>
-                    </div>
-                    <!-- <i class="fa-solid fa-unlock-keyhole"></i>
-                    <i class="fa-solid fa-ellipsis"></i> -->
-                    </div>
-                    @if($playlist->isUnlocked())
-                        @include('frontend.includes.modals.playlist_details')
-                    @endif
-                @endforeach
+                @include('frontend.includes.partials.gridlist',['playlists'=>$playlists])
             </div>
 
             @if(method_exists($playlists, 'links'))
@@ -468,308 +427,5 @@
 
 
 <style>
-    .badge a{
-        color:white !important;
-    }
-
-    .img-thumbnail{
-        max-width:fit-content !important;
-    }
-
-    .filter-form:hover,:focus{
-        box-shadow:none!important;
-    }
-
-    table{
-        border-collapse:separate !important;
-        border-spacing:0px 8px;
-        border:none;
-    }
-
-    td span.d-block{
-        color:white !important;
-        background: #121212 !important;
-    }
-
-    td span.badge{
-        display: inline-block !important;
-        padding: 2px 5px;
-        line-height: 26px !important;
-        font-size: 12px !important;
-        letter-spacing: 0px;
-    }
-
-
-    td, th{
-        background: #1b1b1b !important;
-        vertical-align:middle !important;
-        text-align:center;
-    }
-
-    .w-20{
-        width:20%;
-    }
     
-    .text-left{
-        text-align:left;
-    }
-
-    tbody, td, tfoot, th, thead, tr{
-        border-style:hidden !important;
-    }
-
-    table thead th .col-4{
-        padding-left:20px;
-    }
-
-    table tr td:first-child, tr th:first-child{
-        border-radius: 10px 0px 0px 10px;
-    }
-
-    table tr td:last-child, tr th:last-child, .ellipse-border{
-        border-radius: 0px 10px 10px 0px;
-    }
-
-    .filter-form{
-        height: 40px !important;
-        background-color: #121212 !important;
-        justify-content: center !important;
-        padding: 6px !important;
-        border-radius: 10px !important;
-    }
-
-    .main{
-        padding-bottom:0px !important;
-    }
-
-    .result-found{
-        float:right;
-    }
-
-    .filters{
-        display:inline-flex;
-    }
-
-    .mobile-d{
-        display:none;
-    }
-
-    .modal{
-        background: rgba(29,29,29,0.6)
-    }
-
-    .modal-content{
-        background-color: #121212 !important;
-    }
-
-    .position-btn{
-        width:36px;
-        height:36px;
-        border-radius:10px;
-        background-color: #121212;
-        position:absolute;
-        color:#827F7F;
-        justify-content: center;
-        display: flex;
-        align-items: center;
-    }
-
-    li.page-item {
-        margin-right: 20px;
-    }
-
-    li.page-item>*{
-        width:25px;
-        height:25px;
-        color:white;
-        border-radius:50% !important;
-        background:none;
-        border:none;
-    }
-
-    .page-item.disabled .page-link{
-        background: #1b1b1b !important;
-    }
-
-    .page-item.disabled:not(:first-child):not(:last-child) .page-link{
-        background-color:transparent !important;
-        font-size: 25px;
-        top: -10px;
-    }
-
-    .page-item:first-child a,
-    .page-item:first-child span,
-    .page-item:last-child a,
-    .page-item:last-child span{
-        background:#1B1B1B;
-        font-size: 26px;
-        align-items: center;
-        border-radius:50%;
-    }
-
-    .page-link{
-        text-align: center;
-        justify-content: center;
-        display: flex !important;
-    }
-
-    .img-container{
-        width: 100%;
-        padding-top: 100% !important;
-        background-size: cover;
-        border-radius:10px;
-    }
-
-    .header{
-        font-size:20px;
-    }
-
-    table tbody tr:hover td{
-        background:#121212 !important;
-    }
-
-    table tbody tr:hover{
-        outline:1px gray solid;
-    }
-
-    @media screen and (max-width:767px) {
-        .homepage-section.homepage-section-hero{
-            background:none !important;
-            height:600px !important;
-        }
-
-        .text-ellispe{
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        li.page-item {
-            margin-right: 10px;
-        }
-
-        .header{
-            font-size:14px;
-        }
-
-        .table.container, .table-responsive.container{
-            padding:0 !important;
-        }
-
-        table td.mobile-d:last-child{
-            border-radius:0px 10px 10px 0px;
-        }
-
-        table td[colspan="3"]{
-            padding-right:40px;
-        }
-
-        .summary{
-            font-size:14px!important;
-        }
-
-        td img{
-            width: 67px !important;
-            height:67px !important;
-        }
-
-        tr{
-            height:100px !important;
-        }
-
-        table{
-            table-layout:fixed;
-        }
-
-        .filters{
-            display: none !important;
-        }
-
-        .result-found{
-            float:left
-        }
-
-        .mobile-d-none{
-            display:none !important;
-        }
-
-        .mr-fix{
-            margin-right: 5px;
-        }
-
-        .w-20{
-            width:0;
-        }
-
-        .col-sm-6{
-            width:50% !important;
-        }
-
-        .summary .col-md-6.col-sm-12:last-child{
-            margin-top:10px;
-        }
-
-        .mobile-d{
-            display:inline-flex;
-            height:inherit;
-            align-items:center;
-        }
-    }
-
-    .badge{
-        border-radius: 50em !important;
-        width: auto !important;
-        font-family: 'Lato';
-        background-color: rgb(53,23,21) !important;
-        font-style: normal;
-        font-weight: 400 !important;
-        font-size: 16px !important;
-        line-height: 24px !important;
-    }
-
-    .search_input:focus{
-        box-shadow:none !important;
-    }
-
-    .mr-1{
-        margin-right:2rem;
-    }
-
-    .search-nav:not(:last-child){
-        margin-top: 20px; 
-        margin-right:1rem !important;
-        font-family: 'Lato';
-        font-weight: 400;
-        font-size:14px;
-        line-height: 24px;
-    }
-
-    div.dots{
-        margin-right: 4px;
-        margin-bottom:3px;
-        display:inline-block;
-        width:5px;
-        height:5px;
-        border-radius: 50%;
-    }
-
-    .navbar-glass {
-        background-color: white !important;
-    }
-
-    td.w-25
-    {
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        -o-user-select: none;
-        user-select: none;
-    }
-
-    .badge-soft-info {
-        color: #1978a2;
-        background-color: #d4f2ff;
-        margin: 3px;
-    }
 </style>

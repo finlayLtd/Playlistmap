@@ -5,8 +5,8 @@
             <div class="position-absolute top-0 right-0 mt-3 mr-3 z-index-1"><button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-dismiss="modal" aria-label="Close"></button></div>
             <div class="modal-body p-0">
                 <div class="bg-card-gradient rounded-top-lg py-3 pl-4 pr-6">
-                    <h4 class="mb-1 text-white playlist-name" id="staticBackdropLabel">{{ $playlist->name }}</h4>
-                    <p class="fs--2 mb-0 text-white">Last Updated <x-friendly-date :date="$playlist->last_updated_on"/></p>
+                    <h4 class="mb-1 text-white playlist-name p-4" id="staticBackdropLabel">{{ $playlist->name }}</h4>
+                    <p class="fs--2 mb-0 text-white p-4">Last Updated <x-friendly-date :date="$playlist->last_updated_on"/></p>
                 </div>
                 <div class="p-4">
                     <div class="row">
