@@ -104,11 +104,11 @@
             </div>
             <div class="col-md-7 marginTop75">
                 <div class="right">
-                    <img class="music" src="{{asset('/images/graphics/music.svg')}}" />
-                    <img class="check" src="{{asset('/images/graphics/check.svg')}}" />
-                    <img class="spotify" src="{{asset('/images/graphics/spotify.svg')}}" />
-                    <img class="eye" src="{{asset('/images/graphics/eye.svg')}}" />
-                    <div class="blue-ball"></div>
+                    <img class="music rePosition rePositionLeft" src="{{asset('/images/graphics/music.svg')}}" />
+                    <img class="check rePosition rePositionRight" src="{{asset('/images/graphics/check.svg')}}" />
+                    <img class="spotify rePosition rePositionRight" src="{{asset('/images/graphics/spotify.svg')}}" />
+                    <img class="eye rePositionLeft" src="{{asset('/images/graphics/eye.svg')}}" />
+                    <div class="blue-ball rePositionLeft" ></div>
                     <h5>Stop wasting your valuable resources on promotion efforts that get you nowhere. Over 80% of our artists have increased their streams in just 1 month.</h5>
                 </div>
             </div>
@@ -470,6 +470,14 @@
             color: #827F7F;
         }
 
+        .rePositionLeft{
+            left: 0px !important;
+        }
+
+        .rePositionRight{
+            right: 0px !important;
+        }
+
         .main{
             padding-left: 16px;
             padding-right: 16px;
@@ -549,7 +557,7 @@
 
         .homepage .homepage-section-how-it-works .how-many-fans .left {
             width: auto !important;;
-            padding-left: 16px !important;
+            padding-left: 20px !important;
         }
 
         .homepage .homepage-section-how-it-works .how-many-fans .left::after {
