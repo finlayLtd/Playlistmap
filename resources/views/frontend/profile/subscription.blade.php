@@ -11,7 +11,6 @@
 ></script>
 
 <div style="height: 70px;">
-
 </div>
 <div class="row mb-4">
     <div class="col-md-4" style=" text-align: center;">
@@ -103,28 +102,28 @@
             Subscritption
         </div>
 
-        <div style="padding: 16px;
-            background: #181818;
-            border-radius: 10px;">
-            <div>
-                <span class="thLetter">
-                    Basic Plan
-                </span>
-                <span class="thLetter">
+        <div style="padding: 16px; background: #181818; border-radius: 10px;margin-top:16px">
+            <div class="profile-plan d-flex align-items-center">
+                <div class="thLetter">
+                    <span class="title-plan">{{$user->subscription()->plan->name}}</span> <span class="mobile-d-none">Plan</span>
+                </div>
+                <div class="thLetter">
                     Monthly
-                </span>
-                <span class="thLetter">
-                    $8.99/Month
-                </span>
-                <span class="thLetter">
+                </div>
+                <div class="thLetter">
+                    <span class="price-plan">${{ $user->subscription()->plan->price}}</span>/Month
+                </div>
+                <div class="thLetter">
                     30 Credits/Month <i class="fas fa-exclamation-circle" style="color: #C0C0C0;"></i>
-                </span>
-                <button type="button" class="btn btn-danger" style="margin-left: 10px; padding: 10px !important; border-radius: 25px !important; color: white; float:right; "> <i class="far fa-chevron-down"></i> Manage Plan</button>
+                </div>
+                <div class="thLetter d-flex">
+                    <button type="button" class="w-100 btn btn-danger" style="background-color:red;margin-left: 10px; padding: 10px !important; border-radius: 25px !important; color: white; float:right; "> <i class="far fa-chevron-down"></i> Manage Plan</button>
+                </div>
             </div>
+
             <div style="margin-top:24px; color: rgba(192, 192, 192, 1);">
-                    The next payment is due on <span style="color: rgba(251, 222, 75, 1) !important;">October 27, 2021</span> . 
+                The next payment is due on <span style="color: rgba(251, 222, 75, 1) !important;">{{date_format($user->subscription()->ends_at, "F d, Y")}}</span> . 
             </div>
-            
         </div>
 
 
@@ -134,14 +133,15 @@
             font-weight: 700;
             font-size: 24px;
             line-height: 36px;
-            color: #FFFFFF;">
+            color: #FFFFFF;
+            margin-top:40px;" class="text-center">
             Payment Methods
             <div style="font-weight: 400;
                 font-size: 16px;
                 line-height: 24px;
-                letter-spacing: -0.0044em;">
+                letter-spacing: -0.0044em;margin-top:16px">
                 Securely add or remove payment methods.
-                <button type="button" class="btn btn-outline-secondary" style="margin-left: 10px; padding: 10px !important; border-radius: 25px !important; color: white; float:right;"> Manage Payments</button>
+                <button type="button" class="manage-plan btn btn-outline-secondary" style="margin-left: 10px; margin-top:16px; padding: 10px !important; border-radius: 25px !important; color: white; float:right;"> Manage Payments</button>
             </div>
         </div>
         
@@ -152,6 +152,7 @@
 
 <style>
     .thLetter{
+        width:20%;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
@@ -232,6 +233,7 @@
         .newDiv{
             padding: 20px;
         }
+
     }
 
 
@@ -242,6 +244,29 @@
         .newDiv{
             padding: 44px;
         }
+
+        .thLetter{
+            width: 100%;
+            margin-bottom: 16px;
+        }
+
+        .manage-plan{
+            width: 100%;
+        }
+
+        .profile-plan{
+            display:block !important;
+            text-align:center;
+        }
+
+        .price-plan{
+            font-size: 34px;
+        }
+
+        .title-plan{
+            font-size: 24px;
+        }
+        
     }
 </style>
 

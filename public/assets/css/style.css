@@ -1976,6 +1976,7 @@ body.terms a {
         background: #121212 !important;
         /*justify-content: flex-start;*/
         justify-content: space-between;
+        width:100vw
     }
 
     header nav.navbar .navbar-nav-icons {
@@ -2119,7 +2120,7 @@ body.terms a {
 
     header .navbar-nav .dropdown-menu {
         position: absolute;
-        right: 0;
+        right: 20px;
     }
 
     header nav .navbar-nav-icons .upgrade-now-wrapper .name {

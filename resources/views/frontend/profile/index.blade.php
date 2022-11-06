@@ -104,18 +104,25 @@
         </div>
         <form class="row g-3" action="{{ route('frontend.profile.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            
-            <div class="form-group col-12">
-                <label>Profile Image:</label>
-                <input type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
-                @include('backend.includes.partials.error', ['field' => 'avatar'])
-            </div>
-
-            <div class="col-12 d-flex justify-content-end">
-                <button onclick="ym(73260880, 'reachGoal', 'profileupdatebtn'); return true;" class="btn btn-primary" type="submit" style="border-radius: 25px; padding: 8px 20px !important; margin-bottom: 20px;">
+            <div class="d-flex align-items-center">
+                <div onclick="uploadimage()" class="justify-content-center d-flex align-items-center position-relative rounded-circle" 
+                    style="width:85px;height:85px; border:1px solid gray">
+                    <i class="no-image fa-solid fa-image"></i>
+                    <img class="preview-img object-fit rounded-circle" style="width:85px; height:85px; display:none">
+                    <div class="position-absolute rounded-circle d-flex justify-content-center align-items-center" 
+                        style="width:25px;height:25px; background-color:gray; bottom:0px;right:0px">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <button onclick="ym(73260880, 'reachGoal', 'profileupdatebtn'); return true;" class="btn btn-primary m-5 disabled upload-image" type="submit" style="border-radius: 25px; padding: 8px 20px !important; margin-bottom: 20px;">
                     Upload Image
                 </button>
             </div>
+            <div class="form-group col-12 d-none">
+                <input type="file" class="form-control @error('avatar') is-invalid @enderror file-upload" name="avatar">
+                @include('backend.includes.partials.error', ['field' => 'avatar'])
+            </div>
+
 
             
         </form>
@@ -316,11 +323,33 @@
 
 @section('scripts')
 <script>
+
+    function uploadimage(){
+        $('.file-upload').trigger('click');
+    }
+
     $(function () {
         $('.reportPlaylistBtn').click(function () {
             let playlistId = $(this).data('playlist-id');
             $('#playlist_id').val(playlistId);
             $('#reportPlaylistModal').modal('show');
+        });
+
+        $('.file-upload').change(function(){
+            var preview = document.querySelector('.preview-img');
+            var file    = document.querySelector('input[type=file]').files[0];
+            var reader  = new FileReader();
+
+            reader.addEventListener("load", function () {
+                preview.src = reader.result;
+            }, false);
+
+            if (file) {
+                reader.readAsDataURL(file);
+                $('.no-image').css('display', 'none');
+                $('.preview-img').css('display', 'block');
+                $('.upload-image').removeClass('disabled');
+            }
         });
     });
 

@@ -13,21 +13,27 @@ class ProfileController extends Controller {
 
     public function index() {
         $user = auth()->user();
-        $playlists = $user->unlockedPlaylists()->paginate(25);
+        $playlists = $user->unlockedPlaylists()->paginate(12);
 
         return view('frontend.profile.index', compact('user', 'playlists'));
     }
 
+    public function myplaylist(){
+        $user = auth()->user();
+        $playlists = $user->unlockedPlaylists()->paginate(12);
+        return view('frontend.profile.myplaylist', compact('user', 'playlists'));
+    }
+
     public function security() {
         $user = auth()->user();
-        $playlists = $user->unlockedPlaylists()->paginate(25);
+        $playlists = $user->unlockedPlaylists()->paginate(12);
 
         return view('frontend.profile.security', compact('user', 'playlists'));
     }
 
     public function subscription() {
         $user = auth()->user();
-        $playlists = $user->unlockedPlaylists()->paginate(25);
+        $playlists = $user->unlockedPlaylists()->paginate(12);
 
         return view('frontend.profile.subscription', compact('user', 'playlists'));
     }
