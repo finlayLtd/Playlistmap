@@ -1,7 +1,14 @@
 @extends('layouts.frontend-main')
 
 @section('content')
-
+<link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css"
+    rel="stylesheet"
+/>
+<script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"
+></script>
 
 <div style="height: 70px;">
 
@@ -95,32 +102,88 @@
             color: #FFFFFF;">
             Login & Security
         </div>
-        <form class="row g-3" action="{{ route('frontend.profile.update') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+     
+                <form class="row g-3" action="{{ route('frontend.profile.update') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="col-12" style="margin-top: 24px;">
+                        <div class="form-outline form-white">
+                            <input class="form-control @error('email') is-invalid @enderror" name="email"
+                                    id="email" type="text" value="{{ old('email', $user ? $user->email : '') }}">
+                                    <x-error field="email"/>
+                            <label class="form-label" for="email" style="margin-left: 10px; margin-top: 7px;">
+                                Email
+                            </label>
+                        </div>
+                    </div>
+                    <div style="padding: 16px;
+                        gap: 16px;
+                        width: 809px;
+                        height: 292px;
+                        border: 1px solid #827F7F;
+                        border-radius: 10px;">
+                        <div style="font-family: 'Lato';
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 24px;
+                            line-height: 36px;
+                            color: #FFFFFF;
+                            margin-bottom: 16px;
+                            ">
+                            Edit Password
+                        </div>
 
-            <div class="col-12">
-                <label class="form-label" for="email">Email</label>
-                <input class="form-control @error('email') is-invalid @enderror" name="email"
-                        id="email" type="text" value="{{ old('email', $user ? $user->email : '') }}">
-                <x-error field="email"/>
-            </div>
-            <div class="col-12">
-                <label class="form-label" for="password">Change password</label>
-                <input class="form-control @error('password') is-invalid @enderror" name="password"
-                        id="password" type="text" >
-                <x-error field="password"/>
-            </div>
+                        <div class="col-12" style="margin-bottom: 16px;">
+                            <div class="form-outline form-white">
+                                <input class="form-control @error('rePassword') is-invalid @enderror" name="rePassword"
+                                    id="rePassword" type="text" >
+                                    <x-error field="rePassword"/>
+                                <label class="form-label" for="rePassword" style="margin-left: 10px; margin-top: 7px;">
+                                    Current Pasword*
+                                </label>
+                            </div>
+                        </div>
 
-            
-            
-            
-           
-            <div class="col-12 d-flex" id="save">
-                <button onclick="ym(73260880, 'reachGoal', 'profileupdatebtn'); return true;" class="btn btn-primary" type="submit" style="border-radius: 25px; padding: 8px 20px !important;">
-                  <i class="far fa-save"></i> Update Password
-                </button>
-            </div>
-        </form>
+                        <div class="row">
+                            <div class="col-6" style="margin-bottom: 16px;">
+                                <div class="form-outline form-white">
+                                    <input class="form-control @error('password') is-invalid @enderror" name="password"
+                                        id="password" type="text" >
+                                        <x-error field="password"/>
+                                    <label class="form-label" for="password" style="margin-left: 10px; margin-top: 7px;">
+                                        New password*
+                                    </label>
+                                </div>
+                            </div>
+    
+                            <div class="col-6" style="margin-bottom: 16px;">
+                                <div class="form-outline form-white">
+                                    <input class="form-control @error('rePassword') is-invalid @enderror" name="rePassword"
+                                        id="rePassword" type="text" >
+                                        <x-error field="rePassword"/>
+                                    <label class="form-label" for="rePassword" style="margin-left: 10px; margin-top: 7px;">
+                                        Confirm New password*
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        Minimum 6 characters
+                    
+                        <div class="col-12 d-flex" id="save">
+                            <button onclick="ym(73260880, 'reachGoal', 'profileupdatebtn'); return true;" class="btn btn-primary" type="submit" style="border-radius: 25px; padding: 8px 20px !important;">
+                            <i class="far fa-save"></i> Update
+                            </button>
+                        </div>
+                    </div>
+
+                    
+
+                    
+                </form>
+
+       
+
     </div>
 </div>
 
@@ -183,6 +246,10 @@
         border: none;
     }
 
+    .btn-primary{
+        background: #2062EF !important;
+    }
+
 
     
 
@@ -218,6 +285,10 @@
             $('#reportPlaylistModal').modal('show');
         });
     });
+
+    document.querySelectorAll('.form-outline').forEach((formOutline) => { new mdb.Input(formOutline).init(); });
+    $(".form-notch").css("display", "none");
+
 
 
 </script>
