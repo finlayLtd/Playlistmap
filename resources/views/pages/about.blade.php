@@ -1,6 +1,6 @@
 @extends('layouts.frontend-main', ['title' => 'Playlistmap About', 'bodyClass' => 'about'])
 @section('content')
-<section class="about-section about-section-hero" style="background:linear-gradient(180.39deg, rgba(18, 18, 18, 0) -5.24%, rgba(18, 18, 18, 0.787848) 75.74%, #121212 94.1%), url({{asset('images/bg/about-hero.jpg')}})">
+<section class="about-section about-section-hero" style="background:linear-gradient(180.39deg, rgba(18, 18, 18, 0) -5.24%, rgba(18, 18, 18, 0.787848) 75.74%, #121212 94.1%), url({{asset('images/bg/about-hero.jpg')}}); ">
     <div class="wrap">
         <div class="main">
 
@@ -85,7 +85,7 @@
 @include('frontend.components.pages.statistics', ['page' => 'about'])
 
 
-<section class="about-section about-section-team">
+<section class="about-section about-section-team" style="margin-bottom: 60px !important;">
     <div class="wrap">
         <h3 class="text-center">Our Team</h3>
         <div class="row mt-5">
@@ -175,6 +175,10 @@
             font-size: 14px;
             line-height: 24px;
             letter-spacing: -0.0044em;
+        }
+
+        .playlistmap-statistics {
+            background: linear-gradient(179deg, #BE281D 1.31%, #2062EF 100.03%);
         }
 
         .about .about-section-why-playlistmap .wrap .inner-wrapper .guitar-wrapper {
