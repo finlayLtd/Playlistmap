@@ -1,9 +1,9 @@
 <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModal"
      aria-hidden="true" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered align-items-end">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content position-relative">
             <div class="position-absolute" data-dismiss="modal" aria-label="Close">
-                <i class="fas fa-times"></i>
+                <i class="fas fa-times" style="font-size:25px;"></i>
             </div>
             <img class="loader" src="{{asset('images/icons/loader-white.gif')}}" />
             <div class="modal-header border-0 pb-0">
@@ -17,26 +17,25 @@
                     <div class="text ps-2 year">Pay Yearly & Save <span class="green-color">20%</span></div>
                 </div>
 
-                <div id="modal-plan-details" class="plan-details d-flex justify-content-between" data-month-plan-id="" data-month-plan-pp-id="" data-year-plan-id="" data-year-plan-pp-id="">
-                    <div class="plan-info d-flex flex-column text-center">
+                <div id="modal-plan-details row" class="plan-details d-flex justify-content-between" data-month-plan-id="" data-month-plan-pp-id="" data-year-plan-id="" data-year-plan-pp-id="">
+                    <div class="col-6 plan-info d-flex flex-column text-center">
                         <h5 class="text-center"><span class="plan-name"></span> Plan</h5>
-                        <div class="plan-credits">50 Credits/Month
+                        <div class="plan-sd align-items-center d-flex justify-content-center">50 Credits/Month
                             <span data-toggle="tooltip" data-placement="right" title="A credit is the currency you use to unlock a Spotify playlist curator’s contact information on our platform. One credit gets you one unlock.">
                                 <i class="fa-solid fa-circle-info secondary-color"></i>
                             </span>
                         </div>
                     </div>
-                    <div class="plan-price">
-                        <h4>
+                    <div class="plan-price col-6">
+                        <h4 style="margin:0;">
                             <span class="normal-price">
-                                $<span id="modal-plan-price-year"></span><span id="modal-plan-price-month"></span><sup class="tertiary-color">/Month</sup>
+                                $<span id="modal-plan-price-year"></span><span id="modal-plan-price-month"></span><sup class="tertiary-color">  /Month</sup>
                             </span>
                             <span class="coupon-price">
                                 $<span id="modal-plan-price-year-coupon"></span><span id="modal-plan-price-month-coupon"></span><sup class="tertiary-color">/Month</sup>
                             </span>
                         </h4>
-                        <h4></h4>
-                        <div class="yearly-plan-save tertiary-color">$<span id="modal-year-price">143.88</span>/year <span class="save green-color green-background">Save $<span id="modal-yearly-save"></span></span></div>
+                        <div class="yearly-plan-save tertiary-color d-flex align-items-center">$<span id="modal-year-price">143.88</span>/year <span class="save green-color green-background text-truncate">Save $<span id="modal-yearly-save"></span></span></div>
                     </div>
                 </div>
 
@@ -55,24 +54,6 @@
                         </button>
                     </li>
                 </ul>
-
-
-
-                <!--                <div class="input-wrapper payment-wrapper">
-                                    <input  id="stripe-input-radio" name="payment-radio" checked type="radio" data-target="#stripe-wrapper">
-                                    <label  for="stripe-input-radio">
-                                        <i class="fa-thin fa-credit-card-blank"></i> Credit Card
-                                    </label>
-                                    <label  for="stripe-input-radio"><img class="logo stripe-logo" src="{{asset("images/icons/stripe-logo.png")}}" /></label>
-                                </div>
-                                <div class="input-wrapper payment-wrapper">
-                                    <input id="paypal-input-radio" name="payment-radio" type="radio" data-target="#paypal-wrapper">
-                                    <label for="paypal-input-radio">
-                                        <i class="fa-brands fa-paypal"></i> Paypal
-                                    </label>
-                                    <label for="paypal-input-radio"><img class="logo paypal-logo" src="{{asset("images/icons/paypal.png")}}" /></label>
-                                </div>
-                                <br>-->
                 @endif
                 <div class="tab-content">
                     <div id="stripe-wrapper" class="tab-pane stripe-wrapper @if( (!user()->subscription()->stripe_id && !user()->subscription()->paypal_id) || (user()->subscription()->stripe_id && !user()->subscription()->paypal_id)) active @endif">
@@ -87,7 +68,7 @@
                                  "></div>
 
 
-                            <button class="i-have-coupon mt-3">I have coupon code</button>
+                            <!-- <button class="i-have-coupon mt-3">I have coupon code</button>
                             <div class="coupon-wrapper mt-3">
                                 <label for="coupon">Add a Promo Code</label>
                                 <div class="d-flex">
@@ -101,6 +82,18 @@
                                         <span class="spinner spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true"></span>
                                     </button>
                                 </div>
+                            </div> -->
+
+                            <div class="row text-center mt-3">
+                                <div class="col-6 text-left"><input type="text" class="w-100"></input></div>
+                                <div class="col-6 text-right"><input type="text" class="w-100"></input></div>
+                            </div>
+
+                            <div class="form-check mt-3">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>
+                                </label>
                             </div>
 
                             <div class="mt-3">
