@@ -2439,7 +2439,7 @@ table tbody tr:hover {
 
 @media screen and (max-width:767px) {
     .homepage-section.homepage-section-hero {
-        background: none !important;
+        background: none;
         height: 600px !important;
     }
 

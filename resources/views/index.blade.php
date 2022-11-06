@@ -31,7 +31,7 @@
 
     </div>
 </section>
-<section class="homepage-section homepage-section-how-it-works">
+<section class="homepage-section homepage-section-how-it-works marginTopFix">
     <div class="wrap">
         <h2 class="text-center playlistTitle">This Is Playlisting, Made Easy</h2>
         <div style="margin: 16px 0px !important;">
@@ -96,75 +96,84 @@
             </div>
         </div>
 
-        <div class="how-many-fans d-flex justify-content-between">
-            <div class="left">
-                <h4>Your future fans are out there. We’re here to help you reach them.</h4>
+        <div class="how-many-fans row">
+            <div class="col-md-5">
+                <div class="left">
+                    <h4>Your future fans are out there. We’re here to help you reach them.</h4>
+                </div>
             </div>
-            <div class="right">
-                <img class="music" src="{{asset('/images/graphics/music.svg')}}" />
-                <img class="check" src="{{asset('/images/graphics/check.svg')}}" />
-                <img class="spotify" src="{{asset('/images/graphics/spotify.svg')}}" />
-                <img class="eye" src="{{asset('/images/graphics/eye.svg')}}" />
-                <div class="blue-ball"></div>
-                <h5>Stop wasting your valuable resources on promotion efforts that get you nowhere. Over 80% of our artists have increased their streams in just 1 month.</h5>
+            <div class="col-md-7 marginTop75">
+                <div class="right">
+                    <img class="music" src="{{asset('/images/graphics/music.svg')}}" />
+                    <img class="check" src="{{asset('/images/graphics/check.svg')}}" />
+                    <img class="spotify" src="{{asset('/images/graphics/spotify.svg')}}" />
+                    <img class="eye" src="{{asset('/images/graphics/eye.svg')}}" />
+                    <div class="blue-ball"></div>
+                    <h5>Stop wasting your valuable resources on promotion efforts that get you nowhere. Over 80% of our artists have increased their streams in just 1 month.</h5>
+                </div>
             </div>
+            
+            
         </div>
     </div>
 </section>
 
-<!-- <section class="homepage-section homepage-section-tabs-section">
+<section class="homepage-section homepage-section-tabs-section">
     <div class="wrap">
-        <div class="d-flex justify-content-center">
+        <div class="row" style="justify-content: center;">
 
-            <ul class="nav nav-tabs justify-content-center">
-                <li><a class="active" data-toggle="tab" href="#playlisting"><h5>Playlisting</h5></a></li>
-                <li><a data-toggle="tab" href="#pitch"><h5>Pitch Templates</h5></a></li>
-                <li><a data-toggle="tab" href="#ai"><h5>AI Recommendations</h5></a></li>
+            <ul class="nav nav-tabs" style="width: auto; text-align: center;">
+                <li><a class="active tabTitle" data-toggle="tab" href="#playlisting"><h5>Playlisting</h5></a></li>
+                <li><a class="tabTitle" data-toggle="tab" href="#pitch"><h5>Pitch Templates</h5></a></li>
+                <li><a class="tabTitle" data-toggle="tab" href="#ai"><h5>AI Recommendations</h5></a></li>
             </ul>
         </div>
 
         <div class="tab-content">
             <div id="playlisting" class="tab-pane fade in active show">
-                <div class="d-flex">
-                    <div>
-                        <img class="eye" src="{{asset('/images/bg/spotify-bg.jpg')}}" />
+                <div class="row padding16">
+                    <div class="col-md-7">
+                        <h3 class="mt-4 mb-4 noneDesktop" style="text-align: center;">Playlisting</h3>
+                        <img class="eye secondEye" src="{{asset('/images/bg/spotify-bg.jpg')}}" />
                     </div>
-                    <div class="d-flex flex-column justify-content-center ms-5 content">
-                        <span>1/3</span>
-                        <h3 class="mt-4 mb-4">Playlisting</h3>
-                        <h6 class="mb-4">Quickly identify playlists that match your music to improve your acceptance rate. Uncover contact information for hard-to-get curators, create valuable connections, and send them your tracks.</h6>
+                    <div class="col-md-5" style="margin:auto;">
+                        <span class="noneMobile">1/3</span>
+                        <h3 class="mt-4 mb-4 noneMobile">Playlisting</h3>
+                        <h6 class="mb-4 sliderText">Quickly identify playlists that match your music to improve your acceptance rate. Uncover contact information for hard-to-get curators, create valuable connections, and send them your tracks.</h6>
                         <a href="#">
-                            <button class="tertiary big"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
+                            <button class="tertiary big m-auto"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
                         </a>
                     </div>
                 </div>
             </div>
             <div id="pitch" class="tab-pane fade">
-                <div class="d-flex">
-                    <div>
-                        <img class="eye" src="{{asset('/images/bg/spotify-bg.jpg')}}" />
+                <div class="row padding16">
+                    <div class="col-md-7">
+                        <h3 class="mt-4 mb-4 noneDesktop" style="text-align: center;">Pitch Templates</h3>
+                        <img class="eye secondEye" src="{{asset('/images/bg/spotify-bg.jpg')}}" />
                     </div>
-                    <div class="d-flex flex-column justify-content-center ms-5 content">
-                        <span>2/3</span>
-                        <h3 class="mt-4 mb-4">Pitch Templates</h3>
-                        <h6 class="mb-4">We get it—you’re a musician, not a marketer.  Use our customizable message templates to speed up your outreach, simplify the pitch process, and boost your success rate. </h6>
+                    <div class="col-md-5" style="margin:auto;">
+                        <span class="noneMobile">2/3</span>
+                        <h3 class="mt-4 mb-4 noneMobile">Pitch Templates</h3>
+                        <h6 class="mb-4 sliderText">We get it—you’re a musician, not a marketer.  Use our customizable message templates to speed up your outreach, simplify the pitch process, and boost your success rate. </h6>
                         <a href="#">
-                            <button class="tertiary big"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
+                            <button class="tertiary big m-auto"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
                         </a>
                     </div>
                 </div>
             </div>
             <div id="ai" class="tab-pane fade">
-                <div class="d-flex">
-                    <div>
-                        <img class="eye" src="{{asset('/images/bg/spotify-bg.jpg')}}" />
+                <div class="row padding16">
+                    <div class="col-md-7">
+                        <h3 class="mt-4 mb-4 noneDesktop" style="text-align: center;">AI Recommendations</h3>
+                        <img class="eye secondEye" src="{{asset('/images/bg/spotify-bg.jpg')}}" />
                     </div>
-                    <div class="d-flex flex-column justify-content-center ms-5 content">
-                        <span>3/3</span>
-                        <h3 class="mt-4 mb-4">AI Recommendations</h3>
-                        <h6 class="mb-4"><b>Coming soon. With our new proprietary AI algorithm, we’ll automatically match your tracks with the most relevant playlists to make pitching your music truly effortless. </b></h6>
+                    <div class="col-md-5" style="margin:auto;">
+                        <span class="noneMobile">3/3</span>
+                        <h3 class="mt-4 mb-4 noneMobile">AI Recommendations</h3>
+                        <h6 class="mb-4 sliderText"><b>Coming soon. With our new proprietary AI algorithm, we’ll automatically match your tracks with the most relevant playlists to make pitching your music truly effortless. </b></h6>
                         <a href="#">
-                            <button class="tertiary big"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
+                            <button class="tertiary big m-auto"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
                         </a>
                     </div>
                 </div>
@@ -175,102 +184,227 @@
 </section>
 <section class="homepage-section homepage-section-discovered-section">
     <div class="wrap">
-        <h2 class="text-center">Everything You Need To <b>Get Discovered</b></h2>
+        <h2 class="text-center timelineBigTitle">Everything You Need To <b>Get Discovered</b></h2>
         <div class="discovered-steps-container position-relative" style="background: url({{asset('images/graphics/big-red-line1.svg')}})">
-            <img class="line-ball line-ball1" src="{{asset('/images/graphics/red-ball.svg')}}" />
-            <img class="line-ball line-ball2" src="{{asset('/images/graphics/blue-ball.svg')}}" />
-            <img class="line-ball line-ball3" src="{{asset('/images/graphics/red-ball.svg')}}" />
-            <div class="step step-1 d-flex justify-content-between">
-                <div class="position-relative d-flex justify-content-center flex-column">
-                    <h3 class="position-relative">
+            <img class="line-ball line-ball1 noneMobile" src="{{asset('/images/graphics/red-ball.svg')}}" />
+            <img class="line-ball line-ball2 noneMobile" src="{{asset('/images/graphics/blue-ball.svg')}}" />
+            <img class="line-ball line-ball3 noneMobile" src="{{asset('/images/graphics/red-ball.svg')}}" />
+            
+            <div class="step step-1 row m-auto">
+                <div class="position-relative col-md-6 mobileAlignCenter" style="text-align: left;">
+                    <h3 class="position-relative timelineTitle">
                         Easy-To-Find Playlists
                         <div class="step-number">01</div>
                     </h3>
-                    <h6 class="secondary-color">Identifying the right playlists is the key to getting discovered. We make it easy to search for and narrow in on relevant playlists that best fit your unique sound.</h6>
+                    <h6 class="secondary-color timelineText">Identifying the right playlists is the key to getting discovered. We make it easy to search for and narrow in on relevant playlists that best fit your unique sound.</h6>
                 </div>
-                <div class="position-relative">
+                <div class="position-relative col-md-6 ">
                     <img class="step-image step1" src="{{asset('/images/graphics/discovered-step1.svg')}}" />
                 </div>
             </div>
 
-            <div class="step step-2 d-flex justify-content-between">
-                <div class="position-relative">
-                    <img class="step-image step2" src="{{asset('/images/graphics/discovered-step2.svg')}}" />
-                </div>
-                <div class="position-relative d-flex  flex-column content-wrapper">
-                    <h3 class="position-relative">
+            <div class="step step-2 row">
+                <div class="noneDesktop position-relative col-md-6 mobileAlignCenter m-auto" style="text-align: left;">
+                    <h3 class="position-relative timelineTitle">
                         Musician-Friendly Interface 
                         <div class="step-number">02</div>
                     </h3>
-                    <h6 class="secondary-color">Our platform is designed to give you a simple, intuitive experience so you can spend less time on promotion and more time making great music.</h6>
+                    <h6 class="secondary-color timelineText">Our platform is designed to give you a simple, intuitive experience so you can spend less time on promotion and more time making great music.</h6>
+
+                </div>
+                <div class="position-relative col-md-6">
+                    <img class="step-image step2" src="{{asset('/images/graphics/discovered-step2.svg')}}" />
+                </div>
+                <div class="noneMobile position-relative col-md-6 mobileAlignCenter m-auto" style="text-align: left;">
+                    <h3 class="position-relative timelineTitle">
+                        Musician-Friendly Interface 
+                        <div class="step-number">02</div>
+                    </h3>
+                    <h6 class="secondary-color timelineText">Our platform is designed to give you a simple, intuitive experience so you can spend less time on promotion and more time making great music.</h6>
 
                 </div>
             </div>
 
-            <div class="step step-3 d-flex justify-content-between">
-                <div class="position-relative d-flex justify-content-center flex-column">
-                    <h3 class="position-relative">
+            <div class="step step-3 row m-auto">
+                <div class="position-relative col-md-6 mobileAlignCenter" style="text-align: left;">
+                    <h3 class="position-relative timelineTitle">
                         Gain Valuable Insights
                         <div class="step-number">03</div>
                     </h3>
-                    <h6 class="secondary-color mt-3">Get a full profile of each playlist before you pitch to make better decisions. View key metrics like number of followers, last updated, top artists, mood, and various other metrics to find genuine, active playlists. </h6>
+                    <h6 class="secondary-color mt-3 timelineText">Get a full profile of each playlist before you pitch to make better decisions. View key metrics like number of followers, last updated, top artists, mood, and various other metrics to find genuine, active playlists. </h6>
                 </div>
-                <div class="position-relative">
+                <div class="position-relative col-md-6">
                     <img class="step-image step3" src="{{asset('/images/graphics/discovered-step3.svg')}}" />
                 </div>
             </div>
 
-            <div class="step step-4 d-flex justify-content-between">
-                <div class="position-relative">
-                    <img class="step-image step4" src="{{asset('/images/graphics/discovered-step4.svg')}}" />
-                </div>
-                <div class="position-relative d-flex justify-content-center flex-column content-wrapper">
-                    <h3 class="position-relative">
+            <div class="step step-4 row">
+                <div class="noneDesktop position-relative col-md-6 mobileAlignCenter m-auto" style="text-align: left;">
+                    <h3 class="position-relative timelineTitle">
                         Reach Curators Directly
                         <div class="step-number">04</div>
                     </h3>
-                    <h6 class="secondary-color">With PlaylistMap, there’s no mysterious middleman between you and the curators. You have full transparency into and control of your campaigns so you can develop personal connections with playlist gatekeepers.</h6>
+                    <h6 class="secondary-color timelineText">With PlaylistMap, there’s no mysterious middleman between you and the curators. You have full transparency into and control of your campaigns so you can develop personal connections with playlist gatekeepers.</h6>
+                </div>
+                <div class="position-relative col-md-6">
+                    <img class="step-image step4" src="{{asset('/images/graphics/discovered-step4.svg')}}" />
+                </div>
+                <div class="noneMobile position-relative col-md-6 mobileAlignCenter m-auto" style="text-align: left;">
+                    <h3 class="position-relative timelineTitle">
+                        Reach Curators Directly
+                        <div class="step-number">04</div>
+                    </h3>
+                    <h6 class="secondary-color timelineText">With PlaylistMap, there’s no mysterious middleman between you and the curators. You have full transparency into and control of your campaigns so you can develop personal connections with playlist gatekeepers.</h6>
                 </div>
             </div>
 
         </div>
     </div>
-</section> -->
+</section>
 
 
 @include('frontend.components.pages.statistics', ['page' => 'homepage'])
-<!-- @include('frontend.components.pages.testimonials', ['page' => 'homepage']) -->
+@include('frontend.components.pages.testimonials', ['page' => 'homepage'])
 @include('frontend.components.pages.faq', ['page' => 'homepage'])
 
 
 
-<!-- <section class="homepage-section homepage-section-get-started">
+<section class="homepage-section homepage-section-get-started">
     <div class="wrap">
-        <div class="d-flex get-started-wrapper">
-            <div>
-                <img class="eye" src="{{asset('/images/bg/get-started-bg.jpg')}}" />
+        <div class="row get-started-wrapper padding16">
+            <div class="col-md-5">
+                <img class="eye secondEye" src="{{asset('/images/bg/get-started-bg.jpg')}}" />
             </div>
-            <div class="d-flex flex-column justify-content-center ms-5 content">
-                <h4 class="mt-4 mb-4">Get Started Today!</h4>
-                <h5 class="mb-4">Want to experience the magic for yourself?<br>
+            <div class="col-md-7 m-auto">
+                <h4 class="mt-4 mb-4 centerMobile">Get Started Today!</h4>
+                <h5 class="mb-4 sliderText">Want to experience the magic for yourself?<br>
                     Sign up now (no credit card required) to start getting the streams your music deserve</h5>
                 <a href="#">
-                    <button class="tertiary big"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
+                    <button class="tertiary big m-auto"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
                 </a>
             </div>
         </div>
     </div>
-</section> -->
+</section>
 @endsection
 
 
 <style>
 
+    .sliderText{
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 32px;
+        letter-spacing: -0.15px;
+        color: #C0C0C0;
+    }
+
+    .noneDesktop{
+        display: none;
+    }
 
     @media screen and (max-width:767px){
+
+        .homepage .homepage-section-discovered-section .wrap .step.step-2 {
+            margin-top: 70px !important;
+        }
+
+        .homepage .homepage-section-discovered-section .wrap .discovered-steps-container::after {
+            background: none !important;
+        }
+
+        .timelineBigTitle{
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 34px;
+            line-height: 44px;
+            text-align: center;
+            letter-spacing: -0.75px;
+        }
+
+        .timelineTitle{
+            padding-left: 12px !important;
+            padding-right: 12px !important;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 56px;
+            letter-spacing: -0.75px;
+        }
+
+        .playlistmap-testimonials .single-testimonial {
+            width: 85vw !important;
+        }
+
+        .timelineText{
+            padding-left: 12px !important;
+            padding-right: 12px !important;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 32px;
+            letter-spacing: -0.15px;
+            color: #C0C0C0;
+        }
+
+        .mobileAlignCenter{
+            text-align: center !important;
+        }
+
+        .centerMobile{
+            text-align: center;
+        }
+
+        .homepage .homepage-section-get-started .wrap {
+            background: none !important;
+        }
+
+        .secondEye{
+            border-radius: 20px;
+            width: 100%;
+        }
+
+        .padding12{
+            padding-right: 12px;
+            padding-left: 12px;
+        }
+
+        .sliderText{
+            text-align: center;
+            margin-top: 20px;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 32px;
+            letter-spacing: -0.15px;
+            color: #C0C0C0;
+        }
+
+        .noneDesktop{
+            display: block;
+        }
+
+        .noneMobile{
+            display: none;
+        }
+
+        .padding16{
+            padding: 16px;
+        }
+
         .main {
             padding-left: 0px !important;
             padding-right: 0px !important;
+        }
+
+        .marginTopFix{
+            margin-top: 270px !important;
         }
 
         .title1{
@@ -411,8 +545,60 @@
             padding-top: 100px !important;
             padding-right: 10px !important;
             padding-left: 10px !important;
-            /* max-width: 740px; */
-            /* margin: 0 auto; */
+        }
+
+        .homepage .homepage-section-how-it-works .how-many-fans .left {
+            width: auto !important;;
+            padding-left: 16px !important;
+        }
+
+        .homepage .homepage-section-how-it-works .how-many-fans .left::after {
+            width: auto !important;
+        }
+
+        .marginTop75{
+            margin-top: 75px !important;
+            padding-right: 35px !important;
+            padding-left: 52px !important;
+        }
+
+        .homepage .homepage-section-how-it-works .how-many-fans .right img.music {
+            left: 0px !important;
+            top: -24px;
+        }
+
+        .tabTitle{
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            letter-spacing: -0.0044em;
+            color: #827F7F;
+        }
+
+        .homepage .homepage-section-tabs-section .wrap ul.nav li h5 {
+            padding: 6px 6px !important;
+        }
+
+        .homepage .homepage-section-discovered-section .wrap .step-image.step1 {
+            max-width: auto;
+            width: 100%;
+        }
+
+        .homepage .homepage-section-discovered-section .wrap .step-image.step2 {
+            max-width: auto;
+            width: 100%;
+        }
+
+        .homepage .homepage-section-discovered-section .wrap .step-image.step3 {
+            max-width: auto;
+            width: 100%;
+        }
+
+        .homepage .homepage-section-discovered-section .wrap .step-image.step4 {
+            max-width: auto;
+            width: 100%;
         }
 
         
@@ -430,6 +616,13 @@
     .backgroundClass{
         background:linear-gradient(180deg, rgba(18, 18, 18, 0) 1.27%, rgba(18, 18, 18, 0.787848) 53.37%, #121212 73.28%), url({{asset('images/bg/hero.jpg')}})
     }
+
+    .homepage .homepage-section-discovered-section .wrap .step-image.step1 {
+        max-width: auto;
+        padding-top: 70px !important;
+        width: 100%;
+    }
+
 </style>
 
 
