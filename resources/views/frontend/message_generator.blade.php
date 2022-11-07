@@ -18,7 +18,7 @@
 </p>
 <div class="message container row m-auto">
     <span class="h2"> Generate Message</span>
-    <div class="col-md-8 col-sm-12 p-4 card composer-email container">
+    <div class="col-md-8 col-sm-12 p-4 mt-3 card composer-email container">
         <div class="h4">Email</div>
         <input class="form-control border-0" type="text" placeholder="To">
         <input class="form-control border-0" id="subject" type="text" placeholder="subject">
@@ -29,9 +29,9 @@
             <input type="text" class="form-control border-0" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
         </div>
         <textarea  class="w-100 container border-0" id="summernote" rows="15" placeholder="Write a message"></textarea>
-        <button class="btn btn-primary w-25 rounded-pill">Save<i class="fa-solid fa-paper-plane-top ms-2"></i></button>
+        <button class="btn btn-primary col-md-3 col-sm-6 rounded-pill">Save<i class="fa-solid fa-paper-plane-top ms-2"></i></button>
     </div>
-    <div class="col-md-4 col-sm-12 container email-template overflow scroll">
+    <div class="col-md-4 col-sm-12 mt-3 container email-template overflow scroll">
         <div class="ms-2 card py-lg-4 pb-lg-3 pb-2 h-100">
             <div class="h4 container m-0">Email Templates</div>
             <p class="container m-0">Pick a template to start with</p>
@@ -63,7 +63,7 @@
 
     </ol>
 </nav>
-<div class="flexereamobile d-none">
+<div class="flexereamobile" style="display:none !important;">
     <div class="card mb-3">
         <div class="card-header">
             <h5 class="mb-0">Generate Message</h5>
