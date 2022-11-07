@@ -107,8 +107,12 @@
             <div class="d-flex align-items-center">
                 <div onclick="uploadimage()" class="justify-content-center d-flex align-items-center position-relative rounded-circle" 
                     style="width:85px;height:85px; border:1px solid gray">
-                    <i class="no-image fa-solid fa-image"></i>
-                    <img class="preview-img object-fit rounded-circle" style="width:85px; height:85px; display:none">
+                    @if(user()->avatar_url)
+                        <img class="preview-img object-fit rounded-circle" src="{{user()->avatar_url}}" style="width:85px; height:85px;">
+                    @else
+                        <i class="no-image fa-solid fa-image"></i>
+                        <img class="preview-img object-fit rounded-circle" style="width:85px; height:85px; display:none">
+                    @endif
                     <div class="position-absolute rounded-circle d-flex justify-content-center align-items-center" 
                         style="width:25px;height:25px; background-color:gray; bottom:0px;right:0px">
                         <i class="fa-solid fa-plus"></i>
