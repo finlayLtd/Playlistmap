@@ -362,6 +362,18 @@ foreach ($playlist->contacts as $contact) {
             font-size: 10px;
         }
 
+        .email-template{
+            padding:0px;
+        }
+
+        .email-template .card{
+            margin-left: 0px !important;
+        }
+
+        .email-template .h4{
+            margin-top:20px !important;
+        }
+
         #texttipbox
         {
             width: 100%!important;
