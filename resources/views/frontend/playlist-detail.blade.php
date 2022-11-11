@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="detail-section background-position-center" style="background:linear-gradient(360deg, #121212 0%, rgba(24, 24, 24, 0) 500%), url({{$playlist->image}}); background-position:top;background-size:cover">
-    <div class="mx-3">My Playlists / {{$playlist->name}}</div>
+    <div class="mx-3"><span><a href="{{route('frontend.search')}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists / {{$playlist->name}}</div>
     <div class="container row my-5">
         <div class="col-md-9 col-sm-12 row">
             <div class="col-md-4 col-sm-12">
