@@ -29,7 +29,7 @@
             <input type="text" class="form-control border-0" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
         </div>
         <textarea  class="w-100 container border-0" id="summernote" rows="15" placeholder="Write a message"></textarea>
-        <button class="btn btn-primary col-md-3 col-sm-6 rounded-pill">Save<i class="fa-solid fa-paper-plane-top ms-2"></i></button>
+        <button class="btn btn-primary col-md-3 col-sm-6 rounded-pill" onClick="MyWindow=window.open('https://mail.google.com/mail/?view=cm&fs=1&to={{ $playlist->contact_email }}&su={{ $template->subject }}&body=Copy%20message%20from%20PlaylistMap','MyWindow','width=600,height=300'); return false;">Save<i class="fa-solid fa-paper-plane-top ms-2"></i></button>
     </div>
     <div class="col-md-4 col-sm-12 mt-3 container email-template overflow scroll">
         <div class="ms-2 card py-lg-4 pb-lg-3 pb-2 h-100">
