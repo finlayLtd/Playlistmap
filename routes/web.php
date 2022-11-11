@@ -95,6 +95,7 @@ Route::name('frontend.')->namespace('Frontend')->middleware(['auth', 'verified']
     Route::post('/profile', 'ProfileController@update')->name('profile.update')->withoutMiddleware(['verified']);
     Route::post('/updateSpotifyArtist', 'ProfileController@updateSpotifyArtist')->name('profile.update-spotify-artist')->withoutMiddleware(['verified']);
 
+    Route::get('/myplaylist/{playlist_id}', 'FrontendController@playlistDetail')->name('playlist_detail');
 
 
     Route::get('/manage-plans', 'ProfileController@plans')->name('profile.plans');

@@ -41,10 +41,10 @@ class ProfileController extends Controller {
     public function update(Request $request) {
         $user = auth()->user();
 
-        $request->validate([
-            'name' => 'required',
-            'email' => "required|unique:users,email,$user->id"
-        ]);
+        // $request->validate([
+        //     'name' => 'required',
+        //     'email' => "required|unique:users,email,$user->id"
+        // ]);
 
         $user->update($request->except(['password', 'avatar']));
         $user->uploadImage('avatar', 'images/users');

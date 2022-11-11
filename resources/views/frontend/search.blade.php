@@ -226,8 +226,8 @@
                                 }
                             @endphp
                             <tr class="{{ $shouldBlur ? 'premium-content' : '' }} @if(!$playlist->isUnlocked()) open-modal @endif" data-id="{{ $playlist->id }}" style="height:125px"
-                                @if(!$playlist->isUnlocked()) 
-                                    data-toggle="modal" data-target="#{{$modal}}" data-playlist-id="{{ $playlist->id }}" 
+                                @if($playlist->isUnlocked()) 
+                                    onclick="window.location.href=`{{route('frontend.playlist_detail', ['playlist_id'=>$playlist->id])}}`"
                                 @else 
                                     data-toggle="modal" data-target="#{{$modal}}" data-playlist-id="{{ $playlist->id }}" 
                                 @endif
@@ -409,6 +409,15 @@
             $(".playlist_unlock_detail #playlist_tracks").text($("tr[data-id='"+playlist_id+"'] span#playlist_tracks").text());
             $(".playlist_unlock_detail #playlist_updated").text($("tr[data-id='"+playlist_id+"'] span#playlist_updated").text());
 
+        });
+        
+        $(".open-modal-grid").click(function (e) {
+            var playlist_id = $(this).attr('data-playlist-id');
+            $(".playlist_unlock_detail img").attr('src', $("div[data-grid-id='"+playlist_id+"'] span.img-src").text());
+            $(".playlist_unlock_detail #playlist_name").text($("div[data-grid-id='"+playlist_id+"'] span.name").text());
+            $(".playlist_unlock_detail #playlist_followers").text($("div[data-grid-id='"+playlist_id+"'] span.followers").text());
+            $(".playlist_unlock_detail #playlist_tracks").text($("div[data-grid-id='"+playlist_id+"'] span.tracks").text());
+            $(".playlist_unlock_detail #playlist_updated").text($("div[data-grid-id='"+playlist_id+"'] span.updated").text());
         });
     });
 

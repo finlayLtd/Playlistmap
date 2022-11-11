@@ -70,10 +70,10 @@
                     </h6>
                     <ul>
                         <li class="mb-2">
-                            <a href="#">Privacy Policy</a>
+                            <a href="{{route('pages.privacy')}}">Privacy Policy</a>
                         </li>
                         <li class="mb-2">
-                            <a href="#">Terms & Conditions</a>
+                            <a href="{{route('pages.terms')}}">Terms & Conditions</a>
                         </li>
                         <li class="mb-2">
                             <a href="#">Contact Us</a>

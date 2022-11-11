@@ -415,4 +415,11 @@ class FrontendController extends Controller {
         ]);
     }
 
+    public function playlistDetail($playlist_id){
+        $playlists = Playlist::limit(6)->get();
+        $user = auth()->user();
+        $playlist = Playlist::where("id", "=", $playlist_id)->get()->first();
+        return view('frontend.playlist-detail', compact('playlist', 'playlists', 'user'));
+    }
+
 }

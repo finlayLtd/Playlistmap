@@ -2,7 +2,7 @@
     <div class="mobile-nav-button-close">
         <i class="fa fa-xmark"></i>
     </div>
-    <nav class="navbar navbar-light navbar-glass navbar-top d-flex align-items-center navbar-expand-lg">
+    <nav class="navbar navbar-light navbar-glass navbar-top d-flex align-items-center navbar-expand-lg flex-nowrap">
         <!--        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarStandard"
                         aria-controls="navbarStandard" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -22,5 +22,8 @@
             </a>
         </div>
         @include('frontend.includes.partials.nav-menu')
+        @include('frontend.includes.modals.login')
+        @include('frontend.includes.modals.register')
+        @include('frontend.includes.modals.forget')
     </nav>
 </header>

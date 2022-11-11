@@ -1888,13 +1888,6 @@ footer .rights {
 
 /* Privacy and Terms pages */
 
-body.privacy .card,
-body.privacy .card .card-header,
-body.terms .card,
-body.terms .card .card-header {
-    background: #121212 !important;
-}
-
 body.privacy .text-primary,
 body.terms .text-primary {
     color: #fff !important;
@@ -2492,6 +2485,10 @@ table tbody tr:hover {
         table-layout: fixed;
     }
 
+    .table>:not(caption)>*>*{
+        padding: 0.5rem 0.44rem;
+    }
+
     .filters {
         display: none !important;
     }
@@ -2525,6 +2522,29 @@ table tbody tr:hover {
         height: inherit;
         align-items: center;
     }
+
+    body:has(div#login_modal.show) header{
+        display: none !important;
+    }
+    body:has(div#register_modal.show) header{
+        display: none !important;
+    }
+    body:has(div#forget_modal.show) header{
+        display: none !important;
+    }
+
+    body:has(div#login_modal.show) div.widget-visible{
+        display: none !important;
+    }
+
+    body:has(div#register_modal.show) div.widget-visible{
+        display: none !important;
+    }
+
+    body:has(div#forget_modal.show) div.widget-visible{
+        display: none !important;
+    }
+
 }
 
 .badge {
@@ -2589,7 +2609,14 @@ td.w-25 {
 .card {
     background: #1b1b1b;
     border-radius: 10px;
-    gap: 16px;
+    gap: 24px;
+}
+
+.card-header{
+    font-size:34px !important;
+    border-bottom: none;
+    line-height: normal;
+    background-color: transparent;
 }
 
 #tinymce p, #tinymce p span{

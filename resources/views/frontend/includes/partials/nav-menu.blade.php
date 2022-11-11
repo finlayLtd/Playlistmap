@@ -1,7 +1,7 @@
 <div class="d-flex align-items-center" id="navbarStandard">
     <ul class="navbar-nav links d-flex align-items-center">
         <li class="nav-item">
-            <a onclick="ym(73260880, 'reachGoal', 'navsearch'); return true;" style="display:flex" class="nav-link {{ Route::is('frontend.search') ? 'active' : '' }}" href="{{ route('frontend.search') }}">Browse</a>
+            <a onclick="ym(73260880, 'reachGoal', 'navsearch'); return true;" style="display:flex" class="nav-link {{ Route::is('frontend.search') ? 'active' : '' }}" @if(auth()->check()) href="{{ route('frontend.search') }}" @else data-toggle="modal" data-target="#login_modal" @endif>Browse</a>
         </li>
         <li class="nav-item">
             <a class="nav-link {{ Route::is('pages.about') ? 'active' : '' }}" href="/about">About</a>
@@ -33,9 +33,12 @@
 <ul class="navbar-nav navbar-nav-icons ml-auto flex-row align-items-center justify-content-end w-100">
     @guest
     <li class="nav-item mr-5 login" style="margin-right: 16px">
-        <a class="nav-link mr-5" href="{{ route('login') }}">
+        <!-- <a class="nav-link mr-5" href="{{ route('login') }}">
             <button class="outlined"><i class="fa-solid fa-arrow-right-to-bracket"></i>Login</button>
-        </a>
+        </a> -->
+        <button class="outlined" data-toggle="modal" data-target="#login_modal">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>Login
+        </button>
     </li>
     <li class="nav-item free-trial">
         <a class="nav-link" href="{{ route('register') }}">
@@ -105,8 +108,7 @@
         </div>
     </li>
 
-    @endauth
-    
+    @endauth    
 
 <?php /*
     <!--    <li class="nav-item mr-3">
