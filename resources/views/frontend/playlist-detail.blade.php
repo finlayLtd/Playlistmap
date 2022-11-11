@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="detail-section background-position-center" style="background:linear-gradient(360deg, #121212 0%, rgba(24, 24, 24, 0) 500%), url({{asset('images/bg/playlist-detail.png')}}); background-position:top;">
+<section class="detail-section background-position-center" style="background:linear-gradient(360deg, #121212 0%, rgba(24, 24, 24, 0) 500%), url({{$playlist->image}}); background-position:top;background-size:cover">
     <div class="mx-3">My Playlists / {{$playlist->name}}</div>
     <div class="container row my-5">
         <div class="col-md-9 col-sm-12 row">
@@ -95,14 +95,7 @@
                     <h5>Top Artists</h5>
                     <div id="top_artists" class="w-100 d-flex m-auto justify-content-center overflow-auto"></div>
                     <div class="analyse_badge">
-                        @foreach(array_slice($playlist->genres, 0, 12) as $genre)
-                            <a class="hover-text-decoration-none" href="{{ route('frontend.search', ['q' => $genre]) }}">
-                                <span class="badge badge-soft-info cursor-pointer genre {{Helpers::stringsMatchWithAccents($genre, request()->query('q'))}}">
-                                    {{ $genre }}
-                                </span>
-                            </a>
-                        @endforeach
-                        <x-modals.show-more :playlist="$playlist" col="genres" :tags="$playlist->genres"/>
+                       
                     </div>
                 </div>
             </div>
@@ -158,7 +151,7 @@
 
             var dataFirst = {
                 label: "Followers",
-                data: data_array1,
+                data: data_array1.reverse(),
                 lineTension: 0,
                 fill: false,
                 borderColor: 'red'
@@ -173,8 +166,8 @@
             };
 
             var speedData = {
-                labels: label_array,
-                datasets: [dataFirst, dataSecond]
+                labels: label_array.reverse(),
+                datasets: [dataFirst]
             };
 
             var chartOptions = {
@@ -196,13 +189,15 @@
 
             label_array = Object.keys(top_genres);
             val_array = Object.values(top_genres);
+            keysSorted = Object.values(top_genres).sort(function(a,b){return top_genres[b]-top_genres[a]}).slice(0,10);
+            label_array = label_array.sort(function(a,b){return b - a; }).slice(0,10);
 
             ctx = document.getElementById('top_genres');
 
             const myChart = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                    labels: val_array,
+                    labels: keysSorted,
                     datasets: [{
                         label: '# of Votes',
                         data: label_array,
@@ -232,6 +227,9 @@
 
             label_array = Object.keys(top_artists);
             val_array = Object.values(top_artists);
+
+            label_array = Object.keys(top_artists).sort(function(a,b){return top_genres[b]-top_genres[a]}).slice(0,10);
+            val_array = val_array.sort(function(a,b){return b - a; }).slice(0,10);
             
             var temp_array = [];
 
@@ -250,7 +248,7 @@
                 "children": temp_array
             };
 
-            var diameter = 400;
+            var diameter = screen.width < 767 ? screen.width * 0.8 : 400;
             var color = d3.scaleOrdinal(d3.schemeCategory20);
 
             var bubble = d3.pack(dataset)
@@ -317,6 +315,16 @@
 
             d3.select(self.frameElement)
                 .style("height", diameter + "px");
+
+            var html = "";
+            for (let index = 0; index < label_array.length; index++) {
+                 html += `<a class="hover-text-decoration-none"><span class="badge badge-soft-info cursor-pointer genre">`
+                            +label_array[index]
+                            +`</span></a>`;
+            }
+
+            console.log(html);
+            $(".analyse_badge").append(html);
         }); 
 
     </script>
