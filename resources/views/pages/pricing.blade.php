@@ -18,29 +18,30 @@
                         <div class="col-lg-3 col-md-6 col-sm-12">
                             <div class=" plan-container mb-2 {{$plan->invoice_interval}} {{$plan->isFree()? "free": ""}} @if(isset($chosen_plan_id) && $chosen_plan_id == $plan->id) current-plan @endif {{strtolower($plan->name)}}">
                                 @if($plan->name == 'Premium')
-                                <div class="most-popular">Most popular
-                                    <i class="fa-solid fa-stars"></i>
-                                </div>
+                                    <div class="most-popular">Most popular
+                                        <i class="fa-solid fa-stars"></i>
+                                    </div>
                                 @endif
                                 <div class="text-center">
                                     <h5 class="font-weight-normal my-0 secondary-color text-start mb-3">{{ $plan->name }}</h5>
                                     <h4 class="plan-price price-month text-start mb-1">$ <span class="price">{{ floor($plan->price) }}</span> <sup class="tertiary-color">/Month</sup></h4>
 
                                     @if($plan->name == 'Free')
-                                    <div class="year-price d-flex justify-content-between align-items-center">
-                                        <div class="tertiary-color">$0/year</div>
-                                    </div>
-                                    @endif
 
-                                    @if($plan->invoice_interval === "year")
-                                    <div class="year-price d-flex justify-content-between align-items-center">
-                                        @if($plan->name === "Plus")
-                                        <div class="tertiary-color fs-body">${{floor(11.2 * 12)}}/year</div>
-                                        @else
-                                        <div class="tertiary-color fs-body">${{floor($plan->price * 12)}}/year</div>
-                                        @endif
-                                        <div class="dark-green-background green-color p-1 br-30 fs-small">Save ${{(($plan->price / 0.8) - $plan->price) * 12}}</div>
-                                    </div>
+                                        <div class="year-price d-flex justify-content-between align-items-center">
+                                            <div class="tertiary-color">$0/year</div>
+                                        </div>
+
+                                    @else
+                                    
+                                        <div class="year-price d-flex justify-content-between align-items-center">
+                                            @if($plan->name === "Plus")
+                                                <div class="tertiary-color fs-body">${{floor(11.2 * 12)}}/year</div>
+                                            @else
+                                                <div class="tertiary-color fs-body">${{floor($plan->price * 12)}}/year</div>
+                                            @endif
+                                            <div class="dark-green-background green-color p-1 br-30 fs-small">Save ${{(($plan->price / 0.8) - $plan->price) * 12}}</div>
+                                        </div>
 
                                     @endif
 
@@ -51,51 +52,11 @@
                                         </span>
                                     </div>
 
-                                    <?php /*
-
-                                    @if($plan->name == 'Free')
-                                    <h2 class="font-weight-medium my-3" style="font-size: 18px; opacity: 0;">
-                                    <sup class="font-weight-normal fs-2 mr-1" style="font-size: 18px !important;">$</sup>{{ $plan->price }}<small class="fs--1 text-700">/ Month</small>
-                                    </h2>
-                                    <h2 class="font-weight-medium my-3" >
-                                    <sup class="font-weight-normal fs-2 mr-1">$</sup>{{ floor(($plan->price / 2)*100)/100 }}<small class="fs--1 text-700">/ Month</small>
-                                    </h2>
-                                    @else
-                                    <h2 class="font-weight-normal my-3" style="font-size: 18px;">
-                                    <del>
-                                    <sup class="font-weight-normal fs-2 mr-1" style="font-size: 18px !important;">$</sup>{{ $plan->price }}<small class="fs--1 text-700">/ Month</small>
-                                    </del>
-                                    <span class="font-weight-normal" style="color:#ff2967;">(-50%)</span>
-                                    </h2>
-                                    <h2 class="font-weight-medium my-3">
-                                    <sup class="font-weight-normal fs-2 mr-1">$</sup>{{ floor(($plan->price / 2)*100)/100 }}<small class="fs--1 text-700">/ Month</small>
-                                    </h2>
-                                    @endif
-
-                                    * 
-                                    * 
-
-                                    <h5 class="font-weight-medium my-4">
-                                    {{ $plan->feature('credits')->value }} Credits         <span data-toggle="tooltip" data-placement="right" title="A credit is the currency you use to unlock a Spotify playlist curator’s contact information on our platform. One credit gets you one unlock.">
-                                    <i class="far fa-question-circle"></i>
-                                    </span>
-                                    @if(!$plan->isFree())
-                                    <small class="fs--1 text-700">/ Monthly</small>
-                                    @endif
-                                    </h5>
-                                    *                                  */ ?>
-
-
-                                    <?php
-            //                        var_dump($chosen_plan_id);
-            //                        exit;
-                                    ?>
-
                                     @guest
                                         @php
                                             $buy_text = $plan->isFree() ? 'Get started' : 'Choose plan'
                                         @endphp
-                                        <a style="" href="{{ route('register') }}">
+                                        <a data-toggle="modal" data-target="#register_modal">
                                             <button class="tertiary">{{$buy_text}}</button> 
                                         </a>
                                     @endguest

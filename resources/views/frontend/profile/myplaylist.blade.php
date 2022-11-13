@@ -6,7 +6,7 @@
         <h4>My Playlists</h4>
         <div class="float-right"> </div>
     </div>
-    <div class="container">
+    <div class="container row">
         @include('frontend.includes.partials.gridlist', ['playlists'=>$playlists])
     </div>
 </div>

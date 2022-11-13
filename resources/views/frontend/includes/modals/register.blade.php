@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered justify-content-center">      
         <div class="modal-content login-modal position-relative">
             <div class="position-absolute register-modal-close mobile-d-none rounded-circle x-button d-flex justify-content-center align-items-center" 
-                    data-dismiss="modal" aria-label="Close">
+                    style="cursor:pointer" data-dismiss="modal" aria-label="Close">
                 <i class="fa-solid fa-x"></i>
             </div>
             <div class="modal-body text-center" style=" padding: 0 !important;margin: 0 !important;">
@@ -21,6 +21,14 @@
                             <form method="POST" action="{{ route('register') }}">
                                 @csrf
                                 <input type="hidden" name="spotify-artist-id" value="{{ old('spotify-artist-id') }}"/>
+
+                                <div id="artist-wrapper" class="mb-3 ui artist position-relative">
+                                    <input id="artist_id" type="text" class="auth-info form-control @error('name') is-invalid @enderror"
+                                            name="artist-id" value="{{ old('artist-id') }}" placeholder="Spotify Artist" autocomplete="artist-id" autofocus>
+                                    <x-error field="artist-id"></x-error>
+                                    <i class="fa-brands fa-spotify position-absolute" style="color: #827F7F; width:24px; height:24px; top: calc(50% - 12px); right:30px"></i>
+                                </div>
+
                                 <div class="mb-3">
                                     <input id="name" type="text" class="auth-info form-control @error('name') is-invalid @enderror"
                                             name="name" placeholder="Name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -44,22 +52,23 @@
                                             name="password_confirmation" placeholder="Confirm Password"
                                             required autocomplete="new-password">
                                 </div>
-                                <div class="form-check mb-0">
-                                    <input class="form-check-input @error('agree') is-invalid @enderror" type="checkbox" name="agree" id="agree" {{ old('agree') ? 'checked' : '' }} >
+                                <button class="btn btn-danger w-100 rounded-pill btn-block mt-3 w-100 rounded-pill" type="submit" name="submit"><span class="me-1"><i class="fa-regular fa-paper-plane-top"></i></span>Create Account</button>
+                                <div class="form-check mb-0 mt-2">
+                                    <input class="form-check-input @error('agree') is-invalid @enderror" type="checkbox" name="agree" id="agree" {{ old('agree') ? 'checked' : '' }} style="cursor:pointer">
                                     <label class="form-check-label" for="agree" target="_blank">By signing up you agree to Playlist Map's<a href="/terms"> Terms of Use</a> and <a href="/privacy" target="_blank"> Cookie & Privacy Policy.</a></label>
                                     <x-error field="agree"></x-error>
                                 </div>
-                                <div class="mt-2 d-flex justify-content-between">
-                                    <div class="d-flex">
-                                        <p class="m-auto">Already a Member?</p>
-                                    </div>
-                                    <div class="text-white">
-                                        <div class="btn btn-primary bg-transparent rounded-pill px-3 login-button" data-toggle="modal" data-target="#login_modal" style="border:1px solid gray">
-                                            <i class="fa-solid fa-sign-in pe-2"></i>Login
-                                        </div>
+                            </form>
+                            <div class="mt-2 d-flex justify-content-between">
+                                <div class="d-flex">
+                                    <p class="m-auto" style="cursor:pointer">Already a Member?</p>
+                                </div>
+                                <div class="text-white">
+                                    <div class="btn btn-primary bg-transparent rounded-pill px-3 login-button" data-toggle="modal" data-target="#login_modal" style="border:1px solid gray">
+                                        <i class="fa-solid fa-sign-in pe-2"></i>Login
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>

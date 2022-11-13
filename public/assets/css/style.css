@@ -1064,7 +1064,6 @@ footer .rights {
 
 .homepage .homepage-section-discovered-section .wrap .discovered-steps-container::after {
     content: '';
-    background: url(../../images/graphics/big-red-line.svg);
     left: 0;
     right: 0;
     top: 0;
@@ -1565,12 +1564,20 @@ footer .rights {
     padding: 32px 0;
 }
 
-.pricing .pricing-section-hero .plans-wrapper.month .plan-container.year {
+/* .pricing .pricing-section-hero .plans-wrapper.month .plan-container.year {
     display: none;
 }
 
 .pricing .pricing-section-hero .plans-wrapper.year .plan-container.month {
     display: none;
+} */
+
+.pricing .pricing-section-hero .plans-wrapper.month .year-price{
+    display: none !important;
+}
+
+.pricing .pricing-section-hero .plans-wrapper.year .year-price{
+    display: flex !important;
 }
 
 .pricing .pricing-section-hero .plans-wrapper.year .plan-container.free,
@@ -1902,9 +1909,9 @@ body.terms a {
 
 /* Media Query */
 @media only screen and (max-width: 1400px) {
-    header {
+    /* header {
         padding: 0px 20px;
-    }
+    } */
 }
 
 @media only screen and (max-width: 1300px) {
@@ -1913,13 +1920,13 @@ body.terms a {
     }
 }
 
-
-
-
-
 @media only screen and (max-width: 1250px) {
     header nav .homepage-link {
         margin-right: 25px;
+    }
+
+    .playlistmap-statistics{
+        margin: auto 16px;
     }
 
     header nav ul.navbar-nav.links .nav-item {
@@ -2486,7 +2493,7 @@ table tbody tr:hover {
     }
 
     .table>:not(caption)>*>*{
-        padding: 0.5rem 0.44rem;
+        padding: 0.5rem 0.4rem;
     }
 
     .filters {
@@ -2622,4 +2629,19 @@ td.w-25 {
 #tinymce p, #tinymce p span{
     background:#121212 !important;
     color:white !important;
+}
+
+.premium-content{
+    filter:blur(5px);
+}
+
+.page-link:hover{
+    color:red !important;
+    background-color: transparent;
+}
+
+.page-item.active .page-link{
+    color: #0d6efd !important;
+    background-color: transparent;
+    border: none;
 }

@@ -11,9 +11,7 @@
                 <form class="searchform" class="homepage-form-search @if (Auth::guest()) guest @endif" action="{{ $route }}">
                     <div class="input-group">
                         <input class="playlistmap-search" class="form-control bg-transparent text-100" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"
-                               placeholder=" " style=""/>
-                        <label class="placehoder1">Search for your genre or a similar sounding artist</label>
-                        <!--<label>Try &quot;<span class="red">edm</span>&quot; or &quot;<span class="red">the weekend</span>&quot;</label>-->
+                               placeholder="Search for your genre or a similar sounding artist"/>
                         <button onclick="ym(73260880, 'reachGoal', 'homepageserachbtn'); return true;" type="submit" class="input-group-text bg-transparent text-100"><i class="fas fa-magnifying-glass"></i></button>
                         <button class="input-group-text clear-input"><i class="fas fa-circle-xmark"></i></button>
                     </div>
@@ -119,7 +117,7 @@
 </section>
 
 <section class="homepage-section homepage-section-tabs-section">
-    <div class="wrap">
+    <div class="wrap container">
         <div class="row" style="justify-content: center;">
 
             <ul class="nav nav-tabs" style="width: auto; text-align: center;">
@@ -132,7 +130,7 @@
         <div class="tab-content">
             <div id="playlisting" class="tab-pane fade in active show">
                 <div class="row padding16">
-                    <div class="col-md-7">
+                    <div class="col-md-7 overflow-hidden">
                         <h3 class="mt-4 mb-4 noneDesktop" style="text-align: center;">Playlisting</h3>
                         <img class="eye secondEye" src="{{asset('/images/bg/spotify-bg.jpg')}}" />
                     </div>
@@ -141,7 +139,7 @@
                         <h3 class="mt-4 mb-4 noneMobile">Playlisting</h3>
                         <h6 class="mb-4 sliderText">Quickly identify playlists that match your music to improve your acceptance rate. Uncover contact information for hard-to-get curators, create valuable connections, and send them your tracks.</h6>
                         <a href="#">
-                            <button class="tertiary big m-auto"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
+                            <button class="tertiary big m-auto" data-toggle="modal" data-target="#register_modal"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
                         </a>
                     </div>
                 </div>
@@ -185,7 +183,7 @@
 <section class="homepage-section homepage-section-discovered-section">
     <div class="wrap">
         <h2 class="text-center timelineBigTitle">Everything You Need To <b>Get Discovered</b></h2>
-        <div class="discovered-steps-container position-relative" style="background: url({{asset('images/graphics/big-red-line1.svg')}})">
+        <div class="discovered-steps-container position-relative">
             <img class="line-ball line-ball1 noneMobile" src="{{asset('/images/graphics/red-ball.svg')}}" />
             <img class="line-ball line-ball2 noneMobile" src="{{asset('/images/graphics/blue-ball.svg')}}" />
             <img class="line-ball line-ball3 noneMobile" src="{{asset('/images/graphics/red-ball.svg')}}" />
@@ -540,7 +538,7 @@
         }
 
         .how-it-works{
-            background: url(http://localhost:8000/images/down_vector.png);
+            background: url({{asset('images/down_vector.png')}});
             background-repeat-x: no-repeat;
             background-position: center;
         }

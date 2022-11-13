@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered justify-content-center">      
         <div class="modal-content forget-modal position-relative">
             <div class="position-absolute forget-modal-close mobile-d-none rounded-circle x-button d-flex justify-content-center align-items-center" 
-                    data-dismiss="modal" aria-label="Close">
+                    style="cursor:pointer" data-dismiss="modal" aria-label="Close">
                 <i class="fa-solid fa-x"></i>
             </div>
             <div class="modal-body text-center" style=" padding: 0 !important;margin: 0 !important;">

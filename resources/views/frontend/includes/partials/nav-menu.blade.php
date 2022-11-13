@@ -1,7 +1,7 @@
 <div class="d-flex align-items-center" id="navbarStandard">
     <ul class="navbar-nav links d-flex align-items-center">
         <li class="nav-item">
-            <a onclick="ym(73260880, 'reachGoal', 'navsearch'); return true;" style="display:flex" class="nav-link {{ Route::is('frontend.search') ? 'active' : '' }}" @if(auth()->check()) href="{{ route('frontend.search') }}" @else data-toggle="modal" data-target="#login_modal" @endif>Browse</a>
+            <a onclick="ym(73260880, 'reachGoal', 'navsearch'); return true;" style="display:flex; cursor:pointer" class="nav-link {{ Route::is('frontend.search') ? 'active' : '' }}" @if(auth()->check()) href="{{ route('frontend.search') }}" @else data-toggle="modal" data-target="#login_modal" @endif>Browse</a>
         </li>
         <li class="nav-item">
             <a class="nav-link {{ Route::is('pages.about') ? 'active' : '' }}" href="/about">About</a>
@@ -41,8 +41,8 @@
         </button>
     </li>
     <li class="nav-item free-trial">
-        <a class="nav-link" href="{{ route('register') }}">
-            <button class="tertiary"><i class="fas fa-badge-percent"></i>Start Free Trial</button> 
+        <a class="nav-link" data-toggle="modal" data-target="#register_modal">
+            <button class="tertiary" style="font-size:80%" ><i class="fas fa-badge-percent"></i>Start Free Trial</button> 
         </a>
     </li>
     @endguest
@@ -83,12 +83,12 @@
                 <a onclick="ym(73260880, 'reachGoal', 'profileinusermenu'); return true;" class="dropdown-item align-items-center" href="{{ route('frontend.profile') }}">
                     <i class="fas fa-user"></i>My Profile
                 </a>
-                <a onclick="ym(73260880, 'reachGoal', 'profileinusermenu'); return true;" class="dropdown-item align-items-center" href="{{ route('frontend.profile') }}">
+                <!-- <a onclick="ym(73260880, 'reachGoal', 'profileinusermenu'); return true;" class="dropdown-item align-items-center" href="{{ route('frontend.profile') }}">
                     <i class="fas fa-user-gear"></i>Account Settings
                 </a>
                 <a onclick="ym(73260880, 'reachGoal', 'profileinusermenu'); return true;" class="dropdown-item align-items-center" href="{{ route('frontend.profile') }}">
                     <i class="fas fa-chart-line"></i>My Dashboard
-                </a>
+                </a> -->
                 <a onclick="ym(73260880, 'reachGoal', 'profileinusermenu'); return true;" class="dropdown-item align-items-center" href="{{ route('frontend.myplaylist') }}">
                     <i class="fas fa-list-music"></i>My Playlists
                 </a>

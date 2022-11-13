@@ -54,7 +54,7 @@
         </div>
 
         <div class="row mt-3 mb-3 d-inline container">
-            <div class="col-md-6 col-sm-12 align-items-center text-left d-inline-flex align-items-center">
+            <div class="col-md-6 col-sm-12 align-items-center text-left d-inline-flex align-items-center mobile-d-none">
                 Search results for:
                 <div class="d-inline-flex badge badge-soft-info" style="background:#1b1b1b!important; margin-left:15px!important">
                     {{request()->get('q')}}
@@ -69,7 +69,7 @@
         </div>
 
         <div class="px-3 container">
-            <div class="d-inline float-left badge badge-soft-info text-white border border-white" style="background:#1b1b1b !important; padding: 8px 24px;">
+            <div class="d-inline float-left mobile-d-none badge badge-soft-info text-white border border-white" style="background:#1b1b1b !important; padding: 8px 24px;">
                 <i class="fa-solid fa-bars-filter"></i>
                 Filters
             </div>
@@ -83,7 +83,7 @@
             </div>
         </div>
 
-        <div class="container m-3 filters" style="background:#1b1b1b; border-radius:10px">
+        <!-- <div class="container m-3 filters" style="background:#1b1b1b; border-radius:10px">
             <div style="width:20%; color:#C0C0C0;" class="mt-2 mx-2">
                 <i class="mx-2 fa fa-users" aria-hidden="true"></i>Followers
                 <select class="form-select mt-2 border-0 filter-form form-select-lg b mb-3" style="height: 48px; background-color:#121212" aria-label=".form-select-lg example">
@@ -124,7 +124,7 @@
                     <option value="3">5k</option>
                 </select>
             </div>
-        </div>
+        </div> -->
     </div>
     <div>
         @if($playlists->count())
@@ -144,15 +144,43 @@
                         <tr class="">
                             @if(user()->subscription()->plan->isFree())
                                 <th scope="col">Playlist</th>
-                                <th scope="col"></th>
-                                <th scope="col">
-                                    <i class="mx-2 fa fa-users" aria-hidden="true"></i>
-                                </th>
-                                <th scope="col">
-                                    <i class="mx-2 fa-sharp fa-solid fa-calendar-week"></i>
-                                </th>
-                                <th scope="col">
-                                    <i class="mx-2 fa-solid fa-clock"></i>
+                                <th scope="col" colspan="2" class="row" style="padding:10px">
+                                    <div class="col-md-6 col-sm-12"></div>
+                                    <div class="col-md-6 col-sm-12 row">
+                                        <div class="col-md-3 col-4">
+                                            @if(request()->input('sortBy') && request()->input('sortBy') === 'followers')
+                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'followers'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                            @elseif(request()->input('sortByAsc') && request()->input('sortByAsc') === 'followers')
+                                                <a href="{{request()->fullUrlWithQuery(['sortByAsc' => null, 'sortBy' => 'followers'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                            @else
+                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => 'followers', 'sortByAsc' => null])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                            @endif
+                                                <i class="mx-2 fa fa-users" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6 col-4">
+                                            @if(request()->input('sortBy') && request()->input('sortBy') === 'lastUpdated')
+                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'lastUpdated'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                            @elseif(request()->input('sortByAsc') && request()->input('sortByAsc') === 'lastUpdated')
+                                                <a href="{{request()->fullUrlWithQuery(['sortByAsc' => null, 'sortBy' => 'lastUpdated'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                            @else
+                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => 'lastUpdated', 'sortByAsc' => null])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                            @endif
+                                                <i class="mx-2 fa-sharp fa-solid fa-calendar-week"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 col-4">
+                                            @if(request()->input('sortBy') && request()->input('sortBy') === 'tracks')
+                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'tracks'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                            @elseif(request()->input('sortByAsc') && request()->input('sortByAsc') === 'tracks')
+                                                <a href="{{request()->fullUrlWithQuery(['sortByAsc' => null, 'sortBy' => 'tracks'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                            @else
+                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => 'tracks', 'sortByAsc' => null])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                            @endif
+                                                <i class="mx-2 fa-solid fa-clock"></i>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </th>
                                 <th style="width:0;"></th>
                                 <th style="width:0;display:none;"></th>
@@ -164,7 +192,7 @@
                                 <th scope="col" colspan="2" class="row" style="padding:10px">
                                     <div class="col-md-6 col-sm-12"></div>
                                     <div class="col-md-6 col-sm-12 row">
-                                        <div class="col-4">
+                                        <div class="col-md-3 col-4">
                                             @if(request()->input('sortBy') && request()->input('sortBy') === 'followers')
                                                 <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'followers'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
                                             @elseif(request()->input('sortByAsc') && request()->input('sortByAsc') === 'followers')
@@ -175,7 +203,7 @@
                                                 <i class="mx-2 fa fa-users" aria-hidden="true"></i>
                                             </a>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-6 col-4">
                                             @if(request()->input('sortBy') && request()->input('sortBy') === 'lastUpdated')
                                                 <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'lastUpdated'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
                                             @elseif(request()->input('sortByAsc') && request()->input('sortByAsc') === 'lastUpdated')
@@ -186,7 +214,7 @@
                                                 <i class="mx-2 fa-sharp fa-solid fa-calendar-week"></i>
                                             </a>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-3 col-4">
                                             @if(request()->input('sortBy') && request()->input('sortBy') === 'tracks')
                                                 <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'tracks'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
                                             @elseif(request()->input('sortByAsc') && request()->input('sortByAsc') === 'tracks')
@@ -264,16 +292,16 @@
                                     <div class="row summary">
                                     <div class="col-md-6 col-sm-12 text-left d-flex align-items-center text-ellispe"><span id="playlist_name">{{ $playlist->name }}</span></div>
                                     <div class="col-md-6 col-sm-12 row">
-                                        <div class="col-4 followers text-left d-flex align-items-center" style="color:#C0C0C0">
+                                        <div class="col-md-3 col-4 followers text-left d-flex align-items-center" style="color:#C0C0C0">
                                             <i width ="14px" height-="14px" class="mr-fix fa fa-users mobile-d" aria-hidden="true" style="font-size:10px"></i>
                                             <span id="playlist_followers">{{ $playlist->formatted_followers }}</span>
                                         </div>
-                                        <div class="col-4 text-left d-flex align-items-center text-truncate" style="color:#C0C0C0">
+                                        <div class="col-md-6 col-4 text-left d-flex align-items-center text-truncate" style="color:#C0C0C0">
                                             <i width ="14px" height-="14px" class="mr-fix mobile-d fa-sharp fa-solid fa-calendar-week" style="font-size:10px"></i>
                                             <span id="playlist_updated"><x-friendly-date :date="$playlist->last_updated_on"/></span>
                                         </div>
         
-                                        <div class="col-4 followers text-left d-flex align-items-center" style="color:#C0C0C0">
+                                        <div class="col-md-3 col-4 followers text-left d-flex align-items-center" style="color:#C0C0C0">
                                             <i width ="14px" height-="14px" class="mr-fix mobile-d fa-solid fa-clock" style="font-size:10px"></i>
                                             <span id="playlist_tracks">{{ $playlist->number_of_tracks }}</span>                                        </div>
                                     </div>

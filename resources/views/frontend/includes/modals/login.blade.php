@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered justify-content-center">      
         <div class="modal-content login-modal position-relative">
             <div class="position-absolute mobile-d-none rounded-circle x-button d-flex justify-content-center align-items-center" 
-                    data-dismiss="modal" aria-label="Close">
+                    style="cursor:pointer" data-dismiss="modal" aria-label="Close">
                 <i class="fa-solid fa-x"></i>
             </div>
             <div class="modal-body text-center" style=" padding: 0 !important;margin: 0 !important;">
@@ -42,11 +42,11 @@
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <div class="mt-2 text-left">
-                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} checked>
+                                        <input class="form-check-input" style="cursor:pointer" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} checked>
                                         <label class="form-check-label" for="remember">Remember me</label>
                                     </div>
                                     <div class="mt-2 text-right">
-                                        <a class="fs--1 mt-3 forget_link" data-toggle="modal" data-target="#forget_modal">Forgot Password?</a>
+                                        <a class="fs--1 mt-3 forget_link" data-toggle="modal" style="cursor:pointer" data-target="#forget_modal">Forgot Password?</a>
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -83,7 +83,8 @@
         });
 
         $("#login_modal div[data-dismiss]").click(function(){
-            $("div[data-dismiss]").trigger('click');
+            if($("div[data-dismiss='modal]")!=null)
+                $("div[data-dismiss='modal]").trigger('click');
         })
         
         $(".forget_link").click(function(){
