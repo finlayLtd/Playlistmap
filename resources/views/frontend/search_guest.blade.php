@@ -14,7 +14,7 @@
                         <p>
                            Create a free account to view the search results. You're one click away from reaching your future fans!
                         </p>
-                        <a id="btnguestsearch"  href="{{ route('register') }}" class="btn btn-sm btn-success">Start for free</a>
+                        <a id="btnguestsearch" data-toggle="modal" data-target="#register_modal" class="btn btn-sm btn-success">Start for free</a>
                     </div>
                     <div class="table-responsive">
                         <table id="main-search-table" data-pagination="true" data-show-pagination-switch="true" class="container table text-white">

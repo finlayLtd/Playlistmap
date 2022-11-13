@@ -155,7 +155,7 @@
                         <h3 class="mt-4 mb-4 noneMobile">Pitch Templates</h3>
                         <h6 class="mb-4 sliderText">We get it—you’re a musician, not a marketer.  Use our customizable message templates to speed up your outreach, simplify the pitch process, and boost your success rate. </h6>
                         <a href="#">
-                            <button class="tertiary big m-auto"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
+                            <button class="tertiary big m-auto" data-toggle="modal" data-target="#register_modal"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
                         </a>
                     </div>
                 </div>
@@ -171,7 +171,7 @@
                         <h3 class="mt-4 mb-4 noneMobile">AI Recommendations</h3>
                         <h6 class="mb-4 sliderText"><b>Coming soon. With our new proprietary AI algorithm, we’ll automatically match your tracks with the most relevant playlists to make pitching your music truly effortless. </b></h6>
                         <a href="#">
-                            <button class="tertiary big m-auto"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
+                            <button class="tertiary big m-auto" data-toggle="modal" data-target="#register_modal"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
                         </a>
                     </div>
                 </div>
