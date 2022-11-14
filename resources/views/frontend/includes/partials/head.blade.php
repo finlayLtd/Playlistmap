@@ -55,6 +55,9 @@
 <!--<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">-->
 
 <script src="{{ asset('vendors/jquery/jquery-3.5.1.min.js') }}"></script>
+<script> var homeurl = "{{ url('/')}}";</script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
 
 <!--@include('frontend.includes.third-party.twik')-->
 @yield('styles')

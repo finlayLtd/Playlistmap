@@ -686,6 +686,7 @@ function addArtistAutoCompleteEvents() {
     if ($("#artist-id").length === 0) {
         return;
     }
+
     $("#artist-id").autocomplete({
         classes: {
             "ui-autocomplete": "artists-ui-list"
@@ -720,6 +721,7 @@ function addArtistAutoCompleteEvents() {
                     term: request.term
                 },
                 success: function (data) {
+                    $(".spotify-list").empty();
                     response($.map(data, function (result) {
                         return {
                             label: result.label,
@@ -731,10 +733,10 @@ function addArtistAutoCompleteEvents() {
             });
         }
     }).data("ui-autocomplete")._renderItem = function (ul, item) {
-        return $("<li></li>")
+        return $("<li class='text-left m-2' onclick='selectArtist(`"+item.image+"`, `"+item.label+"`)'></li>")
                 .data("item.autocomplete", item)
-                .append("<div>" + "<img style='width:75px;height:75px;border-radius:100%;' src='" + item.image + "' /> " + item.label + "</a>")
-                .appendTo(ul);
+                .append("<img style='width:75px;height:75px;border-radius:100%;' src='" + item.image + "' /><span>" + item.label + "</span>")
+                .appendTo($(".spotify-list").css('display', 'block'));
     };
 
     $('#artist-id').on('focusout', (e) => {

@@ -7,14 +7,14 @@
             <div class="card-header bg-100">
                <b style="    font-size: 24px;"> {{ $results_count }} </b>results found for "<b>{{request()->query('q')}}</b>"
             </div>
-            <div class="card-body">
+            <div class="card-body ">
                 @if($playlists->count())
-                    <div class="alert alert-info text-center">
-                        <h3  class="text-center">Create Account</h3>
-                        <p>
+                    <div class="alert alert-info text-center container p-md-5 m-md-5" style="background: linear-gradient(95.34deg, #BE281D 1.31%, #2062EF 100.03%); border:none; border-radius:10px; ">
+                        <h3  class="text-center text-white" style="font-family: 'Lato';font-style: normal;font-weight: 700;font-size: 58px;">Create Account</h3>
+                        <p class="text-white" style="font-size: 18px">
                            Create a free account to view the search results. You're one click away from reaching your future fans!
                         </p>
-                        <a id="btnguestsearch" data-toggle="modal" data-target="#register_modal" class="btn btn-sm btn-success">Start for free</a>
+                        <a id="btnguestsearch" data-toggle="modal" data-target="#register_modal" style="font-size: 20px" class="btn btn-sm btn-danger rounded-pill">Start for free</a>
                     </div>
                     <div class="table-responsive">
                         <table id="main-search-table" data-pagination="true" data-show-pagination-switch="true" class="container table text-white">

@@ -129,12 +129,12 @@
     <div>
         @if($playlists->count())
             @if(user()->subscription()->plan->isFree())
-                <div class="alert alert-info text-center">
-                    <h3 class="text-center text-uppercase">Upgrade</h3>
-                    <p>
+                <div class="alert alert-info text-center container p-md-5 m-md-5" style="background: linear-gradient(95.34deg, #BE281D 1.31%, #2062EF 100.03%); border:none; border-radius:10px; ">
+                    <h3 class="text-center text-uppercase text-white" style="font-family: 'Lato';font-style: normal;font-weight: 700;font-size: 58px;">Upgrade</h3>
+                    <p class="text-white" style="font-size: 18px">
                         Want to see more playlists? Upgrade your plan to unlock up to 100 playlists per month!
                     </p>
-                    <a id="btnguestsearch" href="{{ route('frontend.profile.plans') }}" class="btn btn-sm btn-success">Upgrade Now</a>
+                    <a id="btnguestsearch" href="{{ route('frontend.profile.plans') }}"  style="font-size: 20px" class="btn btn-sm btn-danger rounded-pill">Upgrade Now</a>
                 </div>
             @endif
 

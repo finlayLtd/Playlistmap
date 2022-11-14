@@ -114,7 +114,7 @@
                     <span class="price-plan">${{ $user->subscription()->plan->price}}</span>/Month
                 </div>
                 <div class="thLetter">
-                    30 Credits/Month <i class="fas fa-exclamation-circle" style="color: #C0C0C0;"></i>
+                    {{ $user->subscription()->plan->getFeatureByName('credits'.($user->subscription()->plan->id==1?'':'-'.($user->subscription()->plan->id-1)))->value}} Credits/Month <i class="fas fa-exclamation-circle" style="color: #C0C0C0;"></i>
                 </div>
                 <div class="thLetter d-flex">
                     <button type="button" class="w-100 btn btn-danger" style="background-color:red;margin-left: 10px; padding: 10px !important; border-radius: 25px !important; color: white; float:right; "> <i class="far fa-chevron-down"></i> Manage Plan</button>

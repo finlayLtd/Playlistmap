@@ -21,13 +21,19 @@
                             <form method="POST" action="{{ route('register') }}">
                                 @csrf
                                 <input type="hidden" name="spotify-artist-id" value="{{ old('spotify-artist-id') }}"/>
+                                <input type="hidden" name="spotify-artist-image" value="{{ old('spotify-artist-image') }}"/>
 
-                                <div id="artist-wrapper" class="mb-3 ui artist position-relative">
-                                    <input id="artist_id" type="text" class="auth-info form-control @error('name') is-invalid @enderror"
-                                            name="artist-id" value="{{ old('artist-id') }}" placeholder="Spotify Artist" autocomplete="artist-id" autofocus>
-                                    <x-error field="artist-id"></x-error>
-                                    <i class="fa-brands fa-spotify position-absolute" style="color: #827F7F; width:24px; height:24px; top: calc(50% - 12px); right:30px"></i>
+                                <div class="row">
+                                    <div id="artist-wrapper" class="mb-3 ui artist">
+                                        <div class="w-100 artist-id-image">
+                                            <input id="artist-id" type="text" class="auth-info form-control @error('name') is-invalid @enderror" style="height:40px"
+                                                name="artist-id" value="{{ old('artist-id') }}" autocomplete="artist-id" autofocus placeholder="{{ __('Spotify Artist') }}">
+                                            <img width="200px" height="200px" id="artist-image" style="display:none;background-size:cover"/>
+                                        </div>
+                                        <x-error field="artist-id"></x-error>
+                                    </div>
                                 </div>
+                                <ul class="spotify-list bg-white p-4 position-absolute overflow-scroll" style="height:300px;display:none;color:black"></ul>
 
                                 <div class="mb-3">
                                     <input id="name" type="text" class="auth-info form-control @error('name') is-invalid @enderror"
@@ -89,7 +95,19 @@
             $('#register_modal').css("display","none");
         });
 
+        $("#artist-id[type='text']").keyup(function(){
+            if($(this).val().length < 3) $('ul.spotify-list').empty().css('display', 'none');
+        });
+
     });
+
+    function selectArtist(src, text){
+        $("input[name='spotify-artist-id']").val(text);
+        $("input[name='spotify-artist-image']").val(src);
+        $("#artist-id").val(text);
+        $("#artist-image").attr('src', src).css('display', 'inline-block');
+        $('.spotify-list').css('display', 'none');
+    }
 </script>
 
 <style>
@@ -124,6 +142,11 @@
         width:66%;
     }
 
+    ul.spotify-list li:hover{
+        background: #C0C0C0;
+        border: 1px gray solid;
+    }
+
     .auth-info.form-control:focus.form-control{
         border:none;
     }
@@ -147,13 +170,24 @@
     .auth-info.form-control:focus{
         border:1px solid blue
     }
-    
+
+    .artist-wrapper input#artist-id{
+        width: calc(100% - 200px);
+    }
+
+    .artist-id-image{
+        display: inline-flex
+    }
+
+    .artist-id-image input{
+        margin-right:10px
+    }
+
     @media screen and (max-width:767px){
         
         .login-info, .login-input{
             padding:10px;
         }
-
         .modal-content{
             border-radius: 50px 50px 0px 0px;
             width: 100%;
@@ -164,6 +198,13 @@
 
         #register_modal .container{
             padding:0px !important;
+        }
+
+    }
+
+    @media screen and (max-width:1200px){
+        .artist-id-image{
+            display: block !important;
         }
 
     }
