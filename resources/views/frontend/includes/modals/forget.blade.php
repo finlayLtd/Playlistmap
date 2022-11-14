@@ -54,7 +54,7 @@
         width:35px; 
         height:35px;
         right:0px;
-        top:-12%;
+        top:-7%;
         background-color: #121212;
     }
 
