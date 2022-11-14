@@ -121,7 +121,7 @@
                 </div>
             </div>
 
-            <div style="margin-top:24px; color: rgba(192, 192, 192, 1);">
+            <div style="margin-top:24px; color: rgba(192, 192, 192, 1);" class="@if($user->subscription()->plan->name == 'Free') d-none @endif">
                 The next payment is due on <span style="color: rgba(251, 222, 75, 1) !important;">{{date_format($user->subscription()->ends_at, "F d, Y")}}</span> . 
             </div>
         </div>
