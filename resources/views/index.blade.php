@@ -305,6 +305,10 @@
 
     @media screen and (max-width:767px){
 
+        h3{
+            font-size: 30px !important;
+        }
+
         .homepage .homepage-section-discovered-section .wrap .step.step-2 {
             margin-top: 70px !important;
         }

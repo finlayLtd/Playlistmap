@@ -20,12 +20,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.2/timeago.min.js"></script>
 
 <script>
+
     @php($notifications = array('error', 'success', 'warning', 'info'))
     @foreach($notifications as $notification)
         @if(session()->has($notification))
             {{ "toastr." . $notification }}{!! "('" !!}{{session()->get($notification)}}{!! "')" !!}
         @endif
     @endforeach
+
+    @error('email')
+        {{ "toastr.error" }}{!! "('" !!}{{$message."Please try again."}}{!! "')" !!}
+    @endif
+    @error('password')
+        {{ "toastr.error" }}{!! "('" !!}{{$message."Please try again"}}{!! "')" !!}
+    @endif
+
 </script>
 
 @yield('scripts')

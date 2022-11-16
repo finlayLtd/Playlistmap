@@ -2645,3 +2645,19 @@ td.w-25 {
     background-color: transparent;
     border: none;
 }
+
+@media screen and (max-width:767px){
+    input.playlistmap-search::placeholder {
+        font-size: 10px;
+    }
+}
+
+body:has(.modal.fade.show) div.widget-visible{
+    display: none!important;
+}
+
+.toast.toast-error{
+    background-color: red;
+    color: white;
+    top: 50px;
+}

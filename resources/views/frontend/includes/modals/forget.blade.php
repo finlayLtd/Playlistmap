@@ -2,7 +2,7 @@
      aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered justify-content-center">      
         <div class="modal-content forget-modal position-relative">
-            <div class="position-absolute forget-modal-close mobile-d-none rounded-circle x-button d-flex justify-content-center align-items-center" 
+            <div class="position-absolute forget-modal-close rounded-circle x-button d-flex justify-content-center align-items-center" 
                     style="cursor:pointer" data-dismiss="modal" aria-label="Close">
                 <i class="fa-solid fa-x"></i>
             </div>
@@ -50,11 +50,12 @@
         cursor: pointer;
     }
 
-    .x-button{
+    #forget_modal .x-button{
         width:35px; 
         height:35px;
         right:0px;
         top:-7%;
+        z-index:3000;
         background-color: #121212;
     }
 
@@ -103,6 +104,11 @@
         
         .login-info, .login-input{
             padding:10px;
+        }
+
+        #forget_modal .x-button{
+            right:9px;
+            top:-15px;
         }
 
         .modal-content{
