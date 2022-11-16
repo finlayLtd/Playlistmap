@@ -36,13 +36,16 @@
         <!-- <a class="nav-link mr-5" href="{{ route('login') }}">
             <button class="outlined"><i class="fa-solid fa-arrow-right-to-bracket"></i>Login</button>
         </a> -->
-        <button class="outlined" data-toggle="modal" data-target="#login_modal">
+        <button class="outlined mobile-d-none" data-toggle="modal" data-target="#login_modal">
             <i class="fa-solid fa-arrow-right-to-bracket"></i>Login
         </button>
     </li>
-    <li class="nav-item free-trial">
+    <li class="nav-item free-trial d-flex">
+        <a class="nav-link mobile-d" data-toggle="modal" data-target="#login_modal">
+            <button class="tertiary text-white bg-transparent me-2" style="font-size:80%; border:white 1px solid" ><i class="fa-solid fa-arrow-right-to-bracket"></i>Login</button> 
+        </a>
         <a class="nav-link" data-toggle="modal" data-target="#register_modal">
-            <button class="tertiary" style="font-size:80%" ><i class="fas fa-badge-percent"></i>Start Free Trial</button> 
+            <button class="tertiary d-flex text-truncate" style="font-size:80%" ><i class="fas fa-badge-percent mobile-d-none text-black"></i><span class="mobile-d-none text-black">Start Free Trial</span><span class="mobile-d text-black">Sign Up</span</button> 
         </a>
     </li>
     @endguest

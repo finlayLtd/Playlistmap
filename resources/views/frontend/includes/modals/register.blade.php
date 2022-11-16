@@ -87,7 +87,7 @@
     $(document).ready(function(){
 
         $(".register-modal-close").click(function(){
-            $('#login_modal').addClass('show');
+            // $('#login_modal').addClass('show');
         });
 
         $(".login-button").click(function(){

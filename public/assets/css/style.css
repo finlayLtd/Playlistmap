@@ -2365,8 +2365,10 @@ table tr td:last-child, tr th:last-child, .ellipse-border {
     display: inline-flex;
 }
 
-.mobile-d {
-    display: none;
+@media screen and (min-width:768px){
+    .mobile-d {
+        display: none;
+    }
 }
 
 .modal-content {
