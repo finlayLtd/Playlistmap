@@ -8,7 +8,7 @@
     <p class="row col-md-6 col-sm-12 container h1 text-center h-auto">Get on the right playlist & reach your future fans</p>
     <form class="row col-md-8 col-sm-12" action="{{ route('frontend.search') }}">
         <div class="input-group bg-white rounded-pill p-0">
-            <input class="form-control search_input rounded-pill border-0 m-2" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"
+            <input class="form-control search_input kkk rounded-pill border-0 m-2" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"
                 placeholder="Type Music Genres, Artists Names, Playlist Names"/>
             <button type="submit" class="input-group-text float-right m-2 rounded-circle bg-danger border-0 text-light" style="width:50px; height:50px"><i class="fa fa-search"></i></button>
         </div>
@@ -42,7 +42,7 @@
         <div class="justify-content-center">
             <form action="{{ route('frontend.search') }}">
                 <div class="input-group rounded-pill p-0"  style="background-color:#1b1b1b">
-                    <input class="form-control search_input kkk rounded-pill border-0 py-0 bg-transparent text-white body-search" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"
+                    <input class="form-control search_input rounded-pill border-0 py-0 bg-transparent text-white body-search" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"
                         placeholder="Type Music Genres, Artists Names, Playlist Names"
                     />
                     <span class="text-cancel text-black bg-secondary rounded-circle justify-content-center d-flex align-items-center m-auto" style="width:24px; height:24px; cursor:pointer">

@@ -25,36 +25,18 @@
                                         <div class="col-md-6 col-sm-12"></div>
                                         <div class="col-md-6 col-sm-12 row">
                                             <div class="col-4">
-                                                @if(request()->input('sortBy') && request()->input('sortBy') === 'followers')
-                                                    <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'followers'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                                @elseif(request()->input('sortByAsc') && request()->input('sortByAsc') === 'followers')
-                                                    <a href="{{request()->fullUrlWithQuery(['sortByAsc' => null, 'sortBy' => 'followers'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                                @else
-                                                    <a href="{{request()->fullUrlWithQuery(['sortBy' => 'followers', 'sortByAsc' => null])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                                @endif
+                                                <a>
                                                     <i class="mx-2 fa fa-users" aria-hidden="true"></i>
                                                 </a>
                                             </div>
                                             <div class="col-4">
-                                                @if(request()->input('sortBy') && request()->input('sortBy') === 'lastUpdated')
-                                                    <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'lastUpdated'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                                @elseif(request()->input('sortByAsc') && request()->input('sortByAsc') === 'lastUpdated')
-                                                    <a href="{{request()->fullUrlWithQuery(['sortByAsc' => null, 'sortBy' => 'lastUpdated'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                                @else
-                                                    <a href="{{request()->fullUrlWithQuery(['sortBy' => 'lastUpdated', 'sortByAsc' => null])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                                @endif
-                                                    <i class="mx-2 fa-sharp fa-solid fa-calendar-week"></i>
+                                                <a>
+                                                    <i class="mx-2 fa-solid fa-clock"></i>
                                                 </a>
                                             </div>
                                             <div class="col-4">
-                                                @if(request()->input('sortBy') && request()->input('sortBy') === 'tracks')
-                                                    <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'tracks'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                                @elseif(request()->input('sortByAsc') && request()->input('sortByAsc') === 'tracks')
-                                                    <a href="{{request()->fullUrlWithQuery(['sortByAsc' => null, 'sortBy' => 'tracks'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                                @else
-                                                    <a href="{{request()->fullUrlWithQuery(['sortBy' => 'tracks', 'sortByAsc' => null])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                                @endif
-                                                    <i class="mx-2 fa-solid fa-clock"></i>
+                                                <a>
+                                                    <i class="mx-2 fa-sharp fa-solid fa-calendar-week"></i>
                                                 </a>
                                             </div>
                                         </div>
