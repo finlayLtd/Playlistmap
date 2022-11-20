@@ -4,36 +4,27 @@
         <img class="graphic graphic-right deleteIcon" src="{{asset('/images/graphics/statistics-graphic-right.svg')}}" />
         <img class="graphic graphic-bottom deleteIcon" src="{{asset('/images/graphics/statistics-graphic-bottom.svg')}}" />
         <h2 class="text-center titleForStatistics">PlaylistMap By The Numbers</h2>
-        <div class="row mt-5">
-            <div class="col-md-3 text-center">
-                <img class="step-image step4  staticsImage" src="{{asset('/images/graphics/statistics1.svg')}}" />
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-4 col-sm-12 d-flex text-left staticsImage">
+                <img class="step-image step4 " src="{{asset('/images/graphics/statistics1.svg')}}" />
                 <div class="d-flex flex-column justify-content-between">
                     <div class="text">
-                        <h4>20k</h4>
+                        <h4>100k</h4>
                         <h6>Playlists</h6>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 text-center">
-                <img class="step-image step4 staticsImage" src="{{asset('/images/graphics/statistics2.svg')}}" />
-                <div class="d-flex flex-column justify-content-between">
-                    <div class="text">
-                        <h4>3B</h4>
-                        <h6>Potentials Listeners</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 text-center">
-                <img class="step-image step4 staticsImage" src="{{asset('/images/graphics/statistics4.svg')}}" />
+            <div class="col-md-4 col-sm-12 d-flex text-left staticsImage">
+                <img class="step-image step4" src="{{asset('/images/graphics/statistics2.svg')}}" />
                 <div class="d-flex flex-column justify-content-between">
                     <div class="text">
                         <h4>100M</h4>
-                        <h6>Potentials followers</h6>
+                        <h6 class="text-truncate">Potentials Listeners</h6>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 text-center">
-                <img class="step-image step4 staticsImage" src="{{asset('/images/graphics/statistics3.svg')}}" />
+            <div class="col-md-4 col-sm-12 d-flex text-left staticsImage">
+                <img class="step-image step4" src="{{asset('/images/graphics/statistics3.svg')}}" />
                 <div class="d-flex flex-column justify-content-between">
                     <div class="text">
                         <h4>150</h4>
@@ -46,6 +37,15 @@
 </section>
 
 <style>
+    
+    .staticsImage{
+        justify-content: center;
+    }
+
+    .step-image{
+        margin-right: 10px;
+    }
+
     @media screen and (max-width:767px){
         .deleteIcon{
             display:none;
@@ -59,6 +59,10 @@
             letter-spacing: -0.75px;
             color: #FFFFFF;
         }
+        
+        .row:has(.staticsImage){
+            gap:2rem;
+        }
 
         .playlistmap-statistics {
             background: linear-gradient(95.34deg, #BE281D 1.31%, #2062EF 100.03%);
@@ -71,6 +75,8 @@
 
         .staticsImage{
             margin-top: 20px;
+            justify-content: start;
         }
     }
+
 </style>

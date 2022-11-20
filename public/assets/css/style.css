@@ -2648,12 +2648,6 @@ td.w-25 {
     border: none;
 }
 
-@media screen and (max-width:767px){
-    input.playlistmap-search::placeholder {
-        font-size: 10px;
-    }
-}
-
 body:has(.modal.fade.show) div.widget-visible{
     display: none!important;
 }
@@ -2662,4 +2656,20 @@ body:has(.modal.fade.show) div.widget-visible{
     background-color: red;
     color: white;
     top: 50px;
+}
+
+.ui-autocomplete-loading{
+    background: url(../images/icons/loader-white.gif) 96% center/28px no-repeat;
+}
+
+.message .form-control, div.tox.tox-tinymce *, .message textarea, #inputGroupPrepend{
+    color: #827F7F !important;
+}
+
+.btn{
+    box-shadow: none!important;
+}
+
+#tinymce p{
+    padding: 8px;
 }

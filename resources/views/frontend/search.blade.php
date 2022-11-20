@@ -4,7 +4,7 @@
 <?php
     session_start();
 ?>
-<div class="homepage-section m-auto align-items-center text-center d-flex flex-column justify-content-center homepage-section-hero @if(request()->query('q')) d-none @endif" style="height:770px;background:linear-gradient(180deg, rgba(18, 18, 18, 0) -26%, rgba(18, 18, 18, 0.787848) -4.22%, #121212 58%), url(http://localhost:8000/images/bg/hero.jpg)">
+<div class="homepage-section m-auto align-items-center text-center d-flex flex-column justify-content-center homepage-section-hero @if(request()->query('q')) d-none @endif" style="height:770px !important;background:linear-gradient(180deg, rgba(18, 18, 18, 0) -26%, rgba(18, 18, 18, 0.787848) -4.22%, #121212 58%), url(http://localhost:8000/images/bg/hero.jpg)">
     <p class="row col-md-6 col-sm-12 container h1 text-center h-auto">Get on the right playlist & reach your future fans</p>
     <form class="row col-md-8 col-sm-12" action="{{ route('frontend.search') }}">
         <div class="input-group bg-white rounded-pill p-0">
@@ -42,10 +42,10 @@
         <div class="justify-content-center">
             <form action="{{ route('frontend.search') }}">
                 <div class="input-group rounded-pill p-0"  style="background-color:#1b1b1b">
-                    <input class="form-control search_input rounded-pill border-0 py-0 bg-transparent text-white" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"
+                    <input class="form-control search_input rounded-pill border-0 py-0 bg-transparent text-white body-search" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"
                         placeholder="Type Music Genres, Artists Names, Playlist Names"
                     />
-                    <span class="text-black bg-secondary rounded-circle justify-content-center d-flex align-items-center m-auto" style="width:24px; height:24px">
+                    <span class="text-cancel text-black bg-secondary rounded-circle justify-content-center d-flex align-items-center m-auto" style="width:24px; height:24px; cursor:pointer">
                         <i class="fa-solid fa-xmark"></i>
                     </span>
                     <button type="submit" class="input-group-text float-right rounded-circle bg-transparent border-0 text-light" style="width:50px; height:50px"><i class="fa fa-search"></i></button>
@@ -58,12 +58,12 @@
                 Search results for:
                 <div class="d-inline-flex badge badge-soft-info" style="background:#1b1b1b!important; margin-left:15px!important">
                     {{request()->get('q')}}
-                    <span class="text-black bg-secondary rounded-circle justify-content-center d-flex align-items-center m-auto" style="margin-left:5px !important;width:20px; height:20px">
+                    <span class="text-black cancel-badge bg-secondary rounded-circle justify-content-center d-flex align-items-center m-auto" enable-badge=true style="margin-left:5px !important;width:20px; height:20px; cursor:pointer">
                         <i class="fa-solid fa-xmark"></i>
                     </span>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-12 d-inline badge badge-soft-info result-found text-right text-white" style="color:blue !important;background:#1b1b1b !important">
+            <div class="col-md-6 col-sm-12 d-inline badge badge-soft-info result-found text-right text-white" style="color:#2062EF !important;background:#1b1b1b !important">
                 {{ $results_count }}  Results found
             </div>
         </div>
@@ -82,49 +82,6 @@
                 </span>
             </div>
         </div>
-
-        <!-- <div class="container m-3 filters" style="background:#1b1b1b; border-radius:10px">
-            <div style="width:20%; color:#C0C0C0;" class="mt-2 mx-2">
-                <i class="mx-2 fa fa-users" aria-hidden="true"></i>Followers
-                <select class="form-select mt-2 border-0 filter-form form-select-lg b mb-3" style="height: 48px; background-color:#121212" aria-label=".form-select-lg example">
-                    <option value="1">10.5k</option>
-                    <option value="2">9k</option>
-                    <option value="3">5k</option>
-                </select>
-            </div>
-            <div style="width:20%; color:#C0C0C0;" class="mt-2 mx-2">
-                <i class="mx-2 fa-sharp fa-solid fa-calendar-week"></i>Tracks
-                <select class="form-select mt-2 border-0 filter-form form-select-lg b mb-3" style="height: 48px; background-color:#121212" aria-label=".form-select-lg example">
-                    <option value="1">10.5k</option>
-                    <option value="2">9k</option>
-                    <option value="3">5k</option>
-                </select>
-            </div>
-            <div style="width:20%; color:#C0C0C0;" class="mt-2 mx-2">
-                <i class="mx-2 fa-solid fa-clock"></i>Time Updated
-                <select class="form-select border-0 mt-2 filter-form form-select-lg b mb-3" style="height: 48px; background-color:#121212" aria-label=".form-select-lg example">
-                    <option value="1">10.5k</option>
-                    <option value="2">9k</option>
-                    <option value="3">5k</option>
-                </select>
-            </div>
-            <div style="width:20%; color:#C0C0C0;" class="mt-2 mx-2">
-                <i class="mx-2 fa-solid fa-microphone"></i>Artists
-                <select class="form-select border-0 mt-2 filter-form form-select-lg b mb-3" style="height: 48px; background-color:#121212" aria-label=".form-select-lg example">
-                    <option value="1">10.5k</option>
-                    <option value="2">9k</option>
-                    <option value="3">5k</option>
-                </select>
-            </div>
-            <div style="width:20%; color:#C0C0C0;" class="mt-2 mx-2">
-                <i class="mx-2 fa-light fa-compact-disc"></i>Genres
-                <select class="form-select border-0 mt-2 filter-form form-select-lg b mb-3" style="height: 48px; background-color:#121212" aria-label=".form-select-lg example">
-                    <option value="1">10.5k</option>
-                    <option value="2">9k</option>
-                    <option value="3">5k</option>
-                </select>
-            </div>
-        </div> -->
     </div>
     <div>
         @if($playlists->count())
@@ -138,7 +95,7 @@
                 </div>
             @endif
 
-            <div class="table-responsive container" style="display:@php if( !isset($_SESSION['grid']) || !$_SESSION['grid'] ) echo('block'); else echo('none'); @endphp;">
+            <div class="table-responsive container" style="display:@php if( isset($_SESSION['grid']) && $_SESSION['grid'] ) echo('block'); else echo('none'); @endphp;">
                 <table id="main-search-table" data-pagination="true" data-show-pagination-switch="true" class="container table text-white">
                     <thead class="mobile-d-none">
                         <tr class="">
@@ -148,36 +105,18 @@
                                     <div class="col-md-6 col-sm-12"></div>
                                     <div class="col-md-6 col-sm-12 row">
                                         <div class="col-md-3 col-4">
-                                            @if(request()->input('sortBy') && request()->input('sortBy') === 'followers')
-                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'followers'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                            @elseif(request()->input('sortByAsc') && request()->input('sortByAsc') === 'followers')
-                                                <a href="{{request()->fullUrlWithQuery(['sortByAsc' => null, 'sortBy' => 'followers'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                            @else
-                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => 'followers', 'sortByAsc' => null])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                            @endif
+                                            <a>
                                                 <i class="mx-2 fa fa-users" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                         <div class="col-md-6 col-4">
-                                            @if(request()->input('sortBy') && request()->input('sortBy') === 'lastUpdated')
-                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'lastUpdated'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                            @elseif(request()->input('sortByAsc') && request()->input('sortByAsc') === 'lastUpdated')
-                                                <a href="{{request()->fullUrlWithQuery(['sortByAsc' => null, 'sortBy' => 'lastUpdated'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                            @else
-                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => 'lastUpdated', 'sortByAsc' => null])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                            @endif
-                                                <i class="mx-2 fa-sharp fa-solid fa-calendar-week"></i>
+                                            <a>
+                                                <i class="mx-2 fa-solid fa-clock"></i>
                                             </a>
                                         </div>
                                         <div class="col-md-3 col-4">
-                                            @if(request()->input('sortBy') && request()->input('sortBy') === 'tracks')
-                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'tracks'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                            @elseif(request()->input('sortByAsc') && request()->input('sortByAsc') === 'tracks')
-                                                <a href="{{request()->fullUrlWithQuery(['sortByAsc' => null, 'sortBy' => 'tracks'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                            @else
-                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => 'tracks', 'sortByAsc' => null])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
-                                            @endif
-                                                <i class="mx-2 fa-solid fa-clock"></i>
+                                            <a>
+                                                <i class="fa-solid fa-album-collection"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -211,7 +150,7 @@
                                             @else
                                                 <a href="{{request()->fullUrlWithQuery(['sortBy' => 'lastUpdated', 'sortByAsc' => null])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
                                             @endif
-                                                <i class="mx-2 fa-sharp fa-solid fa-calendar-week"></i>
+                                                <i class="mx-2 fa-solid fa-clock"></i>
                                             </a>
                                         </div>
                                         <div class="col-md-3 col-4">
@@ -222,7 +161,7 @@
                                             @else
                                                 <a href="{{request()->fullUrlWithQuery(['sortBy' => 'tracks', 'sortByAsc' => null])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
                                             @endif
-                                                <i class="mx-2 fa-solid fa-clock"></i>
+                                                <i class="fa-solid fa-album-collection"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -297,14 +236,13 @@
                                             <span id="playlist_followers">{{ $playlist->formatted_followers }}</span>
                                         </div>
                                         <div class="col-md-6 col-4 text-left d-flex align-items-center text-truncate" style="color:#C0C0C0">
-                                            <i width ="14px" height-="14px" class="mr-fix mobile-d fa-sharp fa-solid fa-calendar-week" style="font-size:10px"></i>
+                                            <i width ="14px" height-="14px" class="mr-fix mobile-d  fa-solid fa-album-collection" style="font-size:10px;"></i>
                                             <span id="playlist_updated"><x-friendly-date :date="$playlist->last_updated_on"/></span>
                                         </div>
-        
                                         <div class="col-md-3 col-4 followers text-left d-flex align-items-center" style="color:#C0C0C0">
                                             <i width ="14px" height-="14px" class="mr-fix mobile-d fa-solid fa-clock" style="font-size:10px"></i>
                                             <span id="playlist_tracks">{{ $playlist->number_of_tracks }}</span>                                        </div>
-                                    </div>
+                                        </div>
                                     </div>
                                 </td>
                                 <td class="mobile-d">
@@ -355,7 +293,7 @@
                 </table>
             </div>
 
-            <div class="list-responsive container row m-auto" style="display:@php if( isset($_SESSION['grid']) && $_SESSION['grid'] ) echo('flex'); else echo('none'); @endphp;">
+            <div class="list-responsive container row m-auto" style="display:@php if( !isset($_SESSION['grid']) || !$_SESSION['grid'] ) echo('flex'); else echo('none'); @endphp;">
                 @include('frontend.includes.partials.gridlist',['playlists'=>$playlists])
             </div>
 
@@ -407,6 +345,14 @@
     $(function () {
         $('#search_limit_exceeded_modal').modal('show');
 
+        $(".text-cancel").click(function(){
+            $(".body-search").val("");
+        });
+        $(".cancel-badge").click(function(){
+            $(this).attr("enable-badge", false);
+            $("div:has")
+        });
+
         $('.unlockPlaylistBtn').click(function (e) {
             let playlistId = $(this).data('playlist-id');
             console.log('Playlist ID');
@@ -431,6 +377,7 @@
 
         $(".open-modal").click(function (e) {
             var playlist_id = $(this).attr('data-playlist-id');
+            $("input[name='playlist_id']").val(playlist_id);
             $(".playlist_unlock_detail img").attr('src', $("tr[data-id='"+playlist_id+"'] img").attr('src'));
             $(".playlist_unlock_detail #playlist_name").text($("tr[data-id='"+playlist_id+"'] span#playlist_name").text());
             $(".playlist_unlock_detail #playlist_followers").text($("tr[data-id='"+playlist_id+"'] span#playlist_followers").text());
@@ -441,6 +388,7 @@
         
         $(".open-modal-grid").click(function (e) {
             var playlist_id = $(this).attr('data-playlist-id');
+            $("input[name='playlist_id']").val(playlist_id);
             $(".playlist_unlock_detail img").attr('src', $("div[data-grid-id='"+playlist_id+"'] span.img-src").text());
             $(".playlist_unlock_detail #playlist_name").text($("div[data-grid-id='"+playlist_id+"'] span.name").text());
             $(".playlist_unlock_detail #playlist_followers").text($("div[data-grid-id='"+playlist_id+"'] span.followers").text());
@@ -464,5 +412,20 @@
 
 
 <style>
+
+    div.badge:has([enable-badge=false]){
+        display: none !important;
+    }
+
+    input.search_input:-webkit-autofill{
+        -webkit-box-shadow: white 0 0 0 1000px inset !important;
+        -webkit-text-fill-color:black !important;
+    }
+
+    @media screen and (max-width:767px){
+        .list-responsive{
+            padding: 0px !important;
+        }
+    }
     
 </style>

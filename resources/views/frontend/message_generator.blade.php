@@ -17,12 +17,12 @@
     @endforeach
 </p>
 <div class="message container row m-auto">
-    <span class="h2"> Generate Message</span>
+    <span class="head_text"><i class="me-2 mobile-d fa-regular fa-chevron-left" width="20px" height="20px"></i> Generate Message</span>
     <div class="col-md-8 col-sm-12 p-4 mt-3 card composer-email container">
         <div class="h4">Email</div>
         <input class="form-control border-0" type="text" placeholder="To">
         <input class="form-control border-0" id="subject" type="text" placeholder="subject">
-        <div class="input-group">
+        <div class="input-group mobile-d-none">
             <div class="input-group-prepend">
             <span class="input-group-text border-0 h-100" id="inputGroupPrepend"><i class="fa-solid fa-list-music"></i></span>
             </div>
@@ -266,7 +266,7 @@ foreach ($playlist->contacts as $contact) {
 
     #inputGroupPrepend{
         width: 36px;
-        border-radius: 10px 0px 0px 10px;
+        border-radius: 10px 0px 0px 10px !important;
     }
 
     .email-template, .composer-email{
@@ -275,9 +275,13 @@ foreach ($playlist->contacts as $contact) {
 
     .message .form-control, div.tox.tox-tinymce *, 
     .message textarea, #inputGroupPrepend {
-        background-color: #121212;
+        background: #121212;
         color:white;
         border-radius:10px;
+    }
+
+    body#tinymce{
+        padding:8px;
     }
 
     .template-content *{
@@ -336,6 +340,10 @@ foreach ($playlist->contacts as $contact) {
         font-size: 18px;
     }
 
+    .head_text{
+        font-size: 35px;
+    }
+
     @media (max-width: 1693px)
     {
         #texttipbox{
@@ -346,6 +354,11 @@ foreach ($playlist->contacts as $contact) {
 
     @media (max-width: 767px)
     {
+
+        .head_text{
+            font-size: 20px;
+        }
+
         #gmailbtn
         {
             display:none;

@@ -93,7 +93,9 @@ Route::name('frontend.')->namespace('Frontend')->middleware(['auth', 'verified']
     Route::get('/profile/security', 'ProfileController@security')->name('security')->withoutMiddleware(['verified']);
     Route::get('/profile/subscription', 'ProfileController@subscription')->name('subscription')->withoutMiddleware(['verified']);
     Route::post('/profile', 'ProfileController@update')->name('profile.update')->withoutMiddleware(['verified']);
-    Route::post('/updateSpotifyArtist', 'ProfileController@updateSpotifyArtist')->name('profile.update-spotify-artist')->withoutMiddleware(['verified']);
+    Route::post('/profile/avatar', 'ProfileController@updateAvatar')->name('profile.updateAvatar')->withoutMiddleware(['verified']);
+    Route::post('/profile/password', 'ProfileController@updatePassword')->name('profile.updatePassword')->withoutMiddleware(['verified']);
+    Route::post('/updateArtistID', 'ProfileController@updateArtistID')->name('profile.update-spotify-artist')->withoutMiddleware(['verified']);
 
     Route::get('/myplaylist/{playlist_id}', 'FrontendController@playlistDetail')->name('playlist_detail');
 

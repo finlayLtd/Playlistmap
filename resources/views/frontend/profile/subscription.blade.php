@@ -93,12 +93,7 @@
         
     </div>
     <div class="col-md-7 newDiv">
-        <div style="font-family: 'Lato';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 36px;
-            color: #FFFFFF;">
+        <div style="font-family: 'Lato';font-style: normal;font-weight: 700;font-size: 24px;line-height: 36px;color: #FFFFFF;">
             Subscritption
         </div>
 
@@ -110,8 +105,8 @@
                 <div class="thLetter">
                     Monthly
                 </div>
-                <div class="thLetter">
-                    <span class="price-plan">${{ $user->subscription()->plan->price}}</span>/Month
+                <div class="thLetter position-relative">
+                    <span class="price-plan">${{ $user->subscription()->plan->price}}</span><span class="position-absolute" style="font-size:12px;color: #827F7F">/Month</span>
                 </div>
                 <div class="thLetter">
                     {{ $user->subscription()->plan->getFeatureByName('credits'.($user->subscription()->plan->id==1?'':'-'.($user->subscription()->plan->id-1)))->value}} Credits/Month <i class="fas fa-exclamation-circle" style="color: #C0C0C0;"></i>
@@ -126,20 +121,9 @@
             </div>
         </div>
 
-
-
-        <div style="font-family: 'Lato';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 36px;
-            color: #FFFFFF;
-            margin-top:40px;" class="text-center">
+        <div style="font-family: 'Lato';font-style: normal;font-weight: 700;font-size: 24px;line-height: 36px;color: #FFFFFF;margin-top:40px;" class="text-center">
             Payment Methods
-            <div style="font-weight: 400;
-                font-size: 16px;
-                line-height: 24px;
-                letter-spacing: -0.0044em;margin-top:16px">
+            <div style="font-weight: 400;font-size: 16px;line-height: 24px;letter-spacing: -0.0044em;margin-top:16px">
                 Securely add or remove payment methods.
                 <button type="button" class="manage-plan btn btn-outline-secondary" style="margin-left: 10px; margin-top:16px; padding: 10px !important; border-radius: 25px !important; color: white; float:right;"> Manage Payments</button>
             </div>
@@ -151,6 +135,11 @@
 
 
 <style>
+
+    .form-outline .form-control.active~.form-label, .form-outline .form-control:focus~.form-label {
+        transform: translateY(-1rem) translateY(-0.2rem) scale(.8);
+    }
+    
     .thLetter{
         width:20%;
         font-family: 'Lato';
@@ -160,6 +149,9 @@
         line-height: 24px;
         letter-spacing: -0.0044em;
         color: #FFFFFF;
+    }
+    .thLetter.position-relative span.position-absolute{
+        top: -6px;
     }
 
     .profileModal{
@@ -222,27 +214,16 @@
         background: #2062EF !important;
     }
 
-
-    
-
-
-    @media screen and (min-width:768px){
-        #save{
-            justify-content: flex-end!important;
-        }
-        .newDiv{
-            padding: 20px;
-        }
-
-    }
-
-
     @media screen and (max-width:767px){
         #save{
             justify-content: center !important;
         }
         .newDiv{
             padding: 44px;
+        }
+
+        .thLetter.position-relative span.position-absolute{
+            top: -12px;
         }
 
         .thLetter{

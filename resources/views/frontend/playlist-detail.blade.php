@@ -3,56 +3,61 @@
 @section('content')
 
 <section class="detail-section background-position-center" style="background:linear-gradient(360deg, #121212 0%, rgba(24, 24, 24, 0) 500%), url({{$playlist->image}}); background-position:top;background-size:cover">
-    <div class="mx-3"><span><a href="{{route('frontend.search')}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists / {{$playlist->name}}</div>
-    <div class="container row my-5">
-        <div class="col-md-9 col-sm-12 row">
-            <div class="col-md-4 col-sm-12">
-                <div class="position-relative overflow-hidden" style="width:100%; padding-top:100%; border-radius:10px">
-                    <img class="position-absolute object-fit" style="object-fit:cover; top:0px; left:0px;" src="{{ $playlist->image }}" />
-                </div>
-            </div>
-            <div class="col-md-8 col-sm-12 m-auto">
-                <span class="mobile-d-none">playlist</span>
-                <p class="h2 my-3" style="line-height:1.5">{{$playlist->name}}</p>
-                <div class="d-flex my-3 detail-info">
-                    <div class="me-2 span"><i class="fa-solid fa-users mx-2"></i>Followers {{ $playlist->formatted_followers }} <span></span></div>
-                    <div style="border-left:3px solid gray" class="span">
-                        <i class="mx-2 fa-sharp fa-solid fa-calendar-week"></i>Tracks {{ $playlist->number_of_tracks }}
+    <div style="backdrop-filter:blur(5px);">
+        <div class="mx-3"><span><a href="{{route('frontend.search')}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists / {{$playlist->name}}</div>
+        <div class="container detail-container row my-5">
+            <div class="col-md-9 col-sm-12 row">
+                <div class="col-md-4 col-sm-12 justify-content-center d-block">
+                    <div class="detail-img m-auto" style="border-radius:20px;box-shadow: 0px 15px 0px -10px rgb(255,255,255,0.3)">
+                        <div class="position-relative w-100" style="padding-top:100% !important; box-shadow: 0px 30px 0px -20px rgb(255,255,255,0.3);border-radius: 30px;">
+                            <img src="{{ $playlist->image }}" class="w-100 position-absolute" style="top:0px;left:0px; height:100%;object-fit:cover; border-radius:10px">
+                        </div>
+                        <span class="d-none img-src">{{$playlist->image}}</span>
                     </div>
                 </div>
-                <span>Updated:  <x-friendly-date :date="$playlist->last_updated_on"/></span>
-                <div class="d-flex mt-3 gap-3">
-                    <span class="detail-icon"><i class="fa-solid fa-flag"></i></span>
-                    <span class="detail-icon"><i class="fa-sharp fa-solid fa-share-nodes"></i></span>
-                    <a onclick="ym(73260880, 'reachGoal', 'playonspotify'); return true;" id="spotifybtn" href="{{ $playlist->spotify_deep_link }}">
-                        <button class="btn detail-button btn-primary rounded-pill"><i class="fa-brands fa-spotify"></i>Play On Spotify</button>
-                    </a>            
+                <div class="col-md-8 col-sm-12 m-auto">
+                    <span class="mobile-d-none">playlist</span>
+                    <p class="h2 my-3" style="line-height:1.5">{{$playlist->name}}</p>
+                    <div class="d-flex my-3 detail-info">
+                        <div class="me-2 span"><i class="fa-solid fa-users mx-2"></i>Followers {{ $playlist->formatted_followers }} <span></span></div>
+                        <div style="border-left:3px solid gray" class="span">
+                            <i class="mx-2 fa-sharp fa-solid fa-calendar-week"></i>Tracks {{ $playlist->number_of_tracks }}
+                        </div>
+                    </div>
+                    <span class="update_text">Updated:  <x-friendly-date :date="$playlist->last_updated_on"/></span>
+                    <div class="d-flex mt-3 gap-3">
+                        <span class="detail-icon" data-target="#reportPlaylistModal" data-toggle="modal"><i class="fa-solid fa-flag"></i></span>
+                        <span class="detail-icon"><i class="fa-sharp fa-solid fa-share-nodes"></i></span>
+                        <a onclick="ym(73260880, 'reachGoal', 'playonspotify'); return true;" id="spotifybtn" href="{{ $playlist->spotify_deep_link }}">
+                            <button class="btn detail-button btn-primary rounded-pill"><i class="fa-brands fa-spotify"></i>Play On Spotify</button>
+                        </a>            
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3 col-sm-12 container contact-detail d-flex flex-column justify-content-center">
-            <div class="container h5">Contact Details</div>
-            <div class="container h6">
-                <div class="my-3">
-                    <span class="text-white"><i class="fa-solid fa-circle-user"></i></span> {{ $playlist->owner }}
+            <div class="col-md-3 col-sm-12 container contact-detail d-flex flex-column justify-content-center">
+                <div class="container h5">Contact Details</div>
+                <div class="container h6">
+                    <div class="my-3">
+                        <span class="text-white"><i class="fa-solid fa-circle-user"></i></span> {{ $playlist->owner }}
+                    </div>
+                    <div class="text-truncate my-3" style="overflow:inherit">
+                        <span class="text-white"><i class="fa-solid fa-circle-envelope"></i></span> 
+                            @foreach($playlist->contacts as $contact)
+                                @if(filter_var($contact, FILTER_VALIDATE_EMAIL))
+                                    {{ $contact }}
+                                @else
+                                    <a href="{{"https://www.instagram.com/" . substr($contact, 1) . "/" }}" target="_blank">
+                                        {{"https://www.instagram.com/" . substr($contact, 1) . "/" }}
+                                    </a>
+                                @endif
+                            @endforeach
+                    </div>
                 </div>
-                <div class="text-truncate my-3" style="overflow:inherit">
-                    <span class="text-white"><i class="fa-solid fa-circle-envelope"></i></span> 
-                        @foreach($playlist->contacts as $contact)
-                            @if(filter_var($contact, FILTER_VALIDATE_EMAIL))
-                                {{ $contact }}
-                            @else
-                                <a href="{{"https://www.instagram.com/" . substr($contact, 1) . "/" }}" target="_blank">
-                                    {{"https://www.instagram.com/" . substr($contact, 1) . "/" }}
-                                </a>
-                            @endif
-                        @endforeach
-                </div>
+                <div class="text-center container">
+                    <a onclick="ym(73260880, 'reachGoal', 'generatemessage'); return true;" id="generatemsgbtn" href="{{ route('frontend.message-generator', $playlist) }}">
+                        <button class="detail-button w-100 btn btn-primary rounded-pill text-white"><i class="fa-solid fa-message-dots"></i>Generate Message</div>
+                    </a>
             </div>
-            <div class="text-center container">
-                <a onclick="ym(73260880, 'reachGoal', 'generatemessage'); return true;" id="generatemsgbtn" href="{{ route('frontend.message-generator', $playlist) }}">
-                    <button class="detail-button w-100 btn btn-primary rounded-pill text-white"><i class="fa-solid fa-message-dots"></i>Generate Message</div>
-                </a>
         </div>
     </div>
 </section>
@@ -113,6 +118,7 @@
 </section>
 
 @include('frontend.includes.modals.confirm_unlock')
+@include('frontend.includes.modals.report_playlist')
 
 @endsection
 
@@ -142,9 +148,10 @@
             var data_array1=[], data_array2=[];
 
             for (let index = 0; index < followers['statistics']['followers'].length; index++) {
-                label_array.push(Object.values(followers['statistics']['followers'][index])[0]);
+                var tempDate = new Date(Number(Object.values(followers['statistics']['followers'][index])[0]));
+                var tempArray = tempDate.toString().split(" ");
+                label_array.push(tempArray[1]+" "+tempArray[2]);
                 data_array1.push(Object.values(followers['statistics']['followers'][index])[1]);
-                data_array2.push(Object.values(followers['statistics']['tracks'][index])[1]);
             }
 
             ctx = document.getElementById('followers_analyse');
@@ -356,6 +363,10 @@
         background: #1b1b1b !important;
         border: 1px gray solid !important;
         color: #5EFF5A !important;
+        height:40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .contact-detail{
@@ -368,7 +379,6 @@
 
     span[data-toggle = "modal"]{
         display: inline!important;
-        width: 115px !important;
         padding: 10px !important;
     }
 
@@ -378,6 +388,23 @@
             padding:0px  !important;
             text-align: center;
         }
+
+        .update_text{
+            font-size: 14px;
+        }
+
+        .detail-container{
+            padding:0px !important;
+        }
+
+        .detail-img{
+            width: 70% !important;
+        }
+
+        p.h2{
+            font-size: 20px;
+        }
+
 
         .detail-section .row{
             justify-content: center;

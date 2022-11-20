@@ -41,16 +41,33 @@ class ProfileController extends Controller {
     public function update(Request $request) {
         $user = auth()->user();
 
-        // $request->validate([
-        //     'name' => 'required',
-        //     'email' => "required|unique:users,email,$user->id"
-        // ]);
+        $request->validate([
+            'name' => 'required',
+        ]);
 
-        $user->update($request->except(['password', 'avatar']));
+        if ($name = $request->input('name'))
+            $user->update(['name' => $name]);
+        return redirect()->back()->with('success', 'Profile Updated Successfully');
+    }
+
+    public function updateAvatar(Request $request) {
+        $user = auth()->user();
         $user->uploadImage('avatar', 'images/users');
+        return redirect()->back()->with('success', 'Profile Avatar Updated Successfully');
+    }
+
+    public function updatePassword(Request $request){
+        
+        $user = auth()->user();
+
+        $request->validate([
+            'password' => 'required|string|min:6',
+            'confirm_password' => 'required|same:password|min:6'
+        ]);
+
         if ($password = $request->input('password'))
             $user->update(['password' => bcrypt($password)]);
-        return redirect()->back()->with('success', 'Profile Updated Successfully');
+        return redirect()->back()->with('success', 'Password Updated Successfully');
     }
 
     public function plans(Request $request) {

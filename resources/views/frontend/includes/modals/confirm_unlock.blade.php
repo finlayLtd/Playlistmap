@@ -19,7 +19,7 @@
                             <i class="fa fa-users" aria-hidden="true" style="color:#827F7F"></i>
                             Followers
                             <span id="playlist_followers"></span>
-                            <i class="fa-sharp fa-solid fa-calendar-week" style="color:#827F7F; border-left: 1px #827f7f solid; padding-left:5px;"></i>
+                            <i class="fa-solid fa-album-collection" style="color:#827F7F; border-left: 1px #827f7f solid; padding-left:5px;"></i>
                             Tracks
                             <span id="playlist_tracks"></span>
                         </div>

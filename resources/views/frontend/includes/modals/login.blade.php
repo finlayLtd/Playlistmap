@@ -41,9 +41,9 @@
                                     @enderror
                                 </div>
                                 <div class="d-flex justify-content-between">
-                                    <div class="mt-2 text-left">
-                                        <input class="form-check-input" style="cursor:pointer" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} checked>
-                                        <label class="form-check-label" for="remember">Remember me</label>
+                                    <div class="mt-2 text-left" >
+                                        <input class="form-check-input" type="checkbox" style="cursor:pointer" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} checked>
+                                        <label class="form-check-label" for="remember" style="cursor:pointer">Remember me</label>
                                     </div>
                                     <div class="mt-2 text-right">
                                         <a class="fs--1 mt-3 forget_link" data-toggle="modal" style="cursor:pointer" data-target="#forget_modal">Forgot Password?</a>
@@ -78,8 +78,8 @@
     $(document).ready(function(){  
         
         $(".register-button").click(function(){
-            $("#login_modal.show").removeClass("show");
-            $("#register_modal").css('display', "block");
+            $("#login_modal").modal('hide')
+            $("#register_modal").modal("show");
         });
 
         $("#login_modal div[data-dismiss]").click(function(){
@@ -88,8 +88,8 @@
         })
         
         $(".forget_link").click(function(){
-            $("#login_modal.show").removeClass("show");
-            $("#forget_modal").css('display', "block");
+            $("#login_modal.show").modal("hide");
+            $("#forget_modal").modal("show");
         });
 
     });
@@ -107,7 +107,7 @@
         width:35px; 
         height:35px;
         right:0px;
-        top:-7%;
+        top:-10%;
         z-index:3000;
         background-color: #121212;
     }

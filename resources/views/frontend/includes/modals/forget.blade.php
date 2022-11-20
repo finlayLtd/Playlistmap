@@ -37,7 +37,7 @@
 
     $(document).ready(function(){
         $('.forget-modal-close').click(function(){
-            $("#login_modal").addClass("show");
+            $("#login_modal").modal("show");
         });
     })
 
@@ -54,7 +54,7 @@
         width:35px; 
         height:35px;
         right:0px;
-        top:-7%;
+        top:-15%;
         z-index:3000;
         background-color: #121212;
     }

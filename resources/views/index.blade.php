@@ -9,9 +9,9 @@
             <div class="w-100 search-wrapper red">
                 @php($route = auth()->check() ? route('frontend.search') : route('frontend.search.guest')) 
                 <form class="searchform" class="homepage-form-search @if (Auth::guest()) guest @endif" action="{{ $route }}">
-                    <div class="input-group">
-                        <input class="playlistmap-search" class="form-control bg-transparent text-100" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"
-                               placeholder="Search for your genre or a similar sounding artist"/>
+                    <div class="input-group position-relative bg-light rounded-pill">
+                        <input class="playlistmap-search form-control bg-transparent text-100" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"/>
+                        <span class="text-black placeholder position-absolute">Try "<span class="text-danger">edm</span>" or "<span class="text-danger">weekend</span>"</span>
                         <button onclick="ym(73260880, 'reachGoal', 'homepageserachbtn'); return true;" type="submit" class="input-group-text bg-transparent text-100"><i class="fas fa-magnifying-glass"></i></button>
                         <button class="input-group-text clear-input"><i class="fas fa-circle-xmark"></i></button>
                     </div>
@@ -36,7 +36,7 @@
             <div class="row how-it-works" style="margin: 0px;">
 
                 <div class="single-how-it-works col-md-4 text-center">
-                    <div class="row">
+                    <div class="row chain-works">
                         <div class="col-4 col-md-12" style="margin: auto;">
                             <div class="image-wrapper d-flex align-items-center justify-content-center m-auto">
                                 <img class="normal smallImage" src="{{asset('/images/graphics/find.svg')}}" />
@@ -45,16 +45,16 @@
                             </div>
                         </div>
                         <div class="col-8 col-md-12">
-                            <h4 class="title2">Discover</h4>
+                            <h4 class="title2">Find</h4>
                             <div class="how-it-work-text text2">
-                                Identify hundreds of playlists that match your unique genre, subgenre, and sound with our advanced search and filters.
+                                Identify relevant Spotify playlists that match your genre and sound.
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="single-how-it-works col-md-4 text-center">
-                    <div class="row">
+                    <div class="row chain-works">
                         <div class="col-4 col-md-12" style="margin:auto;">
                             <div class="image-wrapper d-flex align-items-center justify-content-center m-auto">
                                 <img class="normal smallImage" src="{{asset('/images/graphics/unlock.svg')}}" />
@@ -74,7 +74,7 @@
 
                 <div class="single-how-it-works col-md-4 text-center">
 
-                    <div class="row">
+                    <div class="row chain-works">
                         <div class="col-4 col-md-12" style="margin:auto;">
                             <div class="image-wrapper d-flex align-items-center justify-content-center m-auto">
                                 <img class="normal smallImage" src="{{asset('/images/graphics/pitch.svg')}}" />
@@ -85,7 +85,7 @@
                         <div class="col-8 col-md-12">
                             <h4 class="title2">Pitch</h4>
                             <div class="how-it-work-text  text2">
-                                Eliminate the stress of writing pitches with our customizable templates. Boost your open rate and get accepted to your ideal playlists.
+                                Use our customizable templates to boost your open rate, create valuable connections, and get accepted to your ideal playlists.
                             </div>
                         </div>
                     </div>
@@ -138,8 +138,8 @@
                         <span class="noneMobile">1/3</span>
                         <h3 class="mt-4 mb-4 noneMobile">Playlisting</h3>
                         <h6 class="mb-4 sliderText">Quickly identify playlists that match your music to improve your acceptance rate. Uncover contact information for hard-to-get curators, create valuable connections, and send them your tracks.</h6>
-                        <a href="#">
-                            <button class="tertiary big m-auto" data-toggle="modal" data-target="#register_modal"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
+                        <a>
+                            <button class="tertiary big m-auto rounded-pill" data-toggle="modal" data-target="#register_modal"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
                         </a>
                     </div>
                 </div>
@@ -154,8 +154,8 @@
                         <span class="noneMobile">2/3</span>
                         <h3 class="mt-4 mb-4 noneMobile">Pitch Templates</h3>
                         <h6 class="mb-4 sliderText">We get it—you’re a musician, not a marketer.  Use our customizable message templates to speed up your outreach, simplify the pitch process, and boost your success rate. </h6>
-                        <a href="#">
-                            <button class="tertiary big m-auto" data-toggle="modal" data-target="#register_modal"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
+                        <a>
+                            <button class="tertiary big m-auto rounded-pill" data-toggle="modal" data-target="#register_modal"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
                         </a>
                     </div>
                 </div>
@@ -170,8 +170,8 @@
                         <span class="noneMobile">3/3</span>
                         <h3 class="mt-4 mb-4 noneMobile">AI Recommendations</h3>
                         <h6 class="mb-4 sliderText"><b>Coming soon. With our new proprietary AI algorithm, we’ll automatically match your tracks with the most relevant playlists to make pitching your music truly effortless. </b></h6>
-                        <a href="#">
-                            <button class="tertiary big m-auto" data-toggle="modal" data-target="#register_modal"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
+                        <a>
+                            <button class="tertiary big m-auto rounded-pill" data-toggle="modal" data-target="#register_modal"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
                         </a>
                     </div>
                 </div>
@@ -277,8 +277,8 @@
                 <h4 class="mt-4 mb-4 centerMobile">Get Started Today!</h4>
                 <h5 class="mb-4 sliderText">Want to experience the magic for yourself?<br>
                     Sign up now (no credit card required) to start getting the streams your music deserve</h5>
-                <a href="#">
-                    <button class="tertiary big m-auto"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
+                <a>
+                    <button class="tertiary big m-auto rounded-pill"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
                 </a>
             </div>
         </div>
@@ -299,8 +299,32 @@
         color: #C0C0C0;
     }
 
+    .playlistmap-search{
+        z-index: 10;
+    }
+
+    input:focus + .placeholder{
+        display: none;
+    }
+
+    .placeholder{
+        left: 25px;
+        cursor: auto !important;
+        font-size: 20px;
+        z-index: 9;
+        background: transparent !important;
+    }
+
     .noneDesktop{
         display: none;
+    }
+
+    .chain-works{
+        padding:0px 34px;
+    }
+
+    .title2{
+        margin:39.5px auto 24px !important;
     }
 
     @media screen and (max-width:767px){
@@ -430,7 +454,7 @@
         }
 
         .title2{
-            margin-top: 0px !important;
+            margin: 0px !important;
             text-align: left;
             font-family: 'Lato';
             font-style: normal;
@@ -438,6 +462,10 @@
             font-size: 24px;
             line-height: 36px;
             color: #FFFFFF;
+        }
+
+        .chain-works{
+            padding: 0px !important;
         }
 
         .text1{
@@ -544,7 +572,8 @@
         .how-it-works{
             background: url({{asset('images/down_vector.png')}});
             background-repeat-x: no-repeat;
-            background-position: center;
+            background-position: left;
+            background-position-x:11.5%;
         }
 
         .backgroundClass{

@@ -111,24 +111,21 @@
 
                                         <td class="w-20 text-left mobile-d-none">
                                             @foreach(array_slice($playlist->artists, 0, 5) as $artist)
-                                                <a class="hover-text-decoration-none"
-                                                    href="{{ route('frontend.search', ['q' => $artist]) }}">
+                                                <a class="hover-text-decoration-none">
                                                     <span class="badge badge-soft-info cursor-pointer artist {{Helpers::stringsMatchWithAccents($artist, request()->query('q'))}}">
                                                         {{ $artist }}
                                                     </span>
                                                 </a>
                                             @endforeach
-                                            <x-modals.show-more :playlist="$playlist" col="artists" class="d-inherit" :tags="$playlist->artists"/>
                                         </td>
                                         <td class="w-20 text-left mobile-d-none">
                                             @foreach(array_slice($playlist->genres, 0, 5) as $genre)
-                                                <a class="hover-text-decoration-none" href="{{ route('frontend.search', ['q' => $genre]) }}">
+                                                <a class="hover-text-decoration-none">
                                                     <span class="badge badge-soft-info cursor-pointer genre {{Helpers::stringsMatchWithAccents($genre, request()->query('q'))}}">
                                                         {{ $genre }}
                                                     </span>
                                                 </a>
                                             @endforeach
-                                            <x-modals.show-more :playlist="$playlist" col="genres" :tags="$playlist->genres"/>
                                         </td>
                                     </tr>
                                 @endforeach

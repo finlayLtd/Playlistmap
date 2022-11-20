@@ -49,9 +49,8 @@ class RegisteredUserController extends Controller {
                     'password' => Hash::make($request->password),
                     'avatar' => $request['spotify-artist-image']
         ]));
-
+        
         event(new Registered($user));
-
         $user->insertSpotifyArtistID($request['spotify-artist-id']);
 //        $user->uploadProfileImageFromURL($request['spotify-artist-image']);
 

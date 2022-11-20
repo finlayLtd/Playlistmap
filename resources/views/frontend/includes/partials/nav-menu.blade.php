@@ -36,15 +36,15 @@
         <!-- <a class="nav-link mr-5" href="{{ route('login') }}">
             <button class="outlined"><i class="fa-solid fa-arrow-right-to-bracket"></i>Login</button>
         </a> -->
-        <button class="outlined mobile-d-none" data-toggle="modal" data-target="#login_modal">
+        <button class="outlined mobile-d-none login-link" data-toggle="modal" data-target="#login_modal">
             <i class="fa-solid fa-arrow-right-to-bracket"></i>Login
         </button>
     </li>
     <li class="nav-item free-trial d-flex">
-        <a class="nav-link mobile-d" data-toggle="modal" data-target="#login_modal">
+        <a class="nav-link mobile-d login-link" data-toggle="modal" data-target="#login_modal">
             <button class="tertiary text-white bg-transparent me-2" style="font-size:80%; border:white 1px solid" ><i class="fa-solid fa-arrow-right-to-bracket"></i>Login</button> 
         </a>
-        <a class="nav-link" data-toggle="modal" data-target="#register_modal">
+        <a class="nav-link register-link" data-toggle="modal" data-target="#register_modal">
             <button class="tertiary d-flex text-truncate" style="font-size:80%" ><i class="fas fa-badge-percent mobile-d-none text-black"></i><span class="mobile-d-none text-black">Start Free Trial</span><span class="mobile-d text-black">Sign Up</span</button> 
         </a>
     </li>
@@ -76,7 +76,7 @@
                 <i class="fas fa-chevron-down"></i>
             </div>
         </a>
-        <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="navbarDropdownUser">
+        <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="navbarDropdownUser" style="right:0px">
             <div class="rounded-lg py-2 links-wrapper">
                 @role('admin')
                 <a class="dropdown-item align-items-center" href="{{ route('backend.dashboard') }}">
@@ -128,6 +128,25 @@
  * 
  */?>
 </ul>
+
+<script>
+    $(document).ready(function(){
+        var verifyEmail = eval(<?php echo(Session::get('verifyEmail'))?>);
+        if(verifyEmail){
+            $("#verify_email").modal("show");
+        }
+        $(".login-link").on('click', function(){
+            $("#login_modal").modal("show");
+            $("#register_modal").modal("hide");
+            $("#forget_modal").modal("hide");
+        });
+        $(".register-link").on('click', function(){
+            $("#register_modal").modal("show");
+            $("#login_modal").modal("hide");
+            $("#forget_modal").modal("hide");
+        });
+    });
+</script>
 
 <style>
     #btntopregister

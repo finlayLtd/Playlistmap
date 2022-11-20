@@ -233,29 +233,6 @@ $(document).ready(function () {
         }
     }
 
-
-    /*
-     if ($('#artist-id').length > 0) {
-     $('#artist-id').autocomplete({
-     source: homeurl + "/getSpotifyArtistsByName/tiest",
-     minLength: 1,
-     select: function (event, ui)
-     {
-     $('#artist-id').val(ui.item.value);
-     }
-     }).data('ui-autocomplete')._renderItem = function (ul, item) {
-     //            return $("<li class='ui-autocomplete-row'></li>")
-     //                    .data("item.autocomplete", item)
-     //                    .append(item.label)
-     //                    .appendTo(ul);
-     return $("<li></li>")
-     .data("item.autocomplete", item)
-     .append("<a>" + "<img style='width:25px;height:25px' src='" + item.imgsrc + "' /> " + item.label + "</a>")
-     .appendTo(ul);
-     };
-     }*/
-
-
     if ($('#artist-id').length > 0) {
         addArtistAutoCompleteEvents();
     }
@@ -417,12 +394,15 @@ $(document).ready(function () {
     if ($('.testimonials-wrapper').length > 0) {
         $('.testimonials-wrapper').slick({
             infinite: false,
-            slidesToShow: 2,
+            slidesToShow: 1,
             variableWidth: true,
             prevArrow: $('.playlistmap-testimonials .testimonials-prev'),
             nextArrow: $('.playlistmap-testimonials .testimonials-next'),
         });
         $('.testimonials-wrapper').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            if (event.cancelable) {
+                event.preventDefault();
+             }
             console.log(currentSlide);
             let sliderCount = (slick.slideCount - 1);
             if (nextSlide === 0) { // slick on first element
@@ -683,11 +663,11 @@ function setModalPlan(yearly) {
 
 
 function addArtistAutoCompleteEvents() {
-    if ($("#artist-id").length === 0) {
+
+    if ($("[id='artist-id']").length === 0) {
         return;
     }
-
-    $("#artist-id").autocomplete({
+    $("[id='artist-id']").autocomplete({
         classes: {
             "ui-autocomplete": "artists-ui-list"
         },
@@ -723,27 +703,33 @@ function addArtistAutoCompleteEvents() {
                 success: function (data) {
                     $(".spotify-list").empty();
                     response($.map(data, function (result) {
-                        return {
-                            label: result.label,
-                            value: result.value,
-                            image: result.image
-                        };
+                        $("<li class='text-left m-2 text-truncate' onclick='selectArtist(`"+result.image+"`, `"+result.label+"`)'></li>")
+                        .data("result.autocomplete", result)
+                        .append("<img style='width:75px;height:75px;border-radius:100%;' src='" + result.image + "' /><span>" + result.label + "</span>")
+                        .appendTo($(".spotify-list").css('display', 'block'));
+                        return null;
+                        // return {
+                        //     label: result.label,
+                        //     value: result.value,
+                        //     image: result.image
+                        // };
                     }));
                 }
             });
         }
     }).data("ui-autocomplete")._renderItem = function (ul, item) {
+        console.log('itemsss');
         return $("<li class='text-left m-2' onclick='selectArtist(`"+item.image+"`, `"+item.label+"`)'></li>")
                 .data("item.autocomplete", item)
                 .append("<img style='width:75px;height:75px;border-radius:100%;' src='" + item.image + "' /><span>" + item.label + "</span>")
                 .appendTo($(".spotify-list").css('display', 'block'));
     };
 
-    $('#artist-id').on('focusout', (e) => {
-        $('#artist-id').removeClass('ui-autocomplete-loading');
+    $('[id="artist-id"]').on('focusout', (e) => {
+        $("[id='artist-id']").removeClass('ui-autocomplete-loading');
     });
 
-    $("#artist-id").focus();
+    $("[id='artist-id']").focus();
 
 }
 

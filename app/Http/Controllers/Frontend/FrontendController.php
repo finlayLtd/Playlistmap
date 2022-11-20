@@ -225,7 +225,6 @@ class FrontendController extends Controller {
 
     public function unlockPlaylist(Request $request) {
 
-
         try {
             if (user()->subscription()->getFeatureRemainings('credits') <= 0) {
                 return redirect()->back()
@@ -255,9 +254,10 @@ class FrontendController extends Controller {
             user()->subscription()->recordFeatureUsage('credits');
         }
         return redirect()->back()
-                        ->with('success', $message)
-                        ->with('unlockedPlaylistId', $request->playlist_id)
-                        ->with('currentUnlockedPlaylistId', $playlist->playlist_id);
+                        ->with('success', $message);
+                        // ->with('unlockedPlaylistId', $request->playlist_id)
+                        // ->with('currentUnlockedPlaylistId', $playlist->playlist_id);
+
     }
 
     private function replaceAccents($str) {
