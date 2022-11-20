@@ -129,6 +129,7 @@
         $(function(){
             $(".open-modal-grid").click(function (e) {
                 var playlist_id = $(this).attr('data-playlist-id');
+                $("input[name='playlist_id']").val(playlist_id);
                 $(".playlist_unlock_detail img").attr('src', $("div[data-grid-id='"+playlist_id+"'] span.img-src").text());
                 $(".playlist_unlock_detail #playlist_name").text($("div[data-grid-id='"+playlist_id+"'] span.name").text());
                 $(".playlist_unlock_detail #playlist_followers").text($("div[data-grid-id='"+playlist_id+"'] span.followers").text());
