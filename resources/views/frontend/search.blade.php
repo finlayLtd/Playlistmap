@@ -42,7 +42,7 @@
         <div class="justify-content-center">
             <form action="{{ route('frontend.search') }}">
                 <div class="input-group rounded-pill p-0"  style="background-color:#1b1b1b">
-                    <input class="form-control search_input rounded-pill border-0 py-0 bg-transparent text-white body-search" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"
+                    <input class="form-control search_input kkk rounded-pill border-0 py-0 bg-transparent text-white body-search" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"
                         placeholder="Type Music Genres, Artists Names, Playlist Names"
                     />
                     <span class="text-cancel text-black bg-secondary rounded-circle justify-content-center d-flex align-items-center m-auto" style="width:24px; height:24px; cursor:pointer">
@@ -417,7 +417,7 @@
         display: none !important;
     }
 
-    input.search_input:-webkit-autofill{
+    input.kkk:-webkit-autofill{
         -webkit-box-shadow: white 0 0 0 1000px inset !important;
         -webkit-text-fill-color:black !important;
     }
