@@ -331,7 +331,6 @@
                             +`</span></a>`;
             }
 
-            console.log(html);
             $(".analyse_badge").append(html);
         }); 
 

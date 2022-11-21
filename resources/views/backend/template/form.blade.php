@@ -18,7 +18,6 @@
 
         $('.placeholder').click(function () {
             let placeholder = $(this).html();
-            console.log($summernote.summernote('text'));
             $summernote.summernote('insertText', ` %%${placeholder}%% `);
         });
     </script>

@@ -251,7 +251,6 @@
                 } else if (field === 'message'){
                     if ($summernote.summernote('isEmpty') === false) {
                         text = $summernote.summernote('createRange').ec;
-                        console.log(text)
                     }
                 }
 

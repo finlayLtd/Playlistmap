@@ -354,9 +354,7 @@
         });
 
         $('.unlockPlaylistBtn').click(function (e) {
-            let playlistId = $(this).data('playlist-id');
-            console.log('Playlist ID');
-            console.log(playlistId);                                                   
+            let playlistId = $(this).data('playlist-id');                                               
             $('#playlist_id').val(playlistId);
             $('#unlock_playlist_modal').modal('show');
         });
@@ -415,11 +413,6 @@
 
     div.badge:has([enable-badge=false]){
         display: none !important;
-    }
-
-    input.kkk:-webkit-autofill{
-        -webkit-box-shadow: white 0 0 0 1000px inset !important;
-        -webkit-text-fill-color:black !important;
     }
 
     @media screen and (max-width:767px){

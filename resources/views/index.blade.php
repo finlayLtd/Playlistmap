@@ -10,14 +10,14 @@
                 @php($route = auth()->check() ? route('frontend.search') : route('frontend.search.guest')) 
                 <form class="searchform" class="homepage-form-search @if (Auth::guest()) guest @endif" action="{{ $route }}">
                     <div class="input-group position-relative bg-light rounded-pill">
-                        <input class="playlistmap-search form-control bg-transparent text-100" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"/>
+                        <input class="playlistmap-search form-control bg-transparent kkk text-100" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"/>
                         <span class="text-black placeholder position-absolute">Try "<span class="text-danger">edm</span>" or "<span class="text-danger">weekend</span>"</span>
                         <button onclick="ym(73260880, 'reachGoal', 'homepageserachbtn'); return true;" type="submit" class="input-group-text bg-transparent text-100"><i class="fas fa-magnifying-glass"></i></button>
                         <button class="input-group-text clear-input"><i class="fas fa-circle-xmark"></i></button>
                     </div>
                 </form>
             </div>
-            <a href="#" class="buttonMobileCenter"><button class="secondary how-it-works"><i class="fas fa-play"></i>See how it works</button></a>
+            <a class="buttonMobileCenter"><button class="secondary how-it-works" data-toggle="modal" data-target="#demoVideoModal"><i class="fas fa-play"></i>See how it works</button></a>
         </div>
         @include('frontend.components.pages.trusted-by', ['position' => 'center'])
 
@@ -266,7 +266,6 @@
 @include('frontend.components.pages.faq', ['page' => 'homepage'])
 
 
-
 <section class="homepage-section homepage-section-get-started">
     <div class="wrap">
         <div class="row get-started-wrapper padding16">
@@ -285,6 +284,8 @@
     </div>
 </section>
 @endsection
+
+@include('frontend.includes.modals.demo_video')
 
 
 <style>

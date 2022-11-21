@@ -2673,3 +2673,8 @@ body:has(.modal.fade.show) div.widget-visible{
 #tinymce p{
     padding: 8px;
 }
+
+input.kkk:-webkit-autofill{
+    -webkit-box-shadow: white 0 0 0 1000px inset !important;
+    -webkit-text-fill-color:black !important;
+}

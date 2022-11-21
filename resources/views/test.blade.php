@@ -31,7 +31,6 @@
 //                dataType: dataType,
                 success: function (data) {
                     toastr.success('Text Copied!')
-                    console.log(data);
                 },
                 error: function (jqXhr, textStatus, errorMessage) { // error callback 
                     $('p').append('Error: ' + errorMessage);

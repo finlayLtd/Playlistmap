@@ -512,6 +512,19 @@
             }
         });
 
+        $(".submit_button").click(function(){
+            if($("#password").val()==$("#confirm_password").val()){
+                $(".updatePassword").submit();
+            } else {
+                $(".comfirm_error").html("<p class='text-danger'>Confirm Password should be the same as password.</p>");
+            }
+        });
+        
+        $('.edit_email').click(function(){
+            $(".email_input input").css('background', "#1b1b1b");
+            $(".email_input input").trigger('focus');
+        });
+
         $('.file-upload').change(function(){
             var preview = document.querySelector('.preview-img');
             var file    = document.querySelector('input[type=file]').files[0];
