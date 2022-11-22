@@ -20,7 +20,7 @@
                 <div id="modal-plan-details row" class="plan-details d-flex justify-content-between" data-month-plan-id="" data-month-plan-pp-id="" data-year-plan-id="" data-year-plan-pp-id="">
                     <div class="col-6 plan-info d-flex flex-column text-center">
                         <h5 class="text-center"><span class="plan-name"></span> Plan</h5>
-                        <div class="plan-sd align-items-center d-flex justify-content-center">50 Credits/Month
+                        <div class="plan-sd gap-1 mt-2 align-items-center d-flex justify-content-center">50 Credits/Month
                             <span data-toggle="tooltip" data-placement="right" title="A credit is the currency you use to unlock a Spotify playlist curator’s contact information on our platform. One credit gets you one unlock.">
                                 <i class="fa-solid fa-circle-info secondary-color"></i>
                             </span>
@@ -35,7 +35,7 @@
                                 $<span id="modal-plan-price-year-coupon"></span><span id="modal-plan-price-month-coupon"></span><sup class="tertiary-color">/Month</sup>
                             </span>
                         </h4>
-                        <div class="yearly-plan-save tertiary-color d-flex align-items-center">$<span id="modal-year-price">143.88</span>/year <span class="save green-color green-background text-truncate">Save $<span id="modal-yearly-save"></span></span></div>
+                        <div class="yearly-plan-save tertiary-color d-flex align-items-center">$<span id="modal-year-price">143.88</span>/year <span class="ms-2 px-3 save green-color green-background text-truncate">Save $<span id="modal-yearly-save"></span></span></div>
                     </div>
                 </div>
 
@@ -62,33 +62,7 @@
                             <input type="hidden" name="plan_id" id="plan_id">
                             <input type="hidden" name="coupon-code" id="coupon-code">
                             <!--<img class="w-50 pb-xl-3"   src="{{ asset('/frontend/img/cards.png') }}" alt="">-->
-                            <div id="card-element" style="background: #ffffff;
-                                 padding: 5%;
-                                 border-radius: 4px;
-                                 "></div>
-
-
-                            <!-- <button class="i-have-coupon mt-3">I have coupon code</button>
-                            <div class="coupon-wrapper mt-3">
-                                <label for="coupon">Add a Promo Code</label>
-                                <div class="d-flex">
-                                    <div class="form-group coupon-code-wrapper w-100 me-2">
-                                        <input type="coupon" class="form-control" id="coupon" value="{{$coupon ?? ""}}">
-                                        <div class="invalid-feedback">Please provide a valid coupon.</div>
-                                        <div id="coupon-name" class="valid-feedback green-color"></div>
-                                    </div>
-                                    <button id="apply-coupon">
-                                        Apply
-                                        <span class="spinner spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true"></span>
-                                    </button>
-                                </div>
-                            </div> -->
-
-                            <div class="row text-center mt-3">
-                                <div class="col-6 text-left"><input type="text" class="w-100"></input></div>
-                                <div class="col-6 text-right"><input type="text" class="w-100"></input></div>
-                            </div>
-
+                            <div id="card-element" style="background: #ffffff; padding: 5%; border-radius: 4px;"></div>
                             <div class="form-check mt-3">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                                 <label class="form-check-label" for="flexCheckChecked">

@@ -209,6 +209,7 @@ class FrontendController extends Controller {
     }
 
     public function reportPlaylist(Request $request) {
+
         $request->validate([
             'playlist_id' => 'required',
             'message' => 'required',
@@ -253,10 +254,15 @@ class FrontendController extends Controller {
             user()->unlockedPlaylists()->attach($request->playlist_id);
             user()->subscription()->recordFeatureUsage('credits');
         }
-        return redirect()->back()
-                        ->with('success', $message);
-                        // ->with('unlockedPlaylistId', $request->playlist_id)
-                        // ->with('currentUnlockedPlaylistId', $playlist->playlist_id);
+        // return redirect()->back()
+        //                 ->with('success', $message);
+        //                 ->with('unlockedPlaylistId', $request->playlist_id)
+        //                 ->with('currentUnlockedPlaylistId', $playlist->playlist_id);
+        
+        $playlists = Playlist::all()->random(6);
+        $user = auth()->user();
+        $playlist = Playlist::where("id", "=", $playlist->id)->get()->first();
+        return view('frontend.playlist-detail', compact('playlist', 'playlists', 'user'));
 
     }
 
@@ -416,10 +422,22 @@ class FrontendController extends Controller {
     }
 
     public function playlistDetail($playlist_id){
+        // $playlists = Playlist::all()->random(6);
         $playlists = Playlist::limit(6)->get();
         $user = auth()->user();
         $playlist = Playlist::where("id", "=", $playlist_id)->get()->first();
-        return view('frontend.playlist-detail', compact('playlist', 'playlists', 'user'));
+        $temp_array = $user->unlockedPlaylists->toArray();
+        $flag = false;
+        for ($i=0; $i < count($temp_array); $i++) { 
+            if($temp_array[$i]['id'] == $playlist_id){
+                $flag = true;
+            }
+        }
+        if($flag){
+            return view('frontend.playlist-detail', compact('playlist', 'playlists', 'user'));
+        } else {
+            return redirect()->back()->with('error', 'Sorry. You are not allowed to search. Please unlock that file.');
+        }
     }
 
 }

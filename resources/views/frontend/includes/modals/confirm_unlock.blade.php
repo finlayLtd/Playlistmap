@@ -35,13 +35,20 @@
                             type="button"  class="btn btn-sm rounded-pill bg-transparent" data-dismiss="modal" aria-label="Close">
                             Cancel
                         </button>
-                        <button style="font-size: 16px; padding:5px 24px" class="btn btn-sm rounded-pill btn-danger confirmUnlock" >Unlock</button>
+                        <button style="font-size: 16px; padding:5px 24px" class="btn btn-sm rounded-pill btn-danger confirmUnlock" data-toggle="modal" data-target="#loader">Unlock</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+<script>
+    $(function(){
+        $(".confirmUnlock").click(function(){
+            
+        });
+    });
+</script>
 <style>
     #cancelbtn:hover{
         background-color: #1b1b1b !important;

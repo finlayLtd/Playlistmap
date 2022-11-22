@@ -524,7 +524,7 @@ $(document).ready(function () {
             $('#paymentModal #modal-plan-price-month').text(monthlyPrice);
             $('#paymentModal #modal-year-price').text(yearlyPrice);
             $('#paymentModal #modal-year-price').data('original-price', yearlyPrice);
-            $('#paymentModal #modal-yearly-save').text(yearlyPriceSave);
+            $('#paymentModal #modal-yearly-save').text(yearlyPriceSave.toFixed(2));
             $('#paymentModal #modal-yearly-save').data('original-price', yearlyPriceSave);
 
             $('#paymentModal #pay-button-amount-month').text(monthlyPrice);

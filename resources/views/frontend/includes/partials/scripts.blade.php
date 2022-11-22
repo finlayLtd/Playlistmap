@@ -16,7 +16,6 @@
 <script src="{{ asset('vendors/list.js/list.min.js') }}"></script>
 <script src="{{ asset('frontend/js/theme.js') }}"></script>
 <script src="{{asset('js/toastr.min.js')}}"></script>
-{{asset('js/script.js')}}
 <script src="{{asset('js/script.js'). "?v=" .  config('constants.assets_version') }}"></script>    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.2/timeago.min.js"></script>
 

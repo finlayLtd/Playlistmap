@@ -76,24 +76,9 @@
                         }
                         @endphp
                         @if($plan->isFree())
-                        <button  style="border-radius: 4px !important;
-                                 text-transform: uppercase !important;
-                                 font-weight: 600 !important;
-                                 cursor: pointer !important;
-                                 white-space: nowrap;
-                                 padding: 4%;   
-                                 color: white;
-                                 font-size: 16px !important;" class="btn {{$btn_class}} btn-primary btn-block mt-3" data-toggle="modal" data-target="#cancel_subscription">{{$buy_text}} </button>
+                        <button  style="border-radius: 4px !important;text-transform: uppercase !important;font-weight: 600 !important;cursor: pointer !important;white-space: nowrap;padding: 4%;   color: white;font-size: 16px !important;" class="btn {{$btn_class}} btn-primary btn-block mt-3" data-toggle="modal" data-target="#cancel_subscription">{{$buy_text}} </button>
                         @else
-                        <button onclick="ym(73260880, 'reachGoal', 'chooseplan'); return true;" style="    
-                                font-size: 16px !important;
-                                color: white;          
-                                border-radius: 4px !important;
-                                text-transform: uppercase !important;
-                                font-weight: 600 !important;
-                                cursor: pointer !important;
-                                white-space: nowrap;
-                                padding: 4%;" type="button" class="btn {{$btn_class}} buyNow btn-primary btn-block mt-3" data-plan-id="{{$plan->id}}" data-pp-id="{{$plan->paypal_id}}">{{$buy_text}}</button>
+                        <button onclick="ym(73260880, 'reachGoal', 'chooseplan'); return true;" style="    font-size: 16px !important;color: white;          border-radius: 4px !important;text-transform: uppercase !important;font-weight: 600 !important;cursor: pointer !important;white-space: nowrap;padding: 4%;" type="button" class="btn {{$btn_class}} buyNow btn-primary btn-block mt-3" data-plan-id="{{$plan->id}}" data-pp-id="{{$plan->paypal_id}}">{{$buy_text}}</button>
                         @endif
                     </div>
 

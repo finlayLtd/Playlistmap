@@ -20,13 +20,13 @@
     <span class="head_text"><i class="me-2 mobile-d fa-regular fa-chevron-left" width="20px" height="20px"></i> Generate Message</span>
     <div class="col-md-8 col-sm-12 p-4 mt-3 card composer-email container">
         <div class="h4">Email</div>
-        <input class="form-control border-0" type="text" placeholder="To">
+        <input class="form-control border-0" type="text" placeholder="To" value="{{$playlist->contacts[0]}}">
         <input class="form-control border-0" id="subject" type="text" placeholder="subject">
         <div class="input-group mobile-d-none">
             <div class="input-group-prepend">
             <span class="input-group-text border-0 h-100" id="inputGroupPrepend"><i class="fa-solid fa-list-music"></i></span>
             </div>
-            <input type="text" class="form-control border-0" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+            <input type="text" class="form-control border-0" value="{{$playlist->owner}}" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
         </div>
         <textarea  class="w-100 container border-0" id="summernote" rows="15" placeholder="Write a message"></textarea>
         <button class="btn btn-primary col-md-3 col-sm-6 rounded-pill" onClick="MyWindow=window.open('https://mail.google.com/mail/?view=cm&fs=1&to={{ $playlist->contact_email }}&su={{ $template->subject }}&body=Copy%20message%20from%20PlaylistMap','MyWindow','width=600,height=300'); return false;">Save<i class="fa-solid fa-paper-plane-top ms-2"></i></button>
@@ -46,7 +46,8 @@
                         </div>
                         <div class="col-3 d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-eye me-2"></i>
-                            <i class="fa-regular fa-circle"></i>
+                            <i class="select-d-none fa-regular fa-circle"></i>
+                            <i class="select-d fa-regular fa-circle-dot"></i>
                         </div>
                     </div>
                 @endforeach
@@ -310,6 +311,14 @@ foreach ($playlist->contacts as $contact) {
         display:none !important;
     }
 
+    .composer-email:has(input:not([value])) button{
+        color: #fff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+        pointer-events: none;
+        opacity: .65;
+    }
+
     div.input-group:has(.form-control:focus){
         border-radius:10px;
         border-color:#2062EF !important;
@@ -325,6 +334,18 @@ foreach ($playlist->contacts as $contact) {
     .template-item:hover{
         background: #1b1b1b;
         border: 2px solid gray;
+    }
+
+    .template-item .select-d{
+        display: none;
+    }
+
+    .template-item:hover .select-d{
+        display: block;
+    }
+
+    .template-item:hover .select-d-none{
+        display: none;
     }
 
     .template-item{
@@ -393,10 +414,6 @@ foreach ($playlist->contacts as $contact) {
         }
     }
 
-
-
-
-
     #btnchangetitle
     {
         width: 15%;
@@ -444,6 +461,7 @@ foreach ($playlist->contacts as $contact) {
             var templateArray = eval(<?php echo($templates)?>);
             tinymce.activeEditor.setContent(templateArray[index]['body']);
             $('#subject').val(templateArray[index]['subject']);
+            $('#subject').attr('value',templateArray[index]['subject']);
         });
 
         $('.change-template').click(function () {

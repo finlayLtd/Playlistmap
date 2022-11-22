@@ -205,23 +205,23 @@
                 <div style="font-family: 'Lato';font-style: normal;font-weight: 700;font-size: 24px;line-height: 36px;color: #FFFFFF;">
                     Login & Security
                 </div>
-            
-                <form class="row g-3 updatePassword" action="{{ route('frontend.profile.updatePassword') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="col-12 row" style="margin-top: 24px;">
-                        <div class="input-group mb-3 gap-2">
-                            <div class="form-outline form-white email_input">
-                                <input class="form-control @error('email') is-invalid @enderror" name="email"  style="background:#121212 !important"
-                                        id="email" type="text" value="{{ old('email', $user ? $user->email : '') }}">
-                                        <x-error field="email"/>
-                                <label class="form-label" for="email" style="margin-left: 10px; margin-top: 7px;">
-                                    Email
-                                </label>
-                            </div>
-                            <button class="d-inline-block edit_email btn rounded-pill text-white m-auto" onclick="event.preventDefault();return true;" style="border:1px gray solid;height:40px"> Edit </button>
+                
+                <div class="col-12 row" style="margin-top: 24px;">
+                    <div class="input-group mb-3 gap-2">
+                        <div class="form-outline form-white">
+                            <input class="form-control @error('email') is-invalid @enderror" name="email"
+                                id="email" type="text" value="{{ old('email', $user ? $user->email : '') }}">
+                                <x-error field="email"/>
+                            <label class="form-label" for="email" style="margin-left: 10px; margin-top: 7px;">
+                                Email
+                            </label>
                         </div>
                     </div>
-                    <div style="padding: 16px;gap: 16px;width: 809px;height: 292px;border: 1px solid #827F7F;border-radius: 10px;">
+                </div>
+                
+                <form class="row g-3 updatePassword" action="{{ route('frontend.profile.updatePassword') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div style="padding: 16px;gap: 16px;width: 809px;border: 1px solid #827F7F;border-radius: 10px;">
                         <div style="font-family: 'Lato';font-style: normal;font-weight: 700;font-size: 24px;line-height: 36px;color: #FFFFFF;margin-bottom: 16px;">
                             Edit Password
                         </div>
@@ -521,7 +521,6 @@
         });
         
         $('.edit_email').click(function(){
-            $(".email_input input").css('background', "#1b1b1b");
             $(".email_input input").trigger('focus');
         });
 

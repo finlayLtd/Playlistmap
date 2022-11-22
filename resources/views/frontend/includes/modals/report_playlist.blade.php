@@ -15,10 +15,10 @@
                 <div class="container">
                     <form action="{{ route('frontend.playlists.report') }}" method="post" class="m-4">
                         @csrf
-                        <input type="hidden" name="playlist_id" id="playlist_id">
+                        <input type="hidden" name="playlist_id" id="playlist_id" value="{{$playlist->id}}">
                         <div class="form-group">
                             <label for="message" class="ms-3" style="float:left">Message</label>
-                            <textarea class="form-control resize-none"  name="message" id="message" rows="6" required></textarea>
+                            <textarea class="form-control resize-none text-white"  name="message" id="message" rows="6" required></textarea>
                         </div>
                         <div class="text-right pt-3 border-0">
                             <button type="button" class="btn btn-sm btn-danger rounded-pill px-5" data-dismiss="modal">Cancel</button>

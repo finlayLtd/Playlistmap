@@ -26,5 +26,6 @@
         @include('frontend.includes.modals.register')
         @include('frontend.includes.modals.forget')
         @include('frontend.includes.modals.verify-email')
+        @include('frontend.includes.modals.loader')
     </nav>
 </header>

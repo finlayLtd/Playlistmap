@@ -26,8 +26,8 @@
                     </div>
                     <span class="update_text">Updated:  <x-friendly-date :date="$playlist->last_updated_on"/></span>
                     <div class="d-flex mt-3 gap-3">
-                        <span class="detail-icon" data-target="#reportPlaylistModal" data-toggle="modal"><i class="fa-solid fa-flag"></i></span>
-                        <span class="detail-icon"><i class="fa-sharp fa-solid fa-share-nodes"></i></span>
+                        <span class="detail-icon" data-target="#reportPlaylistModal" data-toggle="modal" style="cursor:pointer"><i class="fa-solid fa-flag"></i></span>
+                        <span class="detail-icon" style="cursor:pointer"><i class="fa-sharp fa-solid fa-share-nodes"></i></span>
                         <a onclick="ym(73260880, 'reachGoal', 'playonspotify'); return true;" id="spotifybtn" href="{{ $playlist->spotify_deep_link }}">
                             <button class="btn detail-button btn-primary rounded-pill"><i class="fa-brands fa-spotify"></i>Play On Spotify</button>
                         </a>            
@@ -118,7 +118,7 @@
 </section>
 
 @include('frontend.includes.modals.confirm_unlock')
-@include('frontend.includes.modals.report_playlist')
+@include('frontend.includes.modals.report_playlist', ['playlist'=>$playlist])
 
 @endsection
 
@@ -150,6 +150,7 @@
 
             for (let index = 0; index < followers['statistics']['followers'].length; index++) {
                 var tempDate = new Date(Number(Object.values(followers['statistics']['followers'][index])[0]));
+                console.log(new Date(Number(Object.values(followers['statistics']['followers'][index])[0])));
                 var tempArray = tempDate.toString().split(" ");
                 label_array.push(tempArray[1]+" "+tempArray[2]);
                 data_array1.push(Object.values(followers['statistics']['followers'][index])[1]);

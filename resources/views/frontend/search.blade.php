@@ -53,35 +53,36 @@
             </form>
         </div>
 
-        <div class="row mt-3 mb-3 d-inline container">
-            <div class="col-md-6 col-sm-12 align-items-center text-left d-inline-flex align-items-center mobile-d-none">
-                Search results for:
-                <div class="d-inline-flex badge badge-soft-info" style="background:#1b1b1b!important; margin-left:15px!important">
-                    {{request()->get('q')}}
-                    <span class="text-black cancel-badge bg-secondary rounded-circle justify-content-center d-flex align-items-center m-auto" enable-badge=true style="margin-left:5px !important;width:20px; height:20px; cursor:pointer">
-                        <i class="fa-solid fa-xmark"></i>
+        @if(!user()->subscription()->plan->isFree())
+            <div class="row mt-3 mb-3 d-inline container">
+                <div class="col-md-6 col-sm-12 align-items-center text-left d-inline-flex align-items-center mobile-d-none">
+                    Search results for:
+                    <div class="d-inline-flex badge badge-soft-info" style="background:#1b1b1b!important; margin-left:15px!important">
+                        {{request()->get('q')}}
+                        <span class="text-black cancel-badge bg-secondary rounded-circle justify-content-center d-flex align-items-center m-auto" enable-badge=true style="margin-left:5px !important;width:20px; height:20px; cursor:pointer">
+                            <i class="fa-solid fa-xmark"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 d-inline badge badge-soft-info result-found text-right text-white" style="color:#2062EF !important;background:#1b1b1b !important">
+                    {{ $results_count }}  Results found
+                </div>
+            </div>
+            <div class="px-3 container">
+                <div class="d-inline float-left mobile-d-none badge badge-soft-info text-white border border-white" style="background:#1b1b1b !important; padding: 8px 24px;">
+                    <i class="fa-solid fa-bars-filter"></i>
+                    Filters
+                </div>
+                <div class="d-inline-flex mb-2" style="float:right;">
+                    <span onclick="changeLayout(true)" class="text-white justify-content-center d-flex align-items-center m-auto" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b">
+                        <i class="fa-solid fa-grid-2"></i>
+                    </span>
+                    <span onclick="changeLayout(false)" class="text-white justify-content-center d-flex align-items-center m-auto" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b">
+                        <i class="fa-solid fa-list"></i>
                     </span>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-12 d-inline badge badge-soft-info result-found text-right text-white" style="color:#2062EF !important;background:#1b1b1b !important">
-                {{ $results_count }}  Results found
-            </div>
-        </div>
-
-        <div class="px-3 container">
-            <div class="d-inline float-left mobile-d-none badge badge-soft-info text-white border border-white" style="background:#1b1b1b !important; padding: 8px 24px;">
-                <i class="fa-solid fa-bars-filter"></i>
-                Filters
-            </div>
-            <div class="d-inline-flex mb-2" style="float:right;">
-                <span onclick="changeLayout(true)" class="text-white justify-content-center d-flex align-items-center m-auto" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b">
-                    <i class="fa-solid fa-grid-2"></i>
-                </span>
-                <span onclick="changeLayout(false)" class="text-white justify-content-center d-flex align-items-center m-auto" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b">
-                    <i class="fa-solid fa-list"></i>
-                </span>
-            </div>
-        </div>
+        @endif
     </div>
     <div>
         @if($playlists->count())
