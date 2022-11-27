@@ -12,7 +12,7 @@
             <div class="modal-body">
                 <p>Please upgrade your account to keep using {{ config('app.name') }} or you can come back in 24 hours
                     when your daily limit resets.</p>
-                <a href="/profile#myunlocks">You can access your unlocks here</a>
+                <a href="/myplaylist">You can access your unlocks here</a>
                 <br></br>
                 <div class="text-center">
                     <a href="{{ route('frontend.profile.plans') }}" class="btn btn-sm btn-success">Upgrade</a>

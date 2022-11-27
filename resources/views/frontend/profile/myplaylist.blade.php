@@ -9,5 +9,11 @@
     <div class="container row">
         @include('frontend.includes.partials.gridlist', ['playlists'=>$playlists])
     </div>
+
+    @if(method_exists($playlists, 'links'))
+        <div style="line-height: 1;display:flex;" class="justify-content-center mt-5 pt-5">
+            {{ $playlists->appends(request()->query())->onEachSide(0)->links() }}
+        </div>
+    @endif
 </div>
 @endsection

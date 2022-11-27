@@ -654,10 +654,6 @@ footer .rights {
     display: none;
 }
 
-.search-wrapper form.searchform .playlistmap-search:not(:placeholder-shown)~.clear-input {
-    display: block !important;
-}
-
 .search-wrapper form.searchform label .red {
     color: #BE281D;
 }
@@ -2657,6 +2653,17 @@ body:has(.modal.fade.show) div.widget-visible{
     top: 50px;
 }
 
+.toast.toast-warning{
+    background-color: yellow;
+    color: black !important;
+    top: 50px;
+}
+.toast.toast-info{
+    background-color: yellow;
+    color: black !important;
+    top: 50px;
+}
+
 .ui-autocomplete-loading{
     background: url(../images/icons/loader-white.gif) 96% center/28px no-repeat;
 }
@@ -2677,3 +2684,23 @@ input.kkk:-webkit-autofill{
     -webkit-box-shadow: white 0 0 0 1000px inset !important;
     -webkit-text-fill-color:black !important;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #1b1b1b; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #404040; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: black; 
+  }

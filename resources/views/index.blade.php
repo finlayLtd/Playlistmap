@@ -10,10 +10,10 @@
                 @php($route = auth()->check() ? route('frontend.search') : route('frontend.search.guest')) 
                 <form class="searchform" class="homepage-form-search @if (Auth::guest()) guest @endif" action="{{ $route }}">
                     <div class="input-group position-relative bg-light rounded-pill">
-                        <input class="playlistmap-search form-control bg-transparent kkk text-100" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"/>
+                        <input id="kkk" class="playlistmap-search form-control kkk text-100" style="background-color:transparent" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"/>
                         <span class="text-black placeholder position-absolute">Try "<span class="text-danger">edm</span>" or "<span class="text-danger">weekend</span>"</span>
-                        <button onclick="ym(73260880, 'reachGoal', 'homepageserachbtn'); return true;" type="submit" class="input-group-text bg-transparent text-100"><i class="fas fa-magnifying-glass"></i></button>
-                        <button class="input-group-text clear-input"><i class="fas fa-circle-xmark"></i></button>
+                        <button onclick="ym(73260880, 'reachGoal', 'homepageserachbtn'); return true;" style="z-index:1000" type="submit" class="input-group-text bg-transparent text-100"><i class="fas fa-magnifying-glass"></i></button>
+                        <button class="input-group-text clear-input main-search-input" style="z-index:1000" onclick="initialinput()"><i class="fas fa-circle-xmark"></i></button>
                     </div>
                 </form>
             </div>
@@ -277,7 +277,7 @@
                 <h5 class="mb-4 sliderText">Want to experience the magic for yourself?<br>
                     Sign up now (no credit card required) to start getting the streams your music deserve</h5>
                 <a>
-                    <button class="tertiary big m-auto rounded-pill"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
+                    <button class="tertiary big m-auto rounded-pill" data-toggle="modal" data-target="#register_modal"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
                 </a>
             </div>
         </div>
@@ -287,6 +287,29 @@
 
 @include('frontend.includes.modals.demo_video')
 
+@section('scripts')
+<script>
+    $(document).ready(function(){
+        $("#kkk").change(function(){
+            console.log($(this).val()!="");
+            if($(this).val()!=""){
+                $(this).css('background-color','white');
+                $("button.main-search-input").css('display','block');
+            } else{
+                $(this).css('background-color','transparent');
+                $(this).css('background-color','transparent');
+                $("button.main-search-input").css('display','none');
+            }
+        })
+    });
+
+    function initialinput(){
+        $('#kkk').val('');
+        $('#kkk').css('background-color','transparent');
+    }
+    
+</script>
+@endsection
 
 <style>
 
@@ -326,6 +349,14 @@
 
     .title2{
         margin:39.5px auto 24px !important;
+    }
+
+    .input-group:has(input.playlistmap-search) button.main-search-input{
+        display: none;
+    }
+
+    .input-group:has(input.playlistmap-search:focus) button.main-search-input{
+        display: block !important;
     }
 
     @media screen and (max-width:767px){
@@ -664,5 +695,7 @@
     }
 
 </style>
+
+
 
 

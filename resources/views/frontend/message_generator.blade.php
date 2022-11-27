@@ -22,7 +22,7 @@
         <div class="h4">Email</div>
         <input class="form-control border-0" type="text" placeholder="To" value="{{$playlist->contacts[0]}}">
         <input class="form-control border-0" id="subject" type="text" placeholder="subject">
-        <div class="input-group mobile-d-none">
+        <div class="input-group mobile-d-none d-none">
             <div class="input-group-prepend">
             <span class="input-group-text border-0 h-100" id="inputGroupPrepend"><i class="fa-solid fa-list-music"></i></span>
             </div>
@@ -35,7 +35,7 @@
         <div class="ms-2 card py-lg-4 pb-lg-3 pb-2 h-100">
             <div class="h4 container m-0">Email Templates</div>
             <p class="container m-0">Pick a template to start with</p>
-            <div class="container overflow-scroll">
+            <div class="container overflow-scroll" style="overflow-x:hidden !important">
                 @foreach($templates as $key=>$element)
                     <div class="template-item row container border-radius-lg d-flex align-items-center" data-id="{{$key}}">
                         <div class="col-9 d-flex flex-column overflow-hidden">

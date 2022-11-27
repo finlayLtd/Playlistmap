@@ -36,7 +36,7 @@ class RegisteredUserController extends Controller {
             'name' => 'required|string|max:255',
             'email' => ['required', ' string', ' email', ' max:255', ' unique:users', new ValidEmail],
             'password' => 'required|string|confirmed|min:8',
-            'agree' => 'required',
+            'agree' => 'required|accepted',
             'spotify-artist-id' => 'string|nullable',
             'spotify-artist-image' => 'url|nullable'
                 ], [

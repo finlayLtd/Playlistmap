@@ -30,7 +30,7 @@
                                                 name="artist-id" value="{{ old('artist-id') }}" autocomplete="artist-id" autofocus placeholder="{{ __('Spotify Artist') }}">
                                             <img width="200px" height="200px" id="artist-image" style="display:none;background-size:cover"/>
                                         </div>
-                                        <x-error field="artist-id"></x-error>
+                                        <!-- <x-error field="artist-id"></x-error> -->
                                     </div>
                                 </div>
                                 <ul class="spotify-list bg-white p-4 position-absolute overflow-scroll" style="height:300px;display:none;color:black"></ul>
@@ -38,12 +38,12 @@
                                 <div class="mb-3">
                                     <input id="name" type="text" class="auth-info form-control @error('name') is-invalid @enderror"
                                             name="name" placeholder="Name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                    <x-error field="name"></x-error>
+                                    <!-- <x-error field="name"></x-error> -->
                                 </div>
                                 <div class="mb-3">
                                     <input id="email" type="email" class="auth-info form-control @error('email') is-invalid @enderror"
                                             name="email" placeholder="Email" value="{{ old('email') }}" required  >
-                                    <x-error field="email"></x-error>
+                                    <!-- <x-error field="email"></x-error> -->
                                 </div>
                                 <div class="mb-3 ">
                                     <div class="d-flex justify-content-between">
@@ -51,7 +51,7 @@
                                     <input id="password" type="password" placeholder="Password"
                                             class="auth-info form-control @error('password') is-invalid @enderror"
                                             name="password" required autocomplete="current-password">
-                                    <x-error field="password"></x-error>
+                                    <!-- <x-error field="password"></x-error> -->
                                 </div>
                                 <div class="mb-3 ">
                                     <input id="password-confirm" type="password" class="auth-info form-control"
@@ -202,6 +202,14 @@
             padding:0px !important;
         }
 
+    }
+
+    @media screen and (max-width:380px){
+        @media screen and (max-height:700px) {
+            #register_modal .x-button{
+                top:140px;
+            }
+        }
     }
 
     @media screen and (max-width:1200px){

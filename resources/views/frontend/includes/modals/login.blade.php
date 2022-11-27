@@ -23,22 +23,22 @@
 
                                     <input id="email" type="email" class="auth-info form-control @error('email') is-invalid @enderror"
                                         name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
-                                    @error('email')
+                                    <!-- @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror
+                                    @enderror -->
                                 </div>
                                 <div class="my-3">
                                     <div class="position-relative">
                                         <input id="password" placeholder="password" type="password" class="auth-info form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                         <!-- <i class="fa fa-eye fa-eye-slash position-absolute" onclick="password_toggle" style="width:24px;height:24px;top:calc(50% - 12px); right:12px" id="togglePassword"></i> -->
                                     </div>
-                                    @error('password')
+                                    <!-- @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror
+                                    @enderror -->
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <div class="mt-2 text-left" >

@@ -13,6 +13,7 @@ use function Matrix\trace;
 use App\Lib\SpotifyController;
 use App\Models\UsersData;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use \Stripe;
 
 class FrontendController extends Controller {
@@ -262,7 +263,9 @@ class FrontendController extends Controller {
         $playlists = Playlist::all()->random(6);
         $user = auth()->user();
         $playlist = Playlist::where("id", "=", $playlist->id)->get()->first();
-        return view('frontend.playlist-detail', compact('playlist', 'playlists', 'user'));
+        return redirect()->route('frontend.myplaylist');
+        // return view('frontend.profile.myplaylist', compact('user', 'playlists'));
+        // return view('frontend.playlist-detail', compact('playlist', 'playlists', 'user'));
 
     }
 
@@ -422,8 +425,7 @@ class FrontendController extends Controller {
     }
 
     public function playlistDetail($playlist_id){
-        // $playlists = Playlist::all()->random(6);
-        $playlists = Playlist::limit(6)->get();
+        $playlists = Playlist::all()->random(6);
         $user = auth()->user();
         $playlist = Playlist::where("id", "=", $playlist_id)->get()->first();
         $temp_array = $user->unlockedPlaylists->toArray();

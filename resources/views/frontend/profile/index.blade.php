@@ -11,7 +11,6 @@
 ></script>
 
 <div style="height: 70px;">
-
 </div>
 <div class="row mb-4">
     <div class="col-md-4" style=" text-align: center;">

@@ -4,7 +4,8 @@
 
 <section class="detail-section background-position-center" style="background:linear-gradient(360deg, #121212 0%, rgba(24, 24, 24, 0) 500%), url({{$playlist->image}}); background-position:top;background-size:cover">
     <div style="backdrop-filter:blur(5px);">
-        <div class="mx-3"><span><a href="{{route('frontend.search')}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists / {{$playlist->name}}</div>
+        <!-- <div class="mx-3"><span><a href="{{route('frontend.search')}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists / {{$playlist->name}}</div> -->
+        <div class="mx-3"><span><a href="{{url()->previous()}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists / {{$playlist->name}}</div>
         <div class="container detail-container row my-5">
             <div class="col-md-9 col-sm-12 row">
                 <div class="col-md-4 col-sm-12 justify-content-center d-block">
@@ -40,7 +41,7 @@
                     <div class="my-3">
                         <span class="text-white"><i class="fa-solid fa-circle-user"></i></span> {{ $playlist->owner }}
                     </div>
-                    <div class="text-truncate my-3" style="overflow:inherit">
+                    <div class="my-3" style="overflow:inherit">
                         <span class="text-white"><i class="fa-solid fa-circle-envelope"></i></span> 
                             @foreach($playlist->contacts as $contact)
                                 @if(filter_var($contact, FILTER_VALIDATE_EMAIL))
@@ -62,7 +63,7 @@
     </div>
 </section>
 
-<section class="analyze-detail">
+<section class="analyze-detail position-relative">
     <div class="container mb-5">
         <div class="row">
             <div class="col-md-6 col-sm-12 mt-3">
@@ -149,8 +150,7 @@
             var data_array1=[], data_array2=[];
 
             for (let index = 0; index < followers['statistics']['followers'].length; index++) {
-                var tempDate = new Date(Number(Object.values(followers['statistics']['followers'][index])[0]));
-                console.log(new Date(Number(Object.values(followers['statistics']['followers'][index])[0])));
+                var tempDate = new Date(Number(Object.values(followers['statistics']['followers'][index])[0])*1000);
                 var tempArray = tempDate.toString().split(" ");
                 label_array.push(tempArray[1]+" "+tempArray[2]);
                 data_array1.push(Object.values(followers['statistics']['followers'][index])[1]);
@@ -259,6 +259,7 @@
 
             var diameter = screen.width < 767 ? screen.width * 0.8 : 400;
             var color = d3.scaleOrdinal(d3.schemeCategory20);
+            var html = "";
 
             var bubble = d3.pack(dataset)
                 .size([diameter, diameter])
@@ -287,7 +288,7 @@
 
             node.append("title")
                 .text(function(d) {
-                    return d.Name + ": " + d.Count;
+                    return d.data.Name + ": " + d.data.Count;
                 });
 
             node.append("circle")
@@ -327,9 +328,11 @@
 
             var html = "";
             for (let index = 0; index < label_array.length; index++) {
-                 html += `<a class="hover-text-decoration-none"><span class="badge badge-soft-info cursor-pointer genre">`
-                            +label_array[index]
-                            +`</span></a>`;
+                 html += `<a class="hover-text-decoration-none"><span class="badge badge-soft-info cursor-pointer genre" style="background-color:`
+                    +$('svg.bubble g:nth-child('+(index+1)+') circle').css("fill")
+                    +`!important">`
+                    +label_array[index]
+                    +`</span></a>`;
             }
 
             $(".analyse_badge").append(html);
@@ -354,6 +357,7 @@
 
     .detail-section{
         padding:3rem !important;
+        padding-bottom: 200px !important;
     }
 
     .detail-info{
@@ -381,6 +385,10 @@
     span[data-toggle = "modal"]{
         display: inline!important;
         padding: 10px !important;
+    }
+
+    .analyze-detail{
+        top:-200px;
     }
 
     @media screen and (max-width:767px){

@@ -29,10 +29,13 @@
     @endforeach
 
     @error('email')
-        {{ "toastr.error" }}{!! "('" !!}{{$message."Please try again."}}{!! "')" !!}
+        {{ "toastr.error" }}{!! "('" !!}{{$message.". Please try again."}}{!! "')" !!}
     @endif
     @error('password')
-        {{ "toastr.error" }}{!! "('" !!}{{$message."Please try again"}}{!! "')" !!}
+        {{ "toastr.error" }}{!! "('" !!}{{$message.". Please try again"}}{!! "')" !!}
+    @endif
+    @error('agree')
+        {{ "toastr.error" }}{!! "('" !!}{{$message.". Please try again"}}{!! "')" !!}
     @endif
 
 </script>

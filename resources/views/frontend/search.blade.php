@@ -1,9 +1,6 @@
 @extends('layouts.frontend-main ')
 
 @section('content')
-<?php
-    session_start();
-?>
 <div class="homepage-section m-auto align-items-center text-center d-flex flex-column justify-content-center homepage-section-hero @if(request()->query('q')) d-none @endif" style="height:770px !important;background:linear-gradient(180deg, rgba(18, 18, 18, 0) -26%, rgba(18, 18, 18, 0.787848) -4.22%, #121212 58%), url(http://localhost:8000/images/bg/hero.jpg)">
     <p class="row col-md-6 col-sm-12 container h1 text-center h-auto">Get on the right playlist & reach your future fans</p>
     <form class="row col-md-8 col-sm-12" action="{{ route('frontend.search') }}">
@@ -68,19 +65,21 @@
                     {{ $results_count }}  Results found
                 </div>
             </div>
-            <div class="px-3 container">
-                <div class="d-inline float-left mobile-d-none badge badge-soft-info text-white border border-white" style="background:#1b1b1b !important; padding: 8px 24px;">
+            <div class="px-3 container method-switch">
+                <!-- <div class="d-inline float-left mobile-d-none badge badge-soft-info text-white border border-white" style="background:#1b1b1b !important; padding: 8px 24px;">
                     <i class="fa-solid fa-bars-filter"></i>
                     Filters
-                </div>
-                <div class="d-inline-flex mb-2" style="float:right;">
-                    <span onclick="changeLayout(true)" class="text-white justify-content-center d-flex align-items-center m-auto" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b">
-                        <i class="fa-solid fa-grid-2"></i>
-                    </span>
-                    <span onclick="changeLayout(false)" class="text-white justify-content-center d-flex align-items-center m-auto" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b">
-                        <i class="fa-solid fa-list"></i>
-                    </span>
-                </div>
+                </div> -->
+                @if(!user()->subscription()->plan->isFree())
+                    <div class="d-inline-flex mb-2" style="float:right;">
+                        <span onclick="changeLayout(true)" class="text-white justify-content-center d-flex align-items-center m-auto" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b">
+                            <i class="fa-solid fa-grid-2"></i>
+                        </span>
+                        <span onclick="changeLayout(false)" class="text-white justify-content-center d-flex align-items-center m-auto" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b">
+                            <i class="fa-solid fa-list"></i>
+                        </span>
+                    </div>
+                @endif
             </div>
         @endif
     </div>
@@ -96,7 +95,7 @@
                 </div>
             @endif
 
-            <div class="table-responsive container" style="display:@php if( isset($_SESSION['grid']) && $_SESSION['grid'] ) echo('block'); else echo('none'); @endphp;">
+            <div class="table-responsive container" style="display:none">
                 <table id="main-search-table" data-pagination="true" data-show-pagination-switch="true" class="container table text-white">
                     <thead class="mobile-d-none">
                         <tr class="">
@@ -294,7 +293,7 @@
                 </table>
             </div>
 
-            <div class="list-responsive container row m-auto" style="display:@php if( !isset($_SESSION['grid']) || !$_SESSION['grid'] ) echo('flex'); else echo('none'); @endphp;">
+            <div class="list-responsive container row m-auto" style="display:none">
                 @include('frontend.includes.partials.gridlist',['playlists'=>$playlists])
             </div>
 
@@ -327,17 +326,27 @@
 
 <script>
 
+    $(function(){
+        if(!Object.keys(localStorage).includes('grid')){
+            localStorage.setItem('grid', 'true');
+        }
+        var isFree = eval(<?php echo(user()) ?>).subscriptions[0].plan.id == 1;
+        if(isFree || (localStorage.getItem('grid')=='false')){
+            $('.table-responsive').css('display','block');
+            $('.list-responsive').css('display','none');
+        } else {
+            $('.table-responsive').css('display','none');
+            $('.list-responsive').css('display','flex');
+        }
+    })
+
     function changeLayout(flag){
         if(!flag){
-            @php
-                $_SESSION['grid']=1
-            @endphp
+            localStorage.setItem('grid', 'false');
             $('.table-responsive').css('display','block');
             $('.list-responsive').css('display','none');
         } else{
-            @php
-                $_SESSION['grid']=0
-            @endphp
+            localStorage.setItem('grid', 'true');
             $('.table-responsive').css('display','none');
             $('.list-responsive').css('display','flex');
         }
