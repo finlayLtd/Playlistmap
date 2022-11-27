@@ -2659,7 +2659,6 @@ body:has(.modal.fade.show) div.widget-visible{
     top: 50px;
 }
 .toast.toast-info{
-    background-color: yellow;
     color: black !important;
     top: 50px;
 }

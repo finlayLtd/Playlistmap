@@ -122,7 +122,7 @@
                     @csrf
                     <div class="d-flex align-items-center">
                         <div onclick="uploadimage()" class="justify-content-center d-flex align-items-center position-relative rounded-circle" 
-                            style="width:85px;height:85px; border:1px solid gray">
+                            style="width:85px;height:85px; border:1px solid gray; cursor:pointer">
                             @if(user()->avatar_url)
                                 <img class="preview-img object-fit rounded-circle" src="{{user()->avatar_url}}" style="width:85px; height:85px;">
                             @else

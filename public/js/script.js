@@ -488,6 +488,7 @@ $(document).ready(function () {
         let planId = $(this).data('plan-id');
         let paypalPlanID = $(this).data('pp-id');
         $('#plan_id').val(planId);
+        $('#credit_count').text($(this).data('credit'));
         $('#paypal-plan').val(paypalPlanID);
 
         console.log('Month plan');
@@ -498,7 +499,6 @@ $(document).ready(function () {
 
         let planType = $(this).data('plan-type');
         let planName = $(this).data('plan-name');
-        console.log(planType);
         console.log(planName);
 
         if (planType === "month") {
@@ -506,9 +506,6 @@ $(document).ready(function () {
             let yearPlan = $('button.buyNow[data-plan-type=year][data-plan-name=' + planName + ']');
             let yearPlanID = $(yearPlan).data('plan-id');
             let yearPlanPPID = $(yearPlan).data('pp-id');
-            console.log('Year plan');
-            console.log(yearPlanID);
-            console.log(yearPlanPPID);
 
             $(planDetails).data('month-plan-id', planId);
             $(planDetails).data('month-plan-pp-id', paypalPlanID);
@@ -531,18 +528,11 @@ $(document).ready(function () {
             $('#paymentModal #pay-button-amount-year').text(yearlyPrice);
             $('input[name=yearly-monthly-toggle-modal]').prop('checked', false);
 
-            console.log(monthlyPrice);
-            console.log(yearlyPrice);
-            console.log(yearlyPriceSave);
-
         } else {
             $('#paymentModal .modal-body').removeClass('month').addClass('year');
             let monthPlan = $('button.buyNow[data-plan-type=month][data-plan-name=' + planName + ']');
             let monthPlanID = $(monthPlan).data('plan-id');
             let monthPlanPPID = $(monthPlan).data('pp-id');
-            console.log('Year plan');
-            console.log(monthPlanID);
-            console.log(monthPlanPPID);
             $(planDetails).data('year-plan-id', planId);
             $(planDetails).data('year-plan-pp-id', paypalPlanID);
             $(planDetails).data('month-plan-id', monthPlanID);

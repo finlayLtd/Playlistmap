@@ -13,7 +13,7 @@
                     </h6>
                     <ul>
                         <li class="mb-2">
-                            <a href="#">About</a>
+                            <a href="/about">About</a>
                         </li>
                         <li class="mb-2">
                             <a href="#">Careers</a>
@@ -33,13 +33,13 @@
                     </h6>
                     <ul>
                         <li class="mb-2">
-                            <a href="#">Pricing</a>
+                            <a href="/pricing">Pricing</a>
                         </li>
                         <li class="mb-2">
-                            <a href="#">Sign Up</a>
+                            <a data-toggle="modal" data-target="#register_modal">Sign Up</a>
                         </li>
                         <li class="mb-2">
-                            <a href="#">FAQs</a>
+                            <a href="/faq">FAQs</a>
                         </li>
                     </ul>
                 </div>
@@ -76,7 +76,7 @@
                             <a href="{{route('pages.terms')}}">Terms & Conditions</a>
                         </li>
                         <li class="mb-2">
-                            <a href="#">Contact Us</a>
+                            <a href="/contact">Contact Us</a>
                         </li>
                     </ul>
                 </div>

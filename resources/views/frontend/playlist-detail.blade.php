@@ -2,8 +2,8 @@
 
 @section('content')
 
-<section class="detail-section background-position-center" style="background:linear-gradient(360deg, #121212 0%, rgba(24, 24, 24, 0) 500%), url({{$playlist->image}}); background-position:top;background-size:cover">
-    <div style="backdrop-filter:blur(5px);">
+<section class="background-position-center" style="background:linear-gradient(360deg, #121212 0%, rgba(24, 24, 24, 0) 500%), url({{$playlist->image}}); background-position:top;background-size:cover">
+    <div class="detail-section" style="backdrop-filter:blur(5px)">
         <!-- <div class="mx-3"><span><a href="{{route('frontend.search')}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists / {{$playlist->name}}</div> -->
         <div class="mx-3"><span><a href="{{url()->previous()}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists / {{$playlist->name}}</div>
         <div class="container detail-container row my-5">
@@ -41,7 +41,7 @@
                     <div class="my-3">
                         <span class="text-white"><i class="fa-solid fa-circle-user"></i></span> {{ $playlist->owner }}
                     </div>
-                    <div class="my-3" style="overflow:inherit">
+                    <div class="text-truncate my-3" style="overflow:inherit">
                         <span class="text-white"><i class="fa-solid fa-circle-envelope"></i></span> 
                             @foreach($playlist->contacts as $contact)
                                 @if(filter_var($contact, FILTER_VALIDATE_EMAIL))
@@ -91,7 +91,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 mt-3">
-                <div class="container card gap-0 p-4">
+                <div class="container card gap-0 p-4 h-100">
                     <h5>Top Genres</h5>
                     <div><canvas id="top_genres" width="400" height="400"></canvas></div>
                 </div>
@@ -160,7 +160,7 @@
 
             var dataFirst = {
                 label: "Followers",
-                data: data_array1.reverse(),
+                data: data_array1,
                 lineTension: 0,
                 fill: false,
                 borderColor: 'red'
@@ -175,17 +175,17 @@
             };
 
             var speedData = {
-                labels: label_array.reverse(),
+                labels: label_array,
                 datasets: [dataFirst]
             };
 
             var chartOptions = {
                 legend: {
-                    display: true,
+                    display: false,
                     position: 'top',
                     labels: {
-                    boxWidth: 80,
-                    fontColor: 'black'
+                        boxWidth: 80,
+                        fontColor: 'black'
                     }
                 }
             };
@@ -193,14 +193,15 @@
             var lineChart = new Chart(ctx, {
                 type: 'line',
                 data: speedData,
-                options: chartOptions
+                options: {plugins:chartOptions}
             });
 
             label_array = Object.keys(top_genres);
             val_array = Object.values(top_genres);
             keysSorted = Object.values(top_genres).sort(function(a,b){return top_genres[b]-top_genres[a]}).slice(0,10);
             label_array = label_array.sort(function(a,b){return b - a; }).slice(0,10);
-
+            console.log(keysSorted);
+            console.log(label_array);
             ctx = document.getElementById('top_genres');
 
             const myChart = new Chart(ctx, {
@@ -396,6 +397,10 @@
         .detail-section{
             padding:0px  !important;
             text-align: center;
+        }
+
+        .analyze-detail{
+            top:0px;
         }
 
         .update_text{

@@ -42,13 +42,6 @@
         </div>
     </div>
 </div>
-<script>
-    $(function(){
-        $(".confirmUnlock").click(function(){
-            
-        });
-    });
-</script>
 <style>
     #cancelbtn:hover{
         background-color: #1b1b1b !important;

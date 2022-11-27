@@ -3,7 +3,11 @@
     <section class="pricing-section pricing-section-hero" style="background:linear-gradient(180deg, rgba(18, 18, 18, 0) -112.13%, rgba(18, 18, 18, 0.787848) -0.19%, #121212 42.6%), url({{asset('images/bg/hero.jpg')}})">
         <div class="wrap">
             <h3 class="text-center">Instantly Connect With Playlist Curators</h3>
-            <div class="text-center start-for-free">Start your <span class="yellow-color">Free Trial</span> today, you cancel or change plans at anytime!</div>
+            @if(user()->subscription()->plan->isFree())
+                <div class="text-center start-for-free">Start your <span class="yellow-color">Free Trial</span> today, you cancel or change plans at anytime!</div>
+            @else
+                <div style="height:40px"></div>
+            @endif
             <div class="container">
                 <div class="monthly-yearly-wrapper d-flex align-items-center justify-center month">
                     <div class="text pe-2 month">Pay Monthly</div>
@@ -79,7 +83,7 @@
                                         <div class="d-flex"><button class="primary full-width {{$currentPlanClass ?? ''}}" data-toggle="modal" {{$currentPlanClass ?? ""}} data-target="#cancel_subscription">{{$buyTextFree}} </button></div>
                                         @include('frontend.includes.modals.confirm_cancel_subscription')
                                     @else
-                                        <div class="d-flex"><button class="primary full-width buyNow {{$currentPlanClass ?? ''}}" {{$currentPlanClass ?? ""}} data-plan-name="{{strtolower($plan->name)}}" data-price="{{$plan->price}}" data-plan-type="{{$plan->invoice_interval}}" data-plan-id="{{$plan->id}}" data-pp-id="{{$plan->paypal_id}}" onclick="ym(73260880, 'reachGoal', 'chooseplan'); return true;">{{$buyTextPay}}</button></div>
+                                        <div class="d-flex"><button class="primary full-width buyNow {{$currentPlanClass ?? ''}}" {{$currentPlanClass ?? ""}} data-plan-name="{{strtolower($plan->name)}}" data-price="{{$plan->price}}" data-plan-type="{{$plan->invoice_interval}}" data-credit="{{$plan->feature('credits')->value}}" data-plan-id="{{$plan->id}}" data-pp-id="{{$plan->paypal_id}}" onclick="ym(73260880, 'reachGoal', 'chooseplan'); return true;">{{$buyTextPay}}</button></div>
                                     @endif
 
                                     @endauth

@@ -72,10 +72,10 @@
                 </div> -->
                 @if(!user()->subscription()->plan->isFree())
                     <div class="d-inline-flex mb-2" style="float:right;">
-                        <span onclick="changeLayout(true)" class="text-white justify-content-center d-flex align-items-center m-auto" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b">
+                        <span onclick="changeLayout(true)" class="text-white justify-content-center d-flex align-items-center m-auto grid-layout" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b; cursor:pointer">
                             <i class="fa-solid fa-grid-2"></i>
                         </span>
-                        <span onclick="changeLayout(false)" class="text-white justify-content-center d-flex align-items-center m-auto" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b">
+                        <span onclick="changeLayout(false)" class="text-white justify-content-center d-flex align-items-center m-auto list-layout" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b; cursor:pointer">
                             <i class="fa-solid fa-list"></i>
                         </span>
                     </div>
@@ -332,9 +332,11 @@
         }
         var isFree = eval(<?php echo(user()) ?>).subscriptions[0].plan.id == 1;
         if(isFree || (localStorage.getItem('grid')=='false')){
+            $(".list-layout").css('border','1px solid white');
             $('.table-responsive').css('display','block');
             $('.list-responsive').css('display','none');
         } else {
+            $(".grid-layout").css('border','1px solid white');
             $('.table-responsive').css('display','none');
             $('.list-responsive').css('display','flex');
         }
@@ -343,9 +345,13 @@
     function changeLayout(flag){
         if(!flag){
             localStorage.setItem('grid', 'false');
+            $(".grid-layout").css('border','0px');
+            $(".list-layout").css('border','1px solid white');
             $('.table-responsive').css('display','block');
             $('.list-responsive').css('display','none');
         } else{
+            $(".grid-layout").css('border','1px solid white');
+            $(".list-layout").css('border','0px');
             localStorage.setItem('grid', 'true');
             $('.table-responsive').css('display','none');
             $('.list-responsive').css('display','flex');
@@ -372,15 +378,14 @@
         $(".confirmUnlock").click(function (e) {
             e.preventDefault();
             $('#unlock_playlist_modal').modal('toggle');
-            $('#top').addClass('d-none');
             $('#loader').addClass('d-flex');
             let $form = $(this).closest('form');
 
             setTimeout(
-                    function () {
-                        $form.submit();
-                    }, 1000
-                    );
+                function () {
+                    $form.submit();
+                }, 1000
+            );
         });
 
         $(".open-modal").click(function (e) {

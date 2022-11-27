@@ -2,14 +2,13 @@
      aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content position-relative">
-            <div class="position-absolute" data-dismiss="modal" aria-label="Close">
+            <div class="position-absolute" data-dismiss="modal" aria-label="Close" style="cursor:pointer">
                 <i class="fas fa-times" style="font-size:25px;"></i>
             </div>
             <img class="loader" src="{{asset('images/icons/loader-white.gif')}}" />
             <div class="modal-header border-0 pb-0">
                 <img class="mr-2" src="{{ asset('images/logo-w.png') }}" alt="" width="190" />
             </div>
-
             <div class="modal-body">
                 <div class="monthly-yearly-wrapper d-flex align-items-center justify-center month small">
                     <div class="text pe-2 month">Pay Monthly</div>
@@ -20,7 +19,7 @@
                 <div id="modal-plan-details row" class="plan-details d-flex justify-content-between" data-month-plan-id="" data-month-plan-pp-id="" data-year-plan-id="" data-year-plan-pp-id="">
                     <div class="col-6 plan-info d-flex flex-column text-center">
                         <h5 class="text-center"><span class="plan-name"></span> Plan</h5>
-                        <div class="plan-sd gap-1 mt-2 align-items-center d-flex justify-content-center">50 Credits/Month
+                        <div class="plan-sd gap-1 mt-2 align-items-center d-flex justify-content-center"><span id="credit_count"></span> Credits/Month
                             <span data-toggle="tooltip" data-placement="right" title="A credit is the currency you use to unlock a Spotify playlist curator’s contact information on our platform. One credit gets you one unlock.">
                                 <i class="fa-solid fa-circle-info secondary-color"></i>
                             </span>
@@ -65,8 +64,8 @@
                             <div id="card-element" style="background: #ffffff; padding: 5%; border-radius: 4px;"></div>
                             <div class="form-check mt-3">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                                <label class="form-check-label" for="flexCheckChecked">
-                                    I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>
+                                <label class="form-check-label" for="flexCheckChecked" style="cursor:pointer">
+                                    I agree to the <a href="/terms" target="_blank">Terms & Conditions</a> and <a href="/privacy" target="_blank">Privacy Policy</a>
                                 </label>
                             </div>
 
@@ -145,4 +144,3 @@
         </div>
     </div>
 </div>
-
