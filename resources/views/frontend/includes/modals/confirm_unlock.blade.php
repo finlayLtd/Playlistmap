@@ -15,13 +15,17 @@
                     <img width="90px" height="90px" class="img-thumbnail" style="margin-right:20px">
                     <div class="d-inline-block my-5 text-truncate">
                         <span class="h6" id="playlist_name"></span>
-                        <div style="font-size:16px; color:#C0C0C0">
-                            <i class="fa fa-users" aria-hidden="true" style="color:#827F7F"></i>
-                            Followers
-                            <span id="playlist_followers"></span>
-                            <i class="fa-solid fa-album-collection" style="color:#827F7F; border-left: 1px #827f7f solid; padding-left:5px;"></i>
-                            Tracks
-                            <span id="playlist_tracks"></span>
+                        <div class="row" style="font-size:16px; color:#C0C0C0">
+                            <div class="col-md-6 col-sm-12">
+                                <i class="fa fa-users" aria-hidden="true" style="color:#827F7F"></i>
+                                Followers
+                                <span id="playlist_followers"></span>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <i class="fa-solid fa-album-collection" style="color:#827F7F; padding-left:5px;"></i>
+                                Tracks
+                                <span id="playlist_tracks"></span>
+                            </div>
                         </div>
                         <div style="font-size:12px">updated:  <span id="playlist_updated" style="color:#C0C0C0"></span></div>
                     </div>
@@ -65,10 +69,18 @@
         display:none !important;
     }
 
+    .fa-album-collection{
+        border-left: 1px solid gray;
+    }
+
     @media screen and (max-width:767px){
         .modal-dialog .position-relative{
             position:absolute !important;
             bottom:0;
+        }
+
+        .fa-album-collection{
+            border-left: none;
         }
 
         .modal-dialog .position-absolute{

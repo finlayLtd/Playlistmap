@@ -2,8 +2,8 @@
 
 @section('content')
 
-<section class="background-position-center" style="background:linear-gradient(360deg, #121212 0%, rgba(24, 24, 24, 0) 500%), url({{$playlist->image}}); background-position:top;background-size:cover">
-    <div class="detail-section" style="backdrop-filter:blur(5px)">
+<section class="background-position-center d-flex justify-content-center playlist-detail-section" style="background:linear-gradient(360deg, #121212 0%, rgba(24, 24, 24, 0) 500%), url({{$playlist->image}}); background-position:top;background-size:cover">
+    <div class="detail-section" style="backdrop-filter:blur(5px); max-width:1440px">
         <!-- <div class="mx-3"><span><a href="{{route('frontend.search')}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists / {{$playlist->name}}</div> -->
         <div class="mx-3"><span><a href="{{url()->previous()}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists / {{$playlist->name}}</div>
         <div class="container detail-container row my-5">
@@ -41,8 +41,9 @@
                     <div class="my-3">
                         <span class="text-white"><i class="fa-solid fa-circle-user"></i></span> {{ $playlist->owner }}
                     </div>
-                    <div class="text-truncate my-3" style="overflow:inherit">
+                    <div class="my-3 text-truncate d-flex" style="overflow:inherit; white-space:normal">
                         <span class="text-white"><i class="fa-solid fa-circle-envelope"></i></span> 
+                        <span>
                             @foreach($playlist->contacts as $contact)
                                 @if(filter_var($contact, FILTER_VALIDATE_EMAIL))
                                     {{ $contact }}
@@ -52,6 +53,7 @@
                                     </a>
                                 @endif
                             @endforeach
+                        </span>
                     </div>
                 </div>
                 <div class="text-center container">
@@ -289,7 +291,7 @@
 
             node.append("title")
                 .text(function(d) {
-                    return d.data.Name + ": " + d.data.Count;
+                    return d.data.Name + "-" + d.data.Count+" songs";
                 });
 
             node.append("circle")
@@ -344,6 +346,10 @@
 @endsection
 
 <style>
+
+    .main:has(.playlist-detail-section){
+        max-width: 100%;
+    }
 
     .detail-icon{
         width:40px;

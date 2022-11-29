@@ -8,14 +8,14 @@ use App\Models\UsersData;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Validator;
 
 class ProfileController extends Controller {
 
     public function index() {
         $user = auth()->user();
-        $playlists = $user->unlockedPlaylists()->paginate(12);
 
-        return view('frontend.profile.index', compact('user', 'playlists'));
+        return view('frontend.profile.index', compact('user'));
     }
 
     public function myplaylist(){
@@ -59,15 +59,23 @@ class ProfileController extends Controller {
     public function updatePassword(Request $request){
         
         $user = auth()->user();
+        $tabnum = 2;
 
-        $request->validate([
-            'password' => 'required|string|min:6',
-            'confirm_password' => 'required|same:password|min:6'
-        ]);
+        $validator = Validator::make($request->all(),
+            [
+                'password' => 'required|string|min:6',
+                'confirm_password' => 'required|same:password|min:6'
+            ]
+        );
+        
+        if($validator->fails()){
+            return view('frontend.profile.index', compact('tabnum', 'user'))->with('error', 'Please check confirm password must match' );
+        }
 
         if ($password = $request->input('password'))
             $user->update(['password' => bcrypt($password)]);
-        return redirect()->back()->with('success', 'Password Updated Successfully');
+
+        return view('frontend.profile.index', compact('tabnum', 'user'))->with('success', 'Password Updated Successfully');
     }
 
     public function plans(Request $request) {

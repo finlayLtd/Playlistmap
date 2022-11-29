@@ -36,7 +36,7 @@
                             <a href="/pricing">Pricing</a>
                         </li>
                         <li class="mb-2">
-                            <a data-toggle="modal" data-target="#register_modal">Sign Up</a>
+                            <a href="" data-toggle="modal" data-target="#register_modal" style="cursor:pointer">Sign Up</a>
                         </li>
                         <li class="mb-2">
                             <a href="/faq">FAQs</a>

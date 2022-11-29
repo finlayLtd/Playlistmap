@@ -55,6 +55,8 @@ class SubscriptionController extends Controller {
 
         $user = user();
 
+        $tabnum = 3;
+
         $newSubscription = false;
         $globalPlanID = 0;
 
@@ -126,17 +128,18 @@ class SubscriptionController extends Controller {
             }
 
             if ($newSubscription) {
-                return redirect()->to('/manage-plans')->with('success', 'Plan changed successfully')->getTargetUrl() . '?ordercompleted=' . $plan->id;
+                $ordercompleted = $plan->id;
+                return view('frontend.profile.index', compact('user', 'ordercompleted', 'tabnum'))->with('success', 'Plan changed successfully');
             } else {
-                return redirect()->to('/manage-plans')->with('success', 'Plan changed successfully');
+                return view('frontend.profile.index', compact('user', 'tabnum'))->with('success', 'Plan changed successfully');
             }
         } catch (\Exception $e) {
             if ($newSubscription) {
-                return redirect('/manage-plans' . '?ordercompleted=' . $globalPlanID)->with('success', 'Plan changed successfully');
+                return view('frontend.profile.index', compact('user', '$globalPlanID', 'tabnum'))->with('success', 'Plan changed successfully');
             } else if ($e->getMessage() === "The given data was invalid." || $e->getMessage() === "The given data was invalid") {
-                return redirect()->to('/manage-plans')->with('success', 'Plan changed successfully');
+                return view('frontend.profile.index', compact('user', 'tabnum'))->with('success', 'Plan changed successfully');
             } else {
-                return redirect()->to('/manage-plans')->with('error', $e->getMessage());
+                return redirect()->back()->with('error', $e->getMessage());
             }
         }
     }

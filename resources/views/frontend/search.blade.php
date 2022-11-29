@@ -1,7 +1,7 @@
 @extends('layouts.frontend-main ')
 
 @section('content')
-<div class="homepage-section m-auto align-items-center text-center d-flex flex-column justify-content-center homepage-section-hero @if(request()->query('q')) d-none @endif" style="height:770px !important;background:linear-gradient(180deg, rgba(18, 18, 18, 0) -26%, rgba(18, 18, 18, 0.787848) -4.22%, #121212 58%), url(http://localhost:8000/images/bg/hero.jpg)">
+<div class="homepage-section m-auto align-items-center text-center d-flex flex-column justify-content-center homepage-section-hero @if(request()->query('q')) d-none @endif" style="height:770px !important;background:linear-gradient(180deg, rgba(18, 18, 18, 0) -26%, rgba(18, 18, 18, 0.787848) -4.22%, #121212 58%), url(http://localhost:8000/images/bg/hero.jpg);">
     <p class="row col-md-6 col-sm-12 container h1 text-center h-auto">Get on the right playlist & reach your future fans</p>
     <form class="row col-md-8 col-sm-12" action="{{ route('frontend.search') }}">
         <div class="input-group bg-white rounded-pill p-0">
@@ -52,7 +52,7 @@
 
         @if(!user()->subscription()->plan->isFree())
             <div class="row mt-3 mb-3 d-inline container">
-                <div class="col-md-6 col-sm-12 align-items-center text-left d-inline-flex align-items-center mobile-d-none">
+                <div class="col-md-6 col-sm-12 align-items-center text-left d-inline-flex align-items-center mobile-d-none search-result-for">
                     Search results for:
                     <div class="d-inline-flex badge badge-soft-info" style="background:#1b1b1b!important; margin-left:15px!important">
                         {{request()->get('q')}}
@@ -261,7 +261,7 @@
                                     @foreach(array_slice($playlist->artists, 0, 5) as $artist)
                                         <a class="hover-text-decoration-none"
                                             href="{{ route('frontend.search', ['q' => $artist]) }}">
-                                            <span class="badge badge-soft-info cursor-pointer artist {{Helpers::stringsMatchWithAccents($artist, request()->query('q'))}}">
+                                            <span class="badge badge-soft-info badge-artist cursor-pointer artist {{Helpers::stringsMatchWithAccents($artist, request()->query('q'))}}">
                                                 {{ $artist }}
                                             </span>
                                         </a>
@@ -271,7 +271,7 @@
                                 <td class="w-20 text-left mobile-d-none">
                                     @foreach(array_slice($playlist->genres, 0, 5) as $genre)
                                         <a class="hover-text-decoration-none" href="{{ route('frontend.search', ['q' => $genre]) }}">
-                                            <span class="badge badge-soft-info cursor-pointer genre {{Helpers::stringsMatchWithAccents($genre, request()->query('q'))}}">
+                                            <span class="badge badge-soft-info badge-genere cursor-pointer genre {{Helpers::stringsMatchWithAccents($genre, request()->query('q'))}}">
                                                 {{ $genre }}
                                             </span>
                                         </a>
@@ -366,7 +366,7 @@
         });
         $(".cancel-badge").click(function(){
             $(this).attr("enable-badge", false);
-            $("div:has")
+            $(".search-result-for").addClass('d-none')
         });
 
         $('.unlockPlaylistBtn').click(function (e) {
@@ -425,9 +425,21 @@
 
 
 <style>
-
     div.badge:has([enable-badge=false]){
         display: none !important;
+    }  
+
+    .badge.badge-artist{
+        background-color: rgba(32, 98, 239, 0.2) !important;
+    }
+    .badge.badge-artist.current{
+        background-color: rgba(32, 98, 239, 0.5) !important;
+    }
+    .badge.badge-genere{
+        background-color: rgba(251, 222, 75, 0.2) !important;
+    }
+    .badge.badge-genere.current{
+        background-color: rgba(251, 222, 75, 0.5) !important;
     }
 
     @media screen and (max-width:767px){

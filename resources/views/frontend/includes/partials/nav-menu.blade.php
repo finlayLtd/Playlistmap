@@ -51,17 +51,17 @@
     @endguest
 
     @auth
-    @if(isset(user()->subscription()->name) && user()->subscription()->name !== "primary")
-    <li class="upgrade-now-wrapper">
-        <a class="nav-link me-4" href="/manage-plans">
-            <button class="primary"><i class="fas fa-message-arrow-up"></i>Upgrade Now</button>
+    @if(isset(user()->subscription()->name) && user()->subscription()->plan_id !== 4)
+    <li class="">
+        <a class="nav-link me-4 upgrade-link" href="/pricing">
+            <button class="primary"><i class="fas fa-message-arrow-up"></i>Upgrade<span class="mobile-d-none"> Now</span></button>
         </a>
     </li>
     @endif
 
     <li class="nav-item dropdown dropdown-user-wrapper">
         <a class="nav-link pr-0 d-flex " id="navbarDropdownUser" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <div class="mr-3 align-self-center name">{{ user()->name }}</div>
+            <div class="mr-3 align-self-center name mobile-d-none">{{ user()->name }}</div>
             <div class="avatar avatar-xl">
                 @if(user()->avatar_url)
                 <img class="rounded-circle profile-image ml-4" src="{{ user()->avatar_url }}" alt="" />
@@ -72,7 +72,7 @@
                 @endif
             </div>
             
-            <div class="arrow-wrapper d-flex align-items-center">
+            <div class="arrow-wrapper d-flex align-items-center mobile-d-none">
                 <i class="fas fa-chevron-down"></i>
             </div>
         </a>
@@ -190,6 +190,12 @@
 
         header{
             height:40px !important;
+        }
+    }
+
+    @media screen and (max-width:768px){
+        .upgrade-link{
+            margin-right:0px !important
         }
     }
 

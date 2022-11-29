@@ -22,7 +22,7 @@ body {
     letter-spacing: -0.0044em;
 }
 
-main, header, footer {
+main, footer {
     max-width: 1440px;
     margin: 0 auto;
 }
@@ -461,7 +461,7 @@ header .navbar-nav .dropdown .dropdown-menu .links-wrapper a:hover {
 header .default-avatar-icon {
     font-size: 32px;
     font-weight: 900;
-    line-height: 270px;
+    line-height: 60px;
     letter-spacing: -0.0044em;
     margin-left: 6px;
 }

@@ -48,7 +48,7 @@ class User extends Authenticatable implements MustVerifyEmail {
     }
 
     public function unlockedPlaylists() {
-        return $this->belongsToMany(Playlist::class, 'unlocked_playlists')->withPivot('created_at');
+        return $this->belongsToMany(Playlist::class, 'unlocked_playlists')->withPivot('created_at')->orderByPivot('created_at', 'desc');
     }
 
     /** This function determine if user already unlocked a playlist from curator

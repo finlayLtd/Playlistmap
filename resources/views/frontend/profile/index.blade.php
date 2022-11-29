@@ -9,7 +9,6 @@
     type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"
 ></script>
-
 <div style="height: 70px;">
 </div>
 <div class="row mb-4">
@@ -46,7 +45,7 @@
             </div>
 
             <!-- <a href="{{route('frontend.profile')}}"> -->
-            <a href="#red" class="mobile-d-none active" data-toggle="tab">
+            <a href="#red" class="mobile-d-none @if(!isset($tabnum)) active @endif" data-toggle="tab">
                 <div class="">
                     <i class="fas fa-user"></i>
                     <span style="margin-left: 8px;">
@@ -69,7 +68,7 @@
                 </div>
             </a>
             <!-- <a href="{{route('frontend.security')}}"> -->
-            <a href="#orange" class="mobile-d-none" data-toggle="tab">
+            <a href="#orange" class="mobile-d-none @if(isset($tabnum) && $tabnum==2) active @endif" data-toggle="tab">
                 <div class="">
                     <i class="fas fa-user-unlock"></i>
                     <span style="margin-left: 8px;">
@@ -92,7 +91,7 @@
                 </div>
             </a>              
             <!-- <a href="{{route('frontend.subscription')}}"> -->
-            <a href="#yellow" class="mobile-d-none" data-toggle="tab">
+            <a href="#yellow" class="mobile-d-none  @if(isset($tabnum) && $tabnum==3) active @endif" data-toggle="tab">
                 <div class="">
                     <i class="fas fa-credit-card-blank"></i>
                     <span style="margin-left: 8px;">
@@ -114,7 +113,7 @@
     </div>
     <div class="col-md-7 newDiv mobile-d-none">
         <div id="my-tab-content" class="tab-content">
-            <div class="tab-pane active" id="red">
+            <div class="tab-pane @if(!isset($tabnum)) active @endif" id="red">
                 <div style="font-family: 'Lato'; font-style: normal; font-weight: 700; font-size: 24px; line-height: 36px; color: #FFFFFF;">
                     Profile
                 </div>
@@ -200,7 +199,7 @@
                     </div>
                 </form>
             </div>
-            <div class="tab-pane" id="orange">
+            <div class="tab-pane @if(isset($tabnum) && $tabnum==2) active @endif" id="orange">
                 <div style="font-family: 'Lato';font-style: normal;font-weight: 700;font-size: 24px;line-height: 36px;color: #FFFFFF;">
                     Login & Security
                 </div>
@@ -262,7 +261,7 @@
                     </div>
                 </form>
             </div>
-            <div class="tab-pane" id="yellow">
+            <div class="tab-pane @if(isset($tabnum) && $tabnum==3) active @endif" id="yellow">
                 <div style="font-family: 'Lato';font-style: normal;font-weight: 700;font-size: 24px;line-height: 36px;color: #FFFFFF;">
                     Subscritption
                 </div>

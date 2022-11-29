@@ -138,9 +138,11 @@
                         <span class="noneMobile">1/3</span>
                         <h3 class="mt-4 mb-4 noneMobile">Playlisting</h3>
                         <h6 class="mb-4 sliderText">Quickly identify playlists that match your music to improve your acceptance rate. Uncover contact information for hard-to-get curators, create valuable connections, and send them your tracks.</h6>
+                        @guest
                         <a>
                             <button class="tertiary big m-auto rounded-pill" data-toggle="modal" data-target="#register_modal"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
                         </a>
+                        @endguest
                     </div>
                 </div>
             </div>
@@ -154,9 +156,11 @@
                         <span class="noneMobile">2/3</span>
                         <h3 class="mt-4 mb-4 noneMobile">Pitch Templates</h3>
                         <h6 class="mb-4 sliderText">We get it—you’re a musician, not a marketer.  Use our customizable message templates to speed up your outreach, simplify the pitch process, and boost your success rate. </h6>
+                        @guest
                         <a>
                             <button class="tertiary big m-auto rounded-pill" data-toggle="modal" data-target="#register_modal"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
                         </a>
+                        @endguest
                     </div>
                 </div>
             </div>
@@ -170,9 +174,11 @@
                         <span class="noneMobile">3/3</span>
                         <h3 class="mt-4 mb-4 noneMobile">AI Recommendations</h3>
                         <h6 class="mb-4 sliderText"><b>Coming soon. With our new proprietary AI algorithm, we’ll automatically match your tracks with the most relevant playlists to make pitching your music truly effortless. </b></h6>
+                        @guest
                         <a>
                             <button class="tertiary big m-auto rounded-pill" data-toggle="modal" data-target="#register_modal"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
                         </a>
+                        @endguest
                     </div>
                 </div>
             </div>
@@ -276,9 +282,11 @@
                 <h4 class="mt-4 mb-4 centerMobile">Get Started Today!</h4>
                 <h5 class="mb-4 sliderText">Want to experience the magic for yourself?<br>
                     Sign up now (no credit card required) to start getting the streams your music deserve</h5>
+                @guest
                 <a>
                     <button class="tertiary big m-auto rounded-pill" data-toggle="modal" data-target="#register_modal"><i class="fas fa-badge-percent"></i>Start Free Trial</button>
                 </a>
+                @endguest
             </div>
         </div>
     </div>

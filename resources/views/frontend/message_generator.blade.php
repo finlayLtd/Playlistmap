@@ -17,7 +17,7 @@
     @endforeach
 </p>
 <div class="message container row m-auto">
-    <span class="head_text"><i class="me-2 mobile-d fa-regular fa-chevron-left" width="20px" height="20px"></i> Generate Message</span>
+    <span class="head_text"><a href="{{url()->previous()}}"><i class="me-2 mobile-d fa-regular fa-chevron-left" width="20px" height="20px"></i></a> Generate Message</span>
     <div class="col-md-8 col-sm-12 p-4 mt-3 card composer-email container">
         <div class="h4">Email</div>
         <input class="form-control border-0" type="text" placeholder="To" value="{{$playlist->contacts[0]}}">
@@ -313,7 +313,6 @@ foreach ($playlist->contacts as $contact) {
 
     .composer-email:has(input:not([value])) button{
         color: #fff;
-        background-color: #0d6efd;
         border-color: #0d6efd;
         pointer-events: none;
         opacity: .65;
@@ -406,6 +405,10 @@ foreach ($playlist->contacts as $contact) {
 
         .email-template .h4{
             margin-top:20px !important;
+        }
+
+        .tox-editor-container .tox-editor-header{
+            margin:10px;
         }
 
         #texttipbox
