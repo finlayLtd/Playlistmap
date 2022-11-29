@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="background-position-center playlist-detail-section" style="background:linear-gradient(360deg, #121212 0%, rgba(24, 24, 24, 0) 500%), url({{$playlist->image}}); background-position:top;background-size:cover">
-    <div class="w-100 h-100 d-flex justify-content-center"  style="backdrop-filter:blur(5px);">
+    <div class="w-100 d-flex justify-content-center"  style="backdrop-filter:blur(5px);">
         <div class="detail-section" style="max-width:1440px">
             <!-- <div class="mx-3"><span><a href="{{route('frontend.search')}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists / {{$playlist->name}}</div> -->
             <div class="mx-3"><span><a href="{{url()->previous()}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists / {{$playlist->name}}</div>
@@ -334,7 +334,7 @@
             var html = "";
             for (let index = 0; index < label_array.length; index++) {
                  html += `<a class="hover-text-decoration-none"><span class="badge badge-soft-info cursor-pointer genre" style="background-color:`
-                    +$('svg.bubble g:nth-child('+(index+1)+') circle').css("fill")
+                    +"rgba(190, 40, 29, 0.2)"
                     +`!important">`
                     +label_array[index]
                     +`</span></a>`;
