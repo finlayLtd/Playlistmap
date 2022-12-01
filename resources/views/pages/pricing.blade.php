@@ -1,6 +1,6 @@
 @extends('layouts.frontend-main', ['title' => 'Playlistmap Pricing', 'bodyClass' => 'pricing'])
 @section('content')
-    <section class="pricing-section pricing-section-hero" style="background:linear-gradient(180deg, rgba(18, 18, 18, 0) -112.13%, rgba(18, 18, 18, 0.787848) -0.19%, #121212 42.6%), url({{asset('images/bg/hero.jpg')}})">
+    <section class="pricing-section pricing-section-hero" style="background:linear-gradient(180deg, rgba(18, 18, 18, 0) -112.13%, rgba(18, 18, 18, 0.787848) -0.19%, #121212 42.6%), url({{asset('images/bg/hero1.jpg')}});">
         <div class="wrap">
             <h3 class="text-center">Instantly Connect With Playlist Curators</h3>
             @if(user()->subscription()->plan->isFree())
