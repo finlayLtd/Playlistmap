@@ -58,7 +58,7 @@
                                             name="password_confirmation" placeholder="Confirm Password"
                                             required autocomplete="new-password">
                                 </div>
-                                <button class="btn btn-danger w-100 rounded-pill btn-block mt-3 w-100 rounded-pill" type="submit" name="submit"><span class="me-1"><i class="fa-regular fa-paper-plane-top"></i></span>Create Account</button>
+                                <button class="btn btn-danger w-100 rounded-pill btn-block mt-3 w-100 rounded-pill" type="submit" name="submit" data-toggle="modal" data-target="#loader"><span class="me-1"><i class="fa-regular fa-paper-plane-top"></i></span>Create Account</button>
                                 <div class="form-check mb-0 mt-2">
                                     <input class="form-check-input @error('agree') is-invalid @enderror" type="checkbox" name="agree" id="agree" {{ old('agree') ? 'checked' : '' }} style="cursor:pointer">
                                     <label class="form-check-label" for="agree" target="_blank" style="cursor:pointer">By signing up you agree to Playlist Map's<a href="/terms" target="_blank"> Terms of Use</a> and <a href="/privacy" target="_blank"> Cookie & Privacy Policy.</a></label>
@@ -93,7 +93,6 @@
         $("#artist-id[type='text']").keyup(function(){
             if($(this).val().length < 3) $('ul.spotify-list').empty().css('display', 'none');
         });
-
     });
 
     function selectArtist(src, text){

@@ -19,7 +19,7 @@
                 <div class="d-flex flex-column justify-content-between">
                     <div class="text">
                         <h4>100M</h4>
-                        <h6 class="text-truncate">Potentials Listeners</h6>
+                        <h6 class="text-truncate str-trick">Potentials Listeners</h6>
                     </div>
                 </div>
             </div>
@@ -76,6 +76,12 @@
         .staticsImage{
             margin-top: 20px;
             justify-content: start;
+        }
+    }
+
+    @media screen and (max-width:380px){
+        .str-trick{
+            width: 75%;
         }
     }
 

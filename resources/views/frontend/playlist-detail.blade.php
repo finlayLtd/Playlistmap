@@ -204,8 +204,6 @@
             val_array = Object.values(top_genres);
             keysSorted = Object.values(top_genres).sort(function(a,b){return top_genres[b]-top_genres[a]}).slice(0,10);
             label_array = label_array.sort(function(a,b){return b - a; }).slice(0,10);
-            console.log(keysSorted);
-            console.log(label_array);
             ctx = document.getElementById('top_genres');
 
             const myChart = new Chart(ctx, {

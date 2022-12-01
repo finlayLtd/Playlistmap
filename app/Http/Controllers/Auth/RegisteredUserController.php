@@ -51,7 +51,7 @@ class RegisteredUserController extends Controller {
                     'avatar' => $request['spotify-artist-image']
         ]));
         
-        event(new Registered($user));
+        // event(new Registered($user));
         
         $user->insertSpotifyArtistID($request['spotify-artist-id']);
         //    $user->uploadProfileImageFromURL($request['spotify-artist-image']);

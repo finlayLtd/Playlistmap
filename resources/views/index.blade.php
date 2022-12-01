@@ -299,7 +299,6 @@
 <script>
     $(document).ready(function(){
         $("#kkk").change(function(){
-            console.log($(this).val()!="");
             if($(this).val()!=""){
                 $(this).css('background-color','white');
                 $("button.main-search-input").css('display','block');

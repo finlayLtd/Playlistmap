@@ -50,7 +50,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <button class="btn btn-danger rounded-pill btn-block mt-3 w-100" type="submit" name="submit" style="background: #BE281D;">
+                                    <button class="btn btn-danger rounded-pill btn-block mt-3 w-100" type="submit" name="submit" style="background: #BE281D;"  data-toggle="modal" data-target="#loader">
                                         <i class="fa fa-sign-in" aria-hidden="true"></i>Log in
                                     </button>
                                 </div>
