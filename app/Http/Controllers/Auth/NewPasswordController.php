@@ -18,7 +18,8 @@ class NewPasswordController extends Controller
      */
     public function create(Request $request)
     {
-        return view('auth.reset-password', ['request' => $request]);
+        $reset_modal = 1;
+        return view('index', compact('request', "reset_modal"));
     }
 
     /**
@@ -48,7 +49,7 @@ class NewPasswordController extends Controller
                     'remember_token' => Str::random(60),
                 ])->save();
 
-                event(new PasswordReset($user));
+                // event(new PasswordReset($user));
             }
         );
 
@@ -56,7 +57,7 @@ class NewPasswordController extends Controller
         // the application's home authenticated view. If there is an error we can
         // redirect them back to where they came from with their error message.
         return $status == Password::PASSWORD_RESET
-                    ? redirect()->route('login')->with('status', __($status))
+                    ? redirect()->route('login')->with('status', __($status))->with('success', "Password Changed Successfully")
                     : back()->withInput($request->only('email'))
                             ->withErrors(['email' => __($status)]);
     }

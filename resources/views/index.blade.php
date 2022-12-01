@@ -189,7 +189,7 @@
 <section class="homepage-section homepage-section-discovered-section">
     <div class="wrap">
         <h2 class="text-center timelineBigTitle">Everything You Need To <b>Get Discovered</b></h2>
-        <div class="discovered-steps-container position-relative">
+        <div class="discovered-steps-container position-relative" style="background: url({{asset('images/graphics/big-red-line.svg')}});background-repeat:no-repeat; background-position-x:50%">
             <img class="line-ball line-ball1 noneMobile" src="{{asset('/images/graphics/red-ball.svg')}}" />
             <img class="line-ball line-ball2 noneMobile" src="{{asset('/images/graphics/blue-ball.svg')}}" />
             <img class="line-ball line-ball3 noneMobile" src="{{asset('/images/graphics/red-ball.svg')}}" />
@@ -202,7 +202,7 @@
                     </h3>
                     <h6 class="secondary-color timelineText">Identifying the right playlists is the key to getting discovered. We make it easy to search for and narrow in on relevant playlists that best fit your unique sound.</h6>
                 </div>
-                <div class="position-relative col-md-6 ">
+                <div class="position-relative col-md-6 ps-5">
                     <img class="step-image step1" src="{{asset('/images/graphics/discovered-step1.svg')}}" />
                 </div>
             </div>
@@ -219,7 +219,7 @@
                 <div class="position-relative col-md-6">
                     <img class="step-image step2" src="{{asset('/images/graphics/discovered-step2.svg')}}" />
                 </div>
-                <div class="noneMobile position-relative col-md-6 mobileAlignCenter m-auto" style="text-align: left;">
+                <div class="noneMobile position-relative col-md-6 mobileAlignCenter m-auto ps-5" style="text-align: left;">
                     <h3 class="position-relative timelineTitle">
                         Musician-Friendly Interface 
                         <div class="step-number">02</div>
@@ -237,7 +237,7 @@
                     </h3>
                     <h6 class="secondary-color mt-3 timelineText">Get a full profile of each playlist before you pitch to make better decisions. View key metrics like number of followers, last updated, top artists, mood, and various other metrics to find genuine, active playlists. </h6>
                 </div>
-                <div class="position-relative col-md-6">
+                <div class="position-relative col-md-6 ps-5">
                     <img class="step-image step3" src="{{asset('/images/graphics/discovered-step3.svg')}}" />
                 </div>
             </div>
@@ -253,7 +253,7 @@
                 <div class="position-relative col-md-6">
                     <img class="step-image step4" src="{{asset('/images/graphics/discovered-step4.svg')}}" />
                 </div>
-                <div class="noneMobile position-relative col-md-6 mobileAlignCenter m-auto" style="text-align: left;">
+                <div class="noneMobile position-relative col-md-6 mobileAlignCenter m-auto ps-5" style="text-align: left;">
                     <h3 class="position-relative timelineTitle">
                         Reach Curators Directly
                         <div class="step-number">04</div>
@@ -298,6 +298,11 @@
 @section('scripts')
 <script>
     $(document).ready(function(){
+        var reset = eval(<?php echo( isset($reset_modal) && $reset_modal ) ?>);
+        if(reset){
+            $("#reset_modal").modal('toggle');
+        }
+
         $("#kkk").change(function(){
             if($(this).val()!=""){
                 $(this).css('background-color','white');
@@ -377,6 +382,10 @@
         }
 
         .homepage .homepage-section-discovered-section .wrap .discovered-steps-container::after {
+            background: none !important;
+        }
+
+        .discovered-steps-container{
             background: none !important;
         }
 
@@ -466,10 +475,6 @@
         .main {
             padding-left: 0px !important;
             padding-right: 0px !important;
-        }
-
-        .marginTopFix{
-            margin-top: 270px !important;
         }
 
         .title1{

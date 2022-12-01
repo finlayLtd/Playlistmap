@@ -1,7 +1,7 @@
 @extends('layouts.frontend-main ')
 
 @section('content')
-@if(user()->subscription()->plan->isFree())
+@if(request()->query('q') && user()->subscription()->plan->isFree())
 <div class="card-header bg-100">
     <b style="font-size: 24px;"> {{ $results_count }} </b>results found for "<b>{{request()->query('q')}}</b>"
 </div>

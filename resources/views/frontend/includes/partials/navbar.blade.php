@@ -28,6 +28,7 @@
             @include('frontend.includes.modals.forget')
             @include('frontend.includes.modals.verify-email')
             @include('frontend.includes.modals.loader')
+            @include('frontend.includes.modals.reset-password')
         </nav>
     </div>
 </header>
