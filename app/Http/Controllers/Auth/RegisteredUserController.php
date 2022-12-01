@@ -42,6 +42,7 @@ class RegisteredUserController extends Controller {
                 ], [
             'agree.required' => 'You must agree to our terms & conditions'
         ]);
+        
 
         Auth::login($user = User::create([
                     'name' => $request->name,
@@ -51,8 +52,9 @@ class RegisteredUserController extends Controller {
         ]));
         
         event(new Registered($user));
+        
         $user->insertSpotifyArtistID($request['spotify-artist-id']);
-//        $user->uploadProfileImageFromURL($request['spotify-artist-image']);
+        //    $user->uploadProfileImageFromURL($request['spotify-artist-image']);
 
         return redirect(RouteServiceProvider::HOME);
     }

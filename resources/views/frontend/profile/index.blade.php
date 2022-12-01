@@ -45,7 +45,7 @@
             </div>
 
             <!-- <a href="{{route('frontend.profile')}}"> -->
-            <a href="#red" class="mobile-d-none @if(!isset($tabnum)) active @endif" data-toggle="tab">
+            <a href="#red" class="mobile-d-none @if(!isset($_REQUEST['t'])) active @endif" data-toggle="tab">
                 <div class="">
                     <i class="fas fa-user"></i>
                     <span style="margin-left: 8px;">
@@ -68,7 +68,7 @@
                 </div>
             </a>
             <!-- <a href="{{route('frontend.security')}}"> -->
-            <a href="#orange" class="mobile-d-none @if(isset($tabnum) && $tabnum==2) active @endif" data-toggle="tab">
+            <a href="#orange" class="mobile-d-none @if(isset($_REQUEST['t']) && $_REQUEST['t']==2) active @endif" data-toggle="tab">
                 <div class="">
                     <i class="fas fa-user-unlock"></i>
                     <span style="margin-left: 8px;">
@@ -91,7 +91,7 @@
                 </div>
             </a>              
             <!-- <a href="{{route('frontend.subscription')}}"> -->
-            <a href="#yellow" class="mobile-d-none  @if(isset($tabnum) && $tabnum==3) active @endif" data-toggle="tab">
+            <a href="#yellow" class="mobile-d-none  @if(isset($_REQUEST['t']) && $_REQUEST['t']==3) active @endif" data-toggle="tab">
                 <div class="">
                     <i class="fas fa-credit-card-blank"></i>
                     <span style="margin-left: 8px;">
@@ -113,7 +113,7 @@
     </div>
     <div class="col-md-7 newDiv mobile-d-none">
         <div id="my-tab-content" class="tab-content">
-            <div class="tab-pane @if(!isset($tabnum)) active @endif" id="red">
+            <div class="tab-pane @if(!isset($_REQUEST['t'])) active @endif" id="red">
                 <div style="font-family: 'Lato'; font-style: normal; font-weight: 700; font-size: 24px; line-height: 36px; color: #FFFFFF;">
                     Profile
                 </div>
@@ -199,7 +199,7 @@
                     </div>
                 </form>
             </div>
-            <div class="tab-pane @if(isset($tabnum) && $tabnum==2) active @endif" id="orange">
+            <div class="tab-pane @if(isset($_REQUEST['t']) && $_REQUEST['t']==2) active @endif" id="orange">
                 <div style="font-family: 'Lato';font-style: normal;font-weight: 700;font-size: 24px;line-height: 36px;color: #FFFFFF;">
                     Login & Security
                 </div>
@@ -227,7 +227,7 @@
                             <div class="col-12" style="margin-bottom: 16px;">
                                 <div class="form-outline form-white">
                                     <input class="form-control @error('password') is-invalid @enderror" name="password"
-                                        id="password" type="text" >
+                                        id="password" type="password" >
                                         <x-error field="password"/>
                                     <label class="form-label" for="password" style="margin-left: 10px; margin-top: 7px;">
                                         New password*
@@ -238,7 +238,7 @@
                             <div class="col-12" style="margin-bottom: 16px;">
                                 <div class="form-outline form-white">
                                     <input class="form-control @error('confirm_password') is-invalid @enderror" name="confirm_password"
-                                        id="confirm_password" type="text" >
+                                        id="confirm_password" type="password" >
                                         <x-error field="confirm_password"/>
                                     <label class="form-label" for="confirm_password" style="margin-left: 10px; margin-top: 7px;">
                                         Confirm New password*
@@ -261,7 +261,7 @@
                     </div>
                 </form>
             </div>
-            <div class="tab-pane @if(isset($tabnum) && $tabnum==3) active @endif" id="yellow">
+            <div class="tab-pane @if(isset($_REQUEST['t']) && $_REQUEST['t']==3) active @endif" id="yellow">
                 <div style="font-family: 'Lato';font-style: normal;font-weight: 700;font-size: 24px;line-height: 36px;color: #FFFFFF;">
                     Subscritption
                 </div>
@@ -281,7 +281,9 @@
                             {{ $user->subscription()->plan->getFeatureByName('credits'.($user->subscription()->plan->id==1?'':'-'.($user->subscription()->plan->id-1)))->value}} Credits/Month <i class="fas fa-exclamation-circle" style="color: #C0C0C0;"></i>
                         </div>
                         <div class="thLetter d-flex">
-                            <button type="button" class="w-100 btn btn-danger" style="background-color:red;margin-left: 10px; padding: 10px !important; border-radius: 25px !important; color: white; float:right; "> <i class="far fa-chevron-down"></i> Manage Plan</button>
+                            <a href="/pricing">
+                                <button type="button" class="w-100 btn btn-danger" style="background-color:red;margin-left: 10px; padding: 10px !important; border-radius: 25px !important; color: white; float:right; "> <i class="far fa-chevron-down"></i> Manage Plan</button>
+                            </a>
                         </div>
                     </div>
 

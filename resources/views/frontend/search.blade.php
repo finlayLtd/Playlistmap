@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="homepage-section m-auto align-items-center text-center d-flex flex-column justify-content-center homepage-section-hero @if(request()->query('q')) d-none @endif" style="background:linear-gradient(180deg, rgba(18, 18, 18, 0) -26%, rgba(18, 18, 18, 0.787848) -4.22%, #121212 58%), url(http://localhost:8000/images/bg/hero.jpg);">
+    <div style="height:70px" class="mobile-d"></div>
     <p class="row col-md-6 col-sm-12 container h1 text-center h-auto">Get on the right playlist & reach your future fans</p>
     <form class="row col-md-8 col-sm-12" action="{{ route('frontend.search') }}">
         <div class="input-group bg-white rounded-pill p-0">
@@ -46,7 +47,7 @@
                         <i class="fa-solid fa-xmark"></i>
                     </span>
                     <button type="submit" class="input-group-text float-right rounded-circle bg-transparent border-0 text-light" style="width:50px; height:50px"><i class="fa fa-search"></i></button>
-                </div>
+                </div>  
             </form>
         </div>
 
@@ -192,39 +193,40 @@
                                     $btn_class = 'btn-primary';
                                 }
                             @endphp
-                            <tr class="{{ $shouldBlur ? 'premium-content' : '' }} @if(!$playlist->isUnlocked()) open-modal @endif" data-id="{{ $playlist->id }}" style="height:125px"
+                            <tr class="{{ $shouldBlur ? 'premium-content' : '' }} @if(!$playlist->isUnlocked()) open-modal @endif" data-flag="{{$playlist->isUnlocked()}}" data-id="{{ $playlist->id }}" style="height:125px"
                                 @if($playlist->isUnlocked()) 
                                     onclick="window.location.href=`{{route('frontend.playlist_detail', ['playlist_id'=>$playlist->id])}}`"
                                 @else 
-                                    data-toggle="modal" data-target="#{{$modal}}" data-playlist-id="{{ $playlist->id }}" 
+                                    data-playlist-id="{{ $playlist->id }}" 
                                 @endif
                             >
                                 <td>
-                                    <div class="position-relative d-flex justify-content-center align-items-center">
-                                        <div class="position-absolute btn-group mobile-d-none" role="group" aria-label="Basic example">
-                                            @php
-                                            if ($playlist->isUnlocked()){
-                                                $modal = "pld_{$playlist->id}_modal";
-                                                $unlock_text = 'Details';
-                                                $unlock_class = '';
-                                                $btn_class = 'btn-success';
-                                            } else {
-                                                $modal = $playlist->shouldUnlock() ? 'unlock_playlist_modal' : 'upgrade_to_unlock_modal';
-                                                $unlock_text = 'Unlock';
-                                                $unlock_class = $playlist->shouldUnlock() ? 'unlockPlaylistBtn' : '';
-                                                $btn_class = 'btn-primary';
-                                            }
-                                            @endphp
-                                            
-                                            @if($unlock_text == 'Unlock')
-                                                <button class="open-modal btn bg-danger d-flex justify-content-center btn-sm {{ $btn_class }} text-center rounded-circle border-0" type="button" data-toggle="modal"
-                                                    data-target="#{{$modal}}" data-playlist-id="{{ $playlist->id }}" style="display: inherit; width:40px; height:40px">
-                                                    <i class="fa-solid m-0 fa-lock-keyhole"></i>
-                                                </button>
-                                            @else
-                                            @endif
+                                    <div class="detail-img m-auto" style="width:78px; height:78px; border-radius:10px;box-shadow: 0px 7px 0px -5px rgb(255,255,255,0.3)">
+                                        <div class="position-relative w-100" style="padding-top:100% !important; box-shadow: 0px 10px 0px -5px rgb(255,255,255,0.3);border-radius: 20px;">
+                                            <img src="{{ $playlist->image }}" class="position-absolute" style="top:0px;left:0px; height:78px !important; width:78px !important;object-fit:cover; border-radius:10px">
+                                            <div class="position-absolute btn-group mobile-d-none" role="group" aria-label="Basic example" style="top:calc(50% - 20px); left: calc(50% - 20px)">
+                                                @php
+                                                    if ($playlist->isUnlocked()){
+                                                        $modal = "pld_{$playlist->id}_modal";
+                                                        $unlock_text = 'Details';
+                                                        $unlock_class = '';
+                                                        $btn_class = 'btn-success';
+                                                    } else {
+                                                        $modal = $playlist->shouldUnlock() ? 'unlock_playlist_modal' : 'upgrade_to_unlock_modal';
+                                                        $unlock_text = 'Unlock';
+                                                        $unlock_class = $playlist->shouldUnlock() ? 'unlockPlaylistBtn' : '';
+                                                        $btn_class = 'btn-primary';
+                                                    }
+                                                @endphp
+                                                
+                                                @if($unlock_text == 'Unlock')
+                                                    <button class="open-modal btn bg-danger d-flex justify-content-center btn-sm {{ $btn_class }} text-center rounded-circle border-0" type="button" data-toggle="modal"
+                                                        data-target="#{{$modal}}" data-playlist-id="{{ $playlist->id }}" style="display: inherit; width:40px; height:40px">
+                                                        <i class="fa-solid m-0 fa-lock-keyhole"></i>
+                                                    </button>
+                                                @endif
+                                            </div>
                                         </div>
-                                        <img class="img-thumbnail" style="width: 78px; height:78px; object-fit:cover" src="{{ $playlist->image }}" />
                                     </div>
                                 </td>
                                 <td colspan="2" style="height:inherit;">
@@ -389,6 +391,7 @@
         });
 
         $(".open-modal").click(function (e) {
+
             var playlist_id = $(this).attr('data-playlist-id');
             $("input[name='playlist_id']").val(playlist_id);
             $(".playlist_unlock_detail img").attr('src', $("tr[data-id='"+playlist_id+"'] img").attr('src'));
@@ -396,6 +399,22 @@
             $(".playlist_unlock_detail #playlist_followers").text($("tr[data-id='"+playlist_id+"'] span#playlist_followers").text());
             $(".playlist_unlock_detail #playlist_tracks").text($("tr[data-id='"+playlist_id+"'] span#playlist_tracks").text());
             $(".playlist_unlock_detail #playlist_updated").text($("tr[data-id='"+playlist_id+"'] span#playlist_updated").text());
+
+            if(!e.target.classList.contains('badge'))
+            {
+                if(!$(this).attr('data-flag')=='1'){
+                    $('#unlock_playlist_modal').modal('show');
+                } else{
+                    $('#loader').modal('toggle');
+                    var url = '{{ route("frontend.playlist_detail", ":playlist_id") }}';
+
+                    url = url.replace(':playlist_id', playlist_id);
+
+                    window.location.href=url;
+                }
+            } else {
+                $('#loader').modal('toggle');
+            }
 
         });
         

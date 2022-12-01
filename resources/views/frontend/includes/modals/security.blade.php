@@ -34,7 +34,7 @@
                                 <div class="col-12" style="margin-bottom: 16px;">
                                     <div class="form-outline form-white">
                                         <input class="form-control @error('password') is-invalid @enderror" name="password"
-                                            id="password" type="text" >
+                                            id="password" type="password" >
                                             <x-error field="password"/>
                                         <label class="form-label" for="password" style="margin-left: 10px; margin-top: 7px;">
                                             New password*
@@ -45,7 +45,7 @@
                                 <div class="col-12" style="margin-bottom: 16px;">
                                     <div class="form-outline form-white">
                                         <input class="form-control @error('confirm_password') is-invalid @enderror" name="confirm_password"
-                                            id="confirm_password" type="text" >
+                                            id="confirm_password" type="password" >
                                             <x-error field="confirm_password"/>
                                         <label class="form-label" for="confirm_password" style="margin-left: 10px; margin-top: 7px;">
                                             Confirm New password*

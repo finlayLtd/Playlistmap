@@ -263,9 +263,9 @@ class FrontendController extends Controller {
         $playlists = Playlist::all()->random(6);
         $user = auth()->user();
         $playlist = Playlist::where("id", "=", $playlist->id)->get()->first();
-        return redirect()->route('frontend.myplaylist');
+        // return redirect()->route('frontend.myplaylist');
         // return view('frontend.profile.myplaylist', compact('user', 'playlists'));
-        // return view('frontend.playlist-detail', compact('playlist', 'playlists', 'user'));
+        return redirect()->route('frontend.playlist_detail', ['playlist_id'=>$playlist->id]);
 
     }
 

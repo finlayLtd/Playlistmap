@@ -69,13 +69,13 @@ class ProfileController extends Controller {
         );
         
         if($validator->fails()){
-            return view('frontend.profile.index', compact('tabnum', 'user'))->with('error', 'Please check confirm password must match' );
+            return redirect()->route('frontend.profile', ['t'=>$tabnum])->with('error', 'Please check confirm password must match' );
         }
 
         if ($password = $request->input('password'))
             $user->update(['password' => bcrypt($password)]);
 
-        return view('frontend.profile.index', compact('tabnum', 'user'))->with('success', 'Password Updated Successfully');
+        return redirect()->route('frontend.profile', ['t'=>$tabnum])->with('success', 'Password Updated Successfully');
     }
 
     public function plans(Request $request) {

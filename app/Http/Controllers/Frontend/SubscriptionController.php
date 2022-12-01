@@ -127,17 +127,19 @@ class SubscriptionController extends Controller {
                 $user->subscription()->changePlan($plan);
             }
 
+            $user = user();
+
             if ($newSubscription) {
                 $ordercompleted = $plan->id;
-                return view('frontend.profile.index', compact('user', 'ordercompleted', 'tabnum'))->with('success', 'Plan changed successfully');
+                return redirect()->route('frontend.search')->with('success', 'Plan changed successfully');
             } else {
-                return view('frontend.profile.index', compact('user', 'tabnum'))->with('success', 'Plan changed successfully');
+                return redirect()->route('frontend.search')->with('success', 'Plan changed successfully');
             }
         } catch (\Exception $e) {
             if ($newSubscription) {
-                return view('frontend.profile.index', compact('user', '$globalPlanID', 'tabnum'))->with('success', 'Plan changed successfully');
+                return redirect()->route('frontend.search')->with('success', 'Plan changed successfully');
             } else if ($e->getMessage() === "The given data was invalid." || $e->getMessage() === "The given data was invalid") {
-                return view('frontend.profile.index', compact('user', 'tabnum'))->with('success', 'Plan changed successfully');
+                return redirect()->route('frontend.search')->with('success', 'Plan changed successfully');
             } else {
                 return redirect()->back()->with('error', $e->getMessage());
             }

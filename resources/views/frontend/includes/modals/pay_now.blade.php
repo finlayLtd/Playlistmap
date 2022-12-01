@@ -70,7 +70,7 @@
                             </div>
 
                             <div class="mt-3">
-                                <button onclick="ym(73260880, 'reachGoal', 'placeorder'); return true;" type="submit" class="primary place-order-button d-flex justify-content-center" id="pay_now">
+                                <button onclick="ym(73260880, 'reachGoal', 'placeorder'); return true;" type="submit" class="primary place-order-button d-flex justify-content-center" data-toggle="modal" data-target="#loader" data-dismiss="modal" aria-label="Close" id="pay_now">
                                     <i class="fa-thin fa-credit-card-blank"></i> Subscribe & Pay $<span id="pay-button-amount-month"></span><span id="pay-button-amount-year"></span>
                                 </button>
                             </div>

@@ -380,7 +380,7 @@ header .navbar-expand-lg .navbar-nav .nav-link {
 header img.profile-image {
     width: 40px;
     height: 40px;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 header .arrow-wrapper {
@@ -2116,7 +2116,8 @@ body.terms a {
 
     header .navbar-nav .dropdown-menu {
         position: absolute;
-        right: 20px;
+        right: 20px !important;
+        left: auto;
     }
 
     header nav .navbar-nav-icons .upgrade-now-wrapper .name {
@@ -2649,6 +2650,9 @@ body:has(.modal.fade.show) div.widget-visible{
 .toast.toast-error{
     background-color: red;
     color: white;
+    top: 50px;
+}
+.toast.toast-success{
     top: 50px;
 }
 

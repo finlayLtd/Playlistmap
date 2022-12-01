@@ -25,7 +25,7 @@
             <!--<i class="fa fa-search"></i>-->
             <!--<span>Try &quot;<span class="red">edm</span>&quot; or &quot;<span class="red">the weeknd</span>&quot;</span>-->
             <input class="playlistmap-search" class="form-control bg-transparent text-100" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"
-                   placeholder="Try &quot;edm&quot; or &quot;the weeknd&quot;" style=""/>
+                   placeholder="Try &quot;edm&quot; or &quot;the weeknd&quot;"/>
             <button onclick="ym(73260880, 'reachGoal', 'homepageserachbtn'); return true;" type="submit" class="input-group-text bg-transparent text-100"><i class="fas fa-magnifying-glass"></i></button>
         </div>
     </form>
@@ -51,10 +51,10 @@
     @endguest
 
     @auth
-    @if(isset(user()->subscription()->name) && user()->subscription()->plan_id !== 4)
-    <li class="">
-        <a class="nav-link me-4 upgrade-link" href="/pricing">
-            <button class="primary"><i class="fas fa-message-arrow-up"></i>Upgrade<span class="mobile-d-none"> Now</span></button>
+    @if(isset(user()->subscription()->name) && user()->subscription()->plan_id == 1)
+    <li class="side-menu-upgrade">
+        <a class="nav-link upgrade-link" href="/pricing">
+            <button class="primary rounded-pill"><i class="fas fa-message-arrow-up"></i>Upgrade<span class="mobile-d-none"> Now</span></button>
         </a>
     </li>
     @endif
@@ -64,7 +64,7 @@
             <div class="mr-3 align-self-center name mobile-d-none">{{ user()->name }}</div>
             <div class="avatar avatar-xl">
                 @if(user()->avatar_url)
-                <img class="rounded-circle profile-image ml-4" src="{{ user()->avatar_url }}" alt="" />
+                <img class="rounded-circle profile-image" src="{{ user()->avatar_url }}" alt="" />
                 @else
                 <div class="default-avatar-icon">
                     <i class="fas fa-circle-user default-avatar-icon"></i>
@@ -72,11 +72,11 @@
                 @endif
             </div>
             
-            <div class="arrow-wrapper d-flex align-items-center mobile-d-none">
+            <div class="arrow-wrapper align-items-center mobile-d-none">
                 <i class="fas fa-chevron-down"></i>
             </div>
         </a>
-        <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="navbarDropdownUser" style="right:0px">
+        <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="navbarDropdownUser" style="right:0px; left:auto">
             <div class="rounded-lg py-2 links-wrapper">
                 @role('admin')
                 <a class="dropdown-item align-items-center" href="{{ route('backend.dashboard') }}">
@@ -177,6 +177,18 @@
         font-size: 15px;margin-right:4px;margin-top:2%;
     }
 
+    .upgrade-link{
+        margin-right: 1.5rem;
+    }
+
+    .arrow-wrapper.mobile-d-none{
+        display: flex;
+    }
+    
+    .mobile-menu .side-menu-upgrade{
+        display: none;
+    }
+
     @media only screen and (max-width: 600px) {
         #searchicon
         {
@@ -195,7 +207,7 @@
 
     @media screen and (max-width:768px){
         .upgrade-link{
-            margin-right:0px !important
+            margin-right:0px;
         }
     }
 
