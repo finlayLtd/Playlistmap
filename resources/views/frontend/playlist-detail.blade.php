@@ -362,8 +362,8 @@
         align-items: center;
     }
 
-    .detail-icon:hover svg path{
-        fill: white;
+    span.detail-icon:hover{
+        color: white;
     }
 
     .detail-section{
