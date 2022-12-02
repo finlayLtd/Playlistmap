@@ -61,6 +61,7 @@ class RegisteredUserController extends Controller {
         
         // event(new Registered($user));
         
+        $request->user()->sendEmailVerificationNotification();
         $user->insertSpotifyArtistID($request['spotify-artist-id']);
         //    $user->uploadProfileImageFromURL($request['spotify-artist-image']);
 
