@@ -42,9 +42,9 @@
                         <div class="my-3">
                             <span class="text-white"><i class="fa-solid fa-circle-user"></i></span> {{ $playlist->owner }}
                         </div>
-                        <div class="my-3 text-truncate d-flex align-items-center" style="overflow:inherit; white-space:normal">
+                        <div class="my-3 text-truncate align-items-center" style="overflow:inherit; white-space:normal">
                             <span class="text-white"><i class="fa-solid fa-circle-envelope"></i></span> 
-                            <span class="ms-1">
+                            <span >
                                 @foreach($playlist->contacts as $contact)
                                     @if(filter_var($contact, FILTER_VALIDATE_EMAIL))
                                         {{ $contact }}
