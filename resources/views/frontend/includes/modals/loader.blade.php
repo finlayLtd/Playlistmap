@@ -1,7 +1,7 @@
 <div class="modal fade" id="loader" tabindex="-1" aria-labelledby="unlock_playlist_modal"
      aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered justify-content-center">      
-        <div class="modal-content bg-transparent border-0" style="background-color:transparent!important">
+        <div class="modal-content bg-transparent border-0" style="background-color:transparent!important;">
             <div class="modal-body text-center" style=" padding: 0 !important;margin: 0 !important;">
                 <div class="music-animation-loader">
                     <div class="music-animation-line"></div>
@@ -38,6 +38,10 @@
         border-radius: 10px;
         background: #fff;
         animation: musicloaderanimation 1.3s ease-in-out infinite;
+    }
+
+    .modal.show#loader .modal-content{
+        top:50%;
     }
 
     @keyframes musicloaderanimation{

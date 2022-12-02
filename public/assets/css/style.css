@@ -2439,6 +2439,7 @@ table tbody tr:hover td {
 
 table tbody tr:hover {
     outline: 1px gray solid;
+    border-radius: 10px;
 }
 
 @media screen and (max-width:767px) {
