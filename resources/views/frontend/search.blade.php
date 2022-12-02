@@ -25,7 +25,7 @@
         </ul>
         @if(!request()->query('q') && $playlists->count() < 1)
         @foreach($keywords as $keyword)
-        <span class="badge badge-soft-info">
+        <span class="badge badge-soft-info" style="cursor:pointer">
             <a class="hover-text-decoration-none"
             href="{{ route('frontend.search', ['q' => $keyword->name]) }}">{{ $keyword->name }}</a>
         </span>
@@ -225,8 +225,8 @@
                                                 @endphp
                                                 
                                                 @if($unlock_text == 'Unlock')
-                                                    <button class="open-modal btn bg-danger d-flex justify-content-center btn-sm {{ $btn_class }} text-center rounded-circle border-0" type="button" data-toggle="modal"
-                                                        data-target="#{{$modal}}" data-playlist-id="{{ $playlist->id }}" style="display: inherit; width:40px; height:40px">
+                                                    <button class="open-modal btn bg-danger justify-content-center btn-sm {{ $btn_class }} text-center border-0 ulock-btn" type="button" data-toggle="modal"
+                                                        data-target="#{{$modal}}" data-playlist-id="{{ $playlist->id }}" style="display: inherit; width:40px; height:40px; border-radius: 10px">
                                                         <i class="fa-solid m-0 fa-lock-keyhole"></i>
                                                     </button>
                                                 @endif
@@ -240,15 +240,15 @@
                                     <div class="col-md-6 col-sm-12 row">
                                         <div class="col-md-3 col-4 followers text-left d-flex align-items-center" style="color:#C0C0C0">
                                             <i width ="14px" height-="14px" class="mr-fix fa fa-users mobile-d" aria-hidden="true" style="font-size:10px"></i>
-                                            <span id="playlist_followers">{{ $playlist->formatted_followers }}</span>
+                                            <span id="playlist_followers" style="color:white !important">{{ $playlist->formatted_followers }}</span>
                                         </div>
                                         <div class="col-md-6 col-4 text-left d-flex align-items-center text-truncate" style="color:#C0C0C0">
                                             <i width ="14px" height-="14px" class="mr-fix mobile-d  fa-solid fa-album-collection" style="font-size:10px;"></i>
-                                            <span id="playlist_updated"><x-friendly-date :date="$playlist->last_updated_on"/></span>
+                                            <span id="playlist_updated" style="color:white !important"><x-friendly-date :date="$playlist->last_updated_on"/></span>
                                         </div>
                                         <div class="col-md-3 col-4 followers text-left d-flex align-items-center" style="color:#C0C0C0">
                                             <i width ="14px" height-="14px" class="mr-fix mobile-d fa-solid fa-clock" style="font-size:10px"></i>
-                                            <span id="playlist_tracks">{{ $playlist->number_of_tracks }}</span>                                        </div>
+                                            <span id="playlist_tracks" style="color:white !important">{{ $playlist->number_of_tracks }}</span>                                        </div>
                                         </div>
                                     </div>
                                 </td>
@@ -468,6 +468,14 @@
 
     .homepage-section.m-auto.align-items-center.text-center.d-flex.flex-column.justify-content-center.homepage-section-hero{
         height:770px !important;
+    }
+
+    .ulock-btn{
+        display: none !important;
+    }
+
+    tr:hover .ulock-btn{
+        display: flex !important;
     }
     
     @media screen and (max-width:767px){

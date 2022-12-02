@@ -6,11 +6,11 @@
     <div class="w-100 d-flex justify-content-center"  style="backdrop-filter:blur(5px);">
         <div class="detail-section w-100" style="max-width:1440px">
             <!-- <div class="mx-3"><span><a href="{{route('frontend.search')}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists / {{$playlist->name}}</div> -->
-            <div class="mx-3"><span><a href="{{url()->previous()}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists / {{$playlist->name}}</div>
+            <div class="mx-3 d-flex align-items-center"><span><a href="{{url()->previous()}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists <i class="fa-solid fa-chevron-right mx-2"></i> {{$playlist->name}}</div>
             <div class="container detail-container row my-5">
                 <div class="col-md-9 col-sm-12 row">
                     <div class="col-md-4 col-sm-12 justify-content-center d-block">
-                        <div class="detail-img m-auto" style="border-radius:20px;box-shadow: 0px 15px 0px -10px rgb(255,255,255,0.3)">
+                        <div class="detail-img m-auto" style="width:85%; border-radius:20px;box-shadow: 0px 15px 0px -10px rgb(255,255,255,0.3)">
                             <div class="position-relative w-100" style="padding-top:100% !important; box-shadow: 0px 30px 0px -20px rgb(255,255,255,0.3);border-radius: 30px;">
                                 <img src="{{ $playlist->image }}" class="w-100 position-absolute" style="top:0px;left:0px; height:100%;object-fit:cover; border-radius:10px">
                             </div>
@@ -28,10 +28,10 @@
                         </div>
                         <span class="update_text">Updated:  <x-friendly-date :date="$playlist->last_updated_on"/></span>
                         <div class="d-flex mt-3 gap-3">
-                            <span class="detail-icon" data-target="#reportPlaylistModal" data-toggle="modal" style="cursor:pointer"><i class="fa-solid fa-flag"></i></span>
+                            <span class="detail-icon justify-content-center align-items-center" data-target="#reportPlaylistModal" data-toggle="modal" style="cursor:pointer; display:flex !important;"><i class="fa-solid fa-flag"></i></span>
                             <span class="detail-icon" style="cursor:pointer"><i class="fa-sharp fa-solid fa-share-nodes"></i></span>
                             <a onclick="ym(73260880, 'reachGoal', 'playonspotify'); return true;" id="spotifybtn" href="{{ $playlist->spotify_deep_link }}">
-                                <button class="btn detail-button btn-primary rounded-pill"><i class="fa-brands fa-spotify"></i>Play On Spotify</button>
+                                <button class="btn detail-button btn-primary rounded-pill d-flex"><i class="fa-brands fa-spotify"></i><div>Play On Spotify</div></button>
                             </a>            
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="text-center container">
                         <a onclick="ym(73260880, 'reachGoal', 'generatemessage'); return true;" id="generatemsgbtn" href="{{ route('frontend.message-generator', $playlist) }}">
-                            <button class="detail-button w-100 btn btn-primary rounded-pill text-white text-truncate"><i class="fa-solid fa-message-dots"></i>Generate Message</div>
+                            <button class="detail-button w-100 btn btn-primary rounded-pill text-white text-truncate d-flex"><i class="fa-solid fa-message-dots"></i><div>Generate Message</div></div>
                         </a>
                 </div>
             </div>
@@ -362,6 +362,10 @@
         align-items: center;
     }
 
+    .detail-icon:hover svg path{
+        fill: white;
+    }
+
     .detail-section{
         padding:3rem !important;
         padding-bottom: 200px !important;
@@ -379,6 +383,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .detail-button:hover div{
+        color: #C0C0C0 !important;
+        transition: 0.3s;
     }
 
     .contact-detail{

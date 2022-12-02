@@ -14,7 +14,7 @@
                         <p class="text-white" style="font-size: 18px">
                            Create a free account to view the search results. You're one click away from reaching your future fans!
                         </p>
-                        <a id="btnguestsearch" data-toggle="modal" data-target="#register_modal" style="font-size: 20px" class="btn btn-sm btn-danger rounded-pill">Start for free</a>
+                        <button class="tertiary d-flex text-truncate m-auto" style="font-size:80%" data-toggle="modal" data-target="#register_modal" ><i class="fas fa-badge-percent mobile-d-none text-black"></i>Start Free Trial</button> 
                     </div>
                     <div class="table-responsive">
                         <table id="main-search-table" data-pagination="true" data-show-pagination-switch="true" class="container table text-white">

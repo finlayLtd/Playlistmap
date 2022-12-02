@@ -125,3 +125,12 @@
         </div>
     </div>
 </footer>
+
+<style>
+    .footer-links-wrapper a:hover{
+        padding:5px;
+        background-color: #1b1b1b;
+        border-radius: 50rem;
+        transition: 0.5s;
+    }
+</style>

@@ -132,9 +132,15 @@
 <script>
     $(document).ready(function(){
         var verifyEmail = eval(<?php echo(Session::get('verifyEmail'))?>);
+        var registerM = eval(<?php echo(Session::get('rgm'))?>);
+
         if(verifyEmail){
             $("#verify_email").modal("show");
         }
+        if(registerM){
+            $("#register_modal").modal("show");
+        }
+
         $(".login-link").on('click', function(){
             $("#login_modal").modal("show");
             $("#register_modal").modal("hide");

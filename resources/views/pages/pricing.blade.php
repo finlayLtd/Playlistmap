@@ -3,7 +3,7 @@
     <section class="pricing-section pricing-section-hero" style="background:linear-gradient(180deg, rgba(18, 18, 18, 0) -112.13%, rgba(18, 18, 18, 0.787848) -0.19%, #121212 42.6%), url({{asset('images/bg/hero1.jpg')}});">
         <div class="wrap">
             <h3 class="text-center">Instantly Connect With Playlist Curators</h3>
-            @if(user()->subscription()->plan->isFree())
+            @if(user() && user()->subscription()->plan->isFree())
                 <div class="text-center start-for-free">Start your <span class="yellow-color">Free Trial</span> today, you cancel or change plans at anytime!</div>
             @else
                 <div style="height:40px"></div>

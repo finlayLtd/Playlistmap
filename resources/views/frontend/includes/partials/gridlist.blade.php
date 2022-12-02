@@ -26,21 +26,22 @@
                     <span class="tracks">{{ $playlist->number_of_tracks }}</span>
                 </div>
             </div>
-            <div style="position:relative">
+            <div style="position:relative" class="grid-img" style="cursor:pointer">
                 <div class="mt-2" style="border-radius:20px;box-shadow: 0px 15px 0px -10px rgb(255,255,255,0.3)">
                     <div class="position-relative w-100" style="padding-top:100% !important; box-shadow: 0px 30px 0px -20px rgb(255,255,255,0.3);border-radius: 30px;">
-                        <img src="{{ $playlist->image }}" class="w-100 position-absolute @if(!$playlist->isUnlocked()) open-modal-grid @endif" style="top:0px; height:100%;object-fit:cover; border-radius:10px; cursor:pointer"
+                        <img src="{{ $playlist->image }}" class="w-100 position-absolute @if(!$playlist->isUnlocked()) open-modal-grid @endif" style="top:0px; height:100%;object-fit:cover; border-radius:10px; cursor:pointer">
+                        <div class="position-absolute w-100 h-100 cover-style" style="top:0; cursor:pointer"
                             @if($playlist->isUnlocked()) 
                                 onclick="window.location.href=`{{route('frontend.playlist_detail', ['playlist_id'=>$playlist->id])}}`"
                             @else 
                                 data-toggle="modal" data-target="#{{$modal}}" data-playlist-id="{{ $playlist->id }}" 
                             @endif
-                        >
+                        ></div>
                     </div>
                     <span class="d-none img-src">{{$playlist->image}}</span>
                 </div>
                 @if($unlock_text == 'Unlock')
-                    <div class="position-absolute w-100 d-flex justify-content-center" style="height:38px; top:calc(50% - 19px)">
+                    <div class="position-absolute w-100 justify-content-center ulock-btn" style="height:38px; top:calc(50% - 19px)">
                         <button class="btn btn-danger rounded-pill unlock-button @if(!$playlist->isUnlocked()) open-modal-grid @endif"
                             data-toggle="modal" data-target="#unlock_playlist_modal" data-playlist-id="{{ $playlist->id }}" 
                         >
@@ -74,9 +75,9 @@
             </div>
 
             <div class="text-truncate pt-4"><span class="name">{{ $playlist->name }}</span></div>
-        <div>
+        <div style="font-size:13px">
             <span style="color:#827F7F">updated:</span>
-            <span class="updated"><x-friendly-date :date="$playlist->last_updated_on"/></span>
+            <span class="updated" style="color:#827F7F"><x-friendly-date :date="$playlist->last_updated_on"/></span>
         </div>
         </div>
     @endforeach
@@ -97,6 +98,14 @@
         font-size: 15px;
     }
 
+    .grid-img .ulock-btn{
+        display: none !important;
+    }
+
+    .grid-img:hover .ulock-btn{
+        display: flex !important;
+    }
+
     .position-absolute .links-wrapper{       
         background: #181818;
         border-radius: 10px;
@@ -106,6 +115,11 @@
     .links-wrapper a:hover{
         background: #121212;
         cursor: pointer;
+    }
+
+    .grid-img:hover .cover-style{
+        background: rgb(0,0,0,0.6);
+        transition: 0.3s;
     }
     
     @media screen and (max-width:767px) {

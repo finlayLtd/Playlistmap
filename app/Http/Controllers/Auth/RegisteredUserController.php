@@ -11,6 +11,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\UsersData;
+use Illuminate\Support\Facades\Validator;
+
 
 class RegisteredUserController extends Controller {
 
@@ -32,17 +34,23 @@ class RegisteredUserController extends Controller {
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request) {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => ['required', ' string', ' email', ' max:255', ' unique:users', new ValidEmail],
-            'password' => 'required|string|confirmed|min:8',
-            'agree' => 'required|accepted',
-            'spotify-artist-id' => 'string|nullable',
-            'spotify-artist-image' => 'url|nullable'
-                ], [
-            'agree.required' => 'You must agree to our terms & conditions'
-        ]);
         
+        $validator = Validator::make($request->all(),
+            [
+                'name' => 'required|string|max:255',
+                'email' => ['required', ' string', ' email', ' max:255', ' unique:users', new ValidEmail],
+                'password' => 'required|string|confirmed|min:8',
+                'agree' => 'required|accepted',
+                'spotify-artist-id' => 'string|nullable',
+                'spotify-artist-image' => 'url|nullable'
+                    ], [
+                'agree.required' => 'You must agree to our terms & conditions'
+            ]
+        );
+        
+        if($validator->fails()){
+            return redirect()->back()->with('rgm',1)->withErrors($validator);
+        }
 
         Auth::login($user = User::create([
                     'name' => $request->name,
