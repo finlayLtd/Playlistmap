@@ -5,8 +5,6 @@
 <script src="{{ asset('vendors/is/is.min.js') }}"></script>
 <script src="{{ asset('vendors/echarts/echarts.min.js') }}"></script>
 <script src="{{ asset('vendors/progressbar/progressbar.min.js') }}"></script>
-<script src="{{ asset('vendors/fontawesome6/all.min.js') }}"></script>
-<!--<script src="{{ asset('vendors/fontawesome/all.min.js') }}"></script>-->
 <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
 

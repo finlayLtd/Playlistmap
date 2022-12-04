@@ -5,17 +5,6 @@
 @endsection
 
 @section('content')
-<p style="color:white">
-    @foreach($templates as $element)
-        <?php
-            // $dom = new \DOMDocument();
-            // $dom->loadHTML($element->body);
-            // echo $dom->saveHTML();
-        ?>
-        
-        <!-- <p class="text-truncate">{{$element->subject}}</p><br> -->
-    @endforeach
-</p>
 <div class="message container row m-auto">
     <span class="head_text"><a href="{{url()->previous()}}"><i class="me-2 mobile-d fa-regular fa-chevron-left" width="20px" height="20px"></i></a> Generate Message</span>
     <div class="col-md-8 col-sm-12 p-4 mt-3 card composer-email container">
@@ -443,16 +432,6 @@ foreach ($playlist->contacts as $contact) {
     
     $(function () {
         let $summernote = $('#summernote');
-        /*$summernote.summernote({
-            placeholder: 'Write your message here',
-            height: 120,
-            toolbar: [
-            ['style', ['style']],
-            ['font', ['bold', 'underline', 'clear']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ]
-            });*/
         tinymce.init({
             selector: '#summernote',
             menubar: false,

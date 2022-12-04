@@ -16,7 +16,7 @@
             <div class="single-testimonial container">
                 <div class="d-flex">
                     <div class="image-wrapper position-relative me-3">
-                        <img class="graphic graphic-left" src="{{asset('/images/testimonials/alusin.jpg')}}" />
+                        <img class="graphic graphic-left" src="{{asset('/images/testimonials/alusin.webp')}}" />
                     </div>
                     <div class="d-flex flex-column justify-content-center">
                         <h6 class="testimonial-title mb-0">Alusin</h6>
@@ -33,7 +33,7 @@
             <div class="single-testimonial container">
                 <div class="d-flex">
                     <div class="image-wrapper position-relative me-3">
-                        <img class="graphic graphic-left" src="{{asset('/images/testimonials/eliav.jpg')}}" />
+                        <img class="graphic graphic-left" src="{{asset('/images/testimonials/eliav.webp')}}" />
                     </div>
                     <div class="d-flex flex-column justify-content-center">
                         <h6 class="testimonial-title mb-0">X-Hood21</h6>
@@ -50,7 +50,7 @@
             <div class="single-testimonial container">
                 <div class="d-flex">
                     <div class="image-wrapper position-relative me-3">
-                        <img class="graphic graphic-left" src="{{asset('/images/testimonials/ronny.jpg')}}" />
+                        <img class="graphic graphic-left" src="{{asset('/images/testimonials/ronny.webp')}}" />
                     </div>
                     <div class="d-flex flex-column justify-content-center">
                         <h6 class="testimonial-title mb-0">Ronny</h6>
@@ -67,7 +67,7 @@
             <div class="single-testimonial">
                 <div class="d-flex">
                     <div class="image-wrapper position-relative me-3">
-                        <img class="graphic graphic-left" src="{{asset('/images/testimonials/yarden.jpg')}}" />
+                        <img class="graphic graphic-left" src="{{asset('/images/testimonials/yarden.webp')}}" />
                     </div>
                     <div class="d-flex flex-column justify-content-center">
                         <h6 class="testimonial-title mb-0">Yarden Saxophone</h6>

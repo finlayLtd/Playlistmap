@@ -4,7 +4,7 @@
     <div class="row flex-center min-vh-100 py-6 text-center">
         <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
             <a class="d-flex flex-center mb-4" href="{{route('home')}}">
-                <img class="mr-2 w-50" src="{{ asset('images/logo_inverse.png') }}" alt="">
+                <img class="mr-2 w-50" src="{{ asset('images/logo_inverse.webp') }}" alt="">
             </a>
             <div class="card">
                 <div class="card-body p-4 p-sm-5">

@@ -14,15 +14,11 @@
                             <div class="d-flex"><span class="fa-stack ml-n1 mr-3"><svg style="    height: 1em;
                                                                                        width: 1em;" class="svg-inline--fa fa-circle fa-w-16 fa-stack-2x text-200" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path></svg>
 
-<!-- <i class="fas fa-circle fa-stack-2x text-200"></i> -->
-
                                     <svg class="svg-inline--fa fa-tag fa-w-16 fa-inverse fa-stack-1x text-primary" data-fa-transform="shrink-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="tag" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style="transform-origin: 0.5em 0.5em;">
 
                                         <g transform="translate(256 256)"><g transform="translate(0, 0)  scale(0.875, 0.875)  rotate(0 0 0)">
 
                                                 <path fill="currentColor" d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z" transform="translate(-256 -256)"></path></g></g></svg>
-
-<!-- <i class="fa-inverse fa-stack-1x text-primary fas fa-tag" data-fa-transform="shrink-2"></i> -->
 
                                 </span>
                                 <div class="flex-1">
@@ -30,8 +26,6 @@
 <span class="nav-link nav-link-card-details" href="#!"><svg class="svg-inline--fa fa-user fa-w-14 mr-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg><!-- <span class="fas fa-user mr-2"></span> -->
                                         {{ $playlist->owner }}
                                     </span>
-
-                                    <!--<span class="nav-link nav-link-card-details" href="#!">-->
 
                                     @foreach($playlist->contacts as $contact)
                                     @if(filter_var($contact, FILTER_VALIDATE_EMAIL))

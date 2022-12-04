@@ -30,7 +30,6 @@ function renderButton() {
 
 
 function authenticateGoogleUser(token) {
-//    let token = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImQwMWMxYWJlMjQ5MjY5ZjcyZWY3Y2EyNjEzYTg2YzlmMDVlNTk1NjciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiMjk1ODQzNDQ2NzMxLW5qdWtwM2xjZXI5cjNlZDJwNXVlcHZtMjVpdWVvbThlLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMjk1ODQzNDQ2NzMxLW5qdWtwM2xjZXI5cjNlZDJwNXVlcHZtMjVpdWVvbThlLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTA1MjMwMjc5MDg4MDg2NzAwMDU4IiwiZW1haWwiOiJhcmVsZ2luZG9zdGVzdEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6InFYd0ttTHZYVmk0Y0RYTTBKaExfWEEiLCJuYW1lIjoiQXJlbCBHaW5kb3MiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUFUWEFKei1VOWhDVjdIa3dvaXpaTjJHWEo4VXhJZWhSUzhVR1BlcHhDQmM9czk2LWMiLCJnaXZlbl9uYW1lIjoiQXJlbCIsImZhbWlseV9uYW1lIjoiR2luZG9zIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE2NDE0ODQ0OTQsImV4cCI6MTY0MTQ4ODA5NCwianRpIjoiOTI2NWEzYjkyMTkzYzI1ODFmZTUyZWFiODhkNzMyNmNiZjZmYWZiMSJ9.IlEA8AlMsodt4iHCo1_km7jU8S-5fQ8s0nF1Yyf3VL5lQ3xyL1IKTUec3K-GyT906DEteVuaTXsuC3pEQ-zSdPKaBGzu-mN30FG4p9zyHUUVAlGJ32u-3fzl27RUaejmxXLjqxUAdrBhVUWtLKc3jEnHsvn0SHf1Atp0wnQ4xUKxNop43aWUxye2Bmps9-r1PIYt6h5Q-q6pJywjNJWp1SwZ8VwhQ4UyHLxtvqz4zAAQJNBWmSY5NvcDKdS7_0frWvLuyz8cu-0E30JwnZg3tK9-5vAcrwnSeHBKDHaJZTpXE9Qf9kCs7tAg9aoDA3_BZlIAzyth-r6wYzxhuSNOwg";
     console.log('Starting validate token');
     $.ajaxSetup({
         headers: {
@@ -43,17 +42,13 @@ function authenticateGoogleUser(token) {
         url: "http://localhost:8000/" + "loginWithGoogle",
         data: {tokenID: token},
         success: function (data) {
-//                        if (data.status === "success" && 'url' in data) {
-//                            window.location.href = data.url;
-//                        }
-//                        setTimeout(function () {
-//                            $('#paymentModal').removeClass('loading');
-//                        }, 5000);
+
         },
         error: function (jqXhr, textStatus, errorMessage) { // error callback 
+            
         },
         complete: function (data) {
-//                $('#paymentModal').removeClass('loading');
+
         }
     });
 

@@ -5,7 +5,6 @@
 <section class="background-position-center playlist-detail-section" style="background:linear-gradient(360deg, #121212 0%, rgba(24, 24, 24, 0) 500%), url({{$playlist->image}}); background-position:top;background-size:cover">
     <div class="w-100 d-flex justify-content-center"  style="backdrop-filter:blur(5px);">
         <div class="detail-section w-100" style="max-width:1440px">
-            <!-- <div class="mx-3"><span><a href="{{route('frontend.search')}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists / {{$playlist->name}}</div> -->
             <div class="mx-3 d-flex align-items-center"><span><a href="{{url()->previous()}}"><i class="fa-solid pe-2 fa-chevron-left"></i></a></span>My Playlists <i class="fa-solid fa-chevron-right mx-2"></i> {{$playlist->name}}</div>
             <div class="container detail-container row my-5">
                 <div class="col-md-9 col-sm-12 row">

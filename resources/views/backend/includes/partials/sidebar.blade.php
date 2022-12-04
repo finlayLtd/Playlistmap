@@ -7,7 +7,7 @@
             <div class="content-header-section sidebar-mini-visible-b">
                 <!-- Logo -->
                 <span class="content-header-item font-w700 font-size-xl float-left animated fadeIn">
-                    <img src="{{ asset('images/logo.png') }}" alt="">
+                    <img src="{{ asset('images/logo.webp') }}" alt="">
                 </span>
                 <!-- END Logo -->
             </div>
@@ -25,7 +25,7 @@
                 <!-- Logo -->
                 <div class="content-header-item">
                     <a class="font-w700" href="{{ route('backend.dashboard') }}">
-                        <img src="{{ asset('images/logo.png') }}" alt="" width="130">
+                        <img src="{{ asset('images/logo.webp') }}" alt="" width="130">
                     </a>
                 </div>
                 <!-- END Logo -->
@@ -38,7 +38,7 @@
         <div class="content-side content-side-full content-side-user px-10 align-parent">
             <!-- Visible only in mini mode -->
             <div class="sidebar-mini-visible-b align-v animated fadeIn">
-                <img class="img-avatar img-avatar32" src="{{ asset('images/defaults/avatar.jpg') }}" alt="">
+                <img class="img-avatar img-avatar32" src="{{ asset('images/defaults/avatar.webp') }}" alt="">
             </div>
             <!-- END Visible only in mini mode -->
 

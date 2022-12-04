@@ -6,7 +6,7 @@
     <b style="font-size: 24px;"> {{ $results_count }} </b>results found for "<b>{{request()->query('q')}}</b>"
 </div>
 @endif
-<div class="homepage-section m-auto align-items-center text-center d-flex flex-column justify-content-center homepage-section-hero @if(request()->query('q')) d-none @endif" style="background:linear-gradient(180deg, rgba(18, 18, 18, 0) -26%, rgba(18, 18, 18, 0.787848) -4.22%, #121212 58%), url(http://localhost:8000/images/bg/hero1.jpg);">
+<div class="homepage-section m-auto align-items-center text-center d-flex flex-column justify-content-center homepage-section-hero @if(request()->query('q')) d-none @endif" style="background:linear-gradient(180deg, rgba(18, 18, 18, 0) -26%, rgba(18, 18, 18, 0.787848) -4.22%, #121212 58%), url(http://localhost:8000/images/bg/hero1.webp);">
     <div style="height:70px" class="mobile-d"></div>
     <p class="row col-md-6 col-sm-12 container h1 text-center h-auto">Get on the right playlist & reach your future fans</p>
     <form class="row col-md-8 col-sm-12" action="{{ route('frontend.search') }}">
@@ -41,7 +41,7 @@
             , $_SERVER["HTTP_USER_AGENT"]);
         }
     ?> 
-    <div class="container row m-auto justify-content-center mt-5 pt-5">
+    <div class="container row m-auto my-4 justify-content-center mt-md-5 pt-md-5">
         <div class="justify-content-center">
             <form action="{{ route('frontend.search') }}">
                 <div class="input-group rounded-pill p-0"  style="background-color:#1b1b1b">
@@ -72,10 +72,6 @@
                 </div>
             </div>
             <div class="px-3 container method-switch">
-                <!-- <div class="d-inline float-left mobile-d-none badge badge-soft-info text-white border border-white" style="background:#1b1b1b !important; padding: 8px 24px;">
-                    <i class="fa-solid fa-bars-filter"></i>
-                    Filters
-                </div> -->
                 @if(!user()->subscription()->plan->isFree())
                     <div class="d-inline-flex mb-2" style="float:right;">
                         <span onclick="changeLayout(true)" class="text-white justify-content-center d-flex align-items-center m-auto grid-layout" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b; cursor:pointer">
@@ -235,18 +231,38 @@
                                     </div>
                                 </td>
                                 <td colspan="2" style="height:inherit;">
+                                    <?php
+                                        $sDate = $playlist->last_updated_on;
+                                        $eDate = new DateTime();
+                                        
+                                        $startDate = new DateTime($sDate);
+                                        $diff = $startDate->diff($eDate);
+                                        
+                                        if ($diff->y > 0) 
+                                            $diffStr = $diff->y." y";
+                                        else if ($diff->m > 0) 
+                                            $diffStr = $diff->m." m";
+                                        else if ($diff->d > 0) 
+                                            $diffStr = $diff->d." d";
+                                        else 
+                                            $diffStr = "dates are same";
+                                        
+                                    ?>
                                     <div class="row summary">
                                     <div class="col-md-6 col-sm-12 text-left d-flex align-items-center text-ellispe"><span id="playlist_name">{{ $playlist->name }}</span></div>
                                     <div class="col-md-6 col-sm-12 row">
-                                        <div class="col-md-3 col-4 followers text-left d-flex align-items-center" style="color:#C0C0C0">
+                                        <div class="col-md-3 text-detail col-4 followers text-left d-flex align-items-center" style="color:#C0C0C0">
                                             <i width ="14px" height-="14px" class="mr-fix fa fa-users mobile-d" aria-hidden="true" style="font-size:10px"></i>
                                             <span id="playlist_followers" style="color:white !important">{{ $playlist->formatted_followers }}</span>
                                         </div>
-                                        <div class="col-md-6 col-4 text-left d-flex align-items-center text-truncate" style="color:#C0C0C0">
+                                        <div class="col-md-6 text-detail col-4 text-left d-flex align-items-center text-truncate" style="color:#C0C0C0">
                                             <i width ="14px" height-="14px" class="mr-fix mobile-d  fa-solid fa-album-collection" style="font-size:10px;"></i>
-                                            <span id="playlist_updated" style="color:white !important"><x-friendly-date :date="$playlist->last_updated_on"/></span>
+                                            <span id="playlist_updated" style="color:white !important">
+                                                <div class="mobile-d-none"><x-friendly-date :date="$playlist->last_updated_on"/></div>
+                                                <div class="mobile-d" style="letter-spacing:-1px">{{$diffStr}}</div>
+                                            </span>
                                         </div>
-                                        <div class="col-md-3 col-4 followers text-left d-flex align-items-center" style="color:#C0C0C0">
+                                        <div class="col-md-3 text-detail col-4 followers text-left d-flex align-items-center" style="color:#C0C0C0">
                                             <i width ="14px" height-="14px" class="mr-fix mobile-d fa-solid fa-clock" style="font-size:10px"></i>
                                             <span id="playlist_tracks" style="color:white !important">{{ $playlist->number_of_tracks }}</span>                                        </div>
                                         </div>
@@ -418,7 +434,9 @@
                     window.location.href=url;
                 }
             } else {
-                $('#loader').modal('toggle');
+                if($(e.target).attr('data-toggle')!="modal"){
+                    $('#loader').modal('toggle');
+                }
             }
 
         });
@@ -481,6 +499,10 @@
     @media screen and (max-width:767px){
         .homepage-section.m-auto.align-items-center.text-center.d-flex.flex-column.justify-content-center.homepage-section-hero{
             height: auto !important;
+        }
+
+        .text-detail{
+            font-size: 12px;
         }
         .list-responsive{
             padding: 0px !important;

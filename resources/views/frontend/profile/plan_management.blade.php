@@ -244,13 +244,13 @@
                 <div class="mr-auto card px-0 mx-3 col-sm mb-3" style="    background: transparent;
                      box-shadow: none;
                      border: 1px solid #00000014;">
-                    <img class="card-img-top" src="{{ asset('/frontend/img/yarden2.png') }}" alt="...">
+                    <img class="card-img-top" src="{{ asset('/frontend/img/yarden2.webp') }}" alt="...">
                     <div class="card-body">
                         <p class="card-text text-left">
                             <i id="quoteicon" class="fas fa-quote-left mb-xl-4" style="color: #2ac4fe;display: list-item;" ></i>
                             PlaylistMap is a must-have tool for every artist. <b>It saved me so much valuable time</b>, and put me in touch with so many playlist curators. For me it's an essential part of every new release campaign. </p>  
                         <div class="ml-3 align-self-center text-left lh-1 text-black">
-                            <p class="mb-1 card-text"><small><strong>Yarden Saxophone</strong></small>  <img class="w-16 h-16" src="{{ asset('/frontend/img/verif.png') }}" style="width: 16px;" alt="..."></p>
+                            <p class="mb-1 card-text"><small><strong>Yarden Saxophone</strong></small>  <img class="w-16 h-16" src="{{ asset('/frontend/img/verif.webp') }}" style="width: 16px;" alt="..."></p>
                             <p class="mb-1 card-text"><small>Artist</small></p>
 
                         </div>
@@ -260,7 +260,7 @@
                 <div class="mr-auto card px-0 mx-3 col-sm mb-3" style="    background: transparent;
                      box-shadow: none;
                      border: 1px solid #00000014;">
-                    <img class="card-img-top" src="{{ asset('/frontend/img/amy-2.png') }}" alt="...">
+                    <img class="card-img-top" src="{{ asset('/frontend/img/amy-2.webp') }}" alt="...">
                     <div class="card-body">
                         <p class="card-text text-left">
                             <i id="quoteicon" class="fas fa-quote-left mb-xl-4" style="color: #2ac4fe;display: list-item;" ></i>
@@ -277,7 +277,7 @@
                 <div class="card px-0 mx-3 col-sm" style="    background: transparent;
                      box-shadow: none;
                      border: 1px solid #00000014;">
-                    <img class="card-img-top" src="{{ asset('/frontend/img/ronny2.png') }}" alt="...">
+                    <img class="card-img-top" src="{{ asset('/frontend/img/ronny2.webp') }}" alt="...">
                     <div class="card-body">
                         <p class="card-text text-left">
                             <i id="quoteicon" class="fas fa-quote-left mb-xl-4" style="color: #2ac4fe;display: list-item;" ></i>

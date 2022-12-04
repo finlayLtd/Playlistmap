@@ -49,29 +49,6 @@
                         </button>
                     </div>
                 @endif
-                <!-- <div class="position-btn mobile-d-none" style="top:8px; left:8px"><i class="fa-regular fa-heart"></i></div>
-                <div class="dropdown dropdown-user-wrapper position-absolute" style="top:8px; right:8px">
-                    <a role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="position-btn ellipsis-button" style="position:relative"><i class="fa-solid fa-ellipsis"></i></div>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right py-0 bg-transparent">
-                        <div class="rounded-lg py-2 links-wrapper">
-                            <a class="dropdown-item align-items-center text-white">
-                                <i class="me-3 fa-light fa-compact-disc"></i>Top Genres
-                            </a>
-                            <a onclick="ym(73260880, 'reachGoal', 'profileinusermenu'); return true;" class="dropdown-item align-items-center text-white" >
-                                <i class="me-3 fa-solid fa-microphone"></i>Top Artists
-                            </a>
-                            @if(!$playlist->isUnlocked()) 
-                                <a onclick="ym(73260880, 'reachGoal', 'profileinusermenu'); return true;" class="dropdown-item align-items-center text-white @if(!$playlist->isUnlocked()) open-modal-grid @endif"
-                                    data-toggle="modal" data-target="#unlock_playlist_modal" data-playlist-id="{{ $playlist->id }}">
-                                    <i class="me-3 fa-light fa-unlock-keyhole"></i>Unlock
-                                </a>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-                <div class="position-btn" style="bottom:8px; left:8px"><i class="fa-solid fa-chart-pie"></i></div> -->
             </div>
 
             <div class="text-truncate pt-4"><span class="name">{{ $playlist->name }}</span></div>
@@ -127,6 +104,10 @@
         .unlock-button{
             font-size:14px; 
             padding:9px 24px;
+        }
+
+        .grid-img .ulock-btn{
+            display: flex !important;
         }
 
         .dropdown:has(.ellipsis-button){

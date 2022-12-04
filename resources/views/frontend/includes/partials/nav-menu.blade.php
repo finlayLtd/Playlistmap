@@ -86,12 +86,6 @@
                 <a onclick="ym(73260880, 'reachGoal', 'profileinusermenu'); return true;" class="dropdown-item align-items-center" href="{{ route('frontend.profile') }}">
                     <i class="fas fa-user"></i>My Profile
                 </a>
-                <!-- <a onclick="ym(73260880, 'reachGoal', 'profileinusermenu'); return true;" class="dropdown-item align-items-center" href="{{ route('frontend.profile') }}">
-                    <i class="fas fa-user-gear"></i>Account Settings
-                </a>
-                <a onclick="ym(73260880, 'reachGoal', 'profileinusermenu'); return true;" class="dropdown-item align-items-center" href="{{ route('frontend.profile') }}">
-                    <i class="fas fa-chart-line"></i>My Dashboard
-                </a> -->
                 <a onclick="ym(73260880, 'reachGoal', 'profileinusermenu'); return true;" class="dropdown-item align-items-center" href="{{ route('frontend.myplaylist') }}">
                     <i class="fas fa-list-music"></i>My Playlists
                 </a>
@@ -99,11 +93,6 @@
                 <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();ym(73260880, 'reachGoal', 'navlogout'); return true;">
                     <i class="fas fa-power-off"></i>Logout
                 </a>
-                <!--   
-                                
-                <!--<a onclick="ym(73260880, 'reachGoal', 'navbarupgrade'); return true;" class="dropdown-item" href="/manage-plans">Plans</a>-->
-
-                <!--<a  class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();ym(73260880, 'reachGoal', 'navlogout'); return true;">Logout</a>-->
             </div>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
@@ -113,20 +102,6 @@
 
     @endauth    
 
-<?php /*
-    <!--    <li class="nav-item mr-3">
-            <a onclick="ym(73260880, 'reachGoal', 'unlcoks'); return true;" style="display:flex" class="nav-link" href="{{ route('frontend.profile') }}#myunlocks"><i id="searchicon" class="fas fa-unlock"></i> Unlocks</a>
-        </li>-->
-    <!--    <li class="nav-item mr-3">
-            <a onclick="ym(73260880, 'reachGoal', 'creditsnav'); return true;" href="/manage-plans">
-                <span id="creditsleft" class="badge badge-soft-success lh-lg">{{ user()->subscription()->getFeatureRemainings('credits') }} Credits Left</span></a>
-        </li>
-    
-    
-    -->
- * 
- * 
- */?>
 </ul>
 
 <script>

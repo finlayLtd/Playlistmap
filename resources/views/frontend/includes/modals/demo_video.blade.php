@@ -10,18 +10,6 @@
                 </div>
             </div>
             <div class="modal-body">
-                <!-- <form action="{{ route('frontend.playlists.report') }}" method="post">
-                    @csrf
-                    <input type="hidden" name="playlist_id" id="playlist_id">
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea class="form-control resize-none"  name="message" id="message" rows="3" required></textarea>
-                    </div>
-                    <div class="pt-3 border-0 d-flex justify-content-center gap-3">
-                        <button type="button" class="btn btn-sm btn-danger rounded-pill px-3" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-sm btn-primary rounded-pill px-3">Submit</button>
-                    </div>
-                </form> -->
                 <video id="vid" width="320" height="240" loop="" class="w-100" controls>
                     <source src="{{asset('assets/How-to-use.mp4')}}" type="video/mp4">
                     <source src="{{asset('assets/How-to-use.ogg')}}" type="video/ogg">

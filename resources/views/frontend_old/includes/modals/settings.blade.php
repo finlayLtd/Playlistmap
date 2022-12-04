@@ -58,23 +58,23 @@
                     <div class="row gx-2">
                         <div class="col-6">
                             <input class="btn-check" id="navbar-style-transparent" type="radio" name="navbarStyle" checked="checked" data-page-url="index.html" value="transparent" />
-                            <label class="btn btn-block btn-navbar-style fs--1" for="navbar-style-transparent"> <img class="img-fluid img-prototype" src="frontend/img/generic/default.png" alt="" /><span class="label-text"> Transparent</span></label>
+                            <label class="btn btn-block btn-navbar-style fs--1" for="navbar-style-transparent"> <img class="img-fluid img-prototype" src="frontend/img/generic/default.webp" alt="" /><span class="label-text"> Transparent</span></label>
                         </div>
                         <div class="col-6">
                             <input class="btn-check" id="navbar-style-inverted" type="radio" name="navbarStyle" data-page-url="demo/navbar-vertical-inverted.html" value="inverted" />
-                            <label class="btn btn-block btn-navbar-style fs--1" for="navbar-style-inverted"> <img class="img-fluid img-prototype" src="frontend/img/generic/inverted.png" alt="" /><span class="label-text"> Inverted</span></label>
+                            <label class="btn btn-block btn-navbar-style fs--1" for="navbar-style-inverted"> <img class="img-fluid img-prototype" src="frontend/img/generic/inverted.webp" alt="" /><span class="label-text"> Inverted</span></label>
                         </div>
                         <div class="col-6">
                             <input class="btn-check" id="navbar-style-card" type="radio" name="navbarStyle" data-page-url="demo/navbar-vertical-card.html" value="card" />
-                            <label class="btn btn-block btn-navbar-style fs--1" for="navbar-style-card"> <img class="img-fluid img-prototype" src="frontend/img/generic/card.png" alt="" /><span class="label-text"> Card</span></label>
+                            <label class="btn btn-block btn-navbar-style fs--1" for="navbar-style-card"> <img class="img-fluid img-prototype" src="frontend/img/generic/card.webp" alt="" /><span class="label-text"> Card</span></label>
                         </div>
                         <div class="col-6">
                             <input class="btn-check" id="navbar-style-vibrant" type="radio" name="navbarStyle" data-page-url="demo/navbar-vertical-vibrant.html" value="vibrant" />
-                            <label class="btn btn-block btn-navbar-style fs--1" for="navbar-style-vibrant"> <img class="img-fluid img-prototype" src="frontend/img/generic/vibrant.png" alt="" /><span class="label-text"> Vibrant</span></label>
+                            <label class="btn btn-block btn-navbar-style fs--1" for="navbar-style-vibrant"> <img class="img-fluid img-prototype" src="frontend/img/generic/vibrant.webp" alt="" /><span class="label-text"> Vibrant</span></label>
                         </div>
                     </div>
                 </div>
-                <div class="text-center mt-5"><img class="mb-4" src="frontend/img/illustrations/settings.png" alt="" width="120" />
+                <div class="text-center mt-5"><img class="mb-4" src="frontend/img/illustrations/settings.webp" alt="" width="120" />
                     <h5>Like What You See?</h5>
                     <p class="fs--1">Get Falcon now and create beautiful dashboards with hundreds of widgets.</p><a class="btn btn-primary" href="https://themes.getbootstrap.com/product/falcon-admin-dashboard-webapp-template/" target="_blank">Purchase</a>
                 </div>

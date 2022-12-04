@@ -1,10 +1,10 @@
 @extends('layouts.frontend-main', ['title' => 'Playlistmap About', 'bodyClass' => 'about'])
 @section('content')
-<section class="about-section about-section-hero" style="background:linear-gradient(180.39deg, rgba(18, 18, 18, 0) -5.24%, rgba(18, 18, 18, 0.787848) 75.74%, #121212 94.1%), url({{asset('images/bg/about-hero.jpg')}}); ">
+<section class="about-section about-section-hero" style="background:linear-gradient(180.39deg, rgba(18, 18, 18, 0) -5.24%, rgba(18, 18, 18, 0.787848) 75.74%, #121212 94.1%), url({{asset('images/bg/about-hero.webp')}}); ">
     <div class="wrap">
         <div class="main">
 
-            <img class="logo d-block m-auto" src="{{ asset('images/logo-w.png') }}" alt="" width="150" />
+            <img class="logo d-block m-auto" src="{{ asset('images/logo-w.webp') }}" alt="" width="150" />
 
             <div class="about-headline text-center mt-5">Created by musicians for musicians</div>
             @include('frontend.components.pages.trusted-by', ['position' => 'center'])
@@ -32,7 +32,7 @@
 
             </div>
             <div class="guitar-wrapper">
-                <img class="scroll-down-top me-2 guitar" src="{{asset('/images/bg/guitar.jpg')}}"  />
+                <img class="scroll-down-top me-2 guitar" src="{{asset('/images/bg/guitar.webp')}}"  />
                 <img class="guitar-music"src="{{asset('/images/graphics/guitar-graphic.svg')}}" /> 
             </div>
         </div>
@@ -71,7 +71,7 @@
 
                         </div>
                         <div class="missionWrapper">
-                            <img class="scroll-down-top me-2 guitar" src="{{asset('/images/bg/curators.png')}}"  />
+                            <img class="scroll-down-top me-2 guitar" src="{{asset('/images/bg/curators.webp')}}"  />
                         </div>
                     </div>
 
@@ -92,7 +92,7 @@
             <div class="col-6 col-md-4 text-center d-flex" style="justify-content: center;">
                 <div class=" single-member position-relative">
                     <div class="content-wrapper position-relative">
-                        <img class="our-mission-graphic"src="{{asset('/images/icons/team/shahar.png')}}" /> 
+                        <img class="our-mission-graphic"src="{{asset('/images/icons/team/shahar.webp')}}" /> 
                         <div class="quote">
                             <div>
                                 <i class="fa-light fa-quote-left"></i>
@@ -112,7 +112,7 @@
             <div class="col-6 col-md-4 text-center d-flex" style="justify-content: center;">
                 <div class=" single-member position-relative">
                     <div class="content-wrapper position-relative">
-                        <img class="our-mission-graphic"src="{{asset('/images/icons/team/dor.png')}}" /> 
+                        <img class="our-mission-graphic"src="{{asset('/images/icons/team/dor.webp')}}" /> 
                         <div class="quote">
                             <div>
                                 <i class="fa-light fa-quote-left"></i>
@@ -132,7 +132,7 @@
             <div class="col-6 col-md-4 text-center d-flex marginTop120" style="justify-content: center;">
                 <div class=" single-member position-relative">
                     <div class="content-wrapper position-relative">
-                        <img class="our-mission-graphic"src="{{asset('/images/icons/team/shahar.png')}}" /> 
+                        <img class="our-mission-graphic"src="{{asset('/images/icons/team/shahar.webp')}}" /> 
                         <div class="quote">
                             <div>
                                 <i class="fa-light fa-quote-left"></i>

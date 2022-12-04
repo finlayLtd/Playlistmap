@@ -4,7 +4,7 @@
         <h5 class="mb-0">Verify Your Email Address</h5>
 
         <div class="container"> 
-            <img id="verifyemail" class="rounded mx-auto d-block object-fit-cover w-100" src="/frontend/img/check-email.png" >
+            <img id="verifyemail" class="rounded mx-auto d-block object-fit-cover w-100" src="/frontend/img/check-email.webp" >
         </div>
 
         <div>

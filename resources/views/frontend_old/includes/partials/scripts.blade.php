@@ -5,7 +5,6 @@
 <script src="{{ asset('vendors/is/is.min.js') }}"></script>
 <script src="{{ asset('vendors/echarts/echarts.min.js') }}"></script>
 <script src="{{ asset('vendors/progressbar/progressbar.min.js') }}"></script>
-<script src="{{ asset('vendors/fontawesome/all.min.js') }}"></script>
 <script src="{{ asset('vendors/lodash/lodash.min.js') }}"></script>
 <script src="{{ asset('vendors/swiper/swiper-bundle.min.js') }}"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>

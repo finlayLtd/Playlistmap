@@ -21,9 +21,6 @@
                         <input type="hidden" name="token" @if(isset($request)) value="{{ $request->route('token') }}" @endif>
 
                         <div class="form-group row mb-3">
-                            <!-- <label for="email"
-                                class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label> -->
-
                             <div>
                                 <input id="email" type="email" class="auth-info form-control @error('email') is-invalid @enderror"
                                     name="email" value="{{ $request->email ?? old('email') }}" required autocomplete="email"
@@ -38,9 +35,6 @@
                         </div>
 
                         <div class="form-group row  mb-3">
-                            <!-- <label for="password"
-                                class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label> -->
-
                             <div>
                                 <input id="password" type="password"
                                     class="auth-info form-control @error('password') is-invalid @enderror" name="password"
@@ -55,9 +49,6 @@
                         </div>
 
                         <div class="form-group row  mb-3">
-                            <!-- <label for="password-confirm"
-                                class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label> -->
-
                             <div>
                                 <input id="password-confirm" type="password" class="auth-info form-control"
                                     name="password_confirmation" required autocomplete="new-password" placeholder="{{ __('Confirm Password') }}">

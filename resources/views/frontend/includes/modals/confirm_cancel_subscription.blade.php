@@ -3,10 +3,6 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header border-0 pb-0">
-                <!--                <h5 class="modal-title text-center w-100 text-info">
-                                    <i class="fal fa-exclamation-circle mr-2"></i>
-                                    Confirmation required
-                                </h5>-->
             </div>
             <div class="modal-body">
                 <form action="{{ route('frontend.subscription.cancel') }}" method="post">

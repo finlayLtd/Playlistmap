@@ -11,7 +11,7 @@
                     <div class="col-md-6 col-sm-12 login-info">
                         <div class="justify-content-center mobile-d"><i class="fa-duotone fa-dash" style="height:80px"></i></div>
                         <h4>Login to PlaylistMap</h4>
-                        <img class="mobile-d-none" width="290px" height="242px" src="{{ asset('images/frontend/login-modal.png') }}"></img>
+                        <img class="mobile-d-none" width="290px" height="242px" src="{{ asset('images/frontend/login-modal.webp') }}"></img>
                         <p class="mobile-d-none">Welcome back! to your PlaylistMap account</p>
                     </div>
                     <div class="col-md-6 col-sm-12 login-input">
@@ -23,22 +23,11 @@
 
                                     <input id="email" type="email" class="auth-info form-control @error('email') is-invalid @enderror"
                                         name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
-                                    <!-- @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror -->
                                 </div>
                                 <div class="my-3">
                                     <div class="position-relative">
                                         <input id="password" placeholder="password" type="password" class="auth-info form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                                        <!-- <i class="fa fa-eye fa-eye-slash position-absolute" onclick="password_toggle" style="width:24px;height:24px;top:calc(50% - 12px); right:12px" id="togglePassword"></i> -->
                                     </div>
-                                    <!-- @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror -->
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <div class="mt-2 text-left" >

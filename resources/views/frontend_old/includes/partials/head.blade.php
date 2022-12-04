@@ -8,12 +8,12 @@
 <!-- ===============================================-->
 <!--    Favicons-->
 <!-- ===============================================-->
-<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicons/apple-touch-icon.png') }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicons/favicon-32x32.png') }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicons/favicon-16x16.png') }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicons/apple-touch-icon.webp') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicons/favicon-32x32.webp') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicons/favicon-16x16.webp') }}">
 <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/favicons/favicon.ico') }}">
 <link rel="manifest" href="{{ asset('images/favicons/manifest.json') }}">
-<meta name="msapplication-TileImage" content="{{ asset('images/favicons/mstile-150x150.png') }}">
+<meta name="msapplication-TileImage" content="{{ asset('images/favicons/mstile-150x150.webp') }}">
 <meta name="theme-color" content="#ffffff">
 
 <!-- ===============================================-->

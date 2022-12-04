@@ -132,7 +132,7 @@
                 <div class="row padding16">
                     <div class="col-md-7 overflow-hidden">
                         <h3 class="mt-4 mb-4 noneDesktop" style="text-align: center;">Playlisting</h3>
-                        <img class="eye secondEye" src="{{asset('/images/bg/spotify-bg.jpg')}}" />
+                        <img class="eye secondEye" src="{{asset('/images/bg/spotify-bg.webp')}}" />
                     </div>
                     <div class="col-md-5" style="margin:auto;">
                         <span class="noneMobile">1/3</span>
@@ -150,7 +150,7 @@
                 <div class="row padding16">
                     <div class="col-md-7">
                         <h3 class="mt-4 mb-4 noneDesktop" style="text-align: center;">Pitch Templates</h3>
-                        <img class="eye secondEye" src="{{asset('/images/bg/spotify-bg.jpg')}}" />
+                        <img class="eye secondEye" src="{{asset('/images/bg/spotify-bg.webp')}}" />
                     </div>
                     <div class="col-md-5" style="margin:auto;">
                         <span class="noneMobile">2/3</span>
@@ -168,7 +168,7 @@
                 <div class="row padding16">
                     <div class="col-md-7">
                         <h3 class="mt-4 mb-4 noneDesktop" style="text-align: center;">AI Recommendations</h3>
-                        <img class="eye secondEye" src="{{asset('/images/bg/spotify-bg.jpg')}}" />
+                        <img class="eye secondEye" src="{{asset('/images/bg/spotify-bg.webp')}}" />
                     </div>
                     <div class="col-md-5" style="margin:auto;">
                         <span class="noneMobile">3/3</span>
@@ -203,7 +203,7 @@
                     <h6 class="secondary-color timelineText">Identifying the right playlists is the key to getting discovered. We make it easy to search for and narrow in on relevant playlists that best fit your unique sound.</h6>
                 </div>
                 <div class="position-relative col-md-6 ps-5">
-                    <img class="step-image step1" src="{{asset('/images/graphics/discovered-step1.svg')}}" />
+                    <img class="step-image step1" src="{{asset('/images/graphics/discovered-step1.webp')}}" />
                 </div>
             </div>
 
@@ -217,7 +217,7 @@
 
                 </div>
                 <div class="position-relative col-md-6">
-                    <img class="step-image step2" src="{{asset('/images/graphics/discovered-step2.svg')}}" />
+                    <img class="step-image step2" src="{{asset('/images/graphics/discovered-step2.webp')}}" />
                 </div>
                 <div class="noneMobile position-relative col-md-6 mobileAlignCenter m-auto ps-5" style="text-align: left;">
                     <h3 class="position-relative timelineTitle">
@@ -238,7 +238,7 @@
                     <h6 class="secondary-color mt-3 timelineText">Get a full profile of each playlist before you pitch to make better decisions. View key metrics like number of followers, last updated, top artists, mood, and various other metrics to find genuine, active playlists. </h6>
                 </div>
                 <div class="position-relative col-md-6 ps-5">
-                    <img class="step-image step3" src="{{asset('/images/graphics/discovered-step3.svg')}}" />
+                    <img class="step-image step3" src="{{asset('/images/graphics/discovered-step3.webp')}}" />
                 </div>
             </div>
 
@@ -251,7 +251,7 @@
                     <h6 class="secondary-color timelineText">With PlaylistMap, there’s no mysterious middleman between you and the curators. You have full transparency into and control of your campaigns so you can develop personal connections with playlist gatekeepers.</h6>
                 </div>
                 <div class="position-relative col-md-6">
-                    <img class="step-image step4" src="{{asset('/images/graphics/discovered-step4.svg')}}" />
+                    <img class="step-image step4" src="{{asset('/images/graphics/discovered-step4.webp')}}" />
                 </div>
                 <div class="noneMobile position-relative col-md-6 mobileAlignCenter m-auto ps-5" style="text-align: left;">
                     <h3 class="position-relative timelineTitle">
@@ -276,7 +276,7 @@
     <div class="wrap">
         <div class="row get-started-wrapper padding16">
             <div class="col-md-5">
-                <img class="eye secondEye" src="{{asset('/images/bg/get-started-bg.jpg')}}" />
+                <img class="eye secondEye" src="{{asset('/images/bg/get-started-bg.webp')}}" />
             </div>
             <div class="col-md-7 m-auto">
                 <h4 class="mt-4 mb-4 centerMobile">Get Started Today!</h4>
@@ -614,14 +614,14 @@
         }
 
         .how-it-works{
-            background: url({{asset('images/down_vector.png')}});
+            background: url({{asset('images/down_vector.webp')}});
             background-repeat-x: no-repeat;
             background-position: left;
             background-position-x:11.5%;
         }
 
         .backgroundClass{
-            background:linear-gradient(180deg, rgba(18, 18, 18, 0) 1.27%, rgba(18, 18, 18, 0.787848) 53.37%, #121212 73.28%), url({{asset('images/downBackground.jpg')}}) !important;
+            background:linear-gradient(180deg, rgba(18, 18, 18, 0) 1.27%, rgba(18, 18, 18, 0.787848) 53.37%, #121212 73.28%), url({{asset('images/downBackground.webp')}}) !important;
         }
 
         .homepage .homepage-section.homepage-section-hero .wrap .main {
@@ -697,7 +697,7 @@
     }
 
     .backgroundClass{
-        background:linear-gradient(180deg, rgba(18, 18, 18, 0) 1.27%, rgba(18, 18, 18, 0.787848) 53.37%, #121212 73.28%), url({{asset('images/bg/hero.jpg')}})
+        background:linear-gradient(180deg, rgba(18, 18, 18, 0) 1.27%, rgba(18, 18, 18, 0.787848) 53.37%, #121212 73.28%), url({{asset('images/bg/hero.webp')}})
     }
 
     .homepage .homepage-section-discovered-section .wrap .step-image.step1 {

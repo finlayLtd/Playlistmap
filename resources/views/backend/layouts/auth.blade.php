@@ -12,9 +12,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Icons -->
-    <link rel="shortcut icon" href="{{ asset('images/logo-alt.png') }}">
-    <link rel="icon" sizes="192x192" type="image/png" href="{{ asset('images/logo-alt.png') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/logo-alt.png') }}">
+    <link rel="shortcut icon" href="{{ asset('images/logo-alt.webp') }}">
+    <link rel="icon" sizes="192x192" type="image/png" href="{{ asset('images/logo-alt.webp') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/logo-alt.webp') }}">
 
     <!-- Fonts and Styles -->
     @yield('css_before')

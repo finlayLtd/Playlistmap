@@ -6,7 +6,7 @@
          aria-live="assertive" aria-atomic="true">
         <div class="toast-body d-lg-flex justify-content-center align-items-center text-center px-5">
             <span class="cookie-consent__message">
-                <img class="mr-2" src="{{ asset('images/frontend/cookie.png') }}" width="20" alt="">
+                <img class="mr-2" src="{{ asset('images/frontend/cookie.webp') }}" width="20" alt="">
                 {!! trans('cookieConsent::texts.message') !!}
             </span>
 

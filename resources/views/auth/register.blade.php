@@ -27,7 +27,7 @@ crossorigin="anonymous"></script>
                             </div>
 
                             <div id="bannersideregsiter" class="z-index-1 position-relative">
-                                <img class="w-50 mb-5" src="{{ asset('images/frontend/register-bg.png') }}" alt="">
+                                <img class="w-50 mb-5" src="{{ asset('images/frontend/register-bg.webp') }}" alt="">
                                 <h5 class="text-white text-left">Let’s start the journey</h5>
                                 <p class="opacity-75 text-white text-left">
                                     Get access to thousands of curators who want to discover your music

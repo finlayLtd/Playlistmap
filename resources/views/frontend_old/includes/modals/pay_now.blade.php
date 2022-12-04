@@ -19,11 +19,11 @@
                 @if(!user()->subscription()->stripe_id && !user()->subscription()->paypal_id)
                 <div class="input-wrapper payment-wrapper">
                     <input  id="stripe-input-radio" name="payment-radio" checked type="radio" data-target="#stripe-wrapper">
-                    <label  for="stripe-input-radio"><img class="logo stripe-logo" src="{{asset("images/icons/stripe-logo.png")}}" /></label>
+                    <label  for="stripe-input-radio"><img class="logo stripe-logo" src="{{asset("images/icons/stripe-logo.webp")}}" /></label>
                 </div>
                 <div class="input-wrapper payment-wrapper">
                     <input id="paypal-input-radio" name="payment-radio" type="radio" data-target="#paypal-wrapper">
-                    <label for="paypal-input-radio"><img class="logo paypal-logo" src="{{asset("images/icons/paypal.png")}}" /></label>
+                    <label for="paypal-input-radio"><img class="logo paypal-logo" src="{{asset("images/icons/paypal.webp")}}" /></label>
                 </div>
                 <br>
                 @endif
@@ -33,7 +33,7 @@
                             @csrf
                             <input type="hidden" name="plan_id" id="plan_id">
                             <h6 class="mb-3">Pay with card</h6>
-                            <img class="w-50 pb-xl-3"   src="{{ asset('/frontend/img/cards.png') }}" alt="">
+                            <img class="w-50 pb-xl-3"   src="{{ asset('/frontend/img/cards.webp') }}" alt="">
                             <div id="card-element" style="background: #ffffff;
                                  padding: 5%;
                                  box-shadow: 0px 0px 44px #cbd0d98a;
@@ -55,7 +55,7 @@
                         </form>
 
                         <div class="text-center">
-                            <img src="/frontend/img/Stripe.png" alt="Powered by stripe" class="w-50 p-2" >
+                            <img src="/frontend/img/Stripe.webp" alt="Powered by stripe" class="w-50 p-2" >
                         </div>
                     </div>
                     <div id="paypal-wrapper" class="tab-pane paypal-wrapper @if(!user()->subscription()->stripe_id && user()->subscription()->paypal_id) active @endif">

@@ -12,7 +12,7 @@
                         <div class="col-md-6 col-sm-12 login-info">
                             <div class="justify-content-center mobile-d"><i class="fa-duotone fa-dash" style="height:80px"></i></div>
                             <h4>Sign Up to PlaylistMap</h4>
-                            <img class="mobile-d-none" width="290px" height="242px" src="{{ asset('images/frontend/register-modal.png') }}"></img>
+                            <img class="mobile-d-none" width="290px" height="242px" src="{{ asset('images/frontend/register-modal.webp') }}"></img>
                             <p class="mobile-d-none">Get access to thousands of curators who want to discover your music.</p>
                         </div>
                         <div class="col-md-6 col-sm-12 login-input">
@@ -30,7 +30,6 @@
                                                 name="artist-id" value="{{ old('artist-id') }}" autocomplete="artist-id" autofocus placeholder="{{ __('Spotify Artist') }}">
                                             <img width="200px" height="200px" id="artist-image" style="display:none;background-size:cover"/>
                                         </div>
-                                        <!-- <x-error field="artist-id"></x-error> -->
                                     </div>
                                 </div>
                                 <ul class="spotify-list bg-white p-4 position-absolute overflow-scroll" style="height:300px;display:none;color:black"></ul>
@@ -38,12 +37,10 @@
                                 <div class="mb-3">
                                     <input id="name" type="text" class="auth-info form-control @error('name') is-invalid @enderror"
                                             name="name" placeholder="Name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                    <!-- <x-error field="name"></x-error> -->
                                 </div>
                                 <div class="mb-3">
                                     <input id="email" type="email" class="auth-info form-control @error('email') is-invalid @enderror"
                                             name="email" placeholder="Email" value="{{ old('email') }}" required  >
-                                    <!-- <x-error field="email"></x-error> -->
                                 </div>
                                 <div class="mb-3 ">
                                     <div class="d-flex justify-content-between">

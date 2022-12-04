@@ -3,9 +3,6 @@
         <div class="container text-center text-md-start">
             <!-- Grid row -->
             <div class="mt-3 footer-links-wrapper mb-5 d-flex justify-content-center">
-                <!--<div class="col-md-1 col-lg-1 col-xl-1"></div>-->
-                <!-- Grid column -->
-                <!--<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">-->
                 <div class="mx-auto mb-4">
                     <!-- Links -->
                     <h6 class="mb-2 text-white">
@@ -105,11 +102,6 @@
                     </ul>
                 </div>
                 <!-- Grid column -->
-                <!--<div class="col-md-1 col-lg-1 col-xl-1"></div>-->
-
-<!--                <div class="container col-md-10 col-lg-10 col-xl-10 mt-5 mb-5">
-                    <div class="footer-seperator"></div>
-                </div>-->
             </div>
             <!-- Grid row -->
         </div>
@@ -120,7 +112,7 @@
 
     <div class="row g-0 justify-content-between fs--1 mt-4">
         <div class="col-12 text-center rights d-flex align-items-center justify-content-center">
-            <img class="me-4" src="{{ asset('images/logo-w.png') }}" alt="" width="100" />
+            <img class="me-4" src="{{ asset('images/logo-w.webp') }}" alt="" width="100" />
             <div>&copy; {{ now()->format('Y') }} Playlistmap, Inc. • All rights reserved.</div>
         </div>
     </div>
