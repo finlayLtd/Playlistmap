@@ -91,7 +91,7 @@
 
                                 <div class="align-items-center mt-2 mobile-d" data-toggle="collapse" href="#plan-detail{{$key}}" role="button" aria-expanded="false" aria-controls="plan-detail{{$key}}" style="margin-top:30px !important">
                                     Read More
-                                    <span style="margin-left:5px; margin-top:2px"><i class="text-white fa-duotone fa-chevron-down"></i></span>
+                                    <span style="margin-left:5px; margin-top:2px"><i class="text-white fa-solid fa-chevron-down"></i></span>
                                 </div>
                                 @if($plan->isFree())
                                     <div class="text-left mt-3 collapse" id="plan-detail{{$key}}">
