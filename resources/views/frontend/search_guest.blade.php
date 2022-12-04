@@ -55,7 +55,7 @@
                                             <div class="position-relative d-flex justify-content-center align-items-center">
                                                 <div class="position-absolute btn-group mobile-d-none" role="group" aria-label="Basic example">
                                                     <button class="open-modal btn bg-danger d-flex justify-content-center btn-sm text-center rounded-circle border-0" type="button" style="display: inherit; width:40px; height:40px">
-                                                        <i class="fa-solid m-0 fa-lock-keyhole"></i>
+                                                        <i class="fa-solid m-0 fa-unlock-keyhole"></i>
                                                     </button>
                                                 </div>
                                                 <img class="img-thumbnail" style="width: 78px; height:78px; object-fit:cover" src="{{ $playlist->image }}" />

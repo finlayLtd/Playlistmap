@@ -75,7 +75,7 @@
                 @if(!user()->subscription()->plan->isFree())
                     <div class="d-inline-flex mb-2" style="float:right;">
                         <span onclick="changeLayout(true)" class="text-white justify-content-center d-flex align-items-center m-auto grid-layout" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b; cursor:pointer">
-                            <i class="fa-solid fa-grid-2"></i>
+                            <i class="fa fa-th-large" aria-hidden="true"></i>
                         </span>
                         <span onclick="changeLayout(false)" class="text-white justify-content-center d-flex align-items-center m-auto list-layout" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b; cursor:pointer">
                             <i class="fa-solid fa-list"></i>
@@ -118,7 +118,7 @@
                                         </div>
                                         <div class="col-md-3 col-4">
                                             <a>
-                                                <i class="fa-solid fa-album-collection"></i>
+                                                <i class="fa fa-calendar-minus" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -163,7 +163,7 @@
                                             @else
                                                 <a href="{{request()->fullUrlWithQuery(['sortBy' => 'tracks', 'sortByAsc' => null])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
                                             @endif
-                                                <i class="fa-solid fa-album-collection"></i>
+                                                <i class="fa fa-calendar-minus" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -223,7 +223,7 @@
                                                 @if($unlock_text == 'Unlock')
                                                     <button class="open-modal btn bg-danger justify-content-center btn-sm {{ $btn_class }} text-center border-0 ulock-btn" type="button" data-toggle="modal"
                                                         data-target="#{{$modal}}" data-playlist-id="{{ $playlist->id }}" style="display: inherit; width:40px; height:40px; border-radius: 10px">
-                                                        <i class="fa-solid m-0 fa-lock-keyhole"></i>
+                                                        <i class="fa-solid m-0 fa-unlock-keyhole"></i>
                                                     </button>
                                                 @endif
                                             </div>
@@ -256,7 +256,7 @@
                                             <span id="playlist_followers" style="color:white !important">{{ $playlist->formatted_followers }}</span>
                                         </div>
                                         <div class="col-md-6 text-detail col-4 text-left d-flex align-items-center text-truncate" style="color:#C0C0C0">
-                                            <i width ="14px" height-="14px" class="mr-fix mobile-d  fa-solid fa-album-collection" style="font-size:10px;"></i>
+                                            <i width ="14px" height-="14px" class="mr-fix mobile-d fa fa-calendar-minus" aria-hidden="true"  style="font-size:10px;"></i>
                                             <span id="playlist_updated" style="color:white !important">
                                                 <div class="mobile-d-none"><x-friendly-date :date="$playlist->last_updated_on"/></div>
                                                 <div class="mobile-d" style="letter-spacing:-1px">{{$diffStr}}</div>

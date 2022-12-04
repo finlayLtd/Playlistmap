@@ -52,7 +52,7 @@
 
                         Profile
                     </span>
-                    <i class="far fa-chevron-right" style="float:right;"></i>
+                    <i class="fa-solid fa-chevron-right" style="float:right;"></i>
     
                 </div>
             </a>
@@ -63,50 +63,50 @@
 
                         Profile
                     </span>
-                    <i class="far fa-chevron-right" style="float:right;"></i>
-    
+                    <i class="fa-solid fa-chevron-right" style="float:right;"></i>
                 </div>
             </a>
             <!-- <a href="{{route('frontend.security')}}"> -->
             <a href="#orange" class="mobile-d-none @if(isset($_REQUEST['t']) && $_REQUEST['t']==2) active @endif" data-toggle="tab">
                 <div class="">
-                    <i class="fas fa-user-unlock"></i>
+                    <i class="fa-solid fa-user-lock"></i>
                     <span style="margin-left: 8px;">
 
                         Login & Security
                     </span>
-                    <i class="far fa-chevron-right" style="float:right;"></i>
+                    <i class="fa-solid fa-chevron-right" style="float:right;"></i>
 
                 </div>
             </a>              
             <a href="#orange" class="mobile-d w-100" data-toggle="modal" data-target="#security_modal">
                 <div class="">
-                    <i class="fas fa-user-unlock"></i>
+                    <i class="fa-solid fa-user-lock"></i>
                     <span style="margin-left: 8px;">
 
                         Login & Security
                     </span>
-                    <i class="far fa-chevron-right" style="float:right;"></i>
+                    <i class="fa-solid fa-chevron-right" style="float:right;"></i>
 
                 </div>
             </a>              
             <!-- <a href="{{route('frontend.subscription')}}"> -->
             <a href="#yellow" class="mobile-d-none  @if(isset($_REQUEST['t']) && $_REQUEST['t']==3) active @endif" data-toggle="tab">
                 <div class="">
-                    <i class="fas fa-credit-card-blank"></i>
+                    <i class="fa-solid fa-credit-card"></i>
                     <span style="margin-left: 8px;">
                         Subscritption
                     </span>
-                    <i class="far fa-chevron-right" style="float:right;"></i>
+                    <i class="fa-solid fa-chevron-right" style="float:right;"></i>
+
                 </div>
             </a> 
             <a href="#yellow" class="mobile-d w-100" data-toggle="modal" data-target="#subscription_modal">
                 <div class="">
-                    <i class="fas fa-credit-card-blank"></i>
+                    <i class="fa-solid fa-credit-card"></i>
                     <span style="margin-left: 8px;">
                         Subscritption
                     </span>
-                    <i class="far fa-chevron-right" style="float:right;"></i>
+                    <i class="fa-solid fa-chevron-right" style="float:right;"></i>
                 </div>
             </a> 
         </div>
@@ -282,7 +282,7 @@
                         </div>
                         <div class="thLetter d-flex">
                             <a href="/pricing">
-                                <button type="button" class="w-100 btn btn-danger" style="background-color:red;margin-left: 10px; padding: 10px !important; border-radius: 25px !important; color: white; float:right; "> <i class="far fa-chevron-down"></i> Manage Plan</button>
+                                <button type="button" class="w-100 btn btn-danger" style="background-color:red;margin-left: 10px; padding: 10px !important; border-radius: 25px !important; color: white; float:right; "> <i class="fa-solid fa-chevron-down"></i> Manage Plan</button>
                             </a>
                         </div>
                     </div>

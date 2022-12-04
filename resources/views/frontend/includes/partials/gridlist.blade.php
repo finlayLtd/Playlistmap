@@ -22,7 +22,7 @@
                     <span class="followers">{{ $playlist->formatted_followers }}</span>
                 </div>
                 <div class="d-inline w-50 float-right">
-                    <i class="mx-2 fa-solid fa-album-collection" style="margin-right:0px !important"></i>
+                    <i class="mx-2 fa fa-calendar-minus" style="margin-right:0px !important" aria-hidden="true"></i>
                     <span class="tracks">{{ $playlist->number_of_tracks }}</span>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                         <button class="btn btn-danger rounded-pill unlock-button @if(!$playlist->isUnlocked()) open-modal-grid @endif"
                             data-toggle="modal" data-target="#unlock_playlist_modal" data-playlist-id="{{ $playlist->id }}" 
                         >
-                            <i class="fa-light fa-unlock-keyhole"></i>Unlock
+                            <i class="fa-solid me-2 fa-unlock-keyhole"></i>Unlock
                         </button>
                     </div>
                 @endif

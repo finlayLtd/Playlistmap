@@ -39,10 +39,10 @@
                     <div class="container h5">Contact Details</div>
                     <div class="container h6">
                         <div class="my-3">
-                            <span class="text-white"><i class="fa-solid fa-circle-user"></i></span> {{ $playlist->owner }}
+                            <span class="text-white me-1"><i class="fa-solid fa-circle-user"></i></span> {{ $playlist->owner }}
                         </div>
-                        <div class="my-3 text-truncate align-items-center" style="overflow:inherit; white-space:normal">
-                            <span class="text-white"><i class="fa-solid fa-circle-envelope"></i></span> 
+                        <div class="my-3 d-flex text-truncate align-items-center" style="overflow:inherit; white-space:normal">
+                            <span class="text-white me-1"><i class="fa fa-envelope-circle-check"></i></span> 
                             <span >
                                 @foreach($playlist->contacts as $contact)
                                     @if(filter_var($contact, FILTER_VALIDATE_EMAIL))

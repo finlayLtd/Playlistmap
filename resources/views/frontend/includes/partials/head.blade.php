@@ -41,7 +41,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') . "?v=" .  config('constants.assets_version') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/fonts.css') . "?v=" .  config('constants.assets_version') }}">
- <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
 <!-- ===============================================-->
 <!--    Fonts-->
 <!-- ===============================================-->

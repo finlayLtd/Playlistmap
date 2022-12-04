@@ -127,14 +127,14 @@
         <div class=" container row justify-content-center m-auto">
             <div class="col-lg-3 col-md-6 col-sm-12 row">
                 <div class="row">
-                    <div class="col-md-12 col-sm-6 self-make rounded-circle"><div class="self-make rounded-circle"><i class="fa-regular fa-unlock-keyhole" style="font-size:30px"></i></div></div>
+                    <div class="col-md-12 col-sm-6 self-make rounded-circle"><div class="self-make rounded-circle"><i class="fa-solid fa-unlock-keyhole" style="font-size:30px"></i></div></div>
                     <div class="col-md-12 col-sm-6 detail-title">Unrivaled Access</div>
                 </div>
                 <div class="detail-content">Our database of Spotify playlist curators exceeds 10,000 making it the largest in the world.</div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 row">
                 <div class="row">
-                    <div class="col-md-12 col-sm-6 self-make rounded-circle"><div class="self-make rounded-circle"><i class="fa-regular fa-sliders" style="font-size:30px"></i></div></div>
+                    <div class="col-md-12 col-sm-6 self-make rounded-circle"><div class="self-make rounded-circle"><i class="fa fa-sliders" style="font-size:30px"></i></div></div>
                     <div class="col-md-12 col-sm-6 detail-title">Robust Filters</div>
                 </div>
                 <div class="detail-content">Set search criteria so you only find playlist curators that are highly relevant to you..</div>
@@ -148,7 +148,7 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 row">
                 <div class="row">
-                    <div class="col-md-12 col-sm-6 self-make rounded-circle"><div class="self-make rounded-circle"><i class="fa-regular fa-headset" style="font-size:30px"></i></div></div>
+                    <div class="col-md-12 col-sm-6 self-make rounded-circle"><div class="self-make rounded-circle"><i class="fa fa-headset" style="font-size:30px"></i></div></div>
                     <div class="col-md-12 col-sm-6 detail-title">Customer Support</div>
                 </div>
                 <div class="detail-content">Our outstanding live chat support is available on working hours. Contact our customer support team 24/7 at support@PlaylistMap.com</div>
