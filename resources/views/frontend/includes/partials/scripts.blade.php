@@ -5,7 +5,6 @@
 <script src="{{ asset('vendors/is/is.min.js') }}"></script>
 <script src="{{ asset('vendors/echarts/echarts.min.js') }}"></script>
 <script src="{{ asset('vendors/progressbar/progressbar.min.js') }}"></script>
-<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
 <script src="{{ asset('vendors/lodash/lodash.min.js') }}"></script>
 <script src="{{ asset('vendors/swiper/swiper-bundle.min.js') }}"></script>
@@ -15,6 +14,7 @@
 <script src="{{asset('js/toastr.min.js')}}"></script>
 <script src="{{asset('js/script.js'). "?v=" .  config('constants.assets_version') }}"></script>    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.2/timeago.min.js"></script>
+<script src="{{ asset('js/stripe-input.js') }}"></script>
 
 <script>
 
@@ -38,8 +38,5 @@
 </script>
 
 @yield('scripts')
-<link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:100,200,300,400,500,600,700,800,900&amp;display=swap"
-    rel="stylesheet">
 
 @include('frontend.includes.third-party.tawkto')

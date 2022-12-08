@@ -399,11 +399,6 @@ For the best experience, use your computer <i class="fas fa-laptop"></i>
 
                                                             @section('scripts')
 
-                                                            <?php /*
-                                                              <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
-                                                              <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-                                                             */ ?>
-
 
                                                             <script>
                                                                 $(function () {

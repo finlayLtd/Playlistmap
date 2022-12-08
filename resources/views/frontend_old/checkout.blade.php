@@ -23,5 +23,4 @@
         let stripe_key = "{{ config('services.stripe.key') }}";
     </script>
     <script src="https://js.stripe.com/v3/"></script>
-    <script src="{{ asset('js/stripe-input.js') }}"></script>
 @endsection

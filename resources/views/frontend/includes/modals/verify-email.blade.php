@@ -11,7 +11,7 @@
                     <h5 class="mb-0">Verify Your Email</h5>
     
                     <div class="container my-5"> 
-                        <img id="verifyemail" class="rounded mx-auto d-block" src="/frontend/img/check-email.webp" >
+                        <img id="verifyemail" class="rounded mx-auto d-block" src="{{asset('/images/frontend/check-email.webp')}}" >
                     </div>
     
                     <div>

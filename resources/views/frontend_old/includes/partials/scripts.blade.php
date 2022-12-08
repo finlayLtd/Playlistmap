@@ -12,7 +12,6 @@
 <script src="{{ asset('frontend/js/theme.js') }}"></script>
 <script src="{{asset('js/toastr.min.js')}}"></script>
 <script src="{{asset('js/script.js'). "?v=" .  config('constants.assets_version') }}"></script>    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.2/timeago.min.js"></script>
 
 <script>
     @php($notifications = array('error', 'success', 'warning', 'info'))

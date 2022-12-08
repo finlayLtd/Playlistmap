@@ -38,15 +38,13 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/toastr.min.css') }}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+<script src="https://kit.fontawesome.com/b8506db2c5.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') . "?v=" .  config('constants.assets_version') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/fonts.css') . "?v=" .  config('constants.assets_version') }}">
 <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
 <!-- ===============================================-->
 <!--    Fonts-->
 <!-- ===============================================-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <script src="{{ asset('vendors/jquery/jquery-3.5.1.min.js') }}"></script>
 <script> var homeurl = "{{ url('/')}}";</script>

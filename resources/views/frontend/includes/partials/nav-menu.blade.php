@@ -44,8 +44,8 @@
         <a class="nav-link mobile-d login-link" data-toggle="modal" data-target="#login_modal">
             <button class="tertiary text-white bg-transparent me-2" style="font-size:80%; border:white 1px solid" ><i class="fa-solid fa-arrow-right-to-bracket"></i>Login</button> 
         </a>
-        <a class="nav-link register-link" data-toggle="modal" data-target="#register_modal">
-            <button class="tertiary d-flex text-truncate" style="font-size:80%" ><i class="fas fa-badge-percent mobile-d-none text-black"></i><span class="mobile-d-none text-black">Start Free Trial</span><span class="mobile-d text-black">Sign Up</span</button> 
+        <a class="nav-link register-link">
+            <button class="tertiary d-flex text-truncate" data-toggle="modal" data-target="#register_modal" style="font-size:80%" ><i class="fas fa-badge-percent mobile-d-none text-black"></i><span class="mobile-d-none text-black">Start Free Trial</span><span class="mobile-d text-black">Sign Up</span</button> 
         </a>
     </li>
     @endguest
@@ -84,14 +84,14 @@
                 </a>
                 @endrole
                 <a onclick="ym(73260880, 'reachGoal', 'profileinusermenu'); return true;" class="dropdown-item align-items-center" href="{{ route('frontend.profile') }}">
-                    <i class="fas fa-user"></i>My Profile
+                    <i class="me-1 fas fa-user"></i>My Profile
                 </a>
                 <a onclick="ym(73260880, 'reachGoal', 'profileinusermenu'); return true;" class="dropdown-item align-items-center" href="{{ route('frontend.myplaylist') }}">
-                    <i class="fas fa-list-music"></i>My Playlists
+                    <i class="me-1 fa-solid fa-music"></i>My Playlists
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();ym(73260880, 'reachGoal', 'navlogout'); return true;">
-                    <i class="fas fa-power-off"></i>Logout
+                    <i class="me-1 fas fa-power-off"></i>Logout
                 </a>
             </div>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

@@ -11,8 +11,7 @@
             </div>
             <div class="modal-body">
                 <video id="vid" width="320" height="240" loop="" class="w-100" controls>
-                    <source src="{{asset('assets/How-to-use.mp4')}}" type="video/mp4">
-                    <source src="{{asset('assets/How-to-use.ogg')}}" type="video/ogg">
+                    <source type="video/mp4">
                         Your browser does not support the video tag.
                 </video>
                 <div class="pt-3 border-0 d-flex justify-content-center gap-3">

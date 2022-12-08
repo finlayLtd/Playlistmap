@@ -313,6 +313,10 @@
                 $("button.main-search-input").css('display','none');
             }
         })
+
+        $(".secondary.how-it-works").click(function(){
+            $("#vid").attr('src',"{{asset('assets/How-to-use.mp4')}}");
+        })
     });
 
     function initialinput(){
@@ -614,14 +618,13 @@
         }
 
         .how-it-works{
-            background: url({{asset('images/down_vector.webp')}});
-            background-repeat-x: no-repeat;
+            background: url("{{asset('images/down_vector.webp')}}");
             background-position: left;
             background-position-x:11.5%;
         }
 
         .backgroundClass{
-            background:linear-gradient(180deg, rgba(18, 18, 18, 0) 1.27%, rgba(18, 18, 18, 0.787848) 53.37%, #121212 73.28%), url({{asset('images/downBackground.webp')}}) !important;
+            background:linear-gradient(180deg, rgba(18, 18, 18, 0) 1.27%, rgba(18, 18, 18, 0.787848) 53.37%, #121212 73.28%), url("{{asset('images/downBackground.webp')}}") !important;
         }
 
         .homepage .homepage-section.homepage-section-hero .wrap .main {
@@ -697,7 +700,7 @@
     }
 
     .backgroundClass{
-        background:linear-gradient(180deg, rgba(18, 18, 18, 0) 1.27%, rgba(18, 18, 18, 0.787848) 53.37%, #121212 73.28%), url({{asset('images/bg/hero.webp')}})
+        background:linear-gradient(180deg, rgba(18, 18, 18, 0) 1.27%, rgba(18, 18, 18, 0.787848) 53.37%, #121212 73.28%), url("{{asset('images/bg/hero.webp')}}")
     }
 
     .homepage .homepage-section-discovered-section .wrap .step-image.step1 {
