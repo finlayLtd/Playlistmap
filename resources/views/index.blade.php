@@ -12,7 +12,7 @@
                     <div class="input-group position-relative bg-light rounded-pill">
                         <input id="kkk" class="playlistmap-search form-control kkk text-100" style="background-color:transparent" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"/>
                         <span class="text-black placeholder position-absolute">Try "<span class="text-danger">edm</span>" or "<span class="text-danger">weekend</span>"</span>
-                        <button onclick="ym(73260880, 'reachGoal', 'homepageserachbtn'); return true;" style="z-index:1000" type="submit" class="input-group-text bg-transparent text-100"><i class="fas fa-magnifying-glass"></i></button>
+                        <button onclick="return true;" style="z-index:1000" type="submit" class="input-group-text bg-transparent text-100"><i class="fas fa-magnifying-glass"></i></button>
                         <button class="input-group-text clear-input main-search-input" style="z-index:1000" onclick="initialinput()"><i class="fas fa-circle-xmark"></i></button>
                     </div>
                 </form>
@@ -22,8 +22,8 @@
         @include('frontend.components.pages.trusted-by', ['position' => 'center'])
 
         <div class="text-center scroll-down">
-            <img class="scroll-down-top me-2" src="{{asset('/images/icons/scroll-down.svg')}}" />
-            <img class="scroll-down-bottom me-2" src="{{asset('/images/icons/scroll-down-hover.svg')}}" />
+            <img alt="" class="scroll-down-top me-2" src="{{asset('/images/icons/scroll-down.svg')}}" />
+            <img alt="" class="scroll-down-bottom me-2" src="{{asset('/images/icons/scroll-down-hover.svg')}}" />
             <span>Scroll Down</span>
         </div>
 
@@ -39,9 +39,9 @@
                     <div class="row chain-works">
                         <div class="col-4 col-md-12" style="margin: auto;">
                             <div class="image-wrapper d-flex align-items-center justify-content-center m-auto">
-                                <img class="normal smallImage" src="{{asset('/images/graphics/find.svg')}}" />
-                                <img class="hover" src="{{asset('/images/graphics/find-hover.svg')}}" />
-                                <img class="red-line" src="{{asset('/images/graphics/red-line.svg')}}" />
+                                <img alt="" class="normal smallImage" src="{{asset('/images/graphics/find.svg')}}" />
+                                <img alt="" class="hover" src="{{asset('/images/graphics/find-hover.svg')}}" />
+                                <img alt="" class="red-line" src="{{asset('/images/graphics/red-line.svg')}}" />
                             </div>
                         </div>
                         <div class="col-8 col-md-12">
@@ -57,9 +57,9 @@
                     <div class="row chain-works">
                         <div class="col-4 col-md-12" style="margin:auto;">
                             <div class="image-wrapper d-flex align-items-center justify-content-center m-auto">
-                                <img class="normal smallImage" src="{{asset('/images/graphics/unlock.svg')}}" />
-                                <img class="hover" src="{{asset('/images/graphics/unlock-hover.svg')}}" />
-                                <img class="red-line" src="{{asset('/images/graphics/red-line.svg')}}" />
+                                <img alt="" class="normal smallImage" src="{{asset('/images/graphics/unlock.svg')}}" />
+                                <img alt="" class="hover" src="{{asset('/images/graphics/unlock-hover.svg')}}" />
+                                <img alt="" class="red-line" src="{{asset('/images/graphics/red-line.svg')}}" />
                             </div>
                         </div>
 
@@ -77,8 +77,8 @@
                     <div class="row chain-works">
                         <div class="col-4 col-md-12" style="margin:auto;">
                             <div class="image-wrapper d-flex align-items-center justify-content-center m-auto">
-                                <img class="normal smallImage" src="{{asset('/images/graphics/pitch.svg')}}" />
-                                <img class="hover"  src="{{asset('/images/graphics/pitch-hover.svg')}}" />
+                                <img alt="" class="normal smallImage" src="{{asset('/images/graphics/pitch.svg')}}" />
+                                <img alt="" class="hover"  src="{{asset('/images/graphics/pitch-hover.svg')}}" />
                             </div>
                         </div>
 
@@ -102,10 +102,10 @@
             </div>
             <div class="col-md-7 marginTop75">
                 <div class="right">
-                    <img class="music rePosition rePositionLeft" src="{{asset('/images/graphics/music.svg')}}" />
-                    <img class="check rePosition rePositionRight" src="{{asset('/images/graphics/check.svg')}}" />
-                    <img class="spotify rePosition rePositionRight" src="{{asset('/images/graphics/spotify.svg')}}" />
-                    <img class="eye rePositionLeft" src="{{asset('/images/graphics/eye.svg')}}" />
+                    <img alt="" class="music rePosition rePositionLeft" src="{{asset('/images/graphics/music.svg')}}" />
+                    <img alt="" class="check rePosition rePositionRight" src="{{asset('/images/graphics/check.svg')}}" />
+                    <img alt="" class="spotify rePosition rePositionRight" src="{{asset('/images/graphics/spotify.svg')}}" />
+                    <img alt="" class="eye rePositionLeft" src="{{asset('/images/graphics/eye.svg')}}" />
                     <div class="blue-ball rePositionLeft" ></div>
                     <h5>Stop wasting your valuable resources on promotion efforts that get you nowhere. Over 80% of our artists have increased their streams in just 1 month.</h5>
                 </div>
@@ -132,7 +132,7 @@
                 <div class="row padding16">
                     <div class="col-md-7 overflow-hidden">
                         <h3 class="mt-4 mb-4 noneDesktop" style="text-align: center;">Playlisting</h3>
-                        <img class="eye secondEye" src="{{asset('/images/bg/spotify-bg.webp')}}" />
+                        <img alt="" class="eye secondEye" src="{{asset('/images/bg/spotify-bg.webp')}}" />
                     </div>
                     <div class="col-md-5" style="margin:auto;">
                         <span class="noneMobile">1/3</span>
@@ -150,7 +150,7 @@
                 <div class="row padding16">
                     <div class="col-md-7">
                         <h3 class="mt-4 mb-4 noneDesktop" style="text-align: center;">Pitch Templates</h3>
-                        <img class="eye secondEye" src="{{asset('/images/bg/spotify-bg.webp')}}" />
+                        <img alt="" class="eye secondEye" src="{{asset('/images/bg/spotify-bg.webp')}}" />
                     </div>
                     <div class="col-md-5" style="margin:auto;">
                         <span class="noneMobile">2/3</span>
@@ -168,7 +168,7 @@
                 <div class="row padding16">
                     <div class="col-md-7">
                         <h3 class="mt-4 mb-4 noneDesktop" style="text-align: center;">AI Recommendations</h3>
-                        <img class="eye secondEye" src="{{asset('/images/bg/spotify-bg.webp')}}" />
+                        <img alt="" class="eye secondEye" src="{{asset('/images/bg/spotify-bg.webp')}}" />
                     </div>
                     <div class="col-md-5" style="margin:auto;">
                         <span class="noneMobile">3/3</span>
@@ -190,9 +190,9 @@
     <div class="wrap">
         <h2 class="text-center timelineBigTitle">Everything You Need To <b>Get Discovered</b></h2>
         <div class="discovered-steps-container position-relative" style="background: url({{asset('images/graphics/big-red-line.svg')}});background-repeat:no-repeat; background-position-x:50%">
-            <img class="line-ball line-ball1 noneMobile" src="{{asset('/images/graphics/red-ball.svg')}}" />
-            <img class="line-ball line-ball2 noneMobile" src="{{asset('/images/graphics/blue-ball.svg')}}" />
-            <img class="line-ball line-ball3 noneMobile" src="{{asset('/images/graphics/red-ball.svg')}}" />
+            <img alt="" class="line-ball line-ball1 noneMobile" src="{{asset('/images/graphics/red-ball.svg')}}" />
+            <img alt="" class="line-ball line-ball2 noneMobile" src="{{asset('/images/graphics/blue-ball.svg')}}" />
+            <img alt="" class="line-ball line-ball3 noneMobile" src="{{asset('/images/graphics/red-ball.svg')}}" />
             
             <div class="step step-1 row m-auto">
                 <div class="position-relative col-md-6 mobileAlignCenter" style="text-align: left;">
@@ -203,7 +203,7 @@
                     <h6 class="secondary-color timelineText">Identifying the right playlists is the key to getting discovered. We make it easy to search for and narrow in on relevant playlists that best fit your unique sound.</h6>
                 </div>
                 <div class="position-relative col-md-6 ps-5">
-                    <img class="step-image step1" src="{{asset('/images/graphics/discovered-step1.webp')}}" />
+                    <img alt="" class="step-image step1" src="{{asset('/images/graphics/discovered-step1.webp')}}" />
                 </div>
             </div>
 
@@ -217,7 +217,7 @@
 
                 </div>
                 <div class="position-relative col-md-6">
-                    <img class="step-image step2" src="{{asset('/images/graphics/discovered-step2.webp')}}" />
+                    <img alt="" class="step-image step2" src="{{asset('/images/graphics/discovered-step2.webp')}}" />
                 </div>
                 <div class="noneMobile position-relative col-md-6 mobileAlignCenter m-auto ps-5" style="text-align: left;">
                     <h3 class="position-relative timelineTitle">
@@ -238,7 +238,7 @@
                     <h6 class="secondary-color mt-3 timelineText">Get a full profile of each playlist before you pitch to make better decisions. View key metrics like number of followers, last updated, top artists, mood, and various other metrics to find genuine, active playlists. </h6>
                 </div>
                 <div class="position-relative col-md-6 ps-5">
-                    <img class="step-image step3" src="{{asset('/images/graphics/discovered-step3.webp')}}" />
+                    <img alt="" class="step-image step3" src="{{asset('/images/graphics/discovered-step3.webp')}}" />
                 </div>
             </div>
 
@@ -251,7 +251,7 @@
                     <h6 class="secondary-color timelineText">With PlaylistMap, there’s no mysterious middleman between you and the curators. You have full transparency into and control of your campaigns so you can develop personal connections with playlist gatekeepers.</h6>
                 </div>
                 <div class="position-relative col-md-6">
-                    <img class="step-image step4" src="{{asset('/images/graphics/discovered-step4.webp')}}" />
+                    <img alt="" class="step-image step4" src="{{asset('/images/graphics/discovered-step4.webp')}}" />
                 </div>
                 <div class="noneMobile position-relative col-md-6 mobileAlignCenter m-auto ps-5" style="text-align: left;">
                     <h3 class="position-relative timelineTitle">
@@ -276,7 +276,7 @@
     <div class="wrap">
         <div class="row get-started-wrapper padding16">
             <div class="col-md-5">
-                <img class="eye secondEye" src="{{asset('/images/bg/get-started-bg.webp')}}" />
+                <img alt="" class="eye secondEye" src="{{asset('/images/bg/get-started-bg.webp')}}" />
             </div>
             <div class="col-md-7 m-auto">
                 <h4 class="mt-4 mb-4 centerMobile">Get Started Today!</h4>
@@ -621,6 +621,7 @@
             background: url("{{asset('images/down_vector.webp')}}");
             background-position: left;
             background-position-x:11.5%;
+            background-repeat-x: no-repeat;
         }
 
         .backgroundClass{

@@ -19,9 +19,9 @@
             <div class="row">
                 <div class="col-3">
                     @if(user()->avatar_url)
-                        <img class="rounded-circle profile-image ml-4" src="{{ user()->avatar_url }}" alt="" style="width: 60px;"/>
+                        <img alt="" class="rounded-circle profile-image ml-4" src="{{ user()->avatar_url }}"  style="width: 60px;"/>
                     @else
-                        <!-- <img class="rounded-circle profile-image ml-4" src="storage/images/users/{{ user()->avatar}}" alt="" style="width: 60px;"/> -->
+                        <!-- <img alt="" class="rounded-circle profile-image ml-4" src="storage/images/users/{{ user()->avatar}}"  style="width: 60px;"/> -->
                         <div class="default-avatar-icon">
                             <i class="fas fa-circle-user default-avatar-icon" style="font-size: 60px;"></i>
                         </div>

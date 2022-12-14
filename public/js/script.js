@@ -146,48 +146,48 @@ $(document).ready(function () {
 
     $("#paymentModal").on('shown.bs.modal', function () {
 
-        paypal.Buttons({
-            style: {
-                shape: 'pill',
-                color: 'blue',
-                layout: 'vertical',
-                label: 'subscribe'
-            },
-            createSubscription: function (data, actions) {
-                return actions.subscription.create({
-                    "plan_id": $('#paypal-plan').val()
-                });
-            },
-            onApprove: function (data, actions) {
-                $('#paymentModal').addClass('loading');
-                $.ajax({
-                    type: "POST",
-                    url: homeurl + "/subscribeToPaypal",
-                    data: data,
-                    success: function (data) {
-//                        toastr.success('Plan changed successfully');
-//                        window.location.reload();
-//console.log('')
-                        console.log(data);
-                        if (data.status === "success" && "planID" in data) {
-                            window.location.href = "/manage-plans?action=register-plan&ordercompleted=" + data.planID;
-                        } else {
-                            window.location.href = "/manage-plans?action=register-plan";
-                        }
+//         paypal.Buttons({
+//             style: {
+//                 shape: 'pill',
+//                 color: 'blue',
+//                 layout: 'vertical',
+//                 label: 'subscribe'
+//             },
+//             createSubscription: function (data, actions) {
+//                 return actions.subscription.create({
+//                     "plan_id": $('#paypal-plan').val()
+//                 });
+//             },
+//             onApprove: function (data, actions) {
+//                 $('#paymentModal').addClass('loading');
+//                 $.ajax({
+//                     type: "POST",
+//                     url: homeurl + "/subscribeToPaypal",
+//                     data: data,
+//                     success: function (data) {
+// //                        toastr.success('Plan changed successfully');
+// //                        window.location.reload();
+// //console.log('')
+//                         console.log(data);
+//                         if (data.status === "success" && "planID" in data) {
+//                             window.location.href = "/manage-plans?action=register-plan&ordercompleted=" + data.planID;
+//                         } else {
+//                             window.location.href = "/manage-plans?action=register-plan";
+//                         }
 
-                        setTimeout(function () {
-                            $('#paymentModal').removeClass('loading');
-                        }, 5000);
-                    },
-                    error: function (jqXhr, textStatus, errorMessage) { // error callback 
-//                        $('p').append('Error: ' + errorMessage);
-                    },
-                    complete: function (data) {
-//                        $('#paymentModal').removeClass('loading');
-                    }
-                });
-            }
-        }).render('#paypal-button-container'); // Renders the PayPal button
+//                         setTimeout(function () {
+//                             $('#paymentModal').removeClass('loading');
+//                         }, 5000);
+//                     },
+//                     error: function (jqXhr, textStatus, errorMessage) { // error callback 
+// //                        $('p').append('Error: ' + errorMessage);
+//                     },
+//                     complete: function (data) {
+// //                        $('#paymentModal').removeClass('loading');
+//                     }
+//                 });
+//             }
+//         }).render('#paypal-button-container'); // Renders the PayPal button
     });
 
     $('#paypal-update-subscription').on('click', (e) => {

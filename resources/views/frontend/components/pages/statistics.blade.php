@@ -1,12 +1,12 @@
 <section class="{{$page ?? ""}}-section {{$page ?? ""}}-section-statistics playlistmap-statistics">
     <div class="wrap">
-        <img class="graphic graphic-left deleteIcon" src="{{asset('/images/graphics/statistics-graphic-left.svg')}}" />
-        <img class="graphic graphic-right deleteIcon" src="{{asset('/images/graphics/statistics-graphic-right.svg')}}" />
-        <img class="graphic graphic-bottom deleteIcon" src="{{asset('/images/graphics/statistics-graphic-bottom.svg')}}" />
+        <img alt="" class="graphic graphic-left deleteIcon" src="{{asset('/images/graphics/statistics-graphic-left.svg')}}" />
+        <img alt="" class="graphic graphic-right deleteIcon" src="{{asset('/images/graphics/statistics-graphic-right.svg')}}" />
+        <img alt="" class="graphic graphic-bottom deleteIcon" src="{{asset('/images/graphics/statistics-graphic-bottom.svg')}}" />
         <h2 class="text-center titleForStatistics">PlaylistMap By The Numbers</h2>
         <div class="row justify-content-center mt-5">
             <div class="col-md-4 col-sm-12 d-flex text-left staticsImage">
-                <img class="step-image step4 " src="{{asset('/images/graphics/statistics1.svg')}}" />
+                <img alt="" class="step-image step4 " src="{{asset('/images/graphics/statistics1.svg')}}" />
                 <div class="d-flex flex-column justify-content-between">
                     <div class="text">
                         <h4>100k</h4>
@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-12 d-flex text-left staticsImage">
-                <img class="step-image step4" src="{{asset('/images/graphics/statistics2.svg')}}" />
+                <img alt="" class="step-image step4" src="{{asset('/images/graphics/statistics2.svg')}}" />
                 <div class="d-flex flex-column justify-content-between">
                     <div class="text">
                         <h4>100M</h4>
@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-12 d-flex text-left staticsImage">
-                <img class="step-image step4" src="{{asset('/images/graphics/statistics3.svg')}}" />
+                <img alt="" class="step-image step4" src="{{asset('/images/graphics/statistics3.svg')}}" />
                 <div class="d-flex flex-column justify-content-between">
                     <div class="text">
                         <h4>150</h4>

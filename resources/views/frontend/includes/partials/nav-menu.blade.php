@@ -1,7 +1,7 @@
 <div class="d-flex align-items-center" id="navbarStandard">
     <ul class="navbar-nav links d-flex align-items-center">
         <li class="nav-item">
-            <a onclick="ym(73260880, 'reachGoal', 'navsearch'); return true;" style="display:flex; cursor:pointer" class="nav-link {{ Route::is('frontend.search') ? 'active' : '' }}" @if(auth()->check()) href="{{ route('frontend.search') }}" @else data-toggle="modal" data-target="#login_modal" @endif>Browse</a>
+            <a onclick="return true;" style="display:flex; cursor:pointer" class="nav-link {{ Route::is('frontend.search') ? 'active' : '' }}" @if(auth()->check()) href="{{ route('frontend.search') }}" @else data-toggle="modal" data-target="#login_modal" @endif>Browse</a>
         </li>
         <li class="nav-item">
             <a class="nav-link {{ Route::is('pages.about') ? 'active' : '' }}" href="/about">About</a>
@@ -26,7 +26,7 @@
             <!--<span>Try &quot;<span class="red">edm</span>&quot; or &quot;<span class="red">the weeknd</span>&quot;</span>-->
             <input class="playlistmap-search" class="form-control bg-transparent text-100" type="text" name="q" value="{{ old('keyword', request()->get('q')) }}"
                    placeholder="Try &quot;edm&quot; or &quot;the weeknd&quot;"/>
-            <button onclick="ym(73260880, 'reachGoal', 'homepageserachbtn'); return true;" type="submit" class="input-group-text bg-transparent text-100"><i class="fas fa-magnifying-glass"></i></button>
+            <button onclick="return true;" type="submit" class="input-group-text bg-transparent text-100"><i class="fas fa-magnifying-glass"></i></button>
         </div>
     </form>
 </div>
@@ -64,7 +64,7 @@
             <div class="mr-3 align-self-center name mobile-d-none">{{ user()->name }}</div>
             <div class="avatar avatar-xl">
                 @if(user()->avatar_url)
-                <img class="rounded-circle profile-image" src="{{ user()->avatar_url }}" alt="" />
+                <img alt="" class="rounded-circle profile-image" src="{{ user()->avatar_url }}"  />
                 @else
                 <div class="default-avatar-icon">
                     <i class="fas fa-circle-user default-avatar-icon"></i>
@@ -83,14 +83,14 @@
                     <i class="fas fa-user-crown"></i>Dashboard
                 </a>
                 @endrole
-                <a onclick="ym(73260880, 'reachGoal', 'profileinusermenu'); return true;" class="dropdown-item align-items-center" href="{{ route('frontend.profile') }}">
+                <a onclick="return true;" class="dropdown-item align-items-center" href="{{ route('frontend.profile') }}">
                     <i class="me-1 fas fa-user"></i>My Profile
                 </a>
-                <a onclick="ym(73260880, 'reachGoal', 'profileinusermenu'); return true;" class="dropdown-item align-items-center" href="{{ route('frontend.myplaylist') }}">
+                <a onclick="return true;" class="dropdown-item align-items-center" href="{{ route('frontend.myplaylist') }}">
                     <i class="me-1 fa-solid fa-music"></i>My Playlists
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();ym(73260880, 'reachGoal', 'navlogout'); return true;">
+                <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();return true;">
                     <i class="me-1 fas fa-power-off"></i>Logout
                 </a>
             </div>

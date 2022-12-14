@@ -10,7 +10,7 @@
             </div>
             <div class="modal-body px-card">
                 <div class="d-flex justify-content-between">
-                    <div class="d-flex align-items-start"><img class="mr-2" src="frontend/img/icons/left-arrow-from-left.svg" width="20" alt="" />
+                    <div class="d-flex align-items-start"><img alt="" class="mr-2" src="frontend/img/icons/left-arrow-from-left.svg" width="20"  />
                         <div class="flex-1">
                             <h5 class="fs-0">RTL Mode</h5>
                             <p class="fs--1 mb-0">Switch your language direction </p>
@@ -22,7 +22,7 @@
                 </div>
                 <hr />
                 <div class="d-flex justify-content-between">
-                    <div class="d-flex align-items-start"><img class="mr-2" src="frontend/img/icons/arrows-h.svg" width="20" alt="" />
+                    <div class="d-flex align-items-start"><img alt="" class="mr-2" src="frontend/img/icons/arrows-h.svg" width="20"  />
                         <div class="flex-1">
                             <h5 class="fs-0">Fluid Layout</h5>
                             <p class="fs--1 mb-0">Toggle container layout system </p>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <hr />
-                <div class="d-flex align-items-start"><img class="mr-2" src="frontend/img/icons/paragraph.svg" width="20" alt="" />
+                <div class="d-flex align-items-start"><img alt="" class="mr-2" src="frontend/img/icons/paragraph.svg" width="20"  />
                     <div class="flex-1">
                         <h5 class="fs-0 d-flex align-items-center">Navigation Position </h5>
                         <p class="fs--1 mb-2">Select a suitable navigation system for your web application </p>
@@ -58,23 +58,23 @@
                     <div class="row gx-2">
                         <div class="col-6">
                             <input class="btn-check" id="navbar-style-transparent" type="radio" name="navbarStyle" checked="checked" data-page-url="index.html" value="transparent" />
-                            <label class="btn btn-block btn-navbar-style fs--1" for="navbar-style-transparent"> <img class="img-fluid img-prototype" src="frontend/img/generic/default.webp" alt="" /><span class="label-text"> Transparent</span></label>
+                            <label class="btn btn-block btn-navbar-style fs--1" for="navbar-style-transparent"> <img alt="" class="img-fluid img-prototype" src="frontend/img/generic/default.webp"  /><span class="label-text"> Transparent</span></label>
                         </div>
                         <div class="col-6">
                             <input class="btn-check" id="navbar-style-inverted" type="radio" name="navbarStyle" data-page-url="demo/navbar-vertical-inverted.html" value="inverted" />
-                            <label class="btn btn-block btn-navbar-style fs--1" for="navbar-style-inverted"> <img class="img-fluid img-prototype" src="frontend/img/generic/inverted.webp" alt="" /><span class="label-text"> Inverted</span></label>
+                            <label class="btn btn-block btn-navbar-style fs--1" for="navbar-style-inverted"> <img alt="" class="img-fluid img-prototype" src="frontend/img/generic/inverted.webp"  /><span class="label-text"> Inverted</span></label>
                         </div>
                         <div class="col-6">
                             <input class="btn-check" id="navbar-style-card" type="radio" name="navbarStyle" data-page-url="demo/navbar-vertical-card.html" value="card" />
-                            <label class="btn btn-block btn-navbar-style fs--1" for="navbar-style-card"> <img class="img-fluid img-prototype" src="frontend/img/generic/card.webp" alt="" /><span class="label-text"> Card</span></label>
+                            <label class="btn btn-block btn-navbar-style fs--1" for="navbar-style-card"> <img alt="" class="img-fluid img-prototype" src="frontend/img/generic/card.webp"  /><span class="label-text"> Card</span></label>
                         </div>
                         <div class="col-6">
                             <input class="btn-check" id="navbar-style-vibrant" type="radio" name="navbarStyle" data-page-url="demo/navbar-vertical-vibrant.html" value="vibrant" />
-                            <label class="btn btn-block btn-navbar-style fs--1" for="navbar-style-vibrant"> <img class="img-fluid img-prototype" src="frontend/img/generic/vibrant.webp" alt="" /><span class="label-text"> Vibrant</span></label>
+                            <label class="btn btn-block btn-navbar-style fs--1" for="navbar-style-vibrant"> <img alt="" class="img-fluid img-prototype" src="frontend/img/generic/vibrant.webp"  /><span class="label-text"> Vibrant</span></label>
                         </div>
                     </div>
                 </div>
-                <div class="text-center mt-5"><img class="mb-4" src="frontend/img/illustrations/settings.webp" alt="" width="120" />
+                <div class="text-center mt-5"><img alt="" class="mb-4" src="frontend/img/illustrations/settings.webp"  width="120" />
                     <h5>Like What You See?</h5>
                     <p class="fs--1">Get Falcon now and create beautiful dashboards with hundreds of widgets.</p><a class="btn btn-primary" href="https://themes.getbootstrap.com/product/falcon-admin-dashboard-webapp-template/" target="_blank">Purchase</a>
                 </div>

@@ -5,7 +5,7 @@
 
 <div class="card" style="background:transparent">
             <div class="card-header bg-100">
-               <b style="    font-size: 24px;"> {{ $results_count }} </b>results found for "<b>{{request()->query('q')}}</b>"
+               <b style="font-size: 24px;"> {{ $results_count }} </b>results found for "<b>{{request()->query('q')}}</b>"
             </div>
             <div class="card-body ">
                 @if($playlists->count())
@@ -58,7 +58,7 @@
                                                         <i class="fa-solid m-0 fa-unlock-keyhole"></i>
                                                     </button>
                                                 </div>
-                                                <img class="img-thumbnail" style="width: 78px; height:78px; object-fit:cover" src="{{ $playlist->image }}" />
+                                                <img alt="" class="img-thumbnail" style="width: 78px; height:78px; object-fit:cover" src="{{ $playlist->image }}" />
                                             </div>
                                         </td>
                                         <td colspan="2" style="height:inherit;">

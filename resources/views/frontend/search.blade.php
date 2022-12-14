@@ -75,7 +75,7 @@
                 @if(!user()->subscription()->plan->isFree())
                     <div class="d-inline-flex mb-2" style="float:right;">
                         <span onclick="changeLayout(true)" class="text-white justify-content-center d-flex align-items-center m-auto grid-layout" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b; cursor:pointer">
-                            <i class="fa fa-th-large" aria-hidden="true"></i>
+                            <i class="fa-solid fa-grid-2"></i>
                         </span>
                         <span onclick="changeLayout(false)" class="text-white justify-content-center d-flex align-items-center m-auto list-layout" style="margin-left:5px !important;width:25px; height:25px; background:#1b1b1b; cursor:pointer">
                             <i class="fa-solid fa-list"></i>
@@ -118,7 +118,7 @@
                                         </div>
                                         <div class="col-md-3 col-4">
                                             <a>
-                                                <i class="fa fa-calendar-minus" aria-hidden="true"></i>
+                                                <i class="fa-solid fa-album-collection" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -135,35 +135,35 @@
                                     <div class="col-md-6 col-sm-12 row">
                                         <div class="col-md-3 col-4">
                                             @if(request()->input('sortBy') && request()->input('sortBy') === 'followers')
-                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'followers'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'followers'])}}" onclick="return true;">
                                             @elseif(request()->input('sortByAsc') && request()->input('sortByAsc') === 'followers')
-                                                <a href="{{request()->fullUrlWithQuery(['sortByAsc' => null, 'sortBy' => 'followers'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                                <a href="{{request()->fullUrlWithQuery(['sortByAsc' => null, 'sortBy' => 'followers'])}}" onclick="return true;">
                                             @else
-                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => 'followers', 'sortByAsc' => null])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => 'followers', 'sortByAsc' => null])}}" onclick="return true;">
                                             @endif
                                                 <i class="mx-2 fa fa-users" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                         <div class="col-md-6 col-4">
                                             @if(request()->input('sortBy') && request()->input('sortBy') === 'lastUpdated')
-                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'lastUpdated'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'lastUpdated'])}}" onclick="return true;">
                                             @elseif(request()->input('sortByAsc') && request()->input('sortByAsc') === 'lastUpdated')
-                                                <a href="{{request()->fullUrlWithQuery(['sortByAsc' => null, 'sortBy' => 'lastUpdated'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                                <a href="{{request()->fullUrlWithQuery(['sortByAsc' => null, 'sortBy' => 'lastUpdated'])}}" onclick="return true;">
                                             @else
-                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => 'lastUpdated', 'sortByAsc' => null])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => 'lastUpdated', 'sortByAsc' => null])}}" onclick="return true;">
                                             @endif
                                                 <i class="mx-2 fa-solid fa-clock"></i>
                                             </a>
                                         </div>
                                         <div class="col-md-3 col-4">
                                             @if(request()->input('sortBy') && request()->input('sortBy') === 'tracks')
-                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'tracks'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => null, 'sortByAsc' => 'tracks'])}}" onclick="return true;">
                                             @elseif(request()->input('sortByAsc') && request()->input('sortByAsc') === 'tracks')
-                                                <a href="{{request()->fullUrlWithQuery(['sortByAsc' => null, 'sortBy' => 'tracks'])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                                <a href="{{request()->fullUrlWithQuery(['sortByAsc' => null, 'sortBy' => 'tracks'])}}" onclick="return true;">
                                             @else
-                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => 'tracks', 'sortByAsc' => null])}}" onclick="ym(73260880, 'reachGoal', 'sorting'); return true;">
+                                                <a href="{{request()->fullUrlWithQuery(['sortBy' => 'tracks', 'sortByAsc' => null])}}" onclick="return true;">
                                             @endif
-                                                <i class="fa fa-calendar-minus" aria-hidden="true"></i>
+                                                <i class="fa-solid fa-album-collection" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -204,7 +204,7 @@
                                 <td>
                                     <div class="detail-img m-auto" style="width:78px; height:78px; border-radius:10px;box-shadow: 0px 7px 0px -5px rgb(255,255,255,0.3)">
                                         <div class="position-relative w-100" style="padding-top:100% !important; box-shadow: 0px 10px 0px -5px rgb(255,255,255,0.3);border-radius: 20px;">
-                                            <img src="{{ $playlist->image }}" class="position-absolute" style="top:0px;left:0px; height:78px !important; width:78px !important;object-fit:cover; border-radius:10px">
+                                            <img alt="" src="{{ $playlist->image }}" class="position-absolute" style="top:0px;left:0px; height:78px !important; width:78px !important;object-fit:cover; border-radius:10px">
                                             <div class="position-absolute btn-group mobile-d-none" role="group" aria-label="Basic example" style="top:calc(50% - 20px); left: calc(50% - 20px)">
                                                 @php
                                                     if ($playlist->isUnlocked()){
@@ -223,7 +223,7 @@
                                                 @if($unlock_text == 'Unlock')
                                                     <button class="open-modal btn bg-danger justify-content-center btn-sm {{ $btn_class }} text-center border-0 ulock-btn" type="button" data-toggle="modal"
                                                         data-target="#{{$modal}}" data-playlist-id="{{ $playlist->id }}" style="display: inherit; width:40px; height:40px; border-radius: 10px">
-                                                        <i class="fa-solid m-0 fa-unlock-keyhole"></i>
+                                                        <i class="fa-solid fa-unlock-keyhole m-0"></i>
                                                     </button>
                                                 @endif
                                             </div>
@@ -256,7 +256,7 @@
                                             <span id="playlist_followers" style="color:white !important">{{ $playlist->formatted_followers }}</span>
                                         </div>
                                         <div class="col-md-6 text-detail col-4 text-left d-flex align-items-center text-truncate" style="color:#C0C0C0">
-                                            <i width ="14px" height-="14px" class="mr-fix mobile-d fa fa-calendar-minus" aria-hidden="true"  style="font-size:10px;"></i>
+                                            <i width ="14px" height-="14px" class="mr-fix mobile-d fa-solid fa-album-collection" aria-hidden="true"  style="font-size:10px;"></i>
                                             <span id="playlist_updated" style="color:white !important">
                                                 <div class="mobile-d-none"><x-friendly-date :date="$playlist->last_updated_on"/></div>
                                                 <div class="mobile-d" style="letter-spacing:-1px">{{$diffStr}}</div>
@@ -269,9 +269,9 @@
                                     </div>
                                 </td>
                                 <td class="mobile-d">
-                                    <div class="open-modal rounded-circle bg-danger d-flex align-items-center justify-content-center" style="width:40px; height:40px" 
+                                    <div class="open-modal rounded-circle bg-danger d-flex align-items-center justify-content-center" style="width:40px; height:40px; @if($playlist->isUnlocked()) visibility:hidden; @endif " 
                                         data-toggle="modal" data-target="#{{$modal}}" data-playlist-id="{{ $playlist->id }}">
-                                        <i class="fa-solid fa-unlock-keyhole"></i>
+                                        <i class="fa-solid fa-unlock-keyhole" ></i>
                                     </div>
                                 </td>
                                 <td class="mobile-d ellipse-border">

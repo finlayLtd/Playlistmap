@@ -11,7 +11,7 @@
                                 <div class="bg-holder " >
                                 </div>
                                 <div class="z-index-1 position-relative">
-                                    <img class="w-50 mb-5" src="{{ asset('images/frontend/login-bg.webp') }}" alt="">
+                                    <img alt="" class="w-50 mb-5" src="{{ asset('images/frontend/login-bg.webp') }}" >
                                     <h5 class="text-white text-left">Welcome Back</h5>
                                     <p class="opacity-75 text-white text-left">
                                         Welcome back! To stay connected with us, please login with your personal information. If you encounter any problem, our team is available 24/7.

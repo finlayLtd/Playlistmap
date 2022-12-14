@@ -10,21 +10,21 @@
             @endif
             <ul class="m-0 partners" style="display:block;">
                 <li class="itemList" >
-                    <img src="{{asset('/images/icons/partners/ditto.svg')}}" class="heightBanner" />
+                    <img alt="" src="{{asset('/images/icons/partners/ditto.svg')}}" class="heightBanner" />
                 </li>
                 <li class="itemList" >
-                    <img src="{{asset('/images/icons/partners/alteza.svg')}}" class="heightBanner"/>
+                    <img alt="" src="{{asset('/images/icons/partners/alteza.svg')}}" class="heightBanner"/>
                 </li>
                 <li class="itemList" id="thirdImage" >
-                    <img src="{{asset('/images/icons/partners/weraveyou.svg')}}" class="heightBanner"/>
+                    <img alt="" src="{{asset('/images/icons/partners/weraveyou.svg')}}" class="heightBanner"/>
                 </li>
                 <br class="breakMobile">
 
                 <li class="itemList">
-                    <img src="{{asset('/images/icons/partners/vini-vici.svg')}}" class="heightBanner marginTop20" id="startPoint"/>
+                    <img alt="" src="{{asset('/images/icons/partners/vini-vici.svg')}}" class="heightBanner marginTop20" id="startPoint"/>
                 </li>
                 <li class="itemList" style="margin-right: 0px !important;">
-                    <img src="{{asset('/images/icons/partners/fangage.svg')}}" class="heightBanner marginTop20" />
+                    <img alt="" src="{{asset('/images/icons/partners/fangage.svg')}}" class="heightBanner marginTop20" />
                 </li>
             </ul>
         </div>

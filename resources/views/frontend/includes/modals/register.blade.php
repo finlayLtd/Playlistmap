@@ -12,7 +12,7 @@
                         <div class="col-md-6 col-sm-12 login-info">
                             <div class="justify-content-center mobile-d"><i class="fa-duotone fa-dash" style="height:80px"></i></div>
                             <h4>Sign Up to PlaylistMap</h4>
-                            <img class="mobile-d-none" width="290px" height="242px" src="{{ asset('images/frontend/register-modal.webp') }}"></img>
+                            <img alt="" class="mobile-d-none" width="290px" height="242px" src="{{ asset('images/frontend/register-modal.webp') }}"></img>
                             <p class="mobile-d-none">Get access to thousands of curators who want to discover your music.</p>
                         </div>
                         <div class="col-md-6 col-sm-12 login-input">
@@ -28,7 +28,7 @@
                                         <div class="w-100 artist-id-image">
                                             <input id="artist-id" type="text" class="artist-id auth-info form-control @error('name') is-invalid @enderror" style="height:40px"
                                                 name="artist-id" value="{{ old('artist-id') }}" autocomplete="artist-id" autofocus placeholder="{{ __('Spotify Artist') }}">
-                                            <img width="200px" height="200px" id="artist-image" style="display:none;background-size:cover"/>
+                                            <img alt="" width="200px" height="200px" id="artist-image" style="display:none;background-size:cover"/>
                                         </div>
                                     </div>
                                 </div>

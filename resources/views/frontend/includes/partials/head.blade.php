@@ -1,5 +1,3 @@
-@include('frontend.includes.third-party.gtm')
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,15 +38,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 <script src="https://kit.fontawesome.com/b8506db2c5.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') . "?v=" .  config('constants.assets_version') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/fonts.css') . "?v=" .  config('constants.assets_version') }}">
-<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-<!-- ===============================================-->
-<!--    Fonts-->
-<!-- ===============================================-->
 
 <script src="{{ asset('vendors/jquery/jquery-3.5.1.min.js') }}"></script>
-<script> var homeurl = "{{ url('/')}}";</script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
 
 @yield('styles')

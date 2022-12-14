@@ -11,7 +11,7 @@ Trusted and loved by millions of developers, and integrated into thousands of ap
 - Content creation in SaaS systems
 
 <p align="center">
-  <img alt="Screenshot of the TinyMCE Editor" src="https://www.tiny.cloud/storage/github-readme-images/tinymce-editor.png"\>
+  <img alt=""  alt="Screenshot of the TinyMCE Editor" src="https://www.tiny.cloud/storage/github-readme-images/tinymce-editor.png"\>
 </p>
 
 ## Our Tiny contribution
@@ -25,7 +25,7 @@ With this in mind, as technology continues to advance and evolve, we want to mak
 TinyMCE easily integrates into applications of all types and sizes, to provide the best content creation experience possible.
 
 <p align="center">
-  <img alt="Tiny Technologies Logo" src="https://www.tiny.cloud/storage/github-readme-images/tiny-image.png"\>
+  <img alt=""  alt="Tiny Technologies Logo" src="https://www.tiny.cloud/storage/github-readme-images/tiny-image.png"\>
 </p>
 
 ## Try the demo

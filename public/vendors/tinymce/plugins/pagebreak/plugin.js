@@ -24,7 +24,7 @@
       return 'mce-pagebreak';
     };
     var getPlaceholderHtml = function () {
-      return '<img src="' + global$1.transparentSrc + '" class="' + getPageBreakClass() + '" data-mce-resize="false" data-mce-placeholder />';
+      return '<img alt=""  src="' + global$1.transparentSrc + '" class="' + getPageBreakClass() + '" data-mce-resize="false" data-mce-placeholder />';
     };
     var setup = function (editor) {
       var separatorHtml = getSeparatorHtml(editor);

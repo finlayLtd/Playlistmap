@@ -4,7 +4,7 @@
             <span class="position-relative">
                 {{$title ?? "Your Success Speaks Volumes"}}
                 @if(!isset($showTitleQuote))
-                <img class="big-red-quote" src="{{asset('/images/graphics/red-quotes-big.svg')}}" />
+                <img alt="" class="big-red-quote" src="{{asset('/images/graphics/red-quotes-big.svg')}}" />
                 @endif
             </span>
         </h2>
@@ -16,7 +16,7 @@
             <div class="single-testimonial container">
                 <div class="d-flex">
                     <div class="image-wrapper position-relative me-3">
-                        <img class="graphic graphic-left" src="{{asset('/images/testimonials/alusin.webp')}}" />
+                        <img alt="" class="graphic graphic-left" src="{{asset('/images/testimonials/alusin.webp')}}" />
                     </div>
                     <div class="d-flex flex-column justify-content-center">
                         <h6 class="testimonial-title mb-0">Alusin</h6>
@@ -27,13 +27,13 @@
                     “ With PlaylistMap, one of the biggest problems we face as creators releasing music has been solved. Now I can use the site’s ready-made templates to easily reach any playlist I want instead of having to deal with the endless rewriting of emails. I definitely recommend this platform. ”
                 </div>
                 <div class="mt-3">
-                    <img class="graphic graphic-left" src="{{asset('/images/graphics/red-quotes.svg')}}" />
+                    <img alt="" class="graphic graphic-left" src="{{asset('/images/graphics/red-quotes.svg')}}" />
                 </div>
             </div>
             <div class="single-testimonial container">
                 <div class="d-flex">
                     <div class="image-wrapper position-relative me-3">
-                        <img class="graphic graphic-left" src="{{asset('/images/testimonials/eliav.webp')}}" />
+                        <img alt="" class="graphic graphic-left" src="{{asset('/images/testimonials/eliav.webp')}}" />
                     </div>
                     <div class="d-flex flex-column justify-content-center">
                         <h6 class="testimonial-title mb-0">X-Hood21</h6>
@@ -44,13 +44,13 @@
                     “ My experience with PlaylistMap has change everything I thought I knew about playlisting. Thanks to PlaylistMap, I was able to save tons of time and money, create strong and fruitful connections with curators, and gain the ability to reach out to many more in the click of a button! ”
                 </div>
                 <div class="mt-3">
-                    <img class="graphic graphic-left" src="{{asset('/images/graphics/red-quotes.svg')}}" />
+                    <img alt="" class="graphic graphic-left" src="{{asset('/images/graphics/red-quotes.svg')}}" />
                 </div>
             </div>
             <div class="single-testimonial container">
                 <div class="d-flex">
                     <div class="image-wrapper position-relative me-3">
-                        <img class="graphic graphic-left" src="{{asset('/images/testimonials/ronny.webp')}}" />
+                        <img alt="" class="graphic graphic-left" src="{{asset('/images/testimonials/ronny.webp')}}" />
                     </div>
                     <div class="d-flex flex-column justify-content-center">
                         <h6 class="testimonial-title mb-0">Ronny</h6>
@@ -61,13 +61,13 @@
                     “ This tool is f**king amazing! Saved so much time and effort for me to search and find good playlists for my genre and most importantly, it gives you the contact info for every playlist curator. I mean, this is crazy man, I could search for hours for a good playlist and sometimes it took even longer to find their contact info, but now it's all in front of you! ”
                 </div>
                 <div class="mt-3">
-                    <img class="graphic graphic-left" src="{{asset('/images/graphics/red-quotes.svg')}}" />
+                    <img alt="" class="graphic graphic-left" src="{{asset('/images/graphics/red-quotes.svg')}}" />
                 </div>
             </div>
             <div class="single-testimonial">
                 <div class="d-flex">
                     <div class="image-wrapper position-relative me-3">
-                        <img class="graphic graphic-left" src="{{asset('/images/testimonials/yarden.webp')}}" />
+                        <img alt="" class="graphic graphic-left" src="{{asset('/images/testimonials/yarden.webp')}}" />
                     </div>
                     <div class="d-flex flex-column justify-content-center">
                         <h6 class="testimonial-title mb-0">Yarden Saxophone</h6>
@@ -78,7 +78,7 @@
                     “ Playlistmap is a game changer for both signed and independent musicians. It's a must-have tool for every artist who wants to get their music to as many listeners as possible. It saved me so much valuable time, and put me in touch with so many playlist curators. For me it's an essential part of every new release campaign. ”
                 </div>
                 <div class="mt-3">
-                    <img class="graphic graphic-left" src="{{asset('/images/graphics/red-quotes.svg')}}" />
+                    <img alt="" class="graphic graphic-left" src="{{asset('/images/graphics/red-quotes.svg')}}" />
                 </div>
             </div>
         </div>

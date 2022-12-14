@@ -54,8 +54,8 @@
 
                                     <div id="bunsplaylistcard">
                                         <center>
-                                            <a onclick="ym(73260880, 'reachGoal', 'generatemessage'); return true;" id="generatemsgbtn" style="width: 182px;    border-radius: 50px; " class="btn btn-primary btn-block my-4" href="{{ route('frontend.message-generator', $playlist) }}">Generate Message <i class="far fa-edit"></i></a>
-                                            <a onclick="ym(73260880, 'reachGoal', 'playonspotify'); return true;" id="spotifybtn" style="width: 182px;    border-radius: 50px;    background: #1DB954; "   href="{{ $playlist->spotify_deep_link }}" class="btn btn-primary btn-block my-4">
+                                            <a onclick="return true;" id="generatemsgbtn" style="width: 182px;    border-radius: 50px; " class="btn btn-primary btn-block my-4" href="{{ route('frontend.message-generator', $playlist) }}">Generate Message <i class="far fa-edit"></i></a>
+                                            <a onclick="return true;" id="spotifybtn" style="width: 182px;    border-radius: 50px;    background: #1DB954; "   href="{{ $playlist->spotify_deep_link }}" class="btn btn-primary btn-block my-4">
                                                 Play on spotify <i class="fab fa-spotify mr-1"></i>
                                             </a></center>
                                     </div>

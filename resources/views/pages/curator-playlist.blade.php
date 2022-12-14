@@ -8,14 +8,14 @@
             <div class="d-flex">
                 <div class="image-wrapper">
                     @if($userImage)
-                    <img src="{{$userImage}}" />
+                    <img alt="" src="{{$userImage}}" />
                     @endif
                 </div>
                 <div class="d-flex flex-column">
                     <div class="song-name">Amor Fati</div>
                     <div class="artist-details">
                         @if($userImage)
-                        <img src="{{$userImage}}" />
+                        <img alt="" src="{{$userImage}}" />
                         @endif
                         <h5>Goldian</h5>
                     </div>

@@ -13,7 +13,7 @@
             <div class="mr-5">
                 <a class="navbar-brand d-flex align-items-center homepage-link" href="{{ route('home') }}">
                     <div class="">
-                        <img class="mr-2" src="{{ asset('images/logo-w.webp') }}" alt="" width="150" />
+                        <img alt="" class="mr-2" src="{{ asset('images/logo-w.webp') }}"  width="150" />
                     </div>
                 </a>
             </div>

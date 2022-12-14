@@ -7,7 +7,7 @@
             <div class="content-header-section sidebar-mini-visible-b">
                 <!-- Logo -->
                 <span class="content-header-item font-w700 font-size-xl float-left animated fadeIn">
-                    <img src="{{ asset('images/logo.webp') }}" alt="">
+                    <img alt="" src="{{ asset('images/logo.webp') }}" >
                 </span>
                 <!-- END Logo -->
             </div>
@@ -25,7 +25,7 @@
                 <!-- Logo -->
                 <div class="content-header-item">
                     <a class="font-w700" href="{{ route('backend.dashboard') }}">
-                        <img src="{{ asset('images/logo.webp') }}" alt="" width="130">
+                        <img alt="" src="{{ asset('images/logo.webp') }}"  width="130">
                     </a>
                 </div>
                 <!-- END Logo -->
@@ -38,14 +38,14 @@
         <div class="content-side content-side-full content-side-user px-10 align-parent">
             <!-- Visible only in mini mode -->
             <div class="sidebar-mini-visible-b align-v animated fadeIn">
-                <img class="img-avatar img-avatar32" src="{{ asset('images/defaults/avatar.webp') }}" alt="">
+                <img alt="" class="img-avatar img-avatar32" src="{{ asset('images/defaults/avatar.webp') }}" >
             </div>
             <!-- END Visible only in mini mode -->
 
             <!-- Visible only in normal mode -->
             <div class="sidebar-mini-hidden-b text-center">
                 <a class="img-link" href="javascript:void(0)">
-                    <img class="img-avatar" src="{{ auth()->user()->avatar_url }}" alt="">
+                    <img alt="" class="img-avatar" src="{{ auth()->user()->avatar_url }}" >
                 </a>
                 <ul class="list-inline mt-10">
                     <li class="list-inline-item">

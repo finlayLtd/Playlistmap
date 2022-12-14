@@ -4,14 +4,14 @@
     <div class="wrap">
         <div class="main">
 
-            <img class="logo d-block m-auto" src="{{ asset('images/logo-w.webp') }}" alt="" width="150" />
+            <img alt="" class="logo d-block m-auto" src="{{ asset('images/logo-w.webp') }}"  width="150" />
 
             <div class="about-headline text-center mt-5">Created by musicians for musicians</div>
             @include('frontend.components.pages.trusted-by', ['position' => 'center'])
         </div>
         <div class="text-center scroll-down">
-            <img class="scroll-down-top me-2" src="{{asset('/images/icons/scroll-down.svg')}}" />
-            <img class="scroll-down-bottom me-2" src="{{asset('/images/icons/scroll-down-hover.svg')}}" />
+            <img alt="" class="scroll-down-top me-2" src="{{asset('/images/icons/scroll-down.svg')}}" />
+            <img alt="" class="scroll-down-bottom me-2" src="{{asset('/images/icons/scroll-down-hover.svg')}}" />
             <span>Scroll Down</span>
         </div>
     </div>
@@ -32,8 +32,8 @@
 
             </div>
             <div class="guitar-wrapper">
-                <img class="scroll-down-top me-2 guitar" src="{{asset('/images/bg/guitar.webp')}}"  />
-                <img class="guitar-music"src="{{asset('/images/graphics/guitar-graphic.svg')}}" /> 
+                <img alt="" class="scroll-down-top me-2 guitar" src="{{asset('/images/bg/guitar.webp')}}"  />
+                <img alt="" class="guitar-music"src="{{asset('/images/graphics/guitar-graphic.svg')}}" /> 
             </div>
         </div>
 
@@ -61,7 +61,7 @@
                 <div class="position-relative inner-wrapper">
                         <div class="why-our-mission pt-4">
                             <h3 class="mt-5 reSize3">Our Mission
-                                <img class="our-mission-graphic"src="{{asset('/images/graphics/mission-graphic.svg')}}" /> 
+                                <img alt="" class="our-mission-graphic"src="{{asset('/images/graphics/mission-graphic.svg')}}" /> 
                             </h3>
                             <h5 class="secondary-color reSize5">
                                 We empower artists to own their music careers and succeed in the digital streaming world, without needing to rely on labels or expensive marketing campaigns.
@@ -71,7 +71,7 @@
 
                         </div>
                         <div class="missionWrapper">
-                            <img class="scroll-down-top me-2 guitar" src="{{asset('/images/bg/curators.webp')}}"  />
+                            <img alt="" class="scroll-down-top me-2 guitar" src="{{asset('/images/bg/curators.webp')}}"  />
                         </div>
                     </div>
 
@@ -92,7 +92,7 @@
             <div class="col-6 col-md-4 text-center d-flex" style="justify-content: center;">
                 <div class=" single-member position-relative">
                     <div class="content-wrapper position-relative">
-                        <img class="our-mission-graphic"src="{{asset('/images/icons/team/shahar.webp')}}" /> 
+                        <img alt="" class="our-mission-graphic"src="{{asset('/images/icons/team/shahar.webp')}}" /> 
                         <div class="quote">
                             <div>
                                 <i class="fa-light fa-quote-left"></i>
@@ -112,7 +112,7 @@
             <div class="col-6 col-md-4 text-center d-flex" style="justify-content: center;">
                 <div class=" single-member position-relative">
                     <div class="content-wrapper position-relative">
-                        <img class="our-mission-graphic"src="{{asset('/images/icons/team/dor.webp')}}" /> 
+                        <img alt="" class="our-mission-graphic"src="{{asset('/images/icons/team/dor.webp')}}" /> 
                         <div class="quote">
                             <div>
                                 <i class="fa-light fa-quote-left"></i>
@@ -132,7 +132,7 @@
             <div class="col-6 col-md-4 text-center d-flex marginTop120" style="justify-content: center;">
                 <div class=" single-member position-relative">
                     <div class="content-wrapper position-relative">
-                        <img class="our-mission-graphic"src="{{asset('/images/icons/team/shahar.webp')}}" /> 
+                        <img alt="" class="our-mission-graphic"src="{{asset('/images/icons/team/shahar.webp')}}" /> 
                         <div class="quote">
                             <div>
                                 <i class="fa-light fa-quote-left"></i>

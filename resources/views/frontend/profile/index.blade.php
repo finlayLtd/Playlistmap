@@ -18,9 +18,9 @@
             <div class="row">
                 <div class="col-3">
                     @if(user()->avatar_url)
-                        <img class="rounded-circle profile-image ml-4" src="{{ user()->avatar_url }}" alt="" style="width: 60px;"/>
+                        <img alt="" class="rounded-circle profile-image ml-4" src="{{ user()->avatar_url }}"  style="width: 60px;"/>
                     @else
-                        <!-- <img class="rounded-circle profile-image ml-4" src="storage/images/users/{{ user()->avatar}}" alt="" style="width: 60px;"/> -->
+                        <!-- <img alt="" class="rounded-circle profile-image ml-4" src="storage/images/users/{{ user()->avatar}}"  style="width: 60px;"/> -->
                         <div class="default-avatar-icon">
                             <i class="fas fa-circle-user default-avatar-icon" style="font-size: 60px;"></i>
                         </div>
@@ -123,10 +123,10 @@
                         <div onclick="uploadimage()" class="justify-content-center d-flex align-items-center position-relative rounded-circle" 
                             style="width:85px;height:85px; border:1px solid gray; cursor:pointer">
                             @if(user()->avatar_url)
-                                <img class="preview-img object-fit rounded-circle" src="{{user()->avatar_url}}" style="width:85px; height:85px;">
+                                <img alt="" class="preview-img object-fit rounded-circle" src="{{user()->avatar_url}}" style="width:85px; height:85px;">
                             @else
                                 <i class="no-image fa-solid fa-image"></i>
-                                <img class="preview-img object-fit rounded-circle" style="width:85px; height:85px; display:none">
+                                <img alt="" class="preview-img object-fit rounded-circle" style="width:85px; height:85px; display:none">
                             @endif
                             <div class="position-absolute rounded-circle d-flex justify-content-center align-items-center" 
                                 style="width:25px;height:25px; background-color:gray; bottom:0px;right:0px">
@@ -194,7 +194,7 @@
                         </div>
                         <ul class="spotify-list profile-spotify bg-white p-4 position-absolute overflow-scroll"></ul>
                         <div class="col-md-6 col-sm-12 row image-container m-auto">
-                            <img width="100%" id="artist-image" class="image-thumbnail" src="{{user()->avatar_url}}" style="display:none;background-size:cover;"/>
+                            <img alt="" width="100%" id="artist-image" class="image-thumbnail" src="{{user()->avatar_url}}" style="display:none;background-size:cover;"/>
                         </div>
                     </div>
                 </form>

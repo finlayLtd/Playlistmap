@@ -27,7 +27,7 @@ crossorigin="anonymous"></script>
                             </div>
 
                             <div id="bannersideregsiter" class="z-index-1 position-relative">
-                                <img class="w-50 mb-5" src="{{ asset('images/frontend/register-bg.webp') }}" alt="">
+                                <img alt="" class="w-50 mb-5" src="{{ asset('images/frontend/register-bg.webp') }}" >
                                 <h5 class="text-white text-left">Let’s start the journey</h5>
                                 <p class="opacity-75 text-white text-left">
                                     Get access to thousands of curators who want to discover your music
@@ -59,7 +59,7 @@ crossorigin="anonymous"></script>
                                         <x-error field="artist-id"></x-error>
                                     </div>
                                     <div class="artist-image-wrapper col-md-6">
-                                        <img id="artist-image" src="https://i.scdn.co/image/ab6761610000e5ebefeb80bd23b299d413c04d8f" />
+                                        <img alt="" id="artist-image" src="https://i.scdn.co/image/ab6761610000e5ebefeb80bd23b299d413c04d8f" />
                                     </div>
                                 </div>
 

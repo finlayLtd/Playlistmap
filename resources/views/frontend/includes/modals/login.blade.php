@@ -11,7 +11,7 @@
                     <div class="col-md-6 col-sm-12 login-info">
                         <div class="justify-content-center mobile-d"><i class="fa-duotone fa-dash" style="height:80px"></i></div>
                         <h4>Login to PlaylistMap</h4>
-                        <img class="mobile-d-none" width="290px" height="242px" src="{{ asset('images/frontend/login-modal.webp') }}"></img>
+                        <img alt="" class="mobile-d-none" width="290px" height="242px" src="{{ asset('images/frontend/login-modal.webp') }}"></img>
                         <p class="mobile-d-none">Welcome back! to your PlaylistMap account</p>
                     </div>
                     <div class="col-md-6 col-sm-12 login-input">

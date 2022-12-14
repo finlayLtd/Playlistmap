@@ -11,7 +11,7 @@
                     <div class="col-md-4 col-sm-12 justify-content-center d-block">
                         <div class="detail-img m-auto" style="width:85%; border-radius:20px;box-shadow: 0px 15px 0px -10px rgb(255,255,255,0.3)">
                             <div class="position-relative w-100" style="padding-top:100% !important; box-shadow: 0px 30px 0px -20px rgb(255,255,255,0.3);border-radius: 30px;">
-                                <img src="{{ $playlist->image }}" class="w-100 position-absolute" style="top:0px;left:0px; height:100%;object-fit:cover; border-radius:10px">
+                                <img alt="" src="{{ $playlist->image }}" class="w-100 position-absolute" style="top:0px;left:0px; height:100%;object-fit:cover; border-radius:10px">
                             </div>
                             <span class="d-none img-src">{{$playlist->image}}</span>
                         </div>
@@ -22,14 +22,14 @@
                         <div class="d-flex my-3 detail-info">
                             <div class="me-2 span"><i class="fa-solid fa-users mx-2"></i>Followers {{ $playlist->formatted_followers }} <span></span></div>
                             <div style="border-left:3px solid gray" class="span">
-                                <i class="mx-2 fa-sharp fa-solid fa-calendar-week"></i>Tracks {{ $playlist->number_of_tracks }}
+                                <i class="mx-2 fa-solid fa-album-collection"></i>Tracks {{ $playlist->number_of_tracks }}
                             </div>
                         </div>
                         <span class="update_text">Updated:  <x-friendly-date :date="$playlist->last_updated_on"/></span>
                         <div class="d-flex mt-3 gap-3">
                             <span class="detail-icon justify-content-center align-items-center" data-target="#reportPlaylistModal" data-toggle="modal" style="cursor:pointer; display:flex !important;"><i class="fa-solid fa-flag"></i></span>
                             <span class="detail-icon" style="cursor:pointer"><i class="fa-sharp fa-solid fa-share-nodes"></i></span>
-                            <a onclick="ym(73260880, 'reachGoal', 'playonspotify'); return true;" id="spotifybtn" href="{{ $playlist->spotify_deep_link }}">
+                            <a onclick="return true;" id="spotifybtn" href="{{ $playlist->spotify_deep_link }}">
                                 <button class="btn detail-button btn-primary rounded-pill d-flex"><i class="fa-brands fa-spotify"></i><div>Play On Spotify</div></button>
                             </a>            
                         </div>
@@ -42,7 +42,7 @@
                             <span class="text-white me-1"><i class="fa-solid fa-circle-user"></i></span> {{ $playlist->owner }}
                         </div>
                         <div class="my-3 d-flex text-truncate align-items-center" style="overflow:inherit; white-space:normal">
-                            <span class="text-white me-1"><i class="fa fa-envelope-circle-check"></i></span> 
+                            <span class="text-white me-1"><i class="fa-solid fa-circle-envelope"></i></span> 
                             <span >
                                 @foreach($playlist->contacts as $contact)
                                     @if(filter_var($contact, FILTER_VALIDATE_EMAIL))
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="text-center container">
-                        <a onclick="ym(73260880, 'reachGoal', 'generatemessage'); return true;" id="generatemsgbtn" href="{{ route('frontend.message-generator', $playlist) }}">
+                        <a onclick="return true;" id="generatemsgbtn" href="{{ route('frontend.message-generator', $playlist) }}">
                             <button class="detail-button w-100 btn btn-primary rounded-pill text-white text-truncate d-flex"><i class="fa-solid fa-message-dots"></i><div>Generate Message</div></div>
                         </a>
                 </div>
@@ -164,8 +164,9 @@
             var dataFirst = {
                 label: "Followers",
                 data: data_array1,
-                lineTension: 0,
+                lineTension: 0.5,
                 fill: false,
+                pointRadius:0,
                 borderColor: 'red'
             };
 
@@ -190,7 +191,7 @@
                         boxWidth: 80,
                         fontColor: 'black'
                     }
-                }
+                }, 
             };
 
             var lineChart = new Chart(ctx, {

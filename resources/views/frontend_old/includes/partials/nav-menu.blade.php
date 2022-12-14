@@ -34,7 +34,7 @@
             <div class="mr-3 align-self-center">{{ user()->name }}</div>
             <div class="avatar avatar-xl">
                 
-               <img class="rounded-circle" src="{{ user()->avatar_url }}" alt="" />
+               <img alt="" class="rounded-circle" src="{{ user()->avatar_url }}"  />
             </div>
         </a>
         <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="navbarDropdownUser">

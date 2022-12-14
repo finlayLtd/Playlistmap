@@ -38,7 +38,7 @@
                             <td>{{ $user->id }}</td>
                             <td>
                                 <div class="media">
-                                    <img class="img-avatar rounded mr-3" src="{{ $user->avatar_url }}" alt="">
+                                    <img alt="" class="img-avatar rounded mr-3" src="{{ $user->avatar_url }}" >
                                     <div class="media-body align-self-center">
                                         <div class="font-w600 mb-5">{{ $user->name }}</div>
                                         <div class="font-size-sm text-muted">{{ $user->role }}</div>

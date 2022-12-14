@@ -594,7 +594,7 @@
     var getFlashHtml = function (data) {
       var html = '<object data="' + data.source + '" width="' + data.width + '" height="' + data.height + '" type="application/x-shockwave-flash">';
       if (data.poster) {
-        html += '<img src="' + data.poster + '" width="' + data.width + '" height="' + data.height + '" />';
+        html += '<img alt=""  src="' + data.poster + '" width="' + data.width + '" height="' + data.height + '" />';
       }
       html += '</object>';
       return html;

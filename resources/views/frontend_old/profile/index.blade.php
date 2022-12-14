@@ -104,7 +104,7 @@
                             <x-error field="artist-id"></x-error>
                         </div>
                         <div class="artist-image-wrapper col-md-6">
-                            <img id="artist-image" src="https://i.scdn.co/image/ab6761610000e5ebefeb80bd23b299d413c04d8f" />
+                            <img alt="" id="artist-image" src="https://i.scdn.co/image/ab6761610000e5ebefeb80bd23b299d413c04d8f" />
                         </div>
                     </div>
 

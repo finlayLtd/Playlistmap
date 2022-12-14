@@ -61,7 +61,7 @@
                         
                             <div class="col-12 d-flex justify-content-end" id="save">
                                 <button class="d-inline-blck btn rounded-pill text-white me-2" style="border:1px gray solid"> Cancel </button>
-                                <button onclick="ym(73260880, 'reachGoal', 'profileupdatebtn'); return true;" class="btn btn-primary text-truncate submit_button" style="border-radius: 25px; padding: 8px 20px !important;">
+                                <button onclick="return true;" class="btn btn-primary text-truncate submit_button" style="border-radius: 25px; padding: 8px 20px !important;">
                                     <i class="far fa-save"></i> Update Password
                                 </button>
                             </div>

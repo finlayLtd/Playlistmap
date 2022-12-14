@@ -83,7 +83,7 @@
                                         <div class="d-flex"><button class="primary full-width {{$currentPlanClass ?? ''}}" data-toggle="modal" {{$currentPlanClass ?? ""}} data-target="#cancel_subscription">{{$buyTextFree}} </button></div>
                                         @include('frontend.includes.modals.confirm_cancel_subscription')
                                     @else
-                                        <div class="d-flex"><button class="primary full-width buyNow {{$currentPlanClass ?? ''}}" {{$currentPlanClass ?? ""}} data-plan-name="{{strtolower($plan->name)}}" data-price="{{$plan->price}}" data-plan-type="{{$plan->invoice_interval}}" data-credit="{{$plan->feature('credits')->value}}" data-plan-id="{{$plan->id}}" data-pp-id="{{$plan->paypal_id}}" onclick="ym(73260880, 'reachGoal', 'chooseplan'); return true;">{{$buyTextPay}}</button></div>
+                                        <div class="d-flex"><button class="primary full-width buyNow {{$currentPlanClass ?? ''}}" {{$currentPlanClass ?? ""}} data-plan-name="{{strtolower($plan->name)}}" data-price="{{$plan->price}}" data-plan-type="{{$plan->invoice_interval}}" data-credit="{{$plan->feature('credits')->value}}" data-plan-id="{{$plan->id}}" data-pp-id="{{$plan->paypal_id}}" onclick="return true;">{{$buyTextPay}}</button></div>
                                     @endif
 
                                     @endauth

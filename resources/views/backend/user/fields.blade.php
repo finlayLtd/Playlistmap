@@ -43,7 +43,7 @@
         @include('backend.includes.partials.error', ['field' => 'avatar'])
         @if($user)
             <div class="my-2">
-                <img class="img-avatar img-avatar128 rounded" src="{{ $user->avatar_url }}" alt="">
+                <img alt="" class="img-avatar img-avatar128 rounded" src="{{ $user->avatar_url }}" >
             </div>
         @endif
     </div>

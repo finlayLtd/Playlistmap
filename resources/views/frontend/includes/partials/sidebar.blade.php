@@ -4,7 +4,7 @@
 
             <button class="btn navbar-toggler-humburger-icon navbar-vertical-toggle" data-toggle="tooltip" data-placement="left" title="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
 
-            <div class="d-flex align-items-center py-3"><img class="mr-2" src="frontend/img/illustrations/falcon.webp" alt="" width="40" /><span class="font-sans-serif">falcon</span>
+            <div class="d-flex align-items-center py-3"><img alt="" class="mr-2" src="frontend/img/illustrations/falcon.webp"  width="40" /><span class="font-sans-serif">falcon</span>
             </div>
         </a>
     </div>

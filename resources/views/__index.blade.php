@@ -18,7 +18,7 @@
                     <a class="navbar-brand" href="{{ route('home') }}">
 
                         <span class="d-flex align-items-center">
-                            <img class="mr-2" src="images/logo.webp" alt="" width="150">
+                            <img alt="" class="mr-2" src="images/logo.webp"  width="150">
                         </span>
                     </a>
                     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarStandard"
@@ -83,7 +83,7 @@
                         </div>
                         <div class="col-xl-6 align-self-end mt-4 mt-xl-0">
                             <div style="-webkit-transform:translateY(-5rem);-ms-transform:translateY(-5rem);transform:translateY(-5rem)" class="mb-0">
-                                <img class="img-fluid" src="{{ asset('images/frontend/home-hero.gif') }}" alt=""/>
+                                <img alt="" class="img-fluid" src="{{ asset('images/frontend/home-hero.gif') }}" />
                             </div>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                                 <div class="col-lg-4">
                                     <div>
                                         <div class="card-span-img">
-                                            <img class="w-50"   src="{{ asset('/frontend/img/find.webp') }}" alt="">
+                                            <img alt="" class="w-50"   src="{{ asset('/frontend/img/find.webp') }}" >
                                         </div>
                                         <div class="card-body pt-6 pb-4">
                                             <h3 class="mb-2 font-weight-bold text-lg">1. Find the right playlists</h3>
@@ -117,7 +117,7 @@
                                 <div class="col-lg-4 mt-6 mt-lg-0">
                                     <div >
                                         <div class="card-span-img"> 
-                                            <img class="w-50"  src="{{ asset('/frontend/img/unlock.webp') }}" alt="">
+                                            <img alt="" class="w-50"  src="{{ asset('/frontend/img/unlock.webp') }}" >
                                         </div>
                                         <div class="card-body pt-6 pb-4">
                                             <h3 class="mb-2 font-weight-bold text-lg">2. Unlock contact information</h3>
@@ -129,7 +129,7 @@
                                 <div class="col-lg-4 mt-6 mt-lg-0">
                                     <div >
                                         <div class="card-span-img">
-                                            <img class="w-50"  src="{{ asset('/frontend/img/Pitch.webp') }}" alt="">
+                                            <img alt="" class="w-50"  src="{{ asset('/frontend/img/Pitch.webp') }}" >
                                         </div>
                                         <div class="card-body pt-6 pb-4">
                                             <h3 class="mb-2 font-weight-bold text-lg">3. Pitch your music</h3>
@@ -159,7 +159,7 @@
                     </div>
                     <div class="row flex-center mt-8">
                         <div class="col-md col-lg-5 col-xl-4 pl-lg-6">
-                            <img class="img-fluid px-6 px-md-0" src="{{ asset('images/frontend/features/connect.webp') }}" alt=""/>
+                            <img alt="" class="img-fluid px-6 px-md-0" src="{{ asset('images/frontend/features/connect.webp') }}" />
                         </div>
                         <div class="col-md col-lg-5 col-xl-4 mt-4 mt-md-0" id="toptitleshomepage" >
                             <h3 class="hometitles">Connect with the most influential Spotify playlist curators</h3>
@@ -168,7 +168,7 @@
                     </div>
                     <div class="row flex-center mt-7">
                         <div class="col-md col-lg-5 col-xl-4 pr-lg-6 order-md-2">
-                            <img class="img-fluid px-6 px-md-0" src="{{ asset('images/frontend/features/identify.webp') }}" alt=""/>
+                            <img alt="" class="img-fluid px-6 px-md-0" src="{{ asset('images/frontend/features/identify.webp') }}" />
                         </div>
                         <div class="col-md col-lg-5 col-xl-4 mt-4 mt-md-0" id="toptitleshomepage" >
                             <h3>Identify playlists that feature artists like you</h3>
@@ -177,7 +177,7 @@
                     </div>
                     <div class="row flex-center mt-7">
                         <div class="col-md col-lg-5 col-xl-4 pr-lg-6 ">
-                            <img class="img-fluid px-6 px-md-0" src="{{ asset('images/frontend/features/message.webp') }}" alt=""/>
+                            <img alt="" class="img-fluid px-6 px-md-0" src="{{ asset('images/frontend/features/message.webp') }}" />
                         </div>
                         <div class="col-md col-lg-5 col-xl-4 mt-4 mt-md-0" id="toptitleshomepage" >
                             <h3>Pitch smarter and stand out</h3>
@@ -186,7 +186,7 @@
                     </div>
                     <div class="row flex-center mt-7">
                         <div class="col-md col-lg-5 col-xl-4 pl-lg-6 order-md-2">
-                            <img class="img-fluid px-6 px-md-0" src="{{ asset('images/frontend/features/budget.webp') }}" alt=""/>
+                            <img alt="" class="img-fluid px-6 px-md-0" src="{{ asset('images/frontend/features/budget.webp') }}" />
                         </div>
                         <div class="col-md col-lg-5 col-xl-4 mt-4 mt-md-0" id="toptitleshomepage" >
                             <h3>Budget-friendly, zero commitment</h3>
@@ -211,7 +211,7 @@
                         <div class="col-lg-4">
                             <div class="card card-span h-100">
                                 <div class="card-span-img">
-                                    <img class="img80" src="{{ asset('images/frontend/benefits/list.webp') }}" alt="">
+                                    <img alt="" class="img80" src="{{ asset('images/frontend/benefits/list.webp') }}" >
                                 </div>
                                 <div class="card-body pt-6 pb-4">
                                     <h5 class="mb-2">Unrivaled access</h5>
@@ -222,7 +222,7 @@
                         <div class="col-lg-4 mt-6 mt-lg-0">
                             <div class="card card-span h-100">
                                 <div class="card-span-img">
-                                    <img class="img80" src="{{ asset('images/frontend/benefits/robust.webp') }}" alt="">
+                                    <img alt="" class="img80" src="{{ asset('images/frontend/benefits/robust.webp') }}" >
                                 </div>
                                 <div class="card-body pt-6 pb-4">
                                     <h5 class="mb-2">Robust filters</h5>
@@ -233,7 +233,7 @@
                         <div class="col-lg-4 mt-6 mt-lg-0">
                             <div class="card card-span h-100">
                                 <div class="card-span-img">
-                                    <img class="img80" src="{{ asset('images/frontend/benefits/fast.webp') }}" alt="">
+                                    <img alt="" class="img80" src="{{ asset('images/frontend/benefits/fast.webp') }}" >
                                 </div>
                                 <div class="card-body pt-6 pb-4">
                                     <h5 class="mb-2">Fast results</h5>
@@ -257,7 +257,7 @@
                                     <div class="swiper-slide">
                                         <div class="px-5 px-sm-6">
                                             <div class="d-flex mb-3">
-                                                <img class="rounded-circle  img-fluid" src="{{ asset('images/frontend/features/ronny.webp') }}" alt="">
+                                                <img alt="" class="rounded-circle  img-fluid" src="{{ asset('images/frontend/features/ronny.webp') }}" >
                                                 <div class="ml-3 align-self-center text-left lh-1 text-black">
                                                     <p class="mb-1">Ronny</p>
                                                     <p class="mb-1">Hip Hop artists</p>
@@ -276,7 +276,7 @@
                                         <div class="px-5 px-sm-6">
                                             <div class="d-flex mb-3">
 
-                                                <img class="rounded-circle  img-fluid" src="{{ asset('/frontend/img/yarden.webp') }}" alt=""><a target="_blank" class="nav-link" href="https://www.instagram.com/yarden_saxophone/" style="color:#000!important">
+                                                <img alt="" class="rounded-circle  img-fluid" src="{{ asset('/frontend/img/yarden.webp') }}" ><a target="_blank" class="nav-link" href="https://www.instagram.com/yarden_saxophone/" style="color:#000!important">
                                                     <div class="ml-3 align-self-center text-left lh-1 text-black">
                                                         <p class="mb-1">Yarden Saxophone</p>
                                                         <p class="mb-1">Artist</p>
@@ -296,7 +296,7 @@
                                 <div class="swiper-slide">
                                     <div class="px-5 px-sm-6">
                                         <div class="d-flex mb-3">
-                                            <img class="rounded-circle  img-fluid" src="{{ asset('/frontend/img/Alusin.webp') }}" alt="">
+                                            <img alt="" class="rounded-circle  img-fluid" src="{{ asset('/frontend/img/Alusin.webp') }}" >
                                             <div class="ml-3 align-self-center text-left lh-1 text-black">
                                                 <p class="mb-1">Alusin</p>
                                                 <p class="mb-1">Music Producer</p>

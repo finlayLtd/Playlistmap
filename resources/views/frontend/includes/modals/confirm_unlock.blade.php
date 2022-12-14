@@ -12,7 +12,7 @@
             </div>
             <div class="modal-body text-center" style=" padding: 0 !important;margin: 0 !important;">
                 <div class="container playlist_unlock_detail align-items-center d-flex text-left justify-content-center">
-                    <img width="90px" height="90px" class="img-thumbnail" style="margin-right:20px">
+                    <img alt="" width="90px" height="90px" class="img-thumbnail" style="margin-right:20px">
                     <div class="d-inline-block my-5 text-truncate">
                         <span class="h6" id="playlist_name"></span>
                         <div class="row" style="font-size:16px; color:#C0C0C0">
@@ -69,7 +69,7 @@
         display:none !important;
     }
 
-    .fa-album-collection{
+    #unlock_playlist_modal .fa-album-collection{
         border-left: 1px solid gray;
     }
 

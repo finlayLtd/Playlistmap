@@ -22,14 +22,14 @@
                     <span class="followers">{{ $playlist->formatted_followers }}</span>
                 </div>
                 <div class="d-inline w-50 float-right">
-                    <i class="mx-2 fa fa-calendar-minus" style="margin-right:0px !important" aria-hidden="true"></i>
+                    <i class="mx-2 fa-solid fa-album-collection" style="margin-right:0px !important" aria-hidden="true"></i>
                     <span class="tracks">{{ $playlist->number_of_tracks }}</span>
                 </div>
             </div>
             <div style="position:relative" class="grid-img" style="cursor:pointer">
                 <div class="mt-2" style="border-radius:20px;box-shadow: 0px 15px 0px -10px rgb(255,255,255,0.3)">
                     <div class="position-relative w-100" style="padding-top:100% !important; box-shadow: 0px 30px 0px -20px rgb(255,255,255,0.3);border-radius: 30px;">
-                        <img src="{{ $playlist->image }}" class="w-100 position-absolute @if(!$playlist->isUnlocked()) open-modal-grid @endif" style="top:0px; height:100%;object-fit:cover; border-radius:10px; cursor:pointer">
+                        <img alt="" src="{{ $playlist->image }}" class="w-100 position-absolute @if(!$playlist->isUnlocked()) open-modal-grid @endif" style="top:0px; height:100%;object-fit:cover; border-radius:10px; cursor:pointer">
                         <div class="position-absolute w-100 h-100 cover-style" style="top:0; cursor:pointer"
                             @if($playlist->isUnlocked()) 
                                 onclick="window.location.href=`{{route('frontend.playlist_detail', ['playlist_id'=>$playlist->id])}}`"

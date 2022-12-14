@@ -5,9 +5,9 @@
             <div class="position-absolute" data-dismiss="modal" aria-label="Close" style="cursor:pointer">
                 <i class="fas fa-times" style="font-size:25px;"></i>
             </div>
-            <img class="loader" src="{{asset('images/icons/loader-white.gif')}}" />
+            <img alt="" class="loader" src="{{asset('images/icons/loader-white.gif')}}" />
             <div class="modal-header border-0 pb-0">
-                <img class="mr-2" src="{{ asset('images/logo-w.webp') }}" alt="" width="190" />
+                <img alt="" class="mr-2" src="{{ asset('images/logo-w.webp') }}"  width="190" />
             </div>
             <div class="modal-body">
                 <div class="monthly-yearly-wrapper d-flex align-items-center justify-center month small">
@@ -60,8 +60,8 @@
                             @csrf
                             <input type="hidden" name="plan_id" id="plan_id">
                             <input type="hidden" name="coupon-code" id="coupon-code">
-                            <!--<img class="w-50 pb-xl-3"   src="{{ asset('/frontend/img/cards.webp') }}" alt="">-->
-                            <div id="card-element" style="background: #ffffff; padding: 5%; border-radius: 4px;"></div>
+                            <input type="coupon" class="form-control" id="coupon" value="{{$coupon ?? ""}}">
+                                        
                             <div class="form-check mt-3">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                                 <label class="form-check-label" for="flexCheckChecked" style="cursor:pointer">
@@ -70,7 +70,7 @@
                             </div>
 
                             <div class="mt-3">
-                                <button onclick="ym(73260880, 'reachGoal', 'placeorder'); return true;" type="submit" class="primary place-order-button d-flex justify-content-center" data-toggle="modal" data-target="#loader" data-dismiss="modal" aria-label="Close" id="pay_now">
+                                <button onclick="return true;" type="submit" class="primary place-order-button d-flex justify-content-center" data-toggle="modal" data-target="#loader" data-dismiss="modal" aria-label="Close" id="pay_now">
                                     <i class="fa-thin fa-credit-card-blank"></i> Subscribe & Pay $<span id="pay-button-amount-month"></span><span id="pay-button-amount-year"></span>
                                 </button>
                             </div>

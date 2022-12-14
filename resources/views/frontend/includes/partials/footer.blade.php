@@ -112,7 +112,7 @@
 
     <div class="row g-0 justify-content-between fs--1 mt-4">
         <div class="col-12 text-center rights d-flex align-items-center justify-content-center">
-            <img class="me-4" src="{{ asset('images/logo-w.webp') }}" alt="" width="100" />
+            <img alt="" class="me-4" src="{{ asset('images/logo-w.webp') }}"  width="100" />
             <div>&copy; {{ now()->format('Y') }} Playlistmap, Inc. • All rights reserved.</div>
         </div>
     </div>
