@@ -29,7 +29,6 @@
 <meta property="og:image" content="{{$ogImage ?? asset('images/playlistmap-share.webp')}}" />
 <meta property="og:site_name" content="Playlistmap" />
 <meta property="og:url" content="{{ Request::url()}}" />
-
 <!-- ===============================================-->
 <!--    Stylesheets-->
 <!-- ===============================================-->

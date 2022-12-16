@@ -194,11 +194,13 @@
                                     $btn_class = 'btn-primary';
                                 }
                             @endphp
-                            <tr class="{{ $shouldBlur ? 'premium-content' : '' }} @if(!$playlist->isUnlocked()) open-modal @endif" data-flag="{{$playlist->isUnlocked()}}" data-id="{{ $playlist->id }}" style="height:125px"
-                                @if($playlist->isUnlocked()) 
-                                    onclick="window.location.href=`{{route('frontend.playlist_detail', ['playlist_id'=>$playlist->id])}}`"
-                                @else 
-                                    data-playlist-id="{{ $playlist->id }}" 
+                            <tr class="{{ $shouldBlur ? 'premium-content' : '' }} @if(!$playlist->isUnlocked()) open-modal @endif" data-blur="{{$shouldBlur}}" data-flag="{{$playlist->isUnlocked()}}" data-id="{{ $playlist->id }}" style="height:125px"
+                                @if($shouldBlur!='1')
+                                    @if($playlist->isUnlocked()) 
+                                        onclick="window.location.href=`{{route('frontend.playlist_detail', ['playlist_id'=>$playlist->id])}}`"
+                                    @else 
+                                        data-playlist-id="{{ $playlist->id }}" 
+                                    @endif
                                 @endif
                             >
                                 <td>
@@ -221,8 +223,11 @@
                                                 @endphp
                                                 
                                                 @if($unlock_text == 'Unlock')
-                                                    <button class="open-modal btn bg-danger justify-content-center btn-sm {{ $btn_class }} text-center border-0 ulock-btn" type="button" data-toggle="modal"
-                                                        data-target="#{{$modal}}" data-playlist-id="{{ $playlist->id }}" style="display: inherit; width:40px; height:40px; border-radius: 10px">
+                                                    <button class=" @if($shouldBlur!='1') open-modal @endif btn bg-danger justify-content-center btn-sm {{ $btn_class }} text-center border-0 ulock-btn" type="button" 
+                                                        @if($shouldBlur!='1')
+                                                            data-toggle="modal" data-target="#{{$modal}}" data-playlist-id="{{ $playlist->id }}" 
+                                                        @endif                                                    
+                                                        style="display: inherit; width:40px; height:40px; border-radius: 10px">
                                                         <i class="fa-solid fa-unlock-keyhole m-0"></i>
                                                     </button>
                                                 @endif
@@ -421,21 +426,25 @@
             $(".playlist_unlock_detail #playlist_tracks").text($("tr[data-id='"+playlist_id+"'] span#playlist_tracks").text());
             $(".playlist_unlock_detail #playlist_updated").text($("tr[data-id='"+playlist_id+"'] span#playlist_updated").text());
 
-            if(!e.target.classList.contains('badge'))
-            {
-                if(!$(this).attr('data-flag')=='1'){
-                    $('#unlock_playlist_modal').modal('show');
-                } else{
-                    $('#loader').modal('toggle');
-                    var url = '{{ route("frontend.playlist_detail", ":playlist_id") }}';
+            
 
-                    url = url.replace(':playlist_id', playlist_id);
+            if(!$(this).attr('data-blur')=='1'){
+                if(!e.target.classList.contains('badge'))
+                {
+                    if(!$(this).attr('data-flag')=='1'){
+                        $('#unlock_playlist_modal').modal('show');
+                    } else{
+                        $('#loader').modal('toggle');
+                        var url = '{{ route("frontend.playlist_detail", ":playlist_id") }}';
 
-                    window.location.href=url;
-                }
-            } else {
-                if($(e.target).attr('data-toggle')!="modal"){
-                    $('#loader').modal('toggle');
+                        url = url.replace(':playlist_id', playlist_id);
+
+                        window.location.href=url;
+                    }
+                } else {
+                    if($(e.target).attr('data-toggle')!="modal"){
+                        $('#loader').modal('toggle');
+                    }
                 }
             }
 
