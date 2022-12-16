@@ -2115,7 +2115,6 @@ body.terms a {
 
     header .navbar-nav .dropdown-menu {
         position: absolute;
-        right: 20px !important;
         left: auto;
     }
 
