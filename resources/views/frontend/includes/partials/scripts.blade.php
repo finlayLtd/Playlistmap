@@ -28,7 +28,4 @@
     @endif
 
 </script>
-
-@yield('scripts')
-
 @include('frontend.includes.third-party.tawkto')
